@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PrivacyProxy.Api.Tests/PrivacyProxy.Api.Tests.csproj" />
+  <Project Path="PrivacyProxy.Api/PrivacyProxy.Api.csproj" />
+</Solution>
