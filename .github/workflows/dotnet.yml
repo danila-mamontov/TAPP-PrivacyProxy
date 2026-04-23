@@ -1,4 +1,4 @@
-name: .NET
+name: CI (.net)
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
     needs: test
     steps:
       - name: Download coverage artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: coverage
       - name: Install report generator
