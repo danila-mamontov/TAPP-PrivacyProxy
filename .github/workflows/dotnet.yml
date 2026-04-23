@@ -22,7 +22,7 @@ jobs:
       - name: Test + Coverage
         run: dotnet test --no-build --collect:"XPlat Code Coverage" --results-directory ./coverage
       - name: Upload coverage artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: ./coverage
@@ -32,7 +32,7 @@ jobs:
     needs: test
     steps:
       - name: Download coverage artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v4
         with:
           name: coverage
       - name: Install report generator
