@@ -1,6 +1,5 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using PrivacyProxy.Api.Models.Enums;
 
 var builder = WebApplication.CreateBuilder(args);
 
