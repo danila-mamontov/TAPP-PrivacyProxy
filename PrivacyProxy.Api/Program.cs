@@ -8,7 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 var options = new JsonSerializerOptions();
+
+// To serialize enums as strings, not as numbers
 options.Converters.Add(new JsonStringEnumConverter());
+
+// To ignore null values when serializing, not writing them
+options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
 
 var app = builder.Build();
 
