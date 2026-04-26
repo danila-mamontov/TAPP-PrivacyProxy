@@ -6,10 +6,10 @@ namespace PrivacyProxy.Api.Models.DTOs;
 public record PresidioAnalyzerRequest
 {
     [JsonPropertyName( "text")]
-    public required string Text { get; set; }
+    public required string Text { get; init; }
     
     [JsonPropertyName( "language")]
-    public required Language Language { get; set; }
+    public required Language Language { get; init; }
     
     [JsonPropertyName( "return_decision_process")]
     public bool? ReturnDecisionProcess { get; set; }
@@ -21,8 +21,8 @@ public record PresidioAnalyzerRequest
     public string[]? Context { get; set; }
     
     [JsonPropertyName("entities")]
-    public string[]? Entities { get; set; }
+    public string[]? Entities { get; init; }
     
     [JsonPropertyName("score_threshold")]
-    public double? ScoreThreshold { get; set; }
+    public double? ScoreThreshold { get; init; }
 }
