@@ -9,10 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+// Add Presidio configuration and validation to PrivacyProxy and check on startup
 builder.Services.AddOptions<PresidioOptions>()
        .BindConfiguration("Presidio")
        .ValidateOnStart();
-
 builder.Services.AddSingleton<IValidateOptions<PresidioOptions>, PresidioOptionsValidator>();
 
 var options = new JsonSerializerOptions();
