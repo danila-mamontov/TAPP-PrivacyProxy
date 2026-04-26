@@ -1,0 +1,81 @@
+using Microsoft.Extensions.Options;
+using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Api.Models.DTOs;
+using PrivacyProxy.Api.Models.Enums;
+using PrivacyProxy.Api.Models.Interfaces;
+
+namespace PrivacyProxy.Api.Services;
+
+/// <summary>
+/// Represents the default entity policy used to apply filtering logic
+/// on recognized entities based on preset confidence thresholds,
+/// considering the source language.
+/// Implements the <c>IEntityPolicy</c> interface.
+/// </summary>
+public class DefaultEntityPolicy(IOptions<PresidioOptions> options) : IEntityPolicy
+{
+    /// <summary>
+    /// Represents the configuration options for the Presidio library injected into the
+    /// DefaultEntityPolicy. These options are used to control entity thresholds, supported
+    /// entity types, and other settings required for text analytics and data anonymization purposes.
+    /// </summary>
+    private readonly PresidioOptions _options = options.Value;
+
+    /// <summary>
+    /// Applies the entity policy by filtering entities based on predefined thresholds
+    /// for the specified language and resolves any overlapping entities.
+    /// </summary>
+    /// <param name="entities">A collection of entities to process, each containing details such as entity type, score, and positional indices.</param>
+    /// <param name="sourceLanguage">The language of the source text, which determines the applicable entity thresholds.</param>
+    /// <param name="originalText">The original text being analyzed, used for contextual operations if necessary.</param>
+    /// <returns>A filtered and non-overlapping list of entities that meet the confidence thresholds for the specified language.</returns>
+    public IReadOnlyList<PresidioAnalyzerResponse> Apply(
+        IEnumerable<PresidioAnalyzerResponse> entities, 
+        Language sourceLanguage, 
+        string originalText)
+    {
+        // Get the entity thresholds for the source language.
+        var thresholds = sourceLanguage == Language.German
+                            ? _options.GermanEntityThresholds
+                            : _options.EnglishEntityThresholds;
+
+        // Filter the entities based on their confidence scores and language depending on scores.
+        var filtered = entities
+                      .Where(e =>
+                                 thresholds.TryGetValue(e.EntityType, out var threshold) &&
+                                 e.Score >= threshold)
+                      .ToList();
+        
+        return ResolveOverlaps(filtered);
+    }
+
+    /// <summary>
+    /// Resolves overlapping entities by retaining only the entities with the highest scores
+    /// and ensuring that no two entities in the result overlap.
+    /// </summary>
+    /// <param name="overlappingEntities">A list of entities that may have overlapping ranges.
+    /// Each entity contains details such as start and end indices, score, and entity type.</param>
+    /// <returns>A list of non-overlapping entities with the highest scores while
+    /// preserving the integrity of the original list as much as possible.</returns>
+    private static List<PresidioAnalyzerResponse> ResolveOverlaps(
+        List<PresidioAnalyzerResponse> overlappingEntities)
+    {
+        // Sort the entities by their score in descending order.
+        var byScore = overlappingEntities
+           .OrderByDescending(e => e.Score);
+        
+        var resolved = new List<PresidioAnalyzerResponse>();
+
+        foreach (var entity in byScore)
+        {
+            // If the entity doesn't overlap with any other entity, add it to the resolved list.
+            // Otherwise, skip it, as it's already been resolved.
+            if (!resolved.Any(e => e.Start < entity.End && e.End > entity.Start))
+            {
+                resolved.Add(entity);
+            }
+        }
+
+        return resolved;
+    }
+}
