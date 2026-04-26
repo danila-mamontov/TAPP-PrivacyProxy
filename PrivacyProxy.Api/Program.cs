@@ -25,6 +25,10 @@ builder.Services.AddHttpClient<IPresidioAnalyzerClient, PresidioAnalyzerClient>(
                                                                                     client.BaseAddress = new Uri(opts.AnalyzerUrl);
                                                                                 });
 
+// Add MappingStore to PrivacyProxy for storing mappings between PII and their Pseudonyms
+// Scoped to ensure each HTTP request has its own instance.
+builder.Services.AddScoped<IMappingStore, MappingStore>();
+
 var options = new JsonSerializerOptions();
 
 // To serialize enums as strings, not as numbers
