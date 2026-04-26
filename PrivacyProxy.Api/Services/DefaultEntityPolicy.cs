@@ -6,10 +6,29 @@ using PrivacyProxy.Api.Models.Interfaces;
 
 namespace PrivacyProxy.Api.Services;
 
+/// <summary>
+/// Represents the default entity policy used to apply filtering logic
+/// on recognized entities based on preset confidence thresholds,
+/// considering the source language.
+/// Implements the <c>IEntityPolicy</c> interface.
+/// </summary>
 public class DefaultEntityPolicy(IOptions<PresidioOptions> options) : IEntityPolicy
 {
+    /// <summary>
+    /// Represents the configuration options for the Presidio library injected into the
+    /// DefaultEntityPolicy. These options are used to control entity thresholds, supported
+    /// entity types, and other settings required for text analytics and data anonymization purposes.
+    /// </summary>
     private readonly PresidioOptions _options = options.Value;
-    
+
+    /// <summary>
+    /// Applies the entity policy by filtering entities based on predefined thresholds
+    /// for the specified language and resolves any overlapping entities.
+    /// </summary>
+    /// <param name="entities">A collection of entities to process, each containing details such as entity type, score, and positional indices.</param>
+    /// <param name="sourceLanguage">The language of the source text, which determines the applicable entity thresholds.</param>
+    /// <param name="originalText">The original text being analyzed, used for contextual operations if necessary.</param>
+    /// <returns>A filtered and non-overlapping list of entities that meet the confidence thresholds for the specified language.</returns>
     public IReadOnlyList<PresidioAnalyzerResponse> Apply(
         IEnumerable<PresidioAnalyzerResponse> entities, 
         Language sourceLanguage, 
@@ -30,6 +49,14 @@ public class DefaultEntityPolicy(IOptions<PresidioOptions> options) : IEntityPol
         return ResolveOverlaps(filtered);
     }
 
+    /// <summary>
+    /// Resolves overlapping entities by retaining only the entities with the highest scores
+    /// and ensuring that no two entities in the result overlap.
+    /// </summary>
+    /// <param name="overlappingEntities">A list of entities that may have overlapping ranges.
+    /// Each entity contains details such as start and end indices, score, and entity type.</param>
+    /// <returns>A list of non-overlapping entities with the highest scores while
+    /// preserving the integrity of the original list as much as possible.</returns>
     private static List<PresidioAnalyzerResponse> ResolveOverlaps(
         List<PresidioAnalyzerResponse> overlappingEntities)
     {
