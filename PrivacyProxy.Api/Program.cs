@@ -1,11 +1,19 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.Extensions.Options;
+using PrivacyProxy.Api.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddOptions<PresidioOptions>()
+       .BindConfiguration("Presidio")
+       .ValidateOnStart();
+
+builder.Services.AddSingleton<IValidateOptions<PresidioOptions>, PresidioOptionsValidator>();
 
 var options = new JsonSerializerOptions();
 
