@@ -17,6 +17,7 @@ builder.Services.AddOptions<PresidioOptions>()
        .ValidateOnStart();
 builder.Services.AddSingleton<IValidateOptions<PresidioOptions>, PresidioOptionsValidator>();
 
+// Add Presidio Analyzer client to PrivacyProxy
 builder.Services.AddHttpClient<IPresidioAnalyzerClient, PresidioAnalyzerClient>(
                                                                                 (sp, client) =>
                                                                                 {
