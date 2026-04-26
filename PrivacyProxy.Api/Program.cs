@@ -2,6 +2,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Api.Models.Interfaces;
+using PrivacyProxy.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,14 @@ builder.Services.AddOptions<PresidioOptions>()
        .BindConfiguration("Presidio")
        .ValidateOnStart();
 builder.Services.AddSingleton<IValidateOptions<PresidioOptions>, PresidioOptionsValidator>();
+
+// Add Presidio Analyzer client to PrivacyProxy
+builder.Services.AddHttpClient<IPresidioAnalyzerClient, PresidioAnalyzerClient>(
+                                                                                (sp, client) =>
+                                                                                {
+                                                                                    var opts = sp.GetRequiredService<IOptions<PresidioOptions>>().Value;
+                                                                                    client.BaseAddress = new Uri(opts.AnalyzerUrl);
+                                                                                });
 
 var options = new JsonSerializerOptions();
 
