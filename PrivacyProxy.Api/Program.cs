@@ -19,6 +19,7 @@ builder.Services.AddSingleton<IValidateOptions<PresidioOptions>, PresidioOptions
 
 // Add the default entity policy to handle entities recognized by Presidio
 builder.Services.AddSingleton<IEntityPolicy, DefaultEntityPolicy>();
+
 // Add Presidio Analyzer client to PrivacyProxy
 builder.Services.AddHttpClient<IPresidioAnalyzerClient, PresidioAnalyzerClient>(
                                                                                 (sp, client) =>
@@ -30,6 +31,10 @@ builder.Services.AddHttpClient<IPresidioAnalyzerClient, PresidioAnalyzerClient>(
 // Add MappingStore to PrivacyProxy for storing mappings between PII and their Pseudonyms
 // Scoped to ensure each HTTP request has its own instance.
 builder.Services.AddScoped<IMappingStore, MappingStore>();
+
+// Add StreamingDeanonymizer to PrivacyProxy for deanonymizing text in real-time from LLM responses
+// That writes them via chunks and not one response.
+builder.Services.AddScoped<StreamingDeanonymizer>();
 
 var options = new JsonSerializerOptions();
 
