@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Api.Endpoints;
 using PrivacyProxy.Api.Models.Interfaces;
 using PrivacyProxy.Api.Services;
 
@@ -48,6 +49,15 @@ builder.Services.AddScoped<IMappingStore, MappingStore>();
 // That writes them via chunks and not one response.
 builder.Services.AddScoped<StreamingDeanonymizer>();
 
+// Add PresidioService to PrivacyProxy for handling PII detection and anonymization
+// Scoped to ensure each HTTP request has its own instance.
+builder.Services.AddScoped<IPresidioService, PresidioService>();
+
+// Add ChatCompletionService to PrivacyProxy for handling chat completions
+// Scoped to ensure each HTTP request has its own instance.
+// Used by the ChatCompletionEndpoint.
+builder.Services.AddScoped<ChatCompletionService>();
+
 var options = new JsonSerializerOptions();
 
 // To serialize enums as strings, not as numbers
@@ -57,6 +67,9 @@ options.Converters.Add(new JsonStringEnumConverter());
 options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
 
 var app = builder.Build();
+
+// Map the endpoint v1/chat/completions to the ChatCompletionEndpoint
+app.MapChatCompletion();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
