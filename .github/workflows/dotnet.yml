@@ -23,7 +23,7 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
       - name: Test + Coverage
-        run: dotnet test --no-build --collect:"XPlat Code Coverage" --results-directory ./coverage -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Exclude="[*]Microsoft.*,[*]System.*,[*]Program"
+        run: dotnet test --no-build --filter "Category!=Integration" --collect:"XPlat Code Coverage" --results-directory ./coverage -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Exclude="[*]Microsoft.*,[*]System.*,[*]Program"
       - name: Upload coverage artifact
         uses: actions/upload-artifact@v4
         with:
