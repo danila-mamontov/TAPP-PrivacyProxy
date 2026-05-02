@@ -34,6 +34,12 @@ builder.Services.AddHttpClient<IPresidioAnalyzerClient, PresidioAnalyzerClient>(
                                                                                     client.BaseAddress = new Uri(opts.AnalyzerUrl);
                                                                                 });
 
+// Add LLM client to PrivacyProxy
+builder.Services.AddHttpClient<ILlmClient, LlmClient>((sp, client) =>
+                                              {
+                                                  var opts = sp.GetRequiredService<IOptions<LlmOptions>>().Value;
+                                                  client.BaseAddress = new Uri(opts.BaseUrl);
+                                              });
 // Add MappingStore to PrivacyProxy for storing mappings between PII and their Pseudonyms
 // Scoped to ensure each HTTP request has its own instance.
 builder.Services.AddScoped<IMappingStore, MappingStore>();
