@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
-using PrivacyProxy.Api.Models.DTOs.Presidio;
+using PrivacyProxy.Api.Models.DTOs;
 using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Models.Interfaces;
 

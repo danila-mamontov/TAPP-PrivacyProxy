@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using PrivacyProxy.Api.Models.Enums;
 
-namespace PrivacyProxy.Api.Models.DTOs.Presidio;
+namespace PrivacyProxy.Api.Models.DTOs;
 
 /// <summary>
 /// Represents a request object for sending data to the Presidio Analyzer service for

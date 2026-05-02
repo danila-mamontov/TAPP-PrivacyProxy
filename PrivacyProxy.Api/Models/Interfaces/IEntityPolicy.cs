@@ -1,4 +1,4 @@
-using PrivacyProxy.Api.Models.DTOs.Presidio;
+using PrivacyProxy.Api.Models.DTOs;
 using PrivacyProxy.Api.Models.Enums;
 
 namespace PrivacyProxy.Api.Models.Interfaces;
