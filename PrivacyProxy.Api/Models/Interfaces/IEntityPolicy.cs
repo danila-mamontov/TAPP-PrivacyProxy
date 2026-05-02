@@ -27,4 +27,16 @@ public interface IEntityPolicy
         Language sourceLanguage,
         string originalText
     );
+    
+    /// <summary>
+    /// Resolves overlapping entities within a collection of analyzed entities by
+    /// identifying and handling conflicts between them based on predefined logic.
+    /// This ensures that the final set of entities is non-overlapping and appropriately prioritized.
+    /// </summary>
+    /// <param name="entities">A collection of <see cref="PresidioAnalyzerResponse"/> instances representing
+    /// the analyzed entities to process for overlap resolution.</param>
+    /// <returns>An IReadOnlyList of <see cref="PresidioAnalyzerResponse"/> where overlapping entities
+    /// have been resolved and refined.</returns>
+    IReadOnlyList<PresidioAnalyzerResponse> ResolveOverlaps(
+        IEnumerable<PresidioAnalyzerResponse> entities);
 }
