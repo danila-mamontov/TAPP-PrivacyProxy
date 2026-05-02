@@ -17,6 +17,12 @@ builder.Services.AddOptions<PresidioOptions>()
        .ValidateOnStart();
 builder.Services.AddSingleton<IValidateOptions<PresidioOptions>, PresidioOptionsValidator>();
 
+// Add LLM configuration and validation to PrivacyProxy and check on startup
+builder.Services.AddOptions<LlmOptions>()
+       .BindConfiguration("Llm")
+       .ValidateOnStart();
+builder.Services.AddSingleton<IValidateOptions<LlmOptions>, LlmOptionsValidator>();
+
 // Add the default entity policy to handle entities recognized by Presidio
 builder.Services.AddSingleton<IEntityPolicy, DefaultEntityPolicy>();
 
