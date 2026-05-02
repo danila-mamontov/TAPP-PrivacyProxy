@@ -50,15 +50,13 @@ public class DefaultEntityPolicy(IOptions<PresidioOptions> options) : IEntityPol
     }
 
     /// <summary>
-    /// Resolves overlapping entities by retaining only the entities with the highest scores
-    /// and ensuring that no two entities in the result overlap.
+    /// Resolves overlapping entities by selecting the highest-scoring entities and discarding any that overlap
+    /// with a previously selected entity.
     /// </summary>
-    /// <param name="overlappingEntities">A list of entities that may have overlapping ranges.
-    /// Each entity contains details such as start and end indices, score, and entity type.</param>
-    /// <returns>A list of non-overlapping entities with the highest scores while
-    /// preserving the integrity of the original list as much as possible.</returns>
-    private static List<PresidioAnalyzerResponse> ResolveOverlaps(
-        List<PresidioAnalyzerResponse> overlappingEntities)
+    /// <param name="overlappingEntities">A collection of entities that may contain positional overlaps, where each entity includes details such as type, score, and positional indices.</param>
+    /// <returns>A list of non-overlapping entities selected based on their confidence scores in descending order.</returns>
+    public IReadOnlyList<PresidioAnalyzerResponse> ResolveOverlaps(
+        IEnumerable<PresidioAnalyzerResponse> overlappingEntities)
     {
         // Sort the entities by their score in descending order.
         var byScore = overlappingEntities
