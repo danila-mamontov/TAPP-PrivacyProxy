@@ -90,15 +90,15 @@ public partial class MappingStore : IMappingStore
     /// <summary>
     /// Replaces placeholders in the given text with their corresponding original values using the stored mappings.
     /// </summary>
-    /// <param name="anonymizedText">The text containing placeholders to be replaced with original values.</param>
+    /// <param name="text">The text containing placeholders to be replaced with original values.</param>
     /// <returns>The text with placeholders replaced by their original values. If a placeholder does not have a matching original value in the mapping, it is left unchanged.</returns>
-    public string Deanonymize(string anonymizedText)
+    public string Deanonymize(string text)
     {
-        if (string.IsNullOrEmpty(anonymizedText)) return anonymizedText;
+        if (string.IsNullOrEmpty(text)) return text;
 
         // Replace placeholders with their original values if they exist in the mapping.
         // Otherwise, leave the placeholder as-is.
-        return PlaceholderRegex.Replace(anonymizedText, m =>
+        return PlaceholderRegex.Replace(text, m =>
                                                             _placeholderToOriginal.TryGetValue(m.Value, out var original) ? 
                                                                 original : 
                                                                 m.Value);

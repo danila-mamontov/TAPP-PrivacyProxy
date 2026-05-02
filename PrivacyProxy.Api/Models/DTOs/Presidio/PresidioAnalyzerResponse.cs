@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace PrivacyProxy.Api.Models.DTOs;
+namespace PrivacyProxy.Api.Models.DTOs.Presidio;
 
 /// <summary>
 /// Represents the response returned from the Presidio Analyzer after text analysis.
