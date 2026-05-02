@@ -1,6 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using PrivacyProxy.Api.Models.DTOs;
+using PrivacyProxy.Api.Models.DTOs.Presidio;
 using PrivacyProxy.Api.Models.Enums;
 
 namespace PrivacyProxy.Api.Tests;
