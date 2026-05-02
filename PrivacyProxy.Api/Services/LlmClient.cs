@@ -67,8 +67,12 @@ public class LlmClient(
         
         using var httpRequest = new HttpRequestMessage(HttpMethod.Post, "/chat/completions");
         httpRequest.Content = content;
+        
+        // Add the API key to the request headers
         httpRequest.Headers.Add("Authorization", $"Bearer {_llmOptions.ApiKey}");
 
+        // Send the request and await the response with cancellation support and till headers are read
+        // to avoid blocking the thread when using streaming responses
         var response = await httpClient.SendAsync(httpRequest, HttpCompletionOption.ResponseHeadersRead, ct);
 
         if (response.IsSuccessStatusCode) 
