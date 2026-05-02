@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Options;
 using Moq;
 using PrivacyProxy.Api.Configuration;
-using PrivacyProxy.Api.Models.DTOs;
+using PrivacyProxy.Api.Models.DTOs.Presidio;
 using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Models.Interfaces;
 using PrivacyProxy.Api.Services;

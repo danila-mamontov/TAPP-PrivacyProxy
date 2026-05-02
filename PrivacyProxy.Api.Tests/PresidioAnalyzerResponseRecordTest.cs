@@ -1,5 +1,5 @@
 using System.Text.Json;
-using PrivacyProxy.Api.Models.DTOs;
+using PrivacyProxy.Api.Models.DTOs.Presidio;
 
 namespace PrivacyProxy.Api.Tests;
 
