@@ -13,7 +13,7 @@ namespace PrivacyProxy.Api.Services;
 public class PresidioService(
     IPresidioAnalyzerClient presidioAnalyzerClient, 
     IEntityPolicy entityPolicy,
-    IMappingStore mappingStore)
+    IMappingStore mappingStore) : IPresidioService
 {
     /// <summary>
     /// Anonymizes sensitive information in the provided text by analyzing it in multiple languages
