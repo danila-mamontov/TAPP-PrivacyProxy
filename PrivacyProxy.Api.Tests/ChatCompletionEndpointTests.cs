@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Moq;
+using PrivacyProxy.Api.Configuration;
 using PrivacyProxy.Api.Models.DTOs.LLM;
 using PrivacyProxy.Api.Models.Interfaces;
 using PrivacyProxy.Api.Services;
@@ -25,8 +26,21 @@ public class ChatCompletionEndpointTests(WebApplicationFactory<Program> factory)
     private HttpClient CreateClient(Action<IServiceCollection> configureServices)
     {
         return factory.WithWebHostBuilder(builder =>
-            builder.ConfigureServices(configureServices))
-            .CreateClient();
+        {
+            builder.ConfigureServices(configureServices);
+        
+            // JSON Options explizit auch im Test-Host setzen
+            builder.ConfigureServices(services =>
+            {
+                services.ConfigureHttpJsonOptions(opts =>
+                {
+                    opts.SerializerOptions.PropertyNamingPolicy        = JsonNamingPolicy.SnakeCaseLower;
+                    opts.SerializerOptions.PropertyNameCaseInsensitive = true;
+                    opts.SerializerOptions.DefaultIgnoreCondition      = JsonIgnoreCondition.WhenWritingNull;
+                    opts.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                });
+            });
+        }).CreateClient();
     }
 
     private static StringContent JsonContent(object obj) =>
@@ -71,24 +85,56 @@ public class ChatCompletionEndpointTests(WebApplicationFactory<Program> factory)
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
-
+    
     [Fact]
-    public async Task Post_StreamTrue_Returns400()
+    public async Task Post_StreamTrue_ReturnsEventStream()
     {
         // Arrange
-        var client = CreateClient(_ => { });
+        var store    = new MappingStore();
+        var presidio = new Mock<IPresidioService>();
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        // simulating SSE-Stream
+        const string sseBody = """
+                               data: {"id":"1","choices":[{"delta":{"content":"Hello"}}]}
+
+                               data: {"id":"1","choices":[{"delta":{"content":" world"}}]}
+
+                               data: [DONE]
+
+                               """;
+
+        var llm = new Mock<ILlmClient>();
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(new HttpResponseMessage(HttpStatusCode.OK)
+           {
+               Content = new StringContent(sseBody, Encoding.UTF8, "text/event-stream")
+           });
+
+        var client = CreateClient(services =>
+        {
+            services.RemoveAll<IPresidioService>();
+            services.AddSingleton(_ => presidio.Object);
+            services.RemoveAll<ILlmClient>();
+            services.AddSingleton(_ => llm.Object);
+            services.RemoveAll<IMappingStore>();
+            services.AddSingleton<IMappingStore>(store);
+        });
 
         // Act
         var response = await client.PostAsync("/v1/chat/completions",
-            JsonContent(new
-            {
-                model    = "llama3",
-                messages = new[] { new { role = "user", content = "Hello" } },
-                stream   = true
-            }));
+                                              new StringContent(
+                                                                """{"model":"llama3","messages":[{"role":"user","content":"Hello"}],"stream":true}""",
+                                                                Encoding.UTF8, "application/json"));
 
         // Assert
-        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal("text/event-stream", response.Content.Headers.ContentType?.MediaType);
+
+        var body = await response.Content.ReadAsStringAsync();
+        Assert.Contains("Hello", body);
+        Assert.Contains("[DONE]", body);
     }
 
     [Fact]
