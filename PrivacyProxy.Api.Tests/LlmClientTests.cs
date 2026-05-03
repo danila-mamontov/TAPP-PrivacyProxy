@@ -1,8 +1,12 @@
 using System.Net;
 using System.Text;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Api.Models.Interfaces;
 using PrivacyProxy.Api.Services;
 
 namespace PrivacyProxy.Api.Tests;
@@ -156,5 +160,32 @@ public class LlmClientTests
         // Assert
         await Assert.ThrowsAnyAsync<OperationCanceledException>(
                                                                 () => sut.SendAsync(ToJsonElement(new { model = "llama3" }), cts.Token));
+    }
+    
+    [Fact]
+    public void LlmClient_BaseAddress_IsConfiguredFromOptions()
+    {
+        // Arrange
+        var factory = new WebApplicationFactory<Program>()
+            .WithWebHostBuilder(builder =>
+            {
+                builder.ConfigureServices(services =>
+                {
+                    services.RemoveAll<IOptions<LlmOptions>>();
+                    services.AddSingleton(Options.Create(new LlmOptions
+                    {
+                        BaseUrl = "http://localhost:9999",
+                        ApiKey  = "test-key"
+                    }));
+                });
+            });
+
+        using var scope  = factory.Services.CreateScope();
+        
+        // Act
+        var       client = scope.ServiceProvider.GetRequiredService<ILlmClient>() as LlmClient;
+        
+        // Assert
+        Assert.NotNull(client);
     }
 }

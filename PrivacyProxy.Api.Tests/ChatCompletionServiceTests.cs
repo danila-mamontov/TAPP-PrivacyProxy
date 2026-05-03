@@ -2,10 +2,9 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Http;
 using Moq;
 using PrivacyProxy.Api.Models.DTOs.LLM;
-using PrivacyProxy.Api.Models.DTOs.Presidio;
-using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Models.Interfaces;
 using PrivacyProxy.Api.Services;
 
@@ -21,26 +20,19 @@ public class ChatCompletionServiceTests
                                                                 };
 
     private static (
-        ChatCompletionService sut,
+        ChatCompletionService  sut,
         Mock<IPresidioService> presidio,
-        Mock<ILlmClient> llmClient,
-        Mock<IMappingStore> store) CreateSut()
+        Mock<ILlmClient>       llmClient,
+        Mock<IMappingStore>    store) CreateSut()
     {
-        var analyzer = new Mock<IPresidioAnalyzerClient>();
-        analyzer.Setup(a => a.AnalyzeAsync(It.IsAny<string>(), It.IsAny<Language>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync([]);
-
-        var policy = new Mock<IEntityPolicy>();
-        policy.Setup(p => p.Apply(It.IsAny<IEnumerable<PresidioAnalyzerResponse>>(), It.IsAny<Language>(), It.IsAny<string>()))
-              .Returns<IEnumerable<PresidioAnalyzerResponse>, Language, string>((e, _, _) => e.ToList().AsReadOnly());
-        policy.Setup(p => p.ResolveOverlaps(It.IsAny<IEnumerable<PresidioAnalyzerResponse>>()))
-              .Returns<IEnumerable<PresidioAnalyzerResponse>>(e => e.ToList().AsReadOnly());
-
-        var store    = new Mock<IMappingStore>();
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
+        var store    = new Mock<IMappingStore>();
+        var deanon   = new StreamingDeanonymizer(store.Object);
 
-        return (new ChatCompletionService(presidio.Object, llm.Object, store.Object), presidio, llm, store);
+        return (new ChatCompletionService(
+                                          presidio.Object, llm.Object, store.Object, deanon),
+                presidio, llm, store);
     }
     
     private static HttpResponseMessage LlmResponse(string content) =>
@@ -55,6 +47,24 @@ public class ChatCompletionServiceTests
                                         Encoding.UTF8,
                                         "application/json")
         };
+    
+    private static HttpResponseMessage SseResponse(string sseBody) =>
+        new(HttpStatusCode.OK)
+        {
+            Content = new StringContent(sseBody, Encoding.UTF8, "text/event-stream")
+        };
+
+    private static DefaultHttpContext CreateHttpContext()
+    {
+        var context  = new DefaultHttpContext
+        {
+            Response =
+            {
+                Body = new MemoryStream()
+            }
+        };
+        return context;
+    }
     
     [Fact]
     public async Task ProcessAsync_AnonymizesEachMessage()
@@ -205,5 +215,379 @@ public class ChatCompletionServiceTests
         // Assert
         presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), cts.Token), Times.Once);
         llm.Verify(l => l.SendAsync(It.IsAny<JsonElement>(), cts.Token), Times.Once);
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_AnonymizesMessages()
+    {
+        // Arrange
+        var (sut, presidio, llm, _) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync("Hello Alice", It.IsAny<CancellationToken>()))
+                .ReturnsAsync("Hello [PERSON_abc]");
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse("data: [DONE]\n\n"));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello Alice" }]
+                                     },
+                                     context.Response);
+
+        // Assert
+        presidio.Verify(p => p.AnonymizeAsync("Hello Alice", It.IsAny<CancellationToken>()), Times.Once);
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_ForwardsAnonymizedContentToLlm()
+    {
+        // Arrange
+        var (sut, presidio, llm, _) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync("Alice", It.IsAny<CancellationToken>()))
+                .ReturnsAsync("[PERSON_abc]");
+
+        JsonElement? captured = null;
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .Callback<JsonElement, CancellationToken>((req, _) => captured = req)
+           .ReturnsAsync(SseResponse("data: [DONE]\n\n"));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Alice" }]
+                                     },
+                                     context.Response);
+
+        // Assert
+        var messages = captured!.Value.GetProperty("messages");
+        Assert.Equal("[PERSON_abc]", messages[0].GetProperty("content").GetString());
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_DeanonymizesDeltaContent()
+    {
+        var store    = new MappingStore();
+        var presidio = new Mock<IPresidioService>();
+        var llm      = new Mock<ILlmClient>();
+        var deanon   = new StreamingDeanonymizer(store);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon);
+
+        var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        // JSON-String sauber bauen statt Raw-String-Interpolation
+        var chunkJson = JsonSerializer.Serialize(new
+        {
+            id      = "1",
+            choices = new[] { new { delta = new { content = placeholder } } }
+        }, JsonOptions);
+
+        var sseBody = $"data: {chunkJson}\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+        Assert.Contains("Alice", output);
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_WritesDoneSignal()
+    {
+        // Arrange
+        var (sut, presidio, llm, _) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse("data: [DONE]\n\n"));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        // Assert
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+        Assert.Contains("[DONE]", output);
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_SetsEventStreamContentType()
+    {
+        // Arrange
+        var (sut, presidio, llm, _) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse("data: [DONE]\n\n"));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        // Assert
+        Assert.Equal("text/event-stream", context.Response.Headers.ContentType.ToString());
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_PlaceholderSplitAcrossChunks_DeanonymizedCorrectly()
+    {
+        // Arrange
+        var store    = new MappingStore();
+        var presidio = new Mock<IPresidioService>();
+        var llm      = new Mock<ILlmClient>();
+        var deanon   = new StreamingDeanonymizer(store);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon);
+
+        var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
+        var mid         = placeholder.Length / 2;
+        var firstHalf   = placeholder[..mid];
+        var secondHalf  = placeholder[mid..];
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        var chunk1 = JsonSerializer.Serialize(new
+        {
+            id      = "1",
+            choices = new[] { new { delta = new { content = firstHalf } } }
+        }, JsonOptions);
+
+        var chunk2 = JsonSerializer.Serialize(new
+        {
+            id      = "1",
+            choices = new[] { new { delta = new { content = secondHalf } } }
+        }, JsonOptions);
+
+        var sseBody = $"data: {chunk1}\n\ndata: {chunk2}\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+        
+        // Assert
+        Assert.Contains("Alice", output);
+        Assert.DoesNotContain(placeholder, output);
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_FlushesRemainingBufferOnDone()
+    {
+        // Arrange
+        var store    = new MappingStore();
+        var presidio = new Mock<IPresidioService>();
+        var llm      = new Mock<ILlmClient>();
+        var deanon   = new StreamingDeanonymizer(store);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon);
+
+        var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
+        var mid         = placeholder.Length / 2;
+        var firstHalf   = placeholder[..mid];
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+
+        // Only the first half of the placeholder is displayed — the second half never appears
+        // StreamingDeanonymizer buffers firstHalf until [DONE] calls FlushAll
+        var chunk1 = JsonSerializer.Serialize(new
+        {
+            id      = "1",
+            choices = new[] { new { delta = new { content = firstHalf } } }
+        }, JsonOptions);
+
+        var sseBody = $"data: {chunk1}\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+
+        // Assert
+        Assert.Contains(firstHalf, output);
+        Assert.Contains("[DONE]", output);
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_FlushAll_SkipsEmptyContent()
+    {
+        // Arrange
+        var store    = new MappingStore();
+        var presidio = new Mock<IPresidioService>();
+        var llm      = new Mock<ILlmClient>();
+        var deanon   = new StreamingDeanonymizer(store);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon);
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        // Chunk with empty content → StreamingDeanonymizer buffers nothing
+        // but another contextKey has an empty carry
+        var chunk1 = JsonSerializer.Serialize(new
+        {
+            id      = "1",
+            choices = new[] { new { delta = new { content = "Hello" } } }
+        }, JsonOptions);
+
+        var sseBody = $"data: {chunk1}\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+        
+        // Assert
+        Assert.Contains("[DONE]", output);
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_SkipsChunkWhenDeserializationReturnsNull()
+    {
+        // Arrange
+        var (sut, presidio, llm, _) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        // Invalid JSON deserialized to zero
+        const string sseBody = "data: null\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+        
+        // Assert
+        Assert.Contains("[DONE]", output);
+    }
+    
+    [Fact]
+    public async Task ProcessStreamAsync_SkipsChunkWhenDeltaContentIsNull()
+    {
+        // Arrange
+        var (sut, presidio, llm, _) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        // Chunk without content — only role, no content (first chunk from LLM)
+        var chunkWithoutContent = JsonSerializer.Serialize(new
+        {
+            id      = "1",
+            choices = new[] { new { delta = new { role = "assistant" } } }
+        }, JsonOptions);
+
+        var sseBody = $"data: {chunkWithoutContent}\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+        
+        // Assert
+        Assert.Contains("[DONE]", output);
     }
 }
