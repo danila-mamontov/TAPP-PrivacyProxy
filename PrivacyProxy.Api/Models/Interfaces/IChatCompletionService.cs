@@ -24,4 +24,6 @@ public interface IChatCompletionService
     /// <see cref="ChatCompletionResponse"/> with the results of the chat completion operation.
     /// </returns>
     public Task<ChatCompletionResponse> ProcessAsync(ChatCompletionRequest request, CancellationToken ct = default);
+    
+    public Task ProcessStreamAsync(ChatCompletionRequest request, HttpResponse httpResponse, CancellationToken ct = default);
 }

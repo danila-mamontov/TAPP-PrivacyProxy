@@ -1,5 +1,5 @@
 using PrivacyProxy.Api.Models.DTOs.LLM;
-using PrivacyProxy.Api.Services;
+using PrivacyProxy.Api.Models.Interfaces;
 
 namespace PrivacyProxy.Api.Endpoints;
 
@@ -22,20 +22,30 @@ public static class ChatCompletionEndpoint
     }
 
     /// <summary>
-    /// Handles the processing of a chat completion request by validating the request,
-    /// delegating it to the chat completion service, and returning the processed response.
+    /// Handles the processing of a chat completion request by validating the incoming data,
+    /// invoking the chat completion service for processing, and generating an appropriate response.
+    /// Supports both streaming and non-streaming response modes.
     /// </summary>
-    /// <param name="request">The chat completion request containing the model, messages, and optional attributes.</param>
-    /// <param name="service">The service responsible for handling chat completion logic, including tasks such as validation and interaction with the LLM.</param>
-    /// <param name="ct">A cancellation token allowing the operation to be canceled if necessary.</param>
-    /// <returns>A task representing the asynchronous operation, containing the result of the processed chat completion request or an error response.</returns>
+    /// <param name="request">The chat completion request containing the model, messages, and streaming configuration.</param>
+    /// <param name="service">The service responsible for processing the chat completion logic, including interactions with the underlying LLM.</param>
+    /// <param name="httpResponse">The HTTP response object used to manage streaming responses, if applicable.</param>
+    /// <param name="ct">A cancellation token to manage task cancellation during the operation.</param>
+    /// <returns>An asynchronous task containing the chat completion result or an empty HTTP result for streamed responses.</returns>
     private static async Task<IResult> HandleAsync(
-        ChatCompletionRequest request,
-        ChatCompletionService service,
-        CancellationToken     ct)
+        ChatCompletionRequest  request,
+        IChatCompletionService service,
+        HttpResponse           httpResponse, // ASP .NET initializes it automatically.
+                                             // HttpResponse is the open TCP-Connection between
+                                             // PrivacyProxy and Endpoint-Caller.
+        CancellationToken ct)
     {
         if (request.Stream == true)
-            return Results.BadRequest("Streaming is not yet supported.");
+        {
+            await service.ProcessStreamAsync(request, httpResponse, ct);
+
+            // ProcessStreamAsync sends response directly per httpResponse.body
+            return Results.Empty;
+        }
 
         var response = await service.ProcessAsync(request, ct);
         return Results.Ok(response);

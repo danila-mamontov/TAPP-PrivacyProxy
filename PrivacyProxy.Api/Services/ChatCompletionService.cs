@@ -6,60 +6,64 @@ using PrivacyProxy.Api.Models.Interfaces;
 namespace PrivacyProxy.Api.Services;
 
 /// <summary>
-/// The <c>ChatCompletionService</c> class is designed to handle chat completion requests,
-/// ensuring that user data is anonymized, processed via an LLM (Large Language Model),
-/// and deanonymized securely and efficiently.
+/// The <c>ChatCompletionService</c> class provides functionality to process chat completion requests
+/// while maintaining user privacy through anonymization and secure data handling.
 /// </summary>
 /// <remarks>
-/// By leveraging dependencies for anonymization, LLM communication, and mapping management,
-/// this service facilitates privacy-aware interactions. It anonymizes incoming user messages,
-/// sends them to the LLM for processing, and uses a mapping system to deanonymize the responses,
-/// ensuring the protection of sensitive information throughout the workflow.
+/// This service integrates anonymization, interaction with a Large Language Model (LLM),
+/// and secure deanonymization mechanisms. It uses dependency services to anonymize user input,
+/// communicate with the LLM, and reconstruct the original context of the responses, ensuring
+/// sensitive data remains protected throughout the process.
 /// </remarks>
 /// <param name="presidioService">
-/// A service responsible for identifying and anonymizing PII (Personally Identifiable Information)
-/// within the user's input.
+/// A service responsible for detecting and anonymizing sensitive or personally identifiable information
+/// in user messages.
 /// </param>
 /// <param name="llmClient">
-/// An LLM client used to send anonymized requests and receive processed responses from a
-/// large language model.
+/// A client interface for communicating with the configured Large Language Model for processing
+/// anonymized chat inputs and generating responses.
 /// </param>
 /// <param name="mappingStore">
-/// A component managing the storage and application of anonymization mappings
-/// to ensure accurate deanonymization of responses.
+/// A storage mechanism for managing anonymization mappings to ensure accurate deanonymization
+/// of LLM-generated output.
+/// </param>
+/// <param name="streamingDeanonymizer">
+/// A component used for streaming deanonymization of LLM responses to provide real-time privacy-aware outputs.
 /// </param>
 public class ChatCompletionService(
-    IPresidioService presidioService,
-    ILlmClient       llmClient,
-    IMappingStore    mappingStore) : IChatCompletionService
+    IPresidioService      presidioService,
+    ILlmClient            llmClient,
+    IMappingStore         mappingStore,
+    StreamingDeanonymizer streamingDeanonymizer) : IChatCompletionService
 {
     /// <summary>
-    /// A static instance of <see cref="JsonSerializerOptions"/> utilized to define
-    /// JSON serialization and deserialization settings specific to the service.
+    /// A static instance of <see cref="JsonSerializerOptions"/> used to configure
+    /// JSON serialization and deserialization settings tailored to the service.
     /// </summary>
     /// <remarks>
-    /// Configured to support the following behavior:
-    /// - Applies SnakeCaseLower naming convention for property names to meet API schema requirements.
-    /// - Excludes null values during serialization to minimize data payload.
-    /// - Allows case-insensitive matching of property names for deserialization flexibility.
+    /// Configured with the following settings:
+    /// - Utilizes SnakeCaseLower naming policy for property names to align with API specifications.
+    /// - Omits null values during serialization to reduce payload size.
+    /// - Supports case-insensitive property name matching for deserialization.
     /// </remarks>
     private static readonly JsonSerializerOptions JsonOptions = new()
-                                                                {
-                                                                    PropertyNamingPolicy =
-                                                                        JsonNamingPolicy.SnakeCaseLower,
-                                                                    DefaultIgnoreCondition =
-                                                                        JsonIgnoreCondition.WhenWritingNull,
-                                                                    PropertyNameCaseInsensitive = true
-                                                                };
+    {
+        PropertyNamingPolicy =
+            JsonNamingPolicy.SnakeCaseLower,
+        DefaultIgnoreCondition =
+            JsonIgnoreCondition.WhenWritingNull,
+        PropertyNameCaseInsensitive = true
+    };
 
     /// <summary>
-    /// Processes a chat completion request by anonymizing input messages, sending the anonymized request
-    /// to a Large Language Model (LLM), and deanonymizing the responses received from the LLM.
+    /// Processes a chat completion request by anonymizing the content of input messages,
+    /// forwarding the anonymized data to a Large Language Model (LLM), and deanonymizing
+    /// the responses received from the LLM.
     /// </summary>
     /// <param name="request">The chat completion request containing the input messages to be processed.</param>
-    /// <param name="ct">Optional cancellation token to cancel the operation if needed.</param>
-    /// <returns>A <see cref="ChatCompletionResponse"/> object containing the processed and deanonymized results
-    /// from the LLM.</returns>
+    /// <param name="ct">An optional cancellation token for cancelling the operation if necessary.</param>
+    /// <returns>A <see cref="ChatCompletionResponse"/> object containing the processed results
+    /// with contents deanonymized.</returns>
     public async Task<ChatCompletionResponse> ProcessAsync(
         ChatCompletionRequest request,
         CancellationToken     ct = default)
@@ -92,5 +96,81 @@ public class ChatCompletionService(
                                              .ToList();
 
         return llmResponse with { Choices = deanonymizedChoices };
+    }
+
+    /// <summary>
+    /// Processes a streaming chat completion request by anonymizing input messages, sending the anonymized request
+    /// to a Large Language Model (LLM), and streaming the deanonymized responses back to the client as
+    /// Server-Sent Events (SSE).
+    /// </summary>
+    /// <param name="request">The chat completion request containing the input messages to be anonymized and processed.</param>
+    /// <param name="httpResponse">The HTTP response through which the streaming results are sent back to the client.</param>
+    /// <param name="ct">Optional cancellation token to cancel the operation if needed.</param>
+    /// <returns>A task that represents the asynchronous operation of processing the streaming request.</returns>
+    public async Task ProcessStreamAsync(
+        ChatCompletionRequest request,
+        HttpResponse          httpResponse,
+        CancellationToken     ct = default)
+    {
+        var anonymizedMessages = new List<ChatMessage>();
+        foreach (var message in request.Messages)
+        {
+            var anonymizedContent = await presidioService.AnonymizeAsync(message.Content, ct);
+            anonymizedMessages.Add(message with { Content = anonymizedContent });
+        }
+
+        var anonymizedRequest = request with { Messages = anonymizedMessages };
+        var requestElement    = JsonSerializer.SerializeToElement(anonymizedRequest, JsonOptions);
+        var llmHttpResponse   = await llmClient.SendAsync(requestElement, ct);
+
+        // Preparing SSE response
+        httpResponse.Headers.ContentType  = "text/event-stream";
+        httpResponse.Headers.CacheControl = "no-cache";
+        
+        await using var stream = await llmHttpResponse.Content.ReadAsStreamAsync(ct);
+        using var       streamReader = new StreamReader(stream);
+
+        while (await streamReader.ReadLineAsync(ct) is { } line && !ct.IsCancellationRequested)
+        {
+            if (!line.StartsWith("data:")) continue;
+            
+            var data = line["data:".Length..].Trim();
+
+            // date = [DONE] → Terminate stream
+            if (data == "[DONE]")
+            {
+                // flush buffers when stream finished
+                var remaining = streamingDeanonymizer.FlushAll();
+                foreach (var (_, content) in remaining)
+                {
+                    if (!string.IsNullOrEmpty(content))
+                        await httpResponse.WriteAsync($"data: {content}\n\n", ct);
+                }
+                await httpResponse.WriteAsync("data: [DONE]\n\n", ct);
+                break;
+            }
+            
+            // deserialize chunk
+            var chunk = JsonSerializer.Deserialize<ChatCompletionChunk>(data, JsonOptions);
+            if (chunk == null) continue;
+
+            var deltaContent = chunk.Choices.FirstOrDefault()?.Delta.Content;
+            if (deltaContent == null) continue;
+            
+            // deanonymize and send out
+            var deanonymized = streamingDeanonymizer.ProcessFragment(deltaContent, false);
+            if (string.IsNullOrEmpty(deanonymized)) continue;
+            
+            var outChunk = chunk with
+            {
+                Choices = [chunk.Choices[0] with
+                {
+                    Delta = chunk.Choices[0].Delta with { Content = deanonymized }
+                }]
+            };
+            await httpResponse.WriteAsync(
+                                          $"data: {JsonSerializer.Serialize(outChunk, JsonOptions)}\n\n", ct);
+            await httpResponse.Body.FlushAsync(ct);
+        }
     }
 }
