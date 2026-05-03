@@ -46,7 +46,7 @@ public static class ChatCompletionEndpoint
             // ProcessStreamAsync sends response directly per httpResponse.body
             return Results.Empty;
         }
-
+        
         var response = await service.ProcessAsync(request, ct);
         return Results.Ok(response);
     }

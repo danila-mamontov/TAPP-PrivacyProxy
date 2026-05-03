@@ -37,7 +37,7 @@ public class LlmClientTests
         string         body       = "{}")
     {
         var handler    = new MockHttpMessageHandler(statusCode, body);
-        var httpClient = new HttpClient(handler) { BaseAddress = new Uri("http://localhost:8000") };
+        var httpClient = new HttpClient(handler) { BaseAddress = new Uri("http://localhost:8000/v1/") };
         var options    = Options.Create(new LlmOptions
                                         {
                                             BaseUrl = "http://localhost:8000",
@@ -91,7 +91,7 @@ public class LlmClientTests
         await sut.SendAsync(ToJsonElement(new { model = "llama3" }));
 
         // Assert
-        Assert.Equal("/chat/completions", handler.LastRequest!.RequestUri!.AbsolutePath);
+        Assert.Equal("/v1/chat/completions", handler.LastRequest!.RequestUri!.AbsolutePath);
         Assert.Equal(HttpMethod.Post,     handler.LastRequest.Method);
     }
     

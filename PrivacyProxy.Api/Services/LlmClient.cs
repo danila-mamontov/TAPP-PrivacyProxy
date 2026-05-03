@@ -65,7 +65,7 @@ public class LlmClient(
         var json    = JsonSerializer.Serialize(request, JsonOptions);
         var content = new StringContent(json, Encoding.UTF8, "application/json");
         
-        using var httpRequest = new HttpRequestMessage(HttpMethod.Post, "/chat/completions");
+        using var httpRequest = new HttpRequestMessage(HttpMethod.Post, "chat/completions");
         httpRequest.Content = content;
         
         // Add the API key to the request headers
