@@ -1,3 +1,84 @@
+# Getting Started
+Privacy Proxy is in development and only running via Development Environment!
+
+Therefore you have to adjust the `appsettings.Development.json` and not `appsettings.json` at the moment.
+
+To set it up, you have to clone the project and adjust the configuration like in the example:
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Warning",
+        "Microsoft.AspNetCore": "Warning"
+      }
+    },
+    "WriteTo": [
+      { "Name": "Console" }
+    ]
+  },
+  
+  "Presidio": {
+    "AnalyzerUrl": "http://localhost:5002",
+    "AllowList": [],
+    "Context": [],
+    "ScoreThreshold": 0.4,
+    "GermanEntityTypes": ["PERSON", "LOCATION", "ORGANIZATION"],
+    "EnglishEntityTypes": ["EMAIL_ADDRESS", "PHONE_NUMBER", "IP_ADDRESS", "CREDIT_CARD", "IBAN_CODE", "URL"],
+    "GermanEntityThresholds": {
+      "PERSON": 0.85,
+      "LOCATION": 0.90,
+      "ORGANIZATION": 0.85
+    },
+    "EnglishEntityThresholds": {
+      "EMAIL_ADDRESS": 0.4,
+      "PHONE_NUMBER": 0.4,
+      "IP_ADDRESS": 0.4,
+      "CREDIT_CARD": 0.4,
+      "IBAN_CODE": 0.4,
+      "URL": 0.4
+    }
+  },
+  
+  "Llm": {
+    "BaseUrl": "http://localhost:11434/v1/",
+    "ApiKey": "ollama"
+  },
+  
+  "AllowedHosts": "*",
+  
+  "Urls": "http://*:6000;https://*:6001"
+}
+
+```
+
+At the moment there is no docker support.
+Therefore you have to use dotnet 10 to run the project.
+
+```bash
+cd .../OpenClaw_PrivacyProxy/PrivacyProxy.Api
+dotnet restore
+dotnet run
+```
+
+To run tests you have to do:
+```
+cd .../OpenClaw_PrivacyProxy/PrivacyProxy.Api.Tests
+dotnet restore
+dotnet test
+```
+
+dotCover by JetBrains is fully supported. Riders IDE is suggested.
+
 ## Pull Requests
 
 - [PR into dev](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/compare/dev...FEATURE_BRANCH?template=merge_into_dev_template.md)
