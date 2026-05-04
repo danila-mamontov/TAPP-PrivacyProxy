@@ -6,6 +6,7 @@ using PrivacyProxy.Api.Configuration;
 using PrivacyProxy.Api.Models.DTOs.Presidio;
 using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Models.Interfaces;
+using Serilog;
 
 namespace PrivacyProxy.Api.Services;
 
@@ -75,17 +76,29 @@ public class PresidioAnalyzerClient(
 
         var json     = JsonSerializer.Serialize(request, JsonOptions);
         var content  = new StringContent(json, Encoding.UTF8, "application/json");
+        
+        Log.Information("Sending request to Presidio Analyzer");
+        Log.Debug("Sending request to Presidio Analyzer: {Request}", json);
+        
         var response = await httpClient.PostAsync("/analyze", content, ct);
 
         if (!response.IsSuccessStatusCode)
         {
+            Log.Error("Presidio Analyzer returned non-success status code: {StatusCode}", response.StatusCode);
+            
             var body = await response.Content.ReadAsStringAsync(ct);
+            
+            Log.Debug("Presidio Analyzer response body: {ResponseBody}", body);
+            
             throw new HttpRequestException(
                 $"Presidio Analyzer returned {(int)response.StatusCode} " +
                 $"{response.ReasonPhrase}: {body}");
         }
-
+        
         var responseBody = await response.Content.ReadAsStringAsync(ct);
+        
+        Log.Information("Received response from Presidio Analyzer");
+        Log.Debug("Received response from Presidio Analyzer: {ResponseBody}", responseBody);
 
         try
         {
@@ -94,6 +107,8 @@ public class PresidioAnalyzerClient(
         }
         catch (JsonException ex)
         {
+            Log.Error(ex, "Failed to deserialize Presidio response");
+            
             throw new InvalidOperationException(
                 $"Failed to deserialize Presidio response: {ex.Message}", ex);
         }

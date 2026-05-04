@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
 using PrivacyProxy.Api.Models.Interfaces;
+using Serilog;
 
 namespace PrivacyProxy.Api.Services;
 
@@ -70,15 +71,25 @@ public class LlmClient(
         
         // Add the API key to the request headers
         httpRequest.Headers.Add("Authorization", $"Bearer {_llmOptions.ApiKey}");
-
+        
         // Send the request and await the response with cancellation support and till headers are read
         // to avoid blocking the thread when using streaming responses
         var response = await httpClient.SendAsync(httpRequest, HttpCompletionOption.ResponseHeadersRead, ct);
-
+        
+        Log.Information("Sended request to LLM provider");
+        Log.Debug("LLM provider response: {StatusCode} {ReasonPhrase}", 
+                  response.StatusCode, 
+                  response.ReasonPhrase);
+        
         if (response.IsSuccessStatusCode) 
             return response;
         
+        Log.Error("LLM provider returned non-success status code: {StatusCode}", response.StatusCode);
+        
         var body = await response.Content.ReadAsStringAsync(ct);
+        
+        Log.Debug("LLM provider response body: {ResponseBody}", body);
+        
         throw new HttpRequestException(
                                        $"LLM provider returned {(int)response.StatusCode} " +
                                        $"{response.ReasonPhrase}: {body}");

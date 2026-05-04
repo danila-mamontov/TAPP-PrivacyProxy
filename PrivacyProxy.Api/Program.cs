@@ -5,6 +5,7 @@ using PrivacyProxy.Api.Configuration;
 using PrivacyProxy.Api.Endpoints;
 using PrivacyProxy.Api.Models.Interfaces;
 using PrivacyProxy.Api.Services;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -62,6 +63,12 @@ builder.Services.AddScoped<IPresidioService, PresidioService>();
 // Add ChatCompletionService to PrivacyProxy for handling chat completions
 builder.Services.AddScoped<IChatCompletionService, ChatCompletionService>();
 
+Log.Logger = new LoggerConfiguration()
+             .ReadFrom.Configuration(builder.Configuration)
+             .CreateLogger();
+
+builder.Host.UseSerilog();
+
 var app = builder.Build();
 
 app.MapChatCompletion();
@@ -70,5 +77,7 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+Log.Information("PrivacyProxy starting up...");
 
 app.Run();
