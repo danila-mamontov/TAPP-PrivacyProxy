@@ -80,4 +80,6 @@ if (app.Environment.IsDevelopment())
 
 Log.Information("PrivacyProxy starting up...");
 
+Log.Information("Listening on Port(s): {Ports}", builder.Configuration["Urls"]);
+
 app.Run();
