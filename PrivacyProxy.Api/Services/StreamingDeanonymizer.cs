@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using PrivacyProxy.Api.Models.Interfaces;
+using Serilog;
 
 namespace PrivacyProxy.Api.Services;
 
@@ -143,6 +144,8 @@ public partial class StreamingDeanonymizer(IMappingStore mappingStore)
     /// <returns>A dictionary where each key represents a context, and each value is the deanonymized result of the buffered fragments for that context.</returns>
     public Dictionary<string, string> FlushAll()
     {
+        Log.Debug("Flushing {Count} buffered fragments...", _carries.Count);
+        
         var result = new Dictionary<string, string>();
 
         foreach (var (key, carry) in _carries)

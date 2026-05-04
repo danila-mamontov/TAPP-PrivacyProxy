@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using PrivacyProxy.Api.Models.DTOs.LLM;
 using PrivacyProxy.Api.Models.Interfaces;
+using Serilog;
 
 namespace PrivacyProxy.Api.Services;
 
@@ -68,6 +69,9 @@ public class ChatCompletionService(
         ChatCompletionRequest request,
         CancellationToken     ct = default)
     {
+        
+        Log.Information("Processing {@MessageCount} messages...", request.Messages.Count);
+        
         // Anonymize each message content
         var anonymizedMessages = new List<ChatMessage>();
         foreach (var message in request.Messages)
@@ -75,14 +79,22 @@ public class ChatCompletionService(
             var anonymizedContent = await presidioService.AnonymizeAsync(message.Content, ct);
             anonymizedMessages.Add(message with { Content = anonymizedContent });
         }
+        
+        Log.Information("Anonymized {MessageCount} messages.", anonymizedMessages.Count);
 
         // Forward anonymized request to LLM
         var anonymizedRequest = request with { Messages = anonymizedMessages };
         var requestElement    = JsonSerializer.SerializeToElement(anonymizedRequest, JsonOptions);
-        var httpResponse      = await llmClient.SendAsync(requestElement, ct);
-        var responseBody      = await httpResponse.Content.ReadAsStringAsync(ct);
-        var llmResponse       = JsonSerializer.Deserialize<ChatCompletionResponse>(responseBody, JsonOptions)
-                                ?? throw new InvalidOperationException("Failed to deserialize LLM response.");
+        
+        Log.Debug("Sending request to LLM provider: {Request}", requestElement.GetRawText());
+        
+        var httpResponse = await llmClient.SendAsync(requestElement, ct);
+        var responseBody = await httpResponse.Content.ReadAsStringAsync(ct);
+        
+        Log.Debug("Received response from LLM provider: {ResponseBody}", responseBody);
+
+        var llmResponse = JsonSerializer.Deserialize<ChatCompletionResponse>(responseBody, JsonOptions)
+                          ?? throw new InvalidOperationException("Failed to deserialize LLM response.");
 
         // Deanonymize each choice
         var deanonymizedChoices = llmResponse.Choices
@@ -94,6 +106,9 @@ public class ChatCompletionService(
                                                                              }
                                                                })
                                              .ToList();
+        
+        Log.Information("Deanonymized {ChoiceCount} choices.", deanonymizedChoices.Count);
+        Log.Debug("Deanonymized choices: {@Choices}", deanonymizedChoices);
 
         return llmResponse with { Choices = deanonymizedChoices };
     }
@@ -112,15 +127,24 @@ public class ChatCompletionService(
         HttpResponse          httpResponse,
         CancellationToken     ct = default)
     {
+        
+        Log.Information("Processing {MessageCount} messages...", request.Messages.Count);
+        
         var anonymizedMessages = new List<ChatMessage>();
         foreach (var message in request.Messages)
         {
             var anonymizedContent = await presidioService.AnonymizeAsync(message.Content, ct);
             anonymizedMessages.Add(message with { Content = anonymizedContent });
         }
+        
+        Log.Information("Anonymized {MessageCount} messages.", anonymizedMessages.Count);
+        Log.Debug("Anonymized messages: {@Messages}", anonymizedMessages);
 
         var anonymizedRequest = request with { Messages = anonymizedMessages };
         var requestElement    = JsonSerializer.SerializeToElement(anonymizedRequest, JsonOptions);
+        
+        Log.Debug("Sending request to LLM provider: {Request}", requestElement.GetRawText());
+        
         var llmHttpResponse   = await llmClient.SendAsync(requestElement, ct);
 
         // Preparing SSE response
@@ -128,7 +152,10 @@ public class ChatCompletionService(
         httpResponse.Headers.CacheControl = "no-cache";
         
         await using var stream = await llmHttpResponse.Content.ReadAsStreamAsync(ct);
-        using var       streamReader = new StreamReader(stream);
+        
+        Log.Debug("Received response from LLM provider");
+
+        using var streamReader = new StreamReader(stream);
 
         while (await streamReader.ReadLineAsync(ct) is { } line && !ct.IsCancellationRequested)
         {
@@ -168,6 +195,9 @@ public class ChatCompletionService(
                     Delta = chunk.Choices[0].Delta with { Content = deanonymized }
                 }]
             };
+            
+            Log.Debug("Sending chunk: {@Chunk}", outChunk);
+            
             await httpResponse.WriteAsync(
                                           $"data: {JsonSerializer.Serialize(outChunk, JsonOptions)}\n\n", ct);
             await httpResponse.Body.FlushAsync(ct);
