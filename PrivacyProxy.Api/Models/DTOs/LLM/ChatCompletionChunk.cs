@@ -36,5 +36,5 @@ public record ChatCompletionChunk
     /// <see cref="System.Text.Json.JsonElement"/> representing the corresponding JSON data.
     /// </remarks>
     [JsonExtensionData]
-    public Dictionary<string, JsonElement>? ExtensionData { get; init; }
+    public Dictionary<string, JsonElement>? Extensions { get; init; }
 }

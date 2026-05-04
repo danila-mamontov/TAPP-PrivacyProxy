@@ -34,5 +34,5 @@ public record ChatCompletionChunkChoice
     /// is populated during deserialization when extra elements are present in the JSON object.
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? Extensions { get; init; }
 }

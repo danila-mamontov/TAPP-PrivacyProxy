@@ -32,5 +32,5 @@ public record ChatMessageDelta
     /// that do not have corresponding properties in the class.
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? Extensions { get; init; }
 }

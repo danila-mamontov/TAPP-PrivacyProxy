@@ -67,7 +67,7 @@ public class ChatCompletionServiceTests
     }
     
     [Fact]
-    public async Task ProcessAsync_AnonymizesEachMessage()
+    public async Task ProcessAsync_AnonymizesEachUserMessage()
     {
         // Arrange
         var (sut, presidio, llm, store) = CreateSut();
@@ -93,7 +93,7 @@ public class ChatCompletionServiceTests
         await sut.ProcessAsync(request);
 
         // Assert
-        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
+        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(1));
     }
     
         [Fact]
@@ -125,7 +125,7 @@ public class ChatCompletionServiceTests
         var messages = captured!.Value.GetProperty("messages");
         
         // Assert
-        Assert.Equal("[PERSON_abc123]", messages[0].GetProperty("content").GetString());
+        Assert.Equal("[PERSON_abc123]", messages[1].GetProperty("content").GetString());
     }
 
     [Fact]
@@ -271,7 +271,7 @@ public class ChatCompletionServiceTests
 
         // Assert
         var messages = captured!.Value.GetProperty("messages");
-        Assert.Equal("[PERSON_abc]", messages[0].GetProperty("content").GetString());
+        Assert.Equal("[PERSON_abc]", messages[1].GetProperty("content").GetString());
     }
     
     [Fact]

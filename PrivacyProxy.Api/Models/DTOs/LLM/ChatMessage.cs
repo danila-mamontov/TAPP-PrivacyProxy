@@ -1,3 +1,4 @@
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace PrivacyProxy.Api.Models.DTOs.LLM;
@@ -26,4 +27,12 @@ public record ChatMessage
     /// </summary>
     [JsonPropertyName("content")]
     public required string Content { get; init; }
+
+    /// <summary>
+    /// Represents a collection of additional data associated with the message.
+    /// This property allows for the inclusion of arbitrary key-value pairs,
+    /// where keys are strings and values are JSON elements, for extensibility purposes.
+    /// </summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? Extensions { get; init; }
 }
