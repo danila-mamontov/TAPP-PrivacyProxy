@@ -3,6 +3,7 @@ using PrivacyProxy.Api.Configuration;
 using PrivacyProxy.Api.Models.DTOs.Presidio;
 using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Models.Interfaces;
+using Serilog;
 
 namespace PrivacyProxy.Api.Services;
 
@@ -38,7 +39,7 @@ public class DefaultEntityPolicy(IOptions<PresidioOptions> options) : IEntityPol
         var thresholds = sourceLanguage == Language.German
                             ? _options.GermanEntityThresholds
                             : _options.EnglishEntityThresholds;
-
+        
         // Filter the entities based on their confidence scores and language depending on scores.
         var filtered = entities
                       .Where(e =>

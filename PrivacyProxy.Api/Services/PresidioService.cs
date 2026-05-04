@@ -1,6 +1,7 @@
 using System.Text;
 using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Models.Interfaces;
+using Serilog;
 
 namespace PrivacyProxy.Api.Services;
 
@@ -57,6 +58,11 @@ public class PresidioService(
             sb.Remove(entity.Start, entity.End - entity.Start)
               .Insert(entity.Start, placeholder);
         }
+        
+        Log.Information("Anonymized {Count} entities in message", combined.Count);
+        Log.Debug("Original message: {Message}", text);
+        Log.Debug("Anonymized message: {Message}", sb.ToString());
+        Log.Debug("Anonymized entities: {@Entities}", combined);
         
         return sb.ToString();
     }

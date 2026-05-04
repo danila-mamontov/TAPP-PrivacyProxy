@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using PrivacyProxy.Api.Models.Interfaces;
+using Serilog;
 
 namespace PrivacyProxy.Api.Services;
 
@@ -84,6 +85,8 @@ public partial class MappingStore : IMappingStore
         _originalToPlaceholder[original] = placeholder;
         _placeholderToOriginal[placeholder] = original;
 
+        Log.Debug("Created placeholder for {Original} ({Placeholder})", original, placeholder);
+        
         return placeholder;
     }
 

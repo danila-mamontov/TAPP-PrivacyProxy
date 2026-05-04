@@ -1,5 +1,6 @@
 using PrivacyProxy.Api.Models.DTOs.LLM;
 using PrivacyProxy.Api.Models.Interfaces;
+using Serilog;
 
 namespace PrivacyProxy.Api.Endpoints;
 
@@ -39,15 +40,20 @@ public static class ChatCompletionEndpoint
                                              // PrivacyProxy and Endpoint-Caller.
         CancellationToken ct)
     {
+        Log.Information("Received chat completion request: {@Request}", request);
+        
         if (request.Stream == true)
         {
+            Log.Information("Streaming response requested.");
             await service.ProcessStreamAsync(request, httpResponse, ct);
 
             // ProcessStreamAsync sends response directly per httpResponse.body
             return Results.Empty;
         }
-
+        
+        Log.Information("Non-streaming response requested.");
         var response = await service.ProcessAsync(request, ct);
+        
         return Results.Ok(response);
     }
 }
