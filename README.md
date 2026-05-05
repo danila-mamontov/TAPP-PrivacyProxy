@@ -79,6 +79,22 @@ dotnet test
 
 dotCover by JetBrains is fully supported. Riders IDE is suggested.
 
+To use it between OpenClaw and LLM you have to configure OpenClaw so that it thinks PrivacyProxy is the LLM Provider.
+
+```bash
+openclaw configure # run configure, select Model -> Custom Provider -> http:<Privacy_Proxy_IP>/v1 -> no API key -> Open AI Endpoint -> Model Alias
+```
+
+The Verification checks if the privacy proxy is available if so you can click "continue" and 
+
+```bash
+openclaw gateway restart
+```
+
+to save changes.
+
+In Session you can select the privacy proxy llm and chat with it. in the logs you should see that PII is recognized and pseudonymized/depseunodymized between OpenClaw and LLM configured in PrivacyProxy settings.
+
 ## Pull Requests
 
 - [PR into dev](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/compare/dev...FEATURE_BRANCH?template=merge_into_dev_template.md)
