@@ -133,146 +133,146 @@ public class ChatCompletionService(
     /// <param name="httpResponse">The HTTP response through which the streaming results are sent back to the client.</param>
     /// <param name="ct">Optional cancellation token to cancel the operation if needed.</param>
     /// <returns>A task that represents the asynchronous operation of processing the streaming request.</returns>
-public async Task ProcessStreamAsync(
-    ChatCompletionRequest request,
-    HttpResponse          httpResponse,
-    CancellationToken     ct = default)
-{
-    var messages = request.Messages.ToList();
-    if (messages.All(m => m.Role != "system"))
-        messages.Insert(0, SystemInstruction);
-
-    Log.Information("Processing {@MessageCount} messages...", request.Messages.Count - 1);
-
-    var anonymizedMessages = new List<ChatMessage>();
-    foreach (var message in messages)
+    public async Task ProcessStreamAsync(
+        ChatCompletionRequest request,
+        HttpResponse          httpResponse,
+        CancellationToken     ct = default)
     {
-        // system role messages do not go into anonymizer
-        if (message.Role == "system")
+        var messages = request.Messages.ToList();
+        if (messages.All(m => m.Role != "system"))
+            messages.Insert(0, SystemInstruction);
+
+        Log.Information("Processing {@MessageCount} messages...", request.Messages.Count - 1);
+
+        var anonymizedMessages = new List<ChatMessage>();
+        foreach (var message in messages)
         {
-            anonymizedMessages.Add(message);
-            continue;
+            // system role messages do not go into anonymizer
+            if (message.Role != "user")
+            {
+                anonymizedMessages.Add(message);
+                continue;
+            }
+            
+            var anonymizedContent = await presidioService.AnonymizeAsync(message.Content, ct);
+            anonymizedMessages.Add(message with { Content = anonymizedContent });
         }
-        
-        var anonymizedContent = await presidioService.AnonymizeAsync(message.Content, ct);
-        anonymizedMessages.Add(message with { Content = anonymizedContent });
+
+        Log.Information("Anonymized {MessageCount} messages.", anonymizedMessages.Count);
+
+        var anonymizedRequest = request with { Messages = anonymizedMessages };
+        var requestElement    = JsonSerializer.SerializeToElement(anonymizedRequest, JsonOptions);
+
+        Log.Debug("Sending request to LLM provider: {Request}", requestElement.GetRawText());
+
+        var llmHttpResponse = await llmClient.SendAsync(requestElement, ct);
+
+        httpResponse.Headers.ContentType  = "text/event-stream";
+        httpResponse.Headers.CacheControl = "no-cache";
+
+        await using var stream       = await llmHttpResponse.Content.ReadAsStreamAsync(ct);
+        using       var streamReader = new StreamReader(stream);
+
+        while (await streamReader.ReadLineAsync(ct) is { } line && !ct.IsCancellationRequested)
+        {
+            Log.Debug("Received SSE line: {Line}", line);
+
+            if (!line.StartsWith("data:")) continue;
+
+            var data = line["data:".Length..].Trim();
+
+            // [DONE] → flush and terminate stream
+            if (data == "[DONE]")
+            {
+                var remaining = streamingDeanonymizer.FlushAll();
+                foreach (var (_, content) in remaining)
+                {
+                    if (!string.IsNullOrEmpty(content))
+                        await httpResponse.WriteAsync($"data: {content}\n\n", ct);
+                }
+                await httpResponse.WriteAsync("data: [DONE]\n\n", ct);
+                break;
+            }
+
+            // parse Chunk as JsonNode
+            var chunkNode = JsonNode.Parse(data) as JsonObject;
+            if (chunkNode == null) continue;
+
+            var choices = chunkNode["choices"]?.AsArray();
+            if (choices == null || choices.Count == 0)
+            {
+                // chunk without choice → continue, no processing  
+                await WriteChunk(httpResponse, chunkNode, ct);
+                continue;
+            }
+
+            var firstChoice = choices[0]?.AsObject();
+            if (firstChoice == null)
+            {
+                await WriteChunk(httpResponse, chunkNode, ct);
+                continue;
+            }
+
+            var delta = firstChoice["delta"]?.AsObject();
+
+            // path 1a: Text-Content available → through StreamingDeanonymizer
+            var contentNode = delta?["content"];
+            if (contentNode != null && contentNode.GetValueKind() == JsonValueKind.String)
+            {
+                var contentText = contentNode.GetValue<string>();
+                if (!string.IsNullOrEmpty(contentText))
+                {
+                    var deanonymized = streamingDeanonymizer.ProcessFragment(
+                        contentText, isFinal: false, contextKey: "content");
+                    delta!["content"] = deanonymized;
+                }
+            }
+            
+            // path 1b: Reasoning-Tokens (Qwen3, DeepSeek-R1, o.ä.) → through StreamingDeanonymizer
+            // some models have reasoning abilities.
+            var reasoningNode = delta?["reasoning"];
+            if (reasoningNode != null && reasoningNode.GetValueKind() == JsonValueKind.String)
+            {
+                var reasoningText = reasoningNode.GetValue<string>();
+                if (!string.IsNullOrEmpty(reasoningText))
+                {
+                    var deanonymized = streamingDeanonymizer.ProcessFragment(
+                                                                             reasoningText, isFinal: false, contextKey: "reasoning");
+                    delta!["reasoning"] = deanonymized;
+                }
+            }
+
+            // path 2: tool_calls available → foreach tool_call.arguments deanonymize
+            var toolCallsArray = delta?["tool_calls"]?.AsArray();
+            if (toolCallsArray != null)
+            {
+                for (int i = 0; i < toolCallsArray.Count; i++)
+                {
+                    var toolCall = toolCallsArray[i]?.AsObject();
+                    var argsNode = toolCall?["function"]?["arguments"];
+                    if (argsNode == null || argsNode.GetValueKind() != JsonValueKind.String)
+                        continue;
+
+                    var argsFragment = argsNode.GetValue<string>();
+                    var deanonymized = streamingDeanonymizer.ProcessFragment(
+                        argsFragment, isFinal: false, contextKey: $"tool_call_{i}");
+
+                    toolCall!["function"]!["arguments"] = deanonymized;
+                }
+            }
+
+            // path 3: no text. no tool_calls and no reasoning (e.g., finish_reason-Chunk) → 1:1 pass through
+            // Don't do anything. :)
+            
+            await WriteChunk(httpResponse, chunkNode, ct);
+        }
     }
 
-    Log.Information("Anonymized {MessageCount} messages.", anonymizedMessages.Count);
-
-    var anonymizedRequest = request with { Messages = anonymizedMessages };
-    var requestElement    = JsonSerializer.SerializeToElement(anonymizedRequest, JsonOptions);
-
-    Log.Debug("Sending request to LLM provider: {Request}", requestElement.GetRawText());
-
-    var llmHttpResponse = await llmClient.SendAsync(requestElement, ct);
-
-    httpResponse.Headers.ContentType  = "text/event-stream";
-    httpResponse.Headers.CacheControl = "no-cache";
-
-    await using var stream       = await llmHttpResponse.Content.ReadAsStreamAsync(ct);
-    using       var streamReader = new StreamReader(stream);
-
-    while (await streamReader.ReadLineAsync(ct) is { } line && !ct.IsCancellationRequested)
+    private static async Task WriteChunk(HttpResponse httpResponse, JsonNode chunkNode, CancellationToken ct)
     {
-        Log.Debug("Received SSE line: {Line}", line);
-
-        if (!line.StartsWith("data:")) continue;
-
-        var data = line["data:".Length..].Trim();
-
-        // [DONE] → flush and terminate stream
-        if (data == "[DONE]")
-        {
-            var remaining = streamingDeanonymizer.FlushAll();
-            foreach (var (_, content) in remaining)
-            {
-                if (!string.IsNullOrEmpty(content))
-                    await httpResponse.WriteAsync($"data: {content}\n\n", ct);
-            }
-            await httpResponse.WriteAsync("data: [DONE]\n\n", ct);
-            break;
-        }
-
-        // parse Chunk as JsonNode
-        var chunkNode = JsonNode.Parse(data) as JsonObject;
-        if (chunkNode == null) continue;
-
-        var choices = chunkNode["choices"]?.AsArray();
-        if (choices == null || choices.Count == 0)
-        {
-            // chunk without choice → continue, no processing  
-            await WriteChunk(httpResponse, chunkNode, ct);
-            continue;
-        }
-
-        var firstChoice = choices[0]?.AsObject();
-        if (firstChoice == null)
-        {
-            await WriteChunk(httpResponse, chunkNode, ct);
-            continue;
-        }
-
-        var delta = firstChoice["delta"]?.AsObject();
-
-        // path 1a: Text-Content available → through StreamingDeanonymizer
-        var contentNode = delta?["content"];
-        if (contentNode != null && contentNode.GetValueKind() == JsonValueKind.String)
-        {
-            var contentText = contentNode.GetValue<string>();
-            if (!string.IsNullOrEmpty(contentText))
-            {
-                var deanonymized = streamingDeanonymizer.ProcessFragment(
-                    contentText, isFinal: false, contextKey: "content");
-                delta!["content"] = deanonymized;
-            }
-        }
-        
-        // path 1b: Reasoning-Tokens (Qwen3, DeepSeek-R1, o.ä.) → through StreamingDeanonymizer
-        // some models have reasoning abilities.
-        var reasoningNode = delta?["reasoning"];
-        if (reasoningNode != null && reasoningNode.GetValueKind() == JsonValueKind.String)
-        {
-            var reasoningText = reasoningNode.GetValue<string>();
-            if (!string.IsNullOrEmpty(reasoningText))
-            {
-                var deanonymized = streamingDeanonymizer.ProcessFragment(
-                                                                         reasoningText, isFinal: false, contextKey: "reasoning");
-                delta!["reasoning"] = deanonymized;
-            }
-        }
-
-        // path 2: tool_calls available → foreach tool_call.arguments deanonymize
-        var toolCallsArray = delta?["tool_calls"]?.AsArray();
-        if (toolCallsArray != null)
-        {
-            for (int i = 0; i < toolCallsArray.Count; i++)
-            {
-                var toolCall = toolCallsArray[i]?.AsObject();
-                var argsNode = toolCall?["function"]?["arguments"];
-                if (argsNode == null || argsNode.GetValueKind() != JsonValueKind.String)
-                    continue;
-
-                var argsFragment = argsNode.GetValue<string>();
-                var deanonymized = streamingDeanonymizer.ProcessFragment(
-                    argsFragment, isFinal: false, contextKey: $"tool_call_{i}");
-
-                toolCall!["function"]!["arguments"] = deanonymized;
-            }
-        }
-
-        // path 3: no text. no tool_calls and no reasoning (e.g., finish_reason-Chunk) → 1:1 pass through
-        // Don't do anything. :)
-        
-        await WriteChunk(httpResponse, chunkNode, ct);
+        await httpResponse.WriteAsync($"data: {chunkNode.ToJsonString()}\n\n", ct);
+        await httpResponse.Body.FlushAsync(ct);
     }
-}
-
-private static async Task WriteChunk(HttpResponse httpResponse, JsonNode chunkNode, CancellationToken ct)
-{
-    await httpResponse.WriteAsync($"data: {chunkNode.ToJsonString()}\n\n", ct);
-    await httpResponse.Body.FlushAsync(ct);
-}
 
     /// <summary>
     /// Deanonymizes the content and extensions of the provided <see cref="ChatCompletionChoice"/>
