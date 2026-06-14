@@ -1,9 +1,50 @@
-# Getting Started
-Privacy Proxy is in development and only running via Development Environment!
+# PrivacyProxy
 
-Therefore you have to adjust the `appsettings.Development.json` and not `appsettings.json` at the moment.
+PrivacyProxy is a reverse proxy for OpenAI-compatible chat-completion APIs. It sits between an LLM
+client (e.g. [OpenClaw](#using-privacyproxy-with-openclaw)) and your LLM provider, detects
+personally identifiable information (PII) in outgoing messages using
+[Microsoft Presidio](https://microsoft.github.io/presidio/), replaces it with placeholders before
+forwarding the request, and restores the original values in the (optionally streamed) response.
 
-To set it up, you have to clone the project and adjust the configuration like in the example:
+[![.NET CI](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/actions/workflows/dotnet.yml/badge.svg)](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/actions/workflows/dotnet.yml)
+
+## Table of Contents
+
+- [How it works](#how-it-works)
+- [Getting Started](#getting-started)
+- [Running Tests](#running-tests)
+- [Using PrivacyProxy with OpenClaw](#using-privacyproxy-with-openclaw)
+- [Docker](#docker)
+- [Microsoft Presidio Analyzer with German supported language](#microsoft-presidio-analyzer-with-german-supported-language)
+- [Pull Requests](#pull-requests)
+
+## How it works
+
+1. A client sends an OpenAI-compatible chat-completion request to PrivacyProxy.
+2. Every user message is sent to the Presidio Analyzer - in parallel for German and English - to
+   detect PII such as names, locations, organizations, email addresses, phone numbers, IBANs,
+   credit card numbers, IP addresses and URLs.
+3. Detected entities are replaced with placeholders of the form `[TYPE_HASH16]` (e.g.
+   `[PERSON_a6ab9045d1042ef4]`). The mapping between placeholder and original value is kept in
+   memory.
+4. A system instruction is added that tells the LLM to treat placeholders as opaque values and to
+   keep them unchanged, including inside tool-call arguments.
+5. The anonymized request is forwarded to the configured LLM provider (any OpenAI-compatible API,
+   e.g. [Ollama](https://ollama.com/)).
+6. The LLM's response - including streamed (SSE) responses, reasoning tokens and tool calls - is
+   scanned for placeholders, which are replaced with their original values before being returned
+   to the client.
+
+As a result, the configured LLM provider never sees the original PII, while the client receives a
+response with the real values restored.
+
+## Getting Started
+
+PrivacyProxy is under active development and is currently only verified to run with the
+`Development` environment. Therefore you have to adjust `appsettings.Development.json`, not
+`appsettings.json`, at the moment.
+
+After cloning the project, adjust the configuration, e.g.:
 
 ```json
 {
@@ -58,44 +99,54 @@ To set it up, you have to clone the project and adjust the configuration like in
   
   "Urls": "http://*:6000;https://*:6001"
 }
-
 ```
 
-This section describes the local development setup without Docker.
-For a containerized setup of PrivacyProxy and the Presidio Analyzer, see the [Docker](#docker) section below.
+- The `Presidio` section configures the connection to the Presidio Analyzer as well as the entity
+  policy: an allow-list and additional context words used to improve detection, plus per-entity
+  score thresholds for German and English.
+- The `Llm` section configures the upstream OpenAI-compatible LLM provider that PrivacyProxy
+  forwards anonymized requests to.
 
-To run locally you have to use dotnet 10.
+To run PrivacyProxy locally you need .NET 10:
 
 ```bash
-cd .../OpenClaw_PrivacyProxy/PrivacyProxy.Api
+cd PrivacyProxy.Api
 dotnet restore
 dotnet run
 ```
 
-To run tests you have to do:
-```
-cd .../OpenClaw_PrivacyProxy/PrivacyProxy.Api.Tests
+> For a containerized setup of PrivacyProxy and the Presidio Analyzer, see [Docker](#docker).
+
+## Running Tests
+
+```bash
+cd PrivacyProxy.Api.Tests
 dotnet restore
 dotnet test
 ```
 
-dotCover by JetBrains is fully supported. Riders IDE is suggested.
+[dotCover](https://www.jetbrains.com/dotcover/) by JetBrains is fully supported for code coverage;
+[Rider](https://www.jetbrains.com/rider/) is the suggested IDE.
 
-To use it between OpenClaw and LLM you have to configure OpenClaw so that it thinks PrivacyProxy is the LLM Provider.
+## Using PrivacyProxy with OpenClaw
+
+To use PrivacyProxy as a transparent proxy between OpenClaw and your LLM, configure OpenClaw so
+that it treats PrivacyProxy as its LLM provider:
 
 ```bash
-openclaw configure # run configure, select Model -> Custom Provider -> http:<Privacy_Proxy_IP>/v1 -> no API key -> Open AI Endpoint -> Model Alias
+openclaw configure # run configure, select Model -> Custom Provider -> http://<PrivacyProxy-Host>/v1 -> no API key -> OpenAI Endpoint -> Model Alias
 ```
 
-The Verification checks if the privacy proxy is available if so you can click "continue" and 
+OpenClaw's verification step checks whether PrivacyProxy is reachable. Once it succeeds, confirm
+with "Continue" and apply the change:
 
 ```bash
 openclaw gateway restart
 ```
 
-to save changes.
-
-In Session you can select the privacy proxy llm and chat with it. in the logs you should see that PII is recognized and pseudonymized/depseunodymized between OpenClaw and LLM configured in PrivacyProxy settings.
+You can now select the PrivacyProxy model in a session and chat with it. PrivacyProxy's logs show
+that PII is recognized, anonymized before being sent to the LLM, and deanonymized again in the
+response.
 
 ## Docker
 
@@ -129,11 +180,6 @@ PrivacyProxy joins the same `privacyproxy-net` network and reaches the Presidio 
 
 Both `.env.example` files document all available variables. Copy them to `.env` (gitignored) and adjust them to your environment.
 
-## Pull Requests
-
-- [PR into dev](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/compare/dev...FEATURE_BRANCH?template=merge_into_dev_template.md)
-- [PR into main](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/compare/main...dev?template=merge_into_main_template.md)
-
 ## Microsoft Presidio Analyzer with German supported language
 
 The [`/Presidio`](./Presidio) folder contains a ready-to-use custom build of the Microsoft Presidio Analyzer with German and English language support, consisting of four files:
@@ -151,3 +197,8 @@ docker compose up -d --build
 ```
 
 This builds the image and starts a _Microsoft Presidio Analyzer_ instance that supports German (and English) plus the custom recognizers listed above. It joins the shared `privacyproxy-net` network as `presidio-analyzer` (reachable by PrivacyProxy at `http://presidio-analyzer:3000`) and is additionally published on `http://localhost:5002` (configurable via `PRESIDIO_PORT`) for manual checks.
+
+## Pull Requests
+
+- [PR into dev](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/compare/dev...FEATURE_BRANCH?template=merge_into_dev_template.md)
+- [PR into main](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/compare/main...dev?template=merge_into_main_template.md)
