@@ -186,6 +186,19 @@ PrivacyProxy joins the same `privacyproxy-net` network and reaches the Presidio 
 
 Both `.env.example` files document all available variables. Copy them to `.env` (gitignored) and adjust them to your environment.
 
+### Image tags
+
+The CI pipeline automatically builds and publishes the `privacyproxy` image to the GitHub Container Registry on every push to `dev` and `main`:
+
+| Tag                            | Built from | Description                                  |
+|--------------------------------|------------|-----------------------------------------------|
+| `ghcr.io/plueschtierbaum/privacyproxy:latest`  | `main`     | Latest production-ready build (recommended). |
+| `ghcr.io/plueschtierbaum/privacyproxy:stable`  | `main`     | Alias of `latest`, for explicit pinning.     |
+| `ghcr.io/plueschtierbaum/privacyproxy:dev`     | `dev`      | Latest development build - may be unstable.  |
+| `ghcr.io/plueschtierbaum/privacyproxy:<sha>`   | `dev`/`main` | Immutable build for a specific commit.     |
+
+`PrivacyProxy.Api/docker-compose.yml` uses `:latest` by default; set `PRIVACYPROXY_IMAGE_TAG` (or edit the `image:` line) to pin a different tag.
+
 ## Microsoft Presidio Analyzer with German supported language
 
 The [`/Presidio`](./Presidio) folder contains a ready-to-use custom build of the Microsoft Presidio Analyzer with German and English language support, consisting of four files:
