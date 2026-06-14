@@ -2,6 +2,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
+using PrivacyProxy.Api.Configuration;
 using PrivacyProxy.Api.Models.Interfaces;
 using Serilog;
 
@@ -12,7 +14,7 @@ namespace PrivacyProxy.Api.Services;
 /// Provides functionality for creating and retrieving placeholders as well as deanonymizing text by replacing placeholders
 /// with their corresponding original values.
 /// </summary>
-public partial class MappingStore : IMappingStore
+public partial class MappingStore : IMappingStore, IDisposable
 {
     /// <summary>
     /// Maintains a mapping where the keys are original values, and the values are their corresponding placeholders.
@@ -34,10 +36,13 @@ public partial class MappingStore : IMappingStore
     /// with their associated original values.
     /// </remarks>
     private readonly IMemoryCache _placeholderToOriginal;
-    
-    private readonly TimeSpan _ttl = TimeSpan.FromMinutes(30);
 
-    
+    /// <summary>
+    /// Sliding-expiration time-to-live applied to every mapping entry, taken from
+    /// <see cref="MappingOptions.TtlMinutes"/>.
+    /// </summary>
+    private readonly TimeSpan _ttl;
+
     /// <summary>
     /// A compiled regular expression designed to match placeholders within a specific format.
     /// The placeholders correspond to strings formatted as "[TYPE_HASH]",
@@ -69,10 +74,32 @@ public partial class MappingStore : IMappingStore
     public int PlaceholderCount => 
         _placeholderToOriginal is MemoryCache mc ? mc.Count : 0;
     
-    public MappingStore()
+    /// <summary>
+    /// Creates a new <see cref="MappingStore"/> using the default TTL of <see cref="MappingOptions"/> (30 minutes).
+    /// </summary>
+    public MappingStore() : this(Options.Create(new MappingOptions()))
     {
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="MappingStore"/> whose mapping entries expire after
+    /// <see cref="MappingOptions.TtlMinutes"/> minutes of inactivity.
+    /// </summary>
+    /// <param name="options">The mapping configuration, in particular the entry TTL.</param>
+    public MappingStore(IOptions<MappingOptions> options)
+    {
+        _ttl                   = TimeSpan.FromMinutes(options.Value.TtlMinutes);
         _originalToPlaceholder = new MemoryCache(new MemoryCacheOptions());
         _placeholderToOriginal = new MemoryCache(new MemoryCacheOptions());
+    }
+
+    /// <summary>
+    /// Disposes the internal caches backing this mapping store.
+    /// </summary>
+    public void Dispose()
+    {
+        _originalToPlaceholder.Dispose();
+        _placeholderToOriginal.Dispose();
     }
 
     /// <summary>

@@ -50,8 +50,12 @@ builder.Services.AddHttpClient<ILlmClient, LlmClient>((sp, client) =>
     client.BaseAddress = new Uri(opts.BaseUrl);
 });
 
-// MemoryCache to introduce TTL to MappingStore
-builder.Services.AddMemoryCache();
+// Add Mapping configuration (TTL for MappingStore entries) and check on startup
+builder.Services.AddOptions<MappingOptions>()
+       .BindConfiguration("Mapping")
+       .ValidateOnStart();
+builder.Services.AddSingleton<IValidateOptions<MappingOptions>, MappingOptionsValidator>();
+
 // Add MappingStore to PrivacyProxy for storing mappings between PII and their Pseudonyms
 // Singleton, because we want to have a single session with every mapping for session requests.
 builder.Services.AddSingleton<IMappingStore, MappingStore>();

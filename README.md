@@ -53,7 +53,11 @@ To set it up, you have to clone the project and adjust the configuration like in
     "BaseUrl": "http://localhost:11434/v1/",
     "ApiKey": "ollama"
   },
-  
+
+  "Mapping": {
+    "TtlMinutes": 30
+  },
+
   "AllowedHosts": "*",
   
   "Urls": "http://*:6000;https://*:6001"
