@@ -29,4 +29,14 @@ public class LlmOptions
     /// A string containing the API key used for authentication.
     /// </value>
     public required string ApiKey  { get; init; }
+    
+    /// <summary>
+    /// Gets or initializes the specific model identifier for the Language Model (LLM) service.
+    /// </summary>
+    /// <remarks>
+    /// This property represents the name or version of the language model to be utilized during interactions
+    /// with the LLM service. It is a required configuration that determines the specific model
+    /// to be engaged for processing requests.
+    /// </remarks>
+    public required string Model { get; init; }
 }
