@@ -9,16 +9,13 @@ services:
       Llm__BaseUrl: "${LLM_BASE_URL:-http://ollama:11434}"
       Llm__ApiKey: "${LLM_API_KEY}"
       Llm__Model: "${LLM_MODEL:-llama3}"
-      # Presidio
-      Presidio__AnalyzerUrl: "${PRESIDIO_URL:-http://presidio-analyzer:5002}"
+      # Presidio (reached via the shared "privacyproxy-net" network)
+      Presidio__AnalyzerUrl: "${PRESIDIO_URL:-http://presidio-analyzer:3000}"
       # Mapping
       Mapping__TtlMinutes: "${MAPPING_TTL:-30}"
-    depends_on:
-      - presidio-analyzer
+    networks:
+      - privacyproxy-net
 
-  presidio-analyzer:
-    build:
-      context: ./Presidio
-      dockerfile: Dockerfile
-    ports:
-      - "5002:3000"
+networks:
+  privacyproxy-net:
+    external: true

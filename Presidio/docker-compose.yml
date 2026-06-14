@@ -1,0 +1,13 @@
+services:
+  presidio-analyzer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PRESIDIO_PORT:-5002}:3000"
+    networks:
+      - privacyproxy-net
+
+networks:
+  privacyproxy-net:
+    external: true
