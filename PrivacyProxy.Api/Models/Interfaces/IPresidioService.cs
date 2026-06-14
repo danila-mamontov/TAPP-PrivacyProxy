@@ -1,8 +1,7 @@
 namespace PrivacyProxy.Api.Models.Interfaces;
 
 /// <summary>
-/// Defines the contract for interacting with the Presidio service,
-/// enabling operations such as anonymizing sensitive data within a given text.
+/// Defines a contract for processing text to identify and anonymize sensitive entities through the Presidio service.
 /// </summary>
 public interface IPresidioService
 {

@@ -1,6 +1,9 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
+using PrivacyProxy.Api.Configuration;
 using PrivacyProxy.Api.Models.Interfaces;
 using Serilog;
 
@@ -11,7 +14,7 @@ namespace PrivacyProxy.Api.Services;
 /// Provides functionality for creating and retrieving placeholders as well as deanonymizing text by replacing placeholders
 /// with their corresponding original values.
 /// </summary>
-public partial class MappingStore : IMappingStore
+public partial class MappingStore : IMappingStore, IDisposable
 {
     /// <summary>
     /// Maintains a mapping where the keys are original values, and the values are their corresponding placeholders.
@@ -22,7 +25,7 @@ public partial class MappingStore : IMappingStore
     /// original values and placeholders. The placeholder generation incorporates a combination of an entity type
     /// and a hash computed from the original value to ensure uniqueness.
     /// </remarks>
-    private readonly Dictionary<string, string> _originalToPlaceholder = new();
+    private readonly IMemoryCache _originalToPlaceholder;
 
     /// <summary>
     /// Stores the mappings between placeholders and their corresponding original values.
@@ -32,8 +35,14 @@ public partial class MappingStore : IMappingStore
     /// It is primarily used during the deanonymization process to replace placeholders within text
     /// with their associated original values.
     /// </remarks>
-    private readonly Dictionary<string, string> _placeholderToOriginal = new();
-    
+    private readonly IMemoryCache _placeholderToOriginal;
+
+    /// <summary>
+    /// Sliding-expiration time-to-live applied to every mapping entry, taken from
+    /// <see cref="MappingOptions.TtlMinutes"/>.
+    /// </summary>
+    private readonly TimeSpan _ttl;
+
     /// <summary>
     /// A compiled regular expression designed to match placeholders within a specific format.
     /// The placeholders correspond to strings formatted as "[TYPE_HASH]",
@@ -62,7 +71,36 @@ public partial class MappingStore : IMappingStore
     /// Each placeholder represents a mapping between an anonymized value and its corresponding original value.
     /// This property provides a count of the existing mappings stored in memory at any given time.
     /// </remarks>
-    public int PlaceholderCount => _placeholderToOriginal.Count;
+    public int PlaceholderCount => 
+        _placeholderToOriginal is MemoryCache mc ? mc.Count : 0;
+    
+    /// <summary>
+    /// Creates a new <see cref="MappingStore"/> using the default TTL of <see cref="MappingOptions"/> (30 minutes).
+    /// </summary>
+    public MappingStore() : this(Options.Create(new MappingOptions()))
+    {
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="MappingStore"/> whose mapping entries expire after
+    /// <see cref="MappingOptions.TtlMinutes"/> minutes of inactivity.
+    /// </summary>
+    /// <param name="options">The mapping configuration, in particular the entry TTL.</param>
+    public MappingStore(IOptions<MappingOptions> options)
+    {
+        _ttl                   = TimeSpan.FromMinutes(options.Value.TtlMinutes);
+        _originalToPlaceholder = new MemoryCache(new MemoryCacheOptions());
+        _placeholderToOriginal = new MemoryCache(new MemoryCacheOptions());
+    }
+
+    /// <summary>
+    /// Disposes the internal caches backing this mapping store.
+    /// </summary>
+    public void Dispose()
+    {
+        _originalToPlaceholder.Dispose();
+        _placeholderToOriginal.Dispose();
+    }
 
     /// <summary>
     /// Retrieves an existing placeholder for the given original value if it exists,
@@ -76,17 +114,33 @@ public partial class MappingStore : IMappingStore
         ArgumentException.ThrowIfNullOrWhiteSpace(entityType);
         ArgumentNullException.ThrowIfNull(original);
 
-        if (_originalToPlaceholder.TryGetValue(original, out var existing))
-            return existing;
+        if (_originalToPlaceholder.TryGetValue(original, out string? existing))
+        {
+            // Sliding Expiration: Zugriff verlängert Lebenszeit
+            _originalToPlaceholder.Set(original, existing, new MemoryCacheEntryOptions
+            {
+                SlidingExpiration = _ttl
+            });
+            _placeholderToOriginal.Set(existing!, original, new MemoryCacheEntryOptions
+            {
+                SlidingExpiration = _ttl
+            });
+            return existing!;
+        }
 
-        var hash = ComputeHash(original);
+        var hash        = ComputeHash(original);
         var placeholder = $"[{entityType}_{hash}]";
 
-        _originalToPlaceholder[original] = placeholder;
-        _placeholderToOriginal[placeholder] = original;
+        _originalToPlaceholder.Set(original, placeholder, new MemoryCacheEntryOptions
+        {
+            SlidingExpiration = _ttl
+        });
+        _placeholderToOriginal.Set(placeholder, original, new MemoryCacheEntryOptions
+        {
+            SlidingExpiration = _ttl
+        });
 
         Log.Debug("Created placeholder for {Original} ({Placeholder})", original, placeholder);
-        
         return placeholder;
     }
 
@@ -99,12 +153,19 @@ public partial class MappingStore : IMappingStore
     {
         if (string.IsNullOrEmpty(anonymizedText)) return anonymizedText;
 
-        // Replace placeholders with their original values if they exist in the mapping.
-        // Otherwise, leave the placeholder as-is.
         return PlaceholderRegex.Replace(anonymizedText, m =>
-                                                            _placeholderToOriginal.TryGetValue(m.Value, out var original) ? 
-                                                                original : 
-                                                                m.Value);
+        {
+            if (_placeholderToOriginal.TryGetValue(m.Value, out string? original))
+            {
+                // Sliding Expiration auch beim Deanonymisieren
+                _placeholderToOriginal.Set(m.Value, original, new MemoryCacheEntryOptions
+                {
+                    SlidingExpiration = _ttl
+                });
+                return original!;
+            }
+            return m.Value;
+        });
     }
 
     /// <summary>
