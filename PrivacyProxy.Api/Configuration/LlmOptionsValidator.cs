@@ -1,4 +1,6 @@
+using System.Text;
 using Microsoft.Extensions.Options;
+using Serilog;
 
 namespace PrivacyProxy.Api.Configuration;
 
@@ -17,26 +19,63 @@ namespace PrivacyProxy.Api.Configuration;
 public class LlmOptionsValidator : IValidateOptions<LlmOptions>
 {
     /// <summary>
-    /// Validates the specified LlmOptions instance to ensure required properties are correctly set.
+    /// Validates the specified LlmOptions instance to ensure that all required properties are correctly set.
     /// </summary>
     /// <param name="name">
-    /// The name of the option instance being validated. This can be null if no name is specified.
+    /// The optional name of the LlmOptions instance being validated. This can be null if no specific name is assigned.
     /// </param>
     /// <param name="options">
-    /// The LlmOptions instance to validate. This object contains the configuration values for the LLM service.
+    /// The LlmOptions instance containing the configuration properties for validation. Expected fields include BaseUrl, ApiKey, and Model.
     /// </param>
     /// <returns>
-    /// A ValidateOptionsResult that indicates whether the validation was successful.
-    /// Returns a failure result if required fields such as BaseUrl or ApiKey are missing or empty.
+    /// A ValidateOptionsResult representing the outcome of the validation process.
+    /// Returns a failure result if any required fields, such as BaseUrl, ApiKey, or Model, are missing or invalid.
     /// </returns>
     public ValidateOptionsResult Validate(string? name, LlmOptions options)
     {
         if (string.IsNullOrWhiteSpace(options.BaseUrl))
             return ValidateOptionsResult.Fail("BaseUrl is required.");
-        
+
         if (string.IsNullOrWhiteSpace(options.ApiKey))
             return ValidateOptionsResult.Fail("ApiKey is required.");
+
+        if (string.IsNullOrWhiteSpace(options.Model))
+            return ValidateOptionsResult.Fail("Model is required.");
+
+        // Check if model is reachable
+        ModelIsReachable(options);
         
         return ValidateOptionsResult.Success;
+    }
+
+    /// <summary>
+    /// Checks whether the LLM gateway endpoint is reachable by sending a diagnostic HTTP request and verifying the response status.
+    /// </summary>
+    /// <returns>
+    /// true if the gateway returns a success status code; otherwise, false.
+    /// </returns>
+    private static void ModelIsReachable(LlmOptions options)
+    {
+        Log.Debug("Checking model connectivity... This can take some time!");
+        using var client = new HttpClient();
+        client.Timeout = TimeSpan.FromSeconds(60);
+        client.DefaultRequestHeaders.Add("Authorization", $"Bearer {options.ApiKey}");
+
+        var body = new StringContent($$"""
+                                       {
+                                           "model": "{{options.Model}}",
+                                           "messages": [{"role": "user", "content": "ping"}],
+                                           "stream": false
+                                       }
+                                       """, Encoding.UTF8, "application/json");
+        try
+        {
+            var response = client.PostAsync(options.BaseUrl, body).GetAwaiter().GetResult();
+            Log.Debug("Model reachable: {StatusCode}", response.StatusCode);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Model not reachable");
+        }
     }
 }
