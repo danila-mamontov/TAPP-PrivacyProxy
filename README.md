@@ -95,6 +95,10 @@ After cloning the project, adjust the configuration, e.g.:
     "ApiKey": "ollama"
   },
   
+  "Mapping": {
+    "TtlMinutes": 30
+  },
+  
   "AllowedHosts": "*",
   
   "Urls": "http://*:6000;https://*:6001"
@@ -106,6 +110,8 @@ After cloning the project, adjust the configuration, e.g.:
   score thresholds for German and English.
 - The `Llm` section configures the upstream OpenAI-compatible LLM provider that PrivacyProxy
   forwards anonymized requests to.
+- The `Mapping` section configures how long (in minutes) PII-to-placeholder mappings are kept in
+  memory before expiring. The TTL uses sliding expiration, i.e. it is refreshed on every access.
 
 To run PrivacyProxy locally you need .NET 10:
 
