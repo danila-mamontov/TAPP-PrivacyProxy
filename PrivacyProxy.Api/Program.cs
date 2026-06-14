@@ -50,9 +50,11 @@ builder.Services.AddHttpClient<ILlmClient, LlmClient>((sp, client) =>
     client.BaseAddress = new Uri(opts.BaseUrl);
 });
 
+// MemoryCache to introduce TTL to MappingStore
+builder.Services.AddMemoryCache();
 // Add MappingStore to PrivacyProxy for storing mappings between PII and their Pseudonyms
-// Scoped to ensure each HTTP request has its own instance.
-builder.Services.AddScoped<IMappingStore, MappingStore>();
+// Singleton, because we want to have a single session with every mapping for session requests.
+builder.Services.AddSingleton<IMappingStore, MappingStore>();
 
 // Add StreamingDeanonymizer to PrivacyProxy for deanonymizing text in real-time from LLM responses
 builder.Services.AddScoped<StreamingDeanonymizer>();
