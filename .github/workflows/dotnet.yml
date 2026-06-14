@@ -46,7 +46,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event_name == 'push'
     permissions:
       contents: read
       packages: write
@@ -60,11 +60,31 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # main  -> :latest, :stable, :<sha>  (current production image)
+      # dev   -> :dev, :<sha>              (current development image)
+      - name: Determine image tags
+        id: meta
+        env:
+          IMAGE: ghcr.io/plueschtierbaum/privacyproxy
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            TAGS="$IMAGE:latest
+          $IMAGE:stable
+          $IMAGE:${{ github.sha }}"
+          else
+            TAGS="$IMAGE:dev
+          $IMAGE:${{ github.sha }}"
+          fi
+          {
+            echo "tags<<EOF"
+            echo "$TAGS"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: PrivacyProxy.Api/Dockerfile
           push: true
-          tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+          tags: ${{ steps.meta.outputs.tags }}

@@ -1,6 +1,6 @@
 services:
   privacyproxy:
-    image: ghcr.io/plueschtierbaum/privacyproxy:latest
+    image: ghcr.io/plueschtierbaum/privacyproxy:${PRIVACYPROXY_IMAGE_TAG:-latest}
     ports:
       - "${BIND_HOST:-127.0.0.1}:8080:8080"
     environment:
