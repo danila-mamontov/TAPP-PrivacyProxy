@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Options;
+using Serilog;
 
 namespace PrivacyProxy.Api.Configuration;
 
@@ -46,6 +47,40 @@ public class PresidioOptionsValidator : IValidateOptions<PresidioOptions>
                                               $"ScoreThreshold ({options.ScoreThreshold}) must be " +
                                               $"≤ min(GermanEntityThresholds, EnglishEntityThresholds) ({minThreshold}).");
 
+        // Check if Presidio is reachable
+        PresidioIsReachable(options);
+
         return ValidateOptionsResult.Success;
+    }
+
+    /// <summary>
+    /// Checks whether the configured Presidio Analyzer endpoint is reachable by calling its health endpoint
+    /// and logging the result. Connectivity issues are logged but do not fail validation.
+    /// </summary>
+    private static void PresidioIsReachable(PresidioOptions options)
+    {
+        Log.Debug("Checking Presidio connectivity...");
+        using var client = new HttpClient();
+        client.Timeout = TimeSpan.FromSeconds(10);
+
+        var healthUrl = $"{options.AnalyzerUrl.TrimEnd('/')}/health";
+
+        try
+        {
+            var response = client.GetAsync(healthUrl).GetAwaiter().GetResult();
+            if (response.IsSuccessStatusCode)
+            {
+                Log.Information("Presidio reachable at {Url}: {StatusCode}", healthUrl, response.StatusCode);
+            }
+            else
+            {
+                Log.Warning("Presidio responded with non-success status at {Url}: {StatusCode}", 
+                            healthUrl, response.StatusCode);
+            }
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Presidio not reachable at {Url}", healthUrl);
+        }
     }
 }

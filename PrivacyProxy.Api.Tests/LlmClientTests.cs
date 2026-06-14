@@ -41,7 +41,8 @@ public class LlmClientTests
         var options    = Options.Create(new LlmOptions
                                         {
                                             BaseUrl = "http://localhost:8000",
-                                            ApiKey  = "test-api-key"
+                                            ApiKey  = "test-api-key",
+                                            Model   = "dummy"
                                         });
 
         return (new LlmClient(httpClient, options), handler);
@@ -175,7 +176,8 @@ public class LlmClientTests
                     services.AddSingleton(Options.Create(new LlmOptions
                     {
                         BaseUrl = "http://localhost:9999",
-                        ApiKey  = "test-key"
+                        ApiKey  = "test-key",
+                        Model = "dummy"
                     }));
                 });
             });
