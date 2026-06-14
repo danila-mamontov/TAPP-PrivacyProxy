@@ -61,8 +61,10 @@ To set it up, you have to clone the project and adjust the configuration like in
 
 ```
 
-At the moment there is no docker support.
-Therefore you have to use dotnet 10 to run the project.
+This section describes the local development setup without Docker.
+For a containerized setup of PrivacyProxy and the Presidio Analyzer, see the [Docker](#docker) section below.
+
+To run locally you have to use dotnet 10.
 
 ```bash
 cd .../OpenClaw_PrivacyProxy/PrivacyProxy.Api
@@ -95,195 +97,57 @@ to save changes.
 
 In Session you can select the privacy proxy llm and chat with it. in the logs you should see that PII is recognized and pseudonymized/depseunodymized between OpenClaw and LLM configured in PrivacyProxy settings.
 
+## Docker
+
+PrivacyProxy and the Presidio Analyzer each ship as their own docker-compose project, so they can be built, started and updated independently. They talk to each other securely over a shared external Docker bridge network.
+
+### 1. Create the shared network (once)
+
+```bash
+docker network create privacyproxy-net
+```
+
+### 2. Start the Presidio Analyzer
+
+```bash
+cd Presidio
+cp .env.example .env   # adjust PRESIDIO_PORT if needed
+docker compose up -d --build
+```
+
+This builds the custom Presidio Analyzer image described in the section below and joins it to `privacyproxy-net` under the service name `presidio-analyzer`. The container listens on port `3000` internally and is additionally published on the host via `PRESIDIO_PORT` (default `5002`), e.g. to check `http://localhost:5002` from outside Docker.
+
+### 3. Start PrivacyProxy
+
+```bash
+cd PrivacyProxy.Api
+cp .env.example .env   # adjust LLM_BASE_URL, LLM_API_KEY, LLM_MODEL, ...
+docker compose up -d
+```
+
+PrivacyProxy joins the same `privacyproxy-net` network and reaches the Presidio Analyzer at `Presidio__AnalyzerUrl` (default `http://presidio-analyzer:3000`, i.e. the Presidio container's service name and internal port - no host port involved). PrivacyProxy itself is published on the host via `BIND_HOST`/`APP_PORT` (default `127.0.0.1:8080`).
+
+Both `.env.example` files document all available variables. Copy them to `.env` (gitignored) and adjust them to your environment.
+
 ## Pull Requests
 
 - [PR into dev](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/compare/dev...FEATURE_BRANCH?template=merge_into_dev_template.md)
 - [PR into main](https://github.com/PlueschtierBaum/OpenClaw-PrivacyProxy/compare/main...dev?template=merge_into_main_template.md)
 
 ## Microsoft Presidio Analyzer with German supported language
-First we have to define three files in the same folder as a dockerfile which uses them:
 
-`default_recognizers.yaml`:
-```yaml
-supported_languages:
-  - en
-  - de
-global_regex_flags: 26
+The [`/Presidio`](./Presidio) folder contains a ready-to-use custom build of the Microsoft Presidio Analyzer with German and English language support, consisting of four files:
 
-recognizers:
-  - name: CreditCardRecognizer
-    supported_languages:
-    - language: en
-      context: [credit, card, visa, mastercard, cc, amex, discover, jcb, diners, maestro, instapayment]
-    - language: es
-      context: [tarjeta, credito, visa, mastercard, cc, amex, discover, jcb, diners, maestro, instapayment]
-    - language: it
-    - language: pl
-    type: predefined
+- `default_recognizers.yaml` - enables the predefined recognizers for `en`/`de` (and a few other languages) plus custom recognizers for German dates, times and amounts (`GermanDateRecognizer`, `GermanTimeRecognizer`, `GermanMoneyRecognizer`)
+- `default_analyzer.yaml` - enables `en` and `de` as supported languages for the analyzer
+- `default.yaml` - configures the spaCy NLP engine with the `en_core_web_lg` and `de_core_news_lg` models
+- `Dockerfile` - builds on `mcr.microsoft.com/presidio-analyzer:latest`, downloads the German and English spaCy models and copies the three config files above into `/app/presidio_analyzer/conf/`
 
-  - name: UsBankRecognizer
-    supported_languages:
-    - en
-    type: predefined
+It is started via its own docker-compose project as described in the [Docker](#docker) section above:
 
-  - name: UsLicenseRecognizer
-    supported_languages:
-    - en
-    type: predefined
-
-  - name: UsItinRecognizer
-    supported_languages:
-    - en
-    type: predefined
-
-  - name: UsPassportRecognizer
-    supported_languages:
-    - en
-    type: predefined
-
-  - name: UsSsnRecognizer
-    supported_languages:
-    - en
-    type: predefined
-
-  - name: NhsRecognizer
-    supported_languages:
-    - en
-    type: predefined
-
-  - name: EsNifRecognizer
-    supported_languages:
-    - es
-    type: predefined
-
-  - name: EsNieRecognizer
-    supported_languages:
-    - es
-    type: predefined
-
-  - name: ItDriverLicenseRecognizer
-    supported_languages:
-    - it
-    type: predefined
-
-  - name: ItFiscalCodeRecognizer
-    supported_languages:
-    - it
-    type: predefined
-
-  - name: ItVatCodeRecognizer
-    supported_languages:
-    - it
-    type: predefined
-
-  - name: ItIdentityCardRecognizer
-    supported_languages:
-    - it
-    type: predefined
-
-  - name: ItPassportRecognizer
-    supported_languages:
-    - it
-    type: predefined
-
-  - name: PlPeselRecognizer
-    supported_languages:
-    - pl
-    type: predefined
-
-  - name: CryptoRecognizer
-    type: predefined
-
-  - name: DateRecognizer
-    type: predefined
-
-  - name: EmailRecognizer
-    type: predefined
-
-  - name: IbanRecognizer
-    type: predefined
-
-  - name: IpRecognizer
-    type: predefined
-
-  - name: MedicalLicenseRecognizer
-    type: predefined
-
-  - name: MacAddressRecognizer
-    type: predefined
-
-  - name: PhoneRecognizer
-    type: predefined
-
-  - name: UrlRecognizer
-    type: predefined
-
-  # Deutsche Custom-Recognizer
-  - name: GermanDateRecognizer
-    supported_languages:
-    - de
-    type: custom
-    supported_entity: DATE_TIME
-    patterns:
-    - name: german_date
-      regex: \b\d{1,2}\.\d{1,2}\.\d{4}\b
-      score: 0.85
-
-  - name: GermanTimeRecognizer
-    supported_languages:
-    - de
-    type: custom
-    supported_entity: DATE_TIME
-    patterns:
-    - name: german_time
-      regex: \b\d{1,2}:\d{2}\s*(Uhr)?\b
-      score: 0.85
-
-  - name: GermanMoneyRecognizer
-    supported_languages:
-    - de
-    type: custom
-    supported_entity: MONEY
-    patterns:
-    - name: german_money
-      regex: \d{1,3}(\.\d{3})*(,\d{2})?\s*€
-      score: 0.85
-```
-
-`default_analyzer.yaml`:
-```yaml
-supported_languages:
-  - en
-  - de
-default_score_threshold: 0
-```
-
-`default.yaml`:
-```yaml
-nlp_engine_name: spacy
-models:
-  - lang_code: en
-    model_name: en_core_web_lg
-  - lang_code: de
-    model_name: de_core_news_lg
-```
-
-`Dockerfile`:
-```Dockerfile
-FROM mcr.microsoft.com/presidio-analyzer:latest
-
-RUN python -m spacy download de_core_news_lg
-RUN python -m spacy download en_core_web_lg
-
-COPY default.yaml /app/presidio_analyzer/conf/default.yaml
-COPY default_analyzer.yaml /app/presidio_analyzer/conf/default_analyzer.yaml
-COPY default_recognizers.yaml /app/presidio_analyzer/conf/default_recognizers.yaml
-```
-
-navigate to the folder with all four files. Then:
 ```bash
-docker build -t custom-presidio-analyzer .
-docker run -d -p 5002:3000 custom-presidio-analyzer
+cd Presidio
+docker compose up -d --build
 ```
 
-Now we have a _Microsoft Presidio Analyzer_ instance running on port 5002 that supports german language and even some custom recognizers.
+This builds the image and starts a _Microsoft Presidio Analyzer_ instance that supports German (and English) plus the custom recognizers listed above. It joins the shared `privacyproxy-net` network as `presidio-analyzer` (reachable by PrivacyProxy at `http://presidio-analyzer:3000`) and is additionally published on `http://localhost:5002` (configurable via `PRESIDIO_PORT`) for manual checks.
