@@ -2,12 +2,21 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Core.Configuration;
 using PrivacyProxy.Api.Endpoints;
 using PrivacyProxy.Api.Models.Interfaces;
 using PrivacyProxy.Api.Services;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Live, hot-reloadable configuration written by the WebUI. The path is shared with the WebUI
+// via ProxyConfigFile.ResolvePath() (env override -> /config volume in Docker -> temp folder
+// locally) and layered above the .env / appsettings defaults. reloadOnChange + IOptionsMonitor
+// let the API apply edits without a restart.
+var liveConfigPath = ProxyConfigFile.ResolvePath();
+Directory.CreateDirectory(Path.GetDirectoryName(liveConfigPath)!);
+builder.Configuration.AddJsonFile(liveConfigPath, optional: true, reloadOnChange: true);
 
 builder.Services.AddOpenApi();
 
@@ -39,15 +48,18 @@ builder.Services.AddSingleton<IEntityPolicy, DefaultEntityPolicy>();
 builder.Services.AddHttpClient<IPresidioAnalyzerClient, PresidioAnalyzerClient>(
     (sp, client) =>
     {
-        var opts = sp.GetRequiredService<IOptions<PresidioOptions>>().Value;
+        // Read the current (hot-reloadable) value so a recreated client picks up changes.
+        var opts = sp.GetRequiredService<IOptionsMonitor<PresidioOptions>>().CurrentValue;
         client.BaseAddress = new Uri(opts.AnalyzerUrl);
     });
 
 // Add LLM client to PrivacyProxy
 builder.Services.AddHttpClient<ILlmClient, LlmClient>((sp, client) =>
 {
-    var opts = sp.GetRequiredService<IOptions<LlmOptions>>().Value;
-    client.BaseAddress = new Uri(opts.BaseUrl);
+    var baseUrl = sp.GetRequiredService<IOptionsMonitor<LlmOptions>>().CurrentValue.BaseUrl;
+    // Tolerate a missing trailing slash so ".../v1" and ".../v1/" both resolve correctly
+    // (without the slash, the relative "chat/completions" would drop the "/v1" segment).
+    client.BaseAddress = new Uri(baseUrl.EndsWith('/') ? baseUrl : baseUrl + "/");
 });
 
 // Add Mapping configuration (TTL for MappingStore entries) and check on startup
@@ -78,6 +90,9 @@ builder.Host.UseSerilog();
 var app = builder.Build();
 
 app.MapChatCompletion();
+
+// Lightweight liveness endpoint — handy for reachability/tunnel checks and container healthchecks.
+app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
 
 if (app.Environment.IsDevelopment())
 {

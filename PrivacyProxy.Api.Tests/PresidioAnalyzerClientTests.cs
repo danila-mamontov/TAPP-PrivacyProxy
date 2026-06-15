@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Core.Configuration;
 using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Services;
 
@@ -34,7 +35,7 @@ public class PresidioAnalyzerClientTests
     {
         var handler    = new MockHttpMessageHandler(statusCode, responseBody);
         var httpClient = new HttpClient(handler) { BaseAddress = new Uri("http://localhost:5002") };
-        var options = Options.Create(new PresidioOptions
+        var options = new StaticOptionsMonitor<PresidioOptions>(new PresidioOptions
                                      {
                                          AnalyzerUrl        = "http://localhost:5002",
                                          GermanEntityTypes  = ["PERSON", "LOCATION"],

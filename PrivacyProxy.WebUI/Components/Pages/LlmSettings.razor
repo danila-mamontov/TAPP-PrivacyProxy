@@ -1,0 +1,78 @@
+@page "/settings/llm"
+@rendermode InteractiveServer
+@inject IProxyConfigService Config
+@inject ISnackbar Snackbar
+
+<PageTitle>LLM – PrivacyProxy</PageTitle>
+
+<MudText Typo="Typo.h4" GutterBottom="true">LLM</MudText>
+<MudText Typo="Typo.body2" Class="mb-4">
+    Verbindung zum Sprachmodell (OpenAI-kompatibel). Änderungen werden in
+    <MudLink Href="@($"file://{Config.FilePath}")" Underline="Underline.Always"><code>@Config.FilePath</code></MudLink>
+    gespeichert und von der API ohne Neustart übernommen.
+</MudText>
+
+<MudPaper Class="pa-6" MaxWidth="640px" Elevation="1">
+    <MudForm @ref="_form">
+        <MudTextField @bind-Value="_model.BaseUrl" Label="Base URL"
+                      HelperText="OpenAI-kompatibler v1-Root mit Slash am Ende, z. B. http://ollama:11434/v1/"
+                      Required="true" RequiredError="Base URL ist erforderlich"
+                      Validation="@(new Func<string, string?>(ValidateUrl))" />
+
+        <MudTextField @bind-Value="_model.ApiKey" Label="API Key" Class="mt-3"
+                      InputType="@(_showKey ? InputType.Text : InputType.Password)"
+                      Required="true" RequiredError="API Key ist erforderlich"
+                      Adornment="Adornment.End"
+                      AdornmentIcon="@(_showKey ? Icons.Material.Filled.VisibilityOff : Icons.Material.Filled.Visibility)"
+                      OnAdornmentClick="@(() => _showKey = !_showKey)" />
+
+        <MudTextField @bind-Value="_model.Model" Label="Modell" Class="mt-3"
+                      HelperText="z. B. llama3"
+                      Required="true" RequiredError="Modell ist erforderlich" />
+
+        <div class="d-flex gap-3 mt-6">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                       StartIcon="@Icons.Material.Filled.Save"
+                       OnClick="Save" Disabled="_saving">Speichern</MudButton>
+            <MudButton Variant="Variant.Text" OnClick="Reset" Disabled="_saving">Zurücksetzen</MudButton>
+        </div>
+    </MudForm>
+</MudPaper>
+
+@code {
+    private MudForm _form = null!;
+    private LlmOptions _model = new();
+    private bool _showKey;
+    private bool _saving;
+
+    protected override void OnInitialized() => _model = Config.GetLlm();
+
+    private void Reset() => _model = Config.GetLlm();
+
+    private static string? ValidateUrl(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value)) return null; // Required handles empty
+        return Uri.TryCreate(value, UriKind.Absolute, out _) ? null : "Keine gültige URL";
+    }
+
+    private async Task Save()
+    {
+        await _form.ValidateAsync();
+        if (!_form.IsValid) return;
+
+        _saving = true;
+        try
+        {
+            await Config.SaveLlmAsync(_model);
+            Snackbar.Add("LLM-Einstellungen gespeichert", Severity.Success);
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Speichern fehlgeschlagen: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            _saving = false;
+        }
+    }
+}

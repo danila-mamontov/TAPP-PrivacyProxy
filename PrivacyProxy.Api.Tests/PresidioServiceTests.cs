@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Options;
 using Moq;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Core.Configuration;
 using PrivacyProxy.Api.Models.DTOs.Presidio;
 using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Models.Interfaces;
@@ -49,7 +50,7 @@ public class PresidioServiceTests
         analyzer.Setup(a => a.AnalyzeAsync(It.IsAny<string>(), Language.English, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(enEntities);
 
-        var options = Options.Create(new PresidioOptions
+        var options = new StaticOptionsMonitor<PresidioOptions>(new PresidioOptions
                                      {
                                          AnalyzerUrl = "http://localhost:5002",
                                          GermanEntityThresholds = new Dictionary<string, double>

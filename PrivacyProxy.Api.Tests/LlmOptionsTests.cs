@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Core.Configuration;
 
 namespace PrivacyProxy.Api.Tests;
 

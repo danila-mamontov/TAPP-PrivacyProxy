@@ -1,4 +1,7 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
+# Create the shared config mount point owned by the non-root app user so the WebUI can
+# write to the named volume (Docker seeds a new volume's ownership from this directory).
+RUN mkdir -p /config && chown $APP_UID /config
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
@@ -8,6 +11,7 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["PrivacyProxy.Api/PrivacyProxy.Api.csproj", "PrivacyProxy.Api/"]
+COPY ["PrivacyProxy.Core/PrivacyProxy.Core.csproj", "PrivacyProxy.Core/"]
 RUN dotnet restore "PrivacyProxy.Api/PrivacyProxy.Api.csproj"
 COPY . .
 WORKDIR "/src/PrivacyProxy.Api"

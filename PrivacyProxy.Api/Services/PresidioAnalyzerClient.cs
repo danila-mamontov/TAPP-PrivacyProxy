@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Core.Configuration;
 using PrivacyProxy.Api.Models.DTOs.Presidio;
 using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Models.Interfaces;
@@ -15,16 +16,8 @@ namespace PrivacyProxy.Api.Services;
 /// </summary>
 public class PresidioAnalyzerClient(
     HttpClient                httpClient,
-    IOptions<PresidioOptions> presidioOptions) : IPresidioAnalyzerClient
+    IOptionsMonitor<PresidioOptions> presidioOptions) : IPresidioAnalyzerClient
 {
-    /// <summary>
-    /// Represents the configuration options for the Presidio Analyzer client.
-    /// This variable is initialized with values from <see cref="PresidioOptions"/> and
-    /// provides access to analyzer-related configurations such as allowed list, entity types,
-    /// context, and score thresholds, essential for performing text analysis requests.
-    /// </summary>
-    private readonly PresidioOptions _options = presidioOptions.Value;
-
     /// <summary>
     /// Provides configuration options for JSON serialization and deserialization operations
     /// within the context of the PresidioAnalyzerClient.
@@ -61,16 +54,19 @@ public class PresidioAnalyzerClient(
         Language language,
         CancellationToken ct = default)
     {
+        // Read current (hot-reloadable) options so config changes apply without a restart.
+        var options = presidioOptions.CurrentValue;
+
         var request = new PresidioAnalyzerRequest
         {
             Text                  = text,
             Language              = language,
-            AllowList             = _options.AllowList,
-            Context               = _options.Context,
-            ScoreThreshold        = _options.ScoreThreshold,
+            AllowList             = options.AllowList,
+            Context               = options.Context,
+            ScoreThreshold        = options.ScoreThreshold,
             Entities              = language == Language.German
-                                        ? _options.GermanEntityTypes
-                                        : _options.EnglishEntityTypes,
+                                        ? options.GermanEntityTypes
+                                        : options.EnglishEntityTypes,
             ReturnDecisionProcess = false
         };
 

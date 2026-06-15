@@ -1,11 +1,11 @@
-namespace PrivacyProxy.Api.Configuration;
+namespace PrivacyProxy.Core.Configuration;
 
 /// <summary>
 /// Configuration options for Presidio, a library for text analytics and data anonymization.
 /// </summary>
 public class PresidioOptions
 {
-    public required string AnalyzerUrl { get; init; }
+    public string AnalyzerUrl { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the list of terms or entities that will be excluded
@@ -34,7 +34,7 @@ public class PresidioOptions
     /// </remarks>
     public string[] Context { get; set; } = [];
     
-    public double ScoreThreshold { get; init; } = 0.4;
+    public double ScoreThreshold { get; set; } = 0.4;
 
     /// <summary>
     /// Specifies the list of entity types recognized for German language analysis.
@@ -72,7 +72,7 @@ public class PresidioOptions
     /// The property is initialized with default values, which can be customized as needed
     /// to align with the desired sensitivity level for specific entity types.
     /// </remarks>
-    public Dictionary<string, double> GermanEntityThresholds { get; init; } = new()
+    public Dictionary<string, double> GermanEntityThresholds { get; set; } = new()
                                                                               {
                                                                                   { "PERSON",       0.85 },
                                                                                   { "LOCATION",     0.90 },
@@ -92,7 +92,7 @@ public class PresidioOptions
     /// Adjusting these values allows for fine-tuning the analysis process to balance accuracy and recall,
     /// depending on the specific use case.
     /// </remarks>
-    public Dictionary<string, double> EnglishEntityThresholds { get; init; } = new()
+    public Dictionary<string, double> EnglishEntityThresholds { get; set; } = new()
                                                                                {
                                                                                    { "EMAIL_ADDRESS", 0.4 },
                                                                                    { "PHONE_NUMBER",  0.4 },

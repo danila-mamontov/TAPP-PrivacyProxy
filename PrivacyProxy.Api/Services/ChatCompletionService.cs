@@ -1,8 +1,10 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
+using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Models.DTOs.LLM;
 using PrivacyProxy.Api.Models.Interfaces;
+using PrivacyProxy.Core.Configuration;
 using Serilog;
 
 namespace PrivacyProxy.Api.Services;
@@ -36,7 +38,8 @@ public class ChatCompletionService(
     IPresidioService      presidioService,
     ILlmClient            llmClient,
     IMappingStore         mappingStore,
-    StreamingDeanonymizer streamingDeanonymizer) : IChatCompletionService
+    StreamingDeanonymizer streamingDeanonymizer,
+    IOptionsMonitor<LlmOptions> llmOptions) : IChatCompletionService
 {
     /// <summary>
     /// A static instance of <see cref="JsonSerializerOptions"/> used to configure
@@ -95,7 +98,9 @@ public class ChatCompletionService(
         Log.Information("Anonymized {MessageCount} messages.", anonymizedMessages.Count);
 
         // Forward anonymized request to LLM
-        var anonymizedRequest = request with { Messages = anonymizedMessages };
+        // Force the configured model regardless of what the client sent, so the proxy
+        // owns the model selection (the WebUI/Llm.Model setting is the single source).
+        var anonymizedRequest = request with { Model = llmOptions.CurrentValue.Model, Messages = anonymizedMessages };
         var requestElement    = JsonSerializer.SerializeToElement(anonymizedRequest, JsonOptions);
         
         Log.Debug("Sending request to LLM provider: {Request}", requestElement.GetRawText());
@@ -160,7 +165,9 @@ public class ChatCompletionService(
 
         Log.Information("Anonymized {MessageCount} messages.", anonymizedMessages.Count);
 
-        var anonymizedRequest = request with { Messages = anonymizedMessages };
+        // Force the configured model regardless of what the client sent, so the proxy
+        // owns the model selection (the WebUI/Llm.Model setting is the single source).
+        var anonymizedRequest = request with { Model = llmOptions.CurrentValue.Model, Messages = anonymizedMessages };
         var requestElement    = JsonSerializer.SerializeToElement(anonymizedRequest, JsonOptions);
 
         Log.Debug("Sending request to LLM provider: {Request}", requestElement.GetRawText());

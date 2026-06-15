@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Core.Configuration;
 using PrivacyProxy.Api.Models.DTOs.Presidio;
 using PrivacyProxy.Api.Models.Enums;
 using PrivacyProxy.Api.Models.Interfaces;
@@ -13,15 +14,8 @@ namespace PrivacyProxy.Api.Services;
 /// considering the source language.
 /// Implements the <c>IEntityPolicy</c> interface.
 /// </summary>
-public class DefaultEntityPolicy(IOptions<PresidioOptions> options) : IEntityPolicy
+public class DefaultEntityPolicy(IOptionsMonitor<PresidioOptions> options) : IEntityPolicy
 {
-    /// <summary>
-    /// Represents the configuration options for the Presidio library injected into the
-    /// DefaultEntityPolicy. These options are used to control entity thresholds, supported
-    /// entity types, and other settings required for text analytics and data anonymization purposes.
-    /// </summary>
-    private readonly PresidioOptions _options = options.Value;
-
     /// <summary>
     /// Applies the entity policy by filtering entities based on predefined thresholds
     /// for the specified language and resolves any overlapping entities.
@@ -35,10 +29,11 @@ public class DefaultEntityPolicy(IOptions<PresidioOptions> options) : IEntityPol
         Language sourceLanguage, 
         string originalText)
     {
-        // Get the entity thresholds for the source language.
+        // Get the entity thresholds for the source language (read live so config changes apply).
+        var currentOptions = options.CurrentValue;
         var thresholds = sourceLanguage == Language.German
-                            ? _options.GermanEntityThresholds
-                            : _options.EnglishEntityThresholds;
+                            ? currentOptions.GermanEntityThresholds
+                            : currentOptions.EnglishEntityThresholds;
         
         // Filter the entities based on their confidence scores and language depending on scores.
         var filtered = entities

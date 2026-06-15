@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using PrivacyProxy.Api.Configuration;
+using PrivacyProxy.Core.Configuration;
 using PrivacyProxy.Api.Services;
 
 namespace PrivacyProxy.Api.Tests;
@@ -16,9 +17,10 @@ public class PresidioServiceIntegrationTests
     
     private static (PresidioService sut, MappingStore store) CreateSut()
     {
-        var options = Options.Create(Configuration.GetSection("Presidio").Get<PresidioOptions>()!);
+        var presidioOptions = Configuration.GetSection("Presidio").Get<PresidioOptions>()!;
+        var options         = new StaticOptionsMonitor<PresidioOptions>(presidioOptions);
 
-        var httpClient = new HttpClient { BaseAddress = new Uri(options.Value.AnalyzerUrl) };
+        var httpClient = new HttpClient { BaseAddress = new Uri(presidioOptions.AnalyzerUrl) };
         var analyzer   = new PresidioAnalyzerClient(httpClient, options);
         var policy     = new DefaultEntityPolicy(options);
         var store      = new MappingStore();
