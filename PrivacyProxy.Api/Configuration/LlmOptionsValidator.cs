@@ -57,26 +57,22 @@ public class LlmOptionsValidator : IValidateOptions<LlmOptions>
     /// </returns>
     private static void ModelIsReachable(LlmOptions options)
     {
-        Log.Debug("Checking model connectivity... This can take some time!");
+        Log.Debug("Checking LLM endpoint connectivity...");
         using var client = new HttpClient();
         client.Timeout = TimeSpan.FromSeconds(60);
         client.DefaultRequestHeaders.Add("Authorization", $"Bearer {options.ApiKey}");
 
-        var body = new StringContent($$"""
-                                       {
-                                           "model": "{{options.Model}}",
-                                           "messages": [{"role": "user", "content": "ping"}],
-                                           "stream": false
-                                       }
-                                       """, Encoding.UTF8, "application/json");
+        // Query the OpenAI-compatible models endpoint (cheap, no inference) and tolerate a
+        // missing trailing slash on the configured base URL.
+        var baseUrl = options.BaseUrl.EndsWith('/') ? options.BaseUrl : options.BaseUrl + "/";
         try
         {
-            var response = client.PostAsync(options.BaseUrl, body).GetAwaiter().GetResult();
-            Log.Debug("Model reachable: {StatusCode}", response.StatusCode);
+            var response = client.GetAsync($"{baseUrl}models").GetAwaiter().GetResult();
+            Log.Debug("LLM endpoint reachable: {StatusCode}", response.StatusCode);
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Model not reachable");
+            Log.Error(ex, "LLM endpoint not reachable");
         }
     }
 }

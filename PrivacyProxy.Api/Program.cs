@@ -56,8 +56,10 @@ builder.Services.AddHttpClient<IPresidioAnalyzerClient, PresidioAnalyzerClient>(
 // Add LLM client to PrivacyProxy
 builder.Services.AddHttpClient<ILlmClient, LlmClient>((sp, client) =>
 {
-    var opts = sp.GetRequiredService<IOptionsMonitor<LlmOptions>>().CurrentValue;
-    client.BaseAddress = new Uri(opts.BaseUrl);
+    var baseUrl = sp.GetRequiredService<IOptionsMonitor<LlmOptions>>().CurrentValue.BaseUrl;
+    // Tolerate a missing trailing slash so ".../v1" and ".../v1/" both resolve correctly
+    // (without the slash, the relative "chat/completions" would drop the "/v1" segment).
+    client.BaseAddress = new Uri(baseUrl.EndsWith('/') ? baseUrl : baseUrl + "/");
 });
 
 // Add Mapping configuration (TTL for MappingStore entries) and check on startup
