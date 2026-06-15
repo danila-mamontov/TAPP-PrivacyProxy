@@ -89,6 +89,9 @@ var app = builder.Build();
 
 app.MapChatCompletion();
 
+// Lightweight liveness endpoint — handy for reachability/tunnel checks and container healthchecks.
+app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
