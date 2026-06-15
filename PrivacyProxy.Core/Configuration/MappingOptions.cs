@@ -1,4 +1,4 @@
-namespace PrivacyProxy.Api.Configuration;
+namespace PrivacyProxy.Core.Configuration;
 
 /// <summary>
 /// Configuration options for <see cref="PrivacyProxy.Api.Services.MappingStore"/>.

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
-    <ProjectReference Include="..\PrivacyProxy.Api\PrivacyProxy.Api.csproj" />
+    <ProjectReference Include="..\PrivacyProxy.Core\PrivacyProxy.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

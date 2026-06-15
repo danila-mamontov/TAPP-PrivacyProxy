@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Options;
+using PrivacyProxy.Core.Configuration;
 
 namespace PrivacyProxy.Api.Configuration;
 

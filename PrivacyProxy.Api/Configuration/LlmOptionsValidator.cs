@@ -1,5 +1,6 @@
 using System.Text;
 using Microsoft.Extensions.Options;
+using PrivacyProxy.Core.Configuration;
 using Serilog;
 
 namespace PrivacyProxy.Api.Configuration;

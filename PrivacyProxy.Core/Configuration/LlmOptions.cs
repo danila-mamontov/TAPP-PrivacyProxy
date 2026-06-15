@@ -1,4 +1,4 @@
-namespace PrivacyProxy.Api.Configuration;
+namespace PrivacyProxy.Core.Configuration;
 
 /// <summary>
 /// Represents configuration options for integrating with a Language Model service (LLM).
