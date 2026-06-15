@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="PrivacyProxy.Api.Tests/PrivacyProxy.Api.Tests.csproj" />
   <Project Path="PrivacyProxy.Api/PrivacyProxy.Api.csproj" />
+  <Project Path="PrivacyProxy.WebUI/PrivacyProxy.WebUI.csproj" />
 </Solution>
