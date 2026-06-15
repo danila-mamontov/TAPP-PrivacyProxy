@@ -10,18 +10,13 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Live, hot-reloadable configuration written by the WebUI (a shared volume in Docker).
-// Added after the default sources so it overrides the .env / appsettings defaults, and
-// reloadOnChange lets the API pick up edits without a restart (consumed via IOptionsMonitor).
-// Only wired up when the target directory exists (e.g. the mounted /config volume) so we
-// never watch a non-existent path locally or in tests.
-var liveConfigPath = Environment.GetEnvironmentVariable("PRIVACYPROXY_CONFIG_FILE")
-                     ?? "/config/privacyproxy.json";
-var liveConfigDir = Path.GetDirectoryName(Path.GetFullPath(liveConfigPath));
-if (liveConfigDir is not null && Directory.Exists(liveConfigDir))
-{
-    builder.Configuration.AddJsonFile(liveConfigPath, optional: true, reloadOnChange: true);
-}
+// Live, hot-reloadable configuration written by the WebUI. The path is shared with the WebUI
+// via ProxyConfigFile.ResolvePath() (env override -> /config volume in Docker -> temp folder
+// locally) and layered above the .env / appsettings defaults. reloadOnChange + IOptionsMonitor
+// let the API apply edits without a restart.
+var liveConfigPath = ProxyConfigFile.ResolvePath();
+Directory.CreateDirectory(Path.GetDirectoryName(liveConfigPath)!);
+builder.Configuration.AddJsonFile(liveConfigPath, optional: true, reloadOnChange: true);
 
 builder.Services.AddOpenApi();
 

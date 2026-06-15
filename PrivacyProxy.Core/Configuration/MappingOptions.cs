@@ -1,18 +1,16 @@
 namespace PrivacyProxy.Core.Configuration;
 
 /// <summary>
-/// Configuration options for <see cref="PrivacyProxy.Api.Services.MappingStore"/>.
+/// Configuration options for the mapping store that holds PII-to-placeholder mappings.
 /// </summary>
 public class MappingOptions
 {
     /// <summary>
-    /// Gets the sliding-expiration time-to-live, in minutes, for PII-to-placeholder mappings
-    /// held by the <see cref="PrivacyProxy.Api.Services.MappingStore"/>.
+    /// Gets or sets the sliding-expiration time-to-live, in minutes, for PII-to-placeholder mappings.
     /// </summary>
     /// <remarks>
-    /// Every time a mapping is read (anonymization or deanonymization), its TTL is reset,
-    /// so frequently used mappings are kept alive while unused ones are evicted after
-    /// this many minutes of inactivity.
+    /// Every time a mapping is read (anonymization or deanonymization) its TTL is reset, so frequently
+    /// used mappings are kept alive while unused ones are evicted after this many minutes of inactivity.
     /// </remarks>
-    public double TtlMinutes { get; init; } = 30;
+    public double TtlMinutes { get; set; } = 30;
 }
