@@ -3,10 +3,12 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 using Moq;
 using PrivacyProxy.Api.Models.DTOs.LLM;
 using PrivacyProxy.Api.Models.Interfaces;
 using PrivacyProxy.Api.Services;
+using PrivacyProxy.Core.Configuration;
 
 namespace PrivacyProxy.Api.Tests;
 
@@ -18,6 +20,10 @@ public class ChatCompletionServiceTests
                                                                     DefaultIgnoreCondition      = JsonIgnoreCondition.WhenWritingNull,
                                                                     PropertyNameCaseInsensitive = true
                                                                 };
+
+    private static IOptionsMonitor<LlmOptions> LlmOpts(string model = "configured-model") =>
+        new StaticOptionsMonitor<LlmOptions>(
+            new LlmOptions { BaseUrl = "http://localhost:11434/v1/", ApiKey = "k", Model = model });
 
     private static (
         ChatCompletionService  sut,
@@ -31,7 +37,7 @@ public class ChatCompletionServiceTests
         var deanon   = new StreamingDeanonymizer(store.Object);
 
         return (new ChatCompletionService(
-                                          presidio.Object, llm.Object, store.Object, deanon),
+                                          presidio.Object, llm.Object, store.Object, deanon, LlmOpts()),
                 presidio, llm, store);
     }
     
@@ -66,6 +72,37 @@ public class ChatCompletionServiceTests
         return context;
     }
     
+    [Fact]
+    public async Task ProcessAsync_OverridesOutgoingModelWithConfiguredModel()
+    {
+        // Arrange
+        var presidio = new Mock<IPresidioService>();
+        var llm      = new Mock<ILlmClient>();
+        var store    = new Mock<IMappingStore>();
+        var deanon   = new StreamingDeanonymizer(store.Object);
+        var sut      = new ChatCompletionService(
+            presidio.Object, llm.Object, store.Object, deanon, LlmOpts("kimi-k2.6:cloud"));
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+
+        JsonElement? captured = null;
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .Callback<JsonElement, CancellationToken>((req, _) => captured = req)
+           .ReturnsAsync(LlmResponse("ok"));
+
+        // Act — the client asks for a different model than configured
+        await sut.ProcessAsync(new ChatCompletionRequest
+        {
+            Model    = "whatever-the-client-sent",
+            Messages = [new ChatMessage { Role = "user", Content = "Hi" }]
+        });
+
+        // Assert — the proxy forwards the configured model instead
+        Assert.Equal("kimi-k2.6:cloud", captured!.Value.GetProperty("model").GetString());
+    }
+
     [Fact]
     public async Task ProcessAsync_AnonymizesEachUserMessage()
     {
@@ -281,7 +318,7 @@ public class ChatCompletionServiceTests
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
         var deanon   = new StreamingDeanonymizer(store);
-        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
 
@@ -379,7 +416,7 @@ public class ChatCompletionServiceTests
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
         var deanon   = new StreamingDeanonymizer(store);
-        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
         var mid         = placeholder.Length / 2;
@@ -433,7 +470,7 @@ public class ChatCompletionServiceTests
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
         var deanon   = new StreamingDeanonymizer(store);
-        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
         var mid         = placeholder.Length / 2;
@@ -483,7 +520,7 @@ public class ChatCompletionServiceTests
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
         var deanon   = new StreamingDeanonymizer(store);
-        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
         presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
