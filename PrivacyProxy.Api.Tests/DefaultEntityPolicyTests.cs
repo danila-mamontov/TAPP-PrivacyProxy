@@ -28,7 +28,7 @@ public class DefaultEntityPolicyTests
                                                                           }
                       };
 
-        return new DefaultEntityPolicy(Options.Create(options));
+        return new DefaultEntityPolicy(new StaticOptionsMonitor<PresidioOptions>(options));
     }
     
     [Fact]

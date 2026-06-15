@@ -9,6 +9,19 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Live, hot-reloadable configuration written by the WebUI (a shared volume in Docker).
+// Added after the default sources so it overrides the .env / appsettings defaults, and
+// reloadOnChange lets the API pick up edits without a restart (consumed via IOptionsMonitor).
+// Only wired up when the target directory exists (e.g. the mounted /config volume) so we
+// never watch a non-existent path locally or in tests.
+var liveConfigPath = Environment.GetEnvironmentVariable("PRIVACYPROXY_CONFIG_FILE")
+                     ?? "/config/privacyproxy.json";
+var liveConfigDir = Path.GetDirectoryName(Path.GetFullPath(liveConfigPath));
+if (liveConfigDir is not null && Directory.Exists(liveConfigDir))
+{
+    builder.Configuration.AddJsonFile(liveConfigPath, optional: true, reloadOnChange: true);
+}
+
 builder.Services.AddOpenApi();
 
 // Configure JSON serialization for Minimal API endpoints
@@ -39,14 +52,15 @@ builder.Services.AddSingleton<IEntityPolicy, DefaultEntityPolicy>();
 builder.Services.AddHttpClient<IPresidioAnalyzerClient, PresidioAnalyzerClient>(
     (sp, client) =>
     {
-        var opts = sp.GetRequiredService<IOptions<PresidioOptions>>().Value;
+        // Read the current (hot-reloadable) value so a recreated client picks up changes.
+        var opts = sp.GetRequiredService<IOptionsMonitor<PresidioOptions>>().CurrentValue;
         client.BaseAddress = new Uri(opts.AnalyzerUrl);
     });
 
 // Add LLM client to PrivacyProxy
 builder.Services.AddHttpClient<ILlmClient, LlmClient>((sp, client) =>
 {
-    var opts = sp.GetRequiredService<IOptions<LlmOptions>>().Value;
+    var opts = sp.GetRequiredService<IOptionsMonitor<LlmOptions>>().CurrentValue;
     client.BaseAddress = new Uri(opts.BaseUrl);
 });
 

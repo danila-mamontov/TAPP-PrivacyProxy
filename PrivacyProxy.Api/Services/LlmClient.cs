@@ -18,19 +18,9 @@ namespace PrivacyProxy.Api.Services;
 /// through <see cref="LlmOptions"/>.
 /// </remarks>
 public class LlmClient(
-    HttpClient httpClient, 
-    IOptions<LlmOptions> llmOptions) : ILlmClient
+    HttpClient httpClient,
+    IOptionsMonitor<LlmOptions> llmOptions) : ILlmClient
 {
-    /// <summary>
-    /// Represents the configuration options for the Language Model service (LLM) used by this client.
-    /// </summary>
-    /// <remarks>
-    /// This variable provides access to essential properties required to interact with the LLM service,
-    /// such as the base URL and API key for authentication. It is initialized from the application's
-    /// configuration settings and stored as a strongly typed object for convenient access during requests.
-    /// </remarks>
-    private readonly LlmOptions _llmOptions = llmOptions.Value;
-
     /// <summary>
     /// Defines shared options for JSON serialization within the application.
     /// </summary>
@@ -70,7 +60,7 @@ public class LlmClient(
         httpRequest.Content = content;
         
         // Add the API key to the request headers
-        httpRequest.Headers.Add("Authorization", $"Bearer {_llmOptions.ApiKey}");
+        httpRequest.Headers.Add("Authorization", $"Bearer {llmOptions.CurrentValue.ApiKey}");
         
         // Send the request and await the response with cancellation support and till headers are read
         // to avoid blocking the thread when using streaming responses

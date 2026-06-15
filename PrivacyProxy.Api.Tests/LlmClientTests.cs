@@ -38,7 +38,7 @@ public class LlmClientTests
     {
         var handler    = new MockHttpMessageHandler(statusCode, body);
         var httpClient = new HttpClient(handler) { BaseAddress = new Uri("http://localhost:8000/v1/") };
-        var options    = Options.Create(new LlmOptions
+        var options    = new StaticOptionsMonitor<LlmOptions>(new LlmOptions
                                         {
                                             BaseUrl = "http://localhost:8000",
                                             ApiKey  = "test-api-key",
