@@ -1,5 +1,6 @@
 using MudBlazor.Services;
 using PrivacyProxy.WebUI.Components;
+using PrivacyProxy.WebUI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,9 @@ builder.Services.AddRazorComponents()
 
 // MudBlazor UI services (theming, dialogs, snackbars, popovers, ...).
 builder.Services.AddMudServices();
+
+// Reads/writes the shared config file that the API hot-reloads.
+builder.Services.AddSingleton<IProxyConfigService, ProxyConfigService>();
 
 var app = builder.Build();
 
