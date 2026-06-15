@@ -50,6 +50,13 @@ jobs:
     permissions:
       contents: read
       packages: write
+    strategy:
+      matrix:
+        include:
+          - image: privacyproxy
+            dockerfile: PrivacyProxy.Api/Dockerfile
+          - image: privacyproxy-webui
+            dockerfile: PrivacyProxy.WebUI/Dockerfile
     steps:
       - uses: actions/checkout@v5
 
@@ -60,24 +67,23 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # main  -> :latest, :stable, :<sha>  (current production image)
-      # dev   -> :dev, :<sha>              (current development image)
+      # main -> :latest, :stable, :<sha>  (current production image)
+      # dev  -> :dev, :<sha>              (current development image)
       - name: Determine image tags
         id: meta
         env:
-          IMAGE: ghcr.io/plueschtierbaum/privacyproxy
+          IMAGE: ghcr.io/plueschtierbaum/${{ matrix.image }}
         run: |
-          if [ "${{ github.ref_name }}" = "main" ]; then
-            TAGS="$IMAGE:latest
-          $IMAGE:stable
-          $IMAGE:${{ github.sha }}"
-          else
-            TAGS="$IMAGE:dev
-          $IMAGE:${{ github.sha }}"
-          fi
           {
             echo "tags<<EOF"
-            echo "$TAGS"
+            if [ "${{ github.ref_name }}" = "main" ]; then
+              echo "$IMAGE:latest"
+              echo "$IMAGE:stable"
+              echo "$IMAGE:${{ github.sha }}"
+            else
+              echo "$IMAGE:dev"
+              echo "$IMAGE:${{ github.sha }}"
+            fi
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
@@ -85,6 +91,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: PrivacyProxy.Api/Dockerfile
+          file: ${{ matrix.dockerfile }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
