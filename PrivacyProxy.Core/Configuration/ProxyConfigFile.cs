@@ -9,7 +9,7 @@ namespace PrivacyProxy.Core.Configuration;
 /// <list type="number">
 ///   <item>the <c>PRIVACYPROXY_CONFIG_FILE</c> environment variable, if set;</item>
 ///   <item>the mounted <c>/config</c> volume when running in Docker;</item>
-///   <item>a per-user temp folder for local development.</item>
+///   <item>~/.privacyproxy for local development.</item>
 /// </list>
 /// </remarks>
 public static class ProxyConfigFile
@@ -29,9 +29,13 @@ public static class ProxyConfigFile
         if (!string.IsNullOrWhiteSpace(fromEnv))
             return fromEnv;
 
+        // In Docker the shared config lives on the mounted /config volume.
         if (Directory.Exists("/config"))
             return Path.Combine("/config", FileName);
 
-        return Path.Combine(Path.GetTempPath(), "privacyproxy", FileName);
+        // Local dev: a stable, visible per-user folder (~/.privacyproxy) — not the opaque
+        // temp dir, and not the source tree (this is per-machine runtime state).
+        var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        return Path.Combine(home, ".privacyproxy", FileName);
     }
 }
