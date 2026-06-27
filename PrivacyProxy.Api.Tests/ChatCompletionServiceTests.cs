@@ -132,7 +132,45 @@ public class ChatCompletionServiceTests
         // Assert
         presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(1));
     }
-    
+
+    [Fact]
+    public async Task ProcessAsync_DeveloperRoleIsTreatedLikeSystem()
+    {
+        // Arrange — gateways such as OpenClaw send "developer" instead of/merged with "system".
+        var (sut, presidio, llm, store) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        JsonElement? captured = null;
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .Callback<JsonElement, CancellationToken>((req, _) => captured = req)
+           .ReturnsAsync(LlmResponse("ok"));
+
+        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+
+        var request = new ChatCompletionRequest
+                      {
+                          Model    = "llama3",
+                          Messages = [
+                              new ChatMessage { Role = "developer", Content = "You are helpful." },
+                              new ChatMessage { Role = "user",      Content = "Hello Alice." }
+                          ]
+                      };
+
+        // Act
+        await sut.ProcessAsync(request);
+
+        // Assert — only the user message is anonymized (developer content is untouched, like system)
+        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(1));
+        presidio.Verify(p => p.AnonymizeAsync("You are helpful.", It.IsAny<CancellationToken>()), Times.Never);
+
+        // Assert — no extra system instruction was inserted (developer already counts as one)
+        var messages = captured!.Value.GetProperty("messages");
+        Assert.Equal(2, messages.GetArrayLength());
+        Assert.Equal("developer", messages[0].GetProperty("role").GetString());
+    }
+
         [Fact]
     public async Task ProcessAsync_ForwardsAnonymizedContentToLlm()
     {
@@ -189,6 +227,44 @@ public class ChatCompletionServiceTests
 
         // Assert
         Assert.Equal("Alice wohnt hier", result.Choices[0].Message.Content);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_DeanonymizesAndLogsToolCallsExtension()
+    {
+        // Arrange — a response whose message carries a "tool_calls" extension (not content)
+        var store    = new MappingStore();
+        var presidio = new Mock<IPresidioService>();
+        var llm      = new Mock<ILlmClient>();
+        var deanon   = new StreamingDeanonymizer(store);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
+
+        var responseJson =
+            "{\"id\":\"chatcmpl-1\",\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"\"," +
+            "\"tool_calls\":[{\"function\":{\"name\":\"lookup\",\"arguments\":\"" + placeholder + "\"}}]}}]}";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(new HttpResponseMessage(HttpStatusCode.OK)
+           {
+               Content = new StringContent(responseJson, Encoding.UTF8, "application/json")
+           });
+
+        // Act
+        var result = await sut.ProcessAsync(new ChatCompletionRequest
+        {
+            Model    = "llama3",
+            Messages = [new ChatMessage { Role = "user", Content = "Hi" }]
+        });
+
+        // Assert — the tool_calls extension was deanonymized (placeholder -> original PII)
+        var toolCallsRaw = result.Choices[0].Message.Extensions!["tool_calls"].GetRawText();
+        Assert.Contains("Alice", toolCallsRaw);
+        Assert.DoesNotContain(placeholder, toolCallsRaw);
     }
 
     [Fact]
@@ -589,6 +665,166 @@ public class ChatCompletionServiceTests
         Assert.Contains("[DONE]", output);
     }
     
+    [Fact]
+    public async Task ProcessStreamAsync_ChunkWithEmptyChoicesArray_PassesThroughUnprocessed()
+    {
+        // Arrange
+        var (sut, presidio, llm, _) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        // "choices": [] -> nothing to process, the chunk is just written through
+        const string sseBody = "data: {\"id\":\"1\",\"choices\":[]}\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+
+        // Assert
+        Assert.Contains("\"choices\":[]", output);
+        Assert.Contains("[DONE]", output);
+    }
+
+    [Fact]
+    public async Task ProcessStreamAsync_ChunkWithNullFirstChoice_PassesThroughUnprocessed()
+    {
+        // Arrange
+        var (sut, presidio, llm, _) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        // "choices": [null] -> the first (only) choice is not an object
+        const string sseBody = "data: {\"id\":\"1\",\"choices\":[null]}\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+
+        // Assert
+        Assert.Contains("\"choices\":[null]", output);
+        Assert.Contains("[DONE]", output);
+    }
+
+    [Fact]
+    public async Task ProcessStreamAsync_DeanonymizesReasoningDelta()
+    {
+        // Arrange — reasoning-capable models (Qwen3, DeepSeek-R1, ...) stream a "reasoning" field
+        var store    = new MappingStore();
+        var presidio = new Mock<IPresidioService>();
+        var llm      = new Mock<ILlmClient>();
+        var deanon   = new StreamingDeanonymizer(store);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
+
+        var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        var chunkJson = JsonSerializer.Serialize(new
+        {
+            id      = "1",
+            choices = new[] { new { delta = new { reasoning = placeholder } } }
+        }, JsonOptions);
+
+        var sseBody = $"data: {chunkJson}\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+
+        // Assert
+        Assert.Contains("Alice", output);
+        Assert.DoesNotContain(placeholder, output);
+    }
+
+    [Fact]
+    public async Task ProcessStreamAsync_DeanonymizesToolCallArguments_AndSkipsNonStringArguments()
+    {
+        // Arrange — one tool call with non-string arguments (skipped) and one with a placeholder
+        // (deanonymized), exercising both branches of the tool_calls loop.
+        var store    = new MappingStore();
+        var presidio = new Mock<IPresidioService>();
+        var llm      = new Mock<ILlmClient>();
+        var deanon   = new StreamingDeanonymizer(store);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
+
+        var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        var chunkJson =
+            "{\"id\":\"1\",\"choices\":[{\"delta\":{\"tool_calls\":[" +
+            "{\"function\":{\"name\":\"skip\",\"arguments\":12345}}," +
+            "{\"function\":{\"name\":\"lookup\",\"arguments\":\"" + placeholder + "\"}}" +
+            "]}}]}";
+
+        var sseBody = $"data: {chunkJson}\n\ndata: [DONE]\n\n";
+
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse(sseBody));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+                                     new ChatCompletionRequest
+                                     {
+                                         Model    = "llama3",
+                                         Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+                                     },
+                                     context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+
+        // Assert — valid tool call deanonymized, invalid one passed through untouched
+        Assert.Contains("Alice", output);
+        Assert.DoesNotContain(placeholder, output);
+        Assert.Contains("12345", output);
+    }
+
     [Fact]
     public async Task ProcessStreamAsync_SkipsChunkWhenDeltaContentIsNull()
     {

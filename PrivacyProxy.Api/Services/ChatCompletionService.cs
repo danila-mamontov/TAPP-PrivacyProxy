@@ -42,6 +42,13 @@ public class ChatCompletionService(
     IOptionsMonitor<LlmOptions> llmOptions) : IChatCompletionService
 {
     /// <summary>
+    /// "Developer" is the newer OpenAI role superseding "system" on some models; gateways such as
+    /// OpenClaw merge both into one. Treat them identically (skip anonymization, count as the
+    /// existing system instruction) wherever the role is checked.
+    /// </summary>
+    private static bool IsSystemRole(string role) => role is "system" or "developer";
+
+    /// <summary>
     /// A static instance of <see cref="JsonSerializerOptions"/> used to configure
     /// JSON serialization and deserialization settings tailored to the service.
     /// </summary>
@@ -75,17 +82,17 @@ public class ChatCompletionService(
     {
 
         var messages = request.Messages.ToList();
-        if (messages.All(m => m.Role != "system"))
+        if (messages.All(m => !IsSystemRole(m.Role)))
             messages.Insert(0, SystemInstruction);
-        
+
         Log.Information("Processing {@MessageCount} messages...", request.Messages.Count - 1);
-        
+
         // Anonymize each message content
         var anonymizedMessages = new List<ChatMessage>();
         foreach (var message in messages)
         {
-            // system role messages do not go into anonymizer
-            if (message.Role == "system")
+            // system/developer role messages do not go into anonymizer
+            if (IsSystemRole(message.Role))
             {
                 anonymizedMessages.Add(message);
                 continue;
@@ -144,7 +151,7 @@ public class ChatCompletionService(
         CancellationToken     ct = default)
     {
         var messages = request.Messages.ToList();
-        if (messages.All(m => m.Role != "system"))
+        if (messages.All(m => !IsSystemRole(m.Role)))
             messages.Insert(0, SystemInstruction);
 
         Log.Information("Processing {@MessageCount} messages...", request.Messages.Count - 1);
@@ -152,7 +159,7 @@ public class ChatCompletionService(
         var anonymizedMessages = new List<ChatMessage>();
         foreach (var message in messages)
         {
-            // system role messages do not go into anonymizer
+            // only user messages go into the anonymizer
             if (message.Role != "user")
             {
                 anonymizedMessages.Add(message);
