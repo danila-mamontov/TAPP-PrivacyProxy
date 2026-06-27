@@ -23,19 +23,27 @@ public static class ProxyConfigFile
     /// <summary>
     /// Resolves the absolute path of the shared configuration file (see the type remarks for the order).
     /// </summary>
-    public static string ResolvePath()
+    public static string ResolvePath() => ResolvePath(
+        Environment.GetEnvironmentVariable(PathEnvVar),
+        "/config",
+        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+
+    /// <summary>
+    /// Core resolution logic with every external input as a parameter, so each branch (env
+    /// override, Docker volume present, local fallback) can be exercised in tests without
+    /// depending on real environment variables or the filesystem root.
+    /// </summary>
+    public static string ResolvePath(string? envOverride, string dockerConfigDir, string localHome)
     {
-        var fromEnv = Environment.GetEnvironmentVariable(PathEnvVar);
-        if (!string.IsNullOrWhiteSpace(fromEnv))
-            return fromEnv;
+        if (!string.IsNullOrWhiteSpace(envOverride))
+            return envOverride;
 
         // In Docker the shared config lives on the mounted /config volume.
-        if (Directory.Exists("/config"))
-            return Path.Combine("/config", FileName);
+        if (Directory.Exists(dockerConfigDir))
+            return Path.Combine(dockerConfigDir, FileName);
 
         // Local dev: a stable, visible per-user folder (~/.privacyproxy) — not the opaque
         // temp dir, and not the source tree (this is per-machine runtime state).
-        var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        return Path.Combine(home, ".privacyproxy", FileName);
+        return Path.Combine(localHome, ".privacyproxy", FileName);
     }
 }
