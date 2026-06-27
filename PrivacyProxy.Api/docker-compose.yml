@@ -6,7 +6,7 @@ services:
     environment:
       ASPNETCORE_HTTP_PORTS: "${APP_PORT:-8080}"
       # LLM
-      Llm__BaseUrl: "${LLM_BASE_URL:-http://ollama:11434/v1/}"
+      Llm__BaseUrl: "${LLM_BASE_URL:-http://localhost:11434/v1/}"
       Llm__ApiKey: "${LLM_API_KEY}"
       Llm__Model: "${LLM_MODEL:-llama3}"
       # Presidio (reached via the shared "privacyproxy-net" network)
