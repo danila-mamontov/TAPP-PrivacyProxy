@@ -104,7 +104,7 @@ public class ChatCompletionServiceTests
     }
 
     [Fact]
-    public async Task ProcessAsync_AnonymizesEachUserMessage()
+    public async Task ProcessAsync_AnonymizesEveryCallerMessage()
     {
         // Arrange
         var (sut, presidio, llm, store) = CreateSut();
@@ -129,46 +129,57 @@ public class ChatCompletionServiceTests
         // Act
         await sut.ProcessAsync(request);
 
-        // Assert
-        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(1));
+        // Assert — both caller messages anonymized (our own instruction is prepended verbatim, not counted)
+        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
     }
 
     [Fact]
-    public async Task ProcessAsync_DeveloperRoleIsTreatedLikeSystem()
+    public async Task ProcessAsync_AnonymizesAllRolesAndSendsInstructionVerbatim()
     {
-        // Arrange — gateways such as OpenClaw send "developer" instead of/merged with "system".
+        // Arrange — every caller role (incl. system/developer) is anonymized; only our own
+        // placeholder instruction is forwarded 1:1.
         var (sut, presidio, llm, store) = CreateSut();
 
         presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync((string t, CancellationToken _) => t);
+                .ReturnsAsync((string t, CancellationToken _) => "ANON(" + t + ")");
+
+        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
 
         JsonElement? captured = null;
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
            .Callback<JsonElement, CancellationToken>((req, _) => captured = req)
            .ReturnsAsync(LlmResponse("ok"));
 
-        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
-
-        var request = new ChatCompletionRequest
-                      {
-                          Model    = "llama3",
-                          Messages = [
-                              new ChatMessage { Role = "developer", Content = "You are helpful." },
-                              new ChatMessage { Role = "user",      Content = "Hello Alice." }
-                          ]
-                      };
-
         // Act
-        await sut.ProcessAsync(request);
+        await sut.ProcessAsync(new ChatCompletionRequest
+        {
+            Model    = "llama3",
+            Messages =
+            [
+                new ChatMessage { Role = "system",    Content = "sys" },
+                new ChatMessage { Role = "developer", Content = "dev" },
+                new ChatMessage { Role = "assistant", Content = "asst" },
+                new ChatMessage { Role = "user",      Content = "usr" }
+            ]
+        });
 
-        // Assert — only the user message is anonymized (developer content is untouched, like system)
-        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(1));
-        presidio.Verify(p => p.AnonymizeAsync("You are helpful.", It.IsAny<CancellationToken>()), Times.Never);
+        // Assert — all four caller messages were anonymized
+        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(4));
 
-        // Assert — no extra system instruction was inserted (developer already counts as one)
         var messages = captured!.Value.GetProperty("messages");
-        Assert.Equal(2, messages.GetArrayLength());
-        Assert.Equal("developer", messages[0].GetProperty("role").GetString());
+
+        // Our own instruction is first and sent verbatim (never anonymized)
+        Assert.Equal(5, messages.GetArrayLength());
+        Assert.Equal("system", messages[0].GetProperty("role").GetString());
+        var instruction = messages[0].GetProperty("content").GetString()!;
+        Assert.DoesNotContain("ANON(", instruction);
+        Assert.Contains("placeholder", instruction, StringComparison.OrdinalIgnoreCase);
+
+        // The caller messages follow, each anonymized, original order preserved
+        Assert.Equal("ANON(sys)",  messages[1].GetProperty("content").GetString());
+        Assert.Equal("ANON(dev)",  messages[2].GetProperty("content").GetString());
+        Assert.Equal("ANON(asst)", messages[3].GetProperty("content").GetString());
+        Assert.Equal("ANON(usr)",  messages[4].GetProperty("content").GetString());
     }
 
         [Fact]

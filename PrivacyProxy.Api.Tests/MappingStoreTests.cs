@@ -95,6 +95,37 @@ public class MappingStoreTests
     }
 
     [Fact]
+    public void GetOrCreatePlaceholder_CaseInsensitive_SameNormalizedValueSharesPlaceholder()
+    {
+        // Arrange
+        var sut = CreateSut();
+
+        // Act — different casing + surrounding whitespace must collapse to ONE placeholder
+        var p1 = sut.GetOrCreatePlaceholder("LOCATION", "Berlin");
+        var p2 = sut.GetOrCreatePlaceholder("LOCATION", "berlin");
+        var p3 = sut.GetOrCreatePlaceholder("LOCATION", "  BERLIN  ");
+
+        // Assert
+        Assert.Equal(p1, p2);
+        Assert.Equal(p1, p3);
+        Assert.Equal(1, sut.PlaceholderCount);
+    }
+
+    [Fact]
+    public void Deanonymize_RestoresFirstSeenOriginalCasing()
+    {
+        // Arrange
+        var sut = CreateSut();
+
+        // Act — "Berlin" is seen first, then a lowercase variant reuses the same placeholder
+        var placeholder = sut.GetOrCreatePlaceholder("LOCATION", "Berlin");
+        sut.GetOrCreatePlaceholder("LOCATION", "berlin");
+
+        // Assert — restoration uses the first-seen casing
+        Assert.Equal("Berlin", sut.Deanonymize(placeholder));
+    }
+
+    [Fact]
     public void DeanonymizeKnownPlaceholderIsReplaced()
     {
         // Arrange
