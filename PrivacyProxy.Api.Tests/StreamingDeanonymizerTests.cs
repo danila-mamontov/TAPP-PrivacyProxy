@@ -85,10 +85,10 @@ public class StreamingDeanonymizerTests
         var mid2 = p2.Length / 2;
 
         // Act
-        sut.ProcessFragment(p1[..mid1], false, "content");
+        sut.ProcessFragment(p1[..mid1], false);
         sut.ProcessFragment(p2[..mid2], false, "toolcall_0");
 
-        var r1 = sut.ProcessFragment(p1[mid1..], false, "content");
+        var r1 = sut.ProcessFragment(p1[mid1..], false);
         var r2 = sut.ProcessFragment(p2[mid2..], false, "toolcall_0");
 
         // Assert
@@ -118,7 +118,7 @@ public class StreamingDeanonymizerTests
 
         var mid       = placeholder.Length / 2;
         var firstHalf = placeholder[..mid];
-        sut.ProcessFragment(firstHalf, false, "content");
+        sut.ProcessFragment(firstHalf, false);
 
         // Act
         var flushed = sut.FlushAll();

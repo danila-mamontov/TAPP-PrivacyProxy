@@ -1,5 +1,3 @@
-using Microsoft.Extensions.Options;
-using PrivacyProxy.Api.Configuration;
 using PrivacyProxy.Core.Configuration;
 using PrivacyProxy.Api.Models.DTOs.Presidio;
 using PrivacyProxy.Api.Models.Enums;

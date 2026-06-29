@@ -3,7 +3,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
-using PrivacyProxy.Api.Configuration;
 using PrivacyProxy.Core.Configuration;
 using PrivacyProxy.Api.Models.Interfaces;
 using Serilog;
