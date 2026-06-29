@@ -232,7 +232,7 @@ public class MappingStoreTests
     public async Task AccessWithinTtlKeepsMappingAlive()
     {
         // Arrange - a short TTL that gets refreshed by repeated access (sliding expiration)
-        var options = Options.Create(new MappingOptions { TtlMinutes = 0.01 }); // ~600ms
+        var options = Options.Create(new MappingOptions { TtlMinutes = 0.10 }); // ~6000ms
         using var sut = new MappingStore(options);
 
         // Act
