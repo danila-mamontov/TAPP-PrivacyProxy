@@ -115,35 +115,36 @@ public partial class MappingStore : IMappingStore, IDisposable
         ArgumentException.ThrowIfNullOrWhiteSpace(entityType);
         ArgumentNullException.ThrowIfNull(original);
 
-        if (_originalToPlaceholder.TryGetValue(original, out string? existing))
+        // Case-/whitespace-insensitive key so "Berlin", "berlin" and " Berlin " share ONE placeholder
+        // (otherwise the LLM sees different hashes and treats them as different entities).
+        var key = NormalizeKey(original);
+
+        if (_originalToPlaceholder.TryGetValue(key, out string? existing))
         {
-            // Sliding Expiration: Zugriff verlängert Lebenszeit
-            _originalToPlaceholder.Set(original, existing, new MemoryCacheEntryOptions
-            {
-                SlidingExpiration = _ttl
-            });
-            _placeholderToOriginal.Set(existing!, original, new MemoryCacheEntryOptions
-            {
-                SlidingExpiration = _ttl
-            });
+            // Refresh sliding TTL on both directions, keeping the first-seen original casing.
+            _originalToPlaceholder.Set(key, existing!, SlidingOptions());
+            if (_placeholderToOriginal.TryGetValue(existing!, out string? firstSeen) && firstSeen is not null)
+                _placeholderToOriginal.Set(existing!, firstSeen, SlidingOptions());
             return existing!;
         }
 
-        var hash        = ComputeHash(original);
-        var placeholder = $"[{entityType}_{hash}]";
+        var placeholder = $"[{entityType}_{ComputeHash(key)}]";
 
-        _originalToPlaceholder.Set(original, placeholder, new MemoryCacheEntryOptions
-        {
-            SlidingExpiration = _ttl
-        });
-        _placeholderToOriginal.Set(placeholder, original, new MemoryCacheEntryOptions
-        {
-            SlidingExpiration = _ttl
-        });
+        _originalToPlaceholder.Set(key, placeholder, SlidingOptions());
+        // Reverse map keeps the first-seen original (with its casing) for restoration.
+        _placeholderToOriginal.Set(placeholder, original, SlidingOptions());
 
         Log.Debug("Created placeholder for {Original} ({Placeholder})", original, placeholder);
         return placeholder;
     }
+
+    /// <summary>
+    /// Normalizes an original value into a lookup key so that case- and surrounding-whitespace
+    /// variants map to the SAME placeholder, preserving the LLM's coreference across the conversation.
+    /// </summary>
+    private static string NormalizeKey(string original) => original.Trim().ToLowerInvariant();
+
+    private MemoryCacheEntryOptions SlidingOptions() => new() { SlidingExpiration = _ttl };
 
     /// <summary>
     /// Replaces placeholders in the given text with their corresponding original values using the stored mappings.
@@ -159,10 +160,7 @@ public partial class MappingStore : IMappingStore, IDisposable
             if (_placeholderToOriginal.TryGetValue(m.Value, out string? original))
             {
                 // Sliding Expiration auch beim Deanonymisieren
-                _placeholderToOriginal.Set(m.Value, original, new MemoryCacheEntryOptions
-                {
-                    SlidingExpiration = _ttl
-                });
+                _placeholderToOriginal.Set(m.Value, original, SlidingOptions());
                 return original!;
             }
             return m.Value;

@@ -42,11 +42,24 @@ public class ChatCompletionService(
     IOptionsMonitor<LlmOptions> llmOptions) : IChatCompletionService
 {
     /// <summary>
-    /// "Developer" is the newer OpenAI role superseding "system" on some models; gateways such as
-    /// OpenClaw merge both into one. Treat them identically (skip anonymization, count as the
-    /// existing system instruction) wherever the role is checked.
+    /// Builds the messages forwarded to the LLM: our own placeholder-handling instruction verbatim
+    /// (never anonymized, never altered) followed by EVERY caller message — regardless of role —
+    /// with its content anonymized via Presidio. Maximum privacy: no caller content reaches the LLM
+    /// without passing through anonymization.
     /// </summary>
-    private static bool IsSystemRole(string role) => role is "system" or "developer";
+    private async Task<List<ChatMessage>> BuildAnonymizedMessagesAsync(
+        IReadOnlyList<ChatMessage> incoming, CancellationToken ct)
+    {
+        var messages = new List<ChatMessage>(incoming.Count + 1) { SystemInstruction };
+
+        foreach (var message in incoming)
+        {
+            var anonymizedContent = await presidioService.AnonymizeAsync(message.Content, ct);
+            messages.Add(message with { Content = anonymizedContent });
+        }
+
+        return messages;
+    }
 
     /// <summary>
     /// A static instance of <see cref="JsonSerializerOptions"/> used to configure
@@ -81,28 +94,10 @@ public class ChatCompletionService(
         CancellationToken     ct = default)
     {
 
-        var messages = request.Messages.ToList();
-        if (messages.All(m => !IsSystemRole(m.Role)))
-            messages.Insert(0, SystemInstruction);
+        Log.Information("Processing {MessageCount} messages...", request.Messages.Count);
 
-        Log.Information("Processing {@MessageCount} messages...", request.Messages.Count - 1);
-
-        // Anonymize each message content
-        var anonymizedMessages = new List<ChatMessage>();
-        foreach (var message in messages)
-        {
-            // system/developer role messages do not go into anonymizer
-            if (IsSystemRole(message.Role))
-            {
-                anonymizedMessages.Add(message);
-                continue;
-            }
-            
-            var anonymizedContent = await presidioService.AnonymizeAsync(message.Content, ct);
-            anonymizedMessages.Add(message with { Content = anonymizedContent });
-        }
-        
-        Log.Information("Anonymized {MessageCount} messages.", anonymizedMessages.Count);
+        // Every caller message (any role) is anonymized; our own instruction is prepended verbatim.
+        var anonymizedMessages = await BuildAnonymizedMessagesAsync(request.Messages, ct);
 
         // Forward anonymized request to LLM
         // Force the configured model regardless of what the client sent, so the proxy
@@ -150,27 +145,10 @@ public class ChatCompletionService(
         HttpResponse          httpResponse,
         CancellationToken     ct = default)
     {
-        var messages = request.Messages.ToList();
-        if (messages.All(m => !IsSystemRole(m.Role)))
-            messages.Insert(0, SystemInstruction);
+        Log.Information("Processing {MessageCount} messages...", request.Messages.Count);
 
-        Log.Information("Processing {@MessageCount} messages...", request.Messages.Count - 1);
-
-        var anonymizedMessages = new List<ChatMessage>();
-        foreach (var message in messages)
-        {
-            // only user messages go into the anonymizer
-            if (message.Role != "user")
-            {
-                anonymizedMessages.Add(message);
-                continue;
-            }
-            
-            var anonymizedContent = await presidioService.AnonymizeAsync(message.Content, ct);
-            anonymizedMessages.Add(message with { Content = anonymizedContent });
-        }
-
-        Log.Information("Anonymized {MessageCount} messages.", anonymizedMessages.Count);
+        // Every caller message (any role) is anonymized; our own instruction is prepended verbatim.
+        var anonymizedMessages = await BuildAnonymizedMessagesAsync(request.Messages, ct);
 
         // Force the configured model regardless of what the client sent, so the proxy
         // owns the model selection (the WebUI/Llm.Model setting is the single source).
