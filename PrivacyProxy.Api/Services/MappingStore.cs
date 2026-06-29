@@ -17,13 +17,12 @@ namespace PrivacyProxy.Api.Services;
 public partial class MappingStore : IMappingStore, IDisposable
 {
     /// <summary>
-    /// Maintains a mapping where the keys are original values, and the values are their corresponding placeholders.
+    /// Maps a normalized original value to its placeholder.
     /// </summary>
     /// <remarks>
-    /// This dictionary is used to quickly retrieve or associate a unique placeholder with a given original value.
-    /// It facilitates the process of anonymizing and mapping data by ensuring a one-to-one relationship between
-    /// original values and placeholders. The placeholder generation incorporates a combination of an entity type
-    /// and a hash computed from the original value to ensure uniqueness.
+    /// Keys are normalized (case- and surrounding-whitespace-insensitive), so all variants of a value
+    /// (e.g. "Berlin", "berlin", " Berlin ") map to the SAME placeholder, keeping the LLM's coreference
+    /// intact. The placeholder combines an entity type with a hash of the normalized value.
     /// </remarks>
     private readonly IMemoryCache _originalToPlaceholder;
 
@@ -103,12 +102,13 @@ public partial class MappingStore : IMappingStore, IDisposable
     }
 
     /// <summary>
-    /// Retrieves an existing placeholder for the given original value if it exists,
-    /// or creates and stores a new placeholder for it using the specified entity type.
+    /// Retrieves the existing placeholder for the given original value, or creates and stores a new one
+    /// using the specified entity type. Matching is case- and surrounding-whitespace-insensitive, so value
+    /// variants share one placeholder; the first-seen casing is kept for later restoration.
     /// </summary>
     /// <param name="entityType">The type of entity to be associated with the placeholder. Cannot be null, empty, or whitespace.</param>
     /// <param name="original">The original value to be mapped to a placeholder. Cannot be null.</param>
-    /// <returns>The placeholder associated with the original value. If the original value is new, a new placeholder is created and returned.</returns>
+    /// <returns>The placeholder associated with the (normalized) original value, created on first use.</returns>
     public string GetOrCreatePlaceholder(string entityType, string original)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(entityType);

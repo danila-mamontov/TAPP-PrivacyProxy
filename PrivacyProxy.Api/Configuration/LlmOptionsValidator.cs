@@ -49,11 +49,9 @@ public class LlmOptionsValidator : IValidateOptions<LlmOptions>
     }
 
     /// <summary>
-    /// Checks whether the LLM gateway endpoint is reachable by sending a diagnostic HTTP request and verifying the response status.
+    /// Logs whether the configured LLM endpoint is reachable by querying its OpenAI-compatible
+    /// "models" endpoint. Connectivity problems are only logged and never fail validation.
     /// </summary>
-    /// <returns>
-    /// true if the gateway returns a success status code; otherwise, false.
-    /// </returns>
     private static void ModelIsReachable(LlmOptions options)
     {
         Log.Debug("Checking LLM endpoint connectivity...");

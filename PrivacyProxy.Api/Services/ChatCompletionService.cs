@@ -15,13 +15,13 @@ namespace PrivacyProxy.Api.Services;
 /// </summary>
 /// <remarks>
 /// This service integrates anonymization, interaction with a Large Language Model (LLM),
-/// and secure deanonymization mechanisms. It uses dependency services to anonymize user input,
-/// communicate with the LLM, and reconstruct the original context of the responses, ensuring
-/// sensitive data remains protected throughout the process.
+/// and secure deanonymization mechanisms. Every incoming message (regardless of role) is anonymized
+/// before it is forwarded to the LLM, and the responses are deanonymized again, ensuring sensitive
+/// data remains protected throughout the process.
 /// </remarks>
 /// <param name="presidioService">
 /// A service responsible for detecting and anonymizing sensitive or personally identifiable information
-/// in user messages.
+/// in incoming messages.
 /// </param>
 /// <param name="llmClient">
 /// A client interface for communicating with the configured Large Language Model for processing
