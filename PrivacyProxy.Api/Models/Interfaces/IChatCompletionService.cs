@@ -24,6 +24,18 @@ public interface IChatCompletionService
     /// <see cref="ChatCompletionResponse"/> with the results of the chat completion operation.
     /// </returns>
     public Task<ChatCompletionResponse> ProcessAsync(ChatCompletionRequest request, CancellationToken ct = default);
-    
+
+    /// <summary>
+    /// Processes the specified chat completion request in streaming mode, writing the deanonymized
+    /// response back to the caller incrementally as Server-Sent Events (SSE).
+    /// </summary>
+    /// <param name="request">
+    /// An instance of <see cref="ChatCompletionRequest"/> containing the model, messages, and related parameters.
+    /// </param>
+    /// <param name="httpResponse">The HTTP response that the streamed events are written to.</param>
+    /// <param name="ct">
+    /// An optional <see cref="CancellationToken"/> to notify the method about cancellation requests.
+    /// </param>
+    /// <returns>A task that represents the asynchronous streaming operation.</returns>
     public Task ProcessStreamAsync(ChatCompletionRequest request, HttpResponse httpResponse, CancellationToken ct = default);
 }

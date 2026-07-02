@@ -13,7 +13,9 @@ namespace PrivacyProxy.Api.Models.Interfaces;
 /// </remarks>
 public interface ILlmClient
 {
+    /// <summary>
     /// Sends an HTTP POST request to a specified endpoint with a JSON payload.
+    /// </summary>
     /// <param name="request">
     /// The JSON payload to be sent in the request body, represented as a JsonElement.
     /// </param>

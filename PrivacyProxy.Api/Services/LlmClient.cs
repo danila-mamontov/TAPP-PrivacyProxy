@@ -36,7 +36,9 @@ public class LlmClient(
                                                                     DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
                                                                 };
 
+    /// <summary>
     /// Sends an HTTP POST request to the LLM provider's endpoint with the specified JSON payload.
+    /// </summary>
     /// <param name="request">
     /// The JSON payload to be sent in the request body, represented as a JsonElement.
     /// </param>
