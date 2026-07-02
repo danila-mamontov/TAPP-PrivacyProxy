@@ -1,6 +1,28 @@
-nlp_engine_name: spacy
+nlp_engine_name: transformers
+
 models:
   - lang_code: en
-    model_name: en_core_web_lg
+    model_name:
+      spacy: en_core_web_sm
+      transformers: Davlan/bert-base-multilingual-cased-ner-hrl
   - lang_code: de
-    model_name: de_core_news_lg
+    model_name:
+      spacy: de_core_news_sm
+      transformers: Davlan/bert-base-multilingual-cased-ner-hrl
+
+# NOTE: spaCy here only provides tokenization/sentence segmentation; the actual
+# NER is performed by the transformer model above. Hence "sm" (small) models
+# are sufficient -- they are no longer responsible for entity recognition
+# quality, unlike in the previous spaCy-only setup (de_core_news_lg).
+
+ner_model_configuration:
+  labels_to_ignore:
+    - O
+  # Davlan/bert-base-multilingual-cased-ner-hrl outputs exactly these three
+  # entity types (verified on the model card), one model for both German and
+  # English -- consistent with PrivacyProxy's dual-language design, no
+  # per-language model split needed.
+  model_to_presidio_entity_mapping:
+    PER: PERSON
+    ORG: ORGANIZATION
+    LOC: LOCATION

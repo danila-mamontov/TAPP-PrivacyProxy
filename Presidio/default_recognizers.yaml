@@ -111,33 +111,9 @@ recognizers:
   - name: UrlRecognizer
     type: predefined
 
-  # Deutsche Custom-Recognizer
-  - name: GermanDateRecognizer
-    supported_languages:
-      - de
-    type: custom
-    supported_entity: DATE_TIME
-    patterns:
-      - name: german_date
-        regex: \b\d{1,2}\.\d{1,2}\.\d{4}\b
-        score: 0.85
-
-  - name: GermanTimeRecognizer
-    supported_languages:
-      - de
-    type: custom
-    supported_entity: DATE_TIME
-    patterns:
-      - name: german_time
-        regex: \b\d{1,2}:\d{2}\s*(Uhr)?\b
-        score: 0.85
-
-  - name: GermanMoneyRecognizer
-    supported_languages:
-      - de
-    type: custom
-    supported_entity: MONEY
-    patterns:
-      - name: german_money
-        regex: \d{1,3}(\.\d{3})*(,\d{2})?\s*€
-        score: 0.85
+  # NOTE: the previously present custom German Date/Time/Money recognizers
+  # (GermanDateRecognizer, GermanTimeRecognizer, GermanMoneyRecognizer) have
+  # been DELIBERATELY REMOVED here to keep this configuration 100% Presidio
+  # defaults, consistent with the thesis's scope decision: only the NLP
+  # backend (transformers) is swapped in, no custom recognizers, no threshold
+  # tuning. See Thesis Section "Scope and Delimitation".
