@@ -40,7 +40,7 @@ public static class ChatCompletionEndpoint
                                              // PrivacyProxy and Endpoint-Caller.
         CancellationToken ct)
     {
-        Log.Information("Received chat completion request: {@Request}", request);
+        Log.Debug("Received chat completion request: {@Request}", request);
         
         if (request.Stream == true)
         {
