@@ -68,7 +68,7 @@ public class LlmClient(
         // to avoid blocking the thread when using streaming responses
         var response = await httpClient.SendAsync(httpRequest, HttpCompletionOption.ResponseHeadersRead, ct);
         
-        Log.Information("Sended request to LLM provider");
+        Log.Information("Sent request to LLM provider");
         Log.Debug("LLM provider response: {StatusCode} {ReasonPhrase}", 
                   response.StatusCode, 
                   response.ReasonPhrase);
