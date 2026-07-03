@@ -1,0 +1,11 @@
+# Local Python environment
+venv/
+__pycache__/
+*.pyc
+
+# Generated at runtime
+.env.presidio
+results/
+
+# macOS
+.DS_Store

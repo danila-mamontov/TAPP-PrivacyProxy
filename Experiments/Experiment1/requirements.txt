@@ -1,0 +1,5 @@
+datasets
+requests
+flask
+pandas
+python-dotenv
