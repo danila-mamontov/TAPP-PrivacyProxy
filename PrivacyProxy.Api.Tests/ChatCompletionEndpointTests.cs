@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Moq;
@@ -26,8 +27,16 @@ public class ChatCompletionEndpointTests(WebApplicationFactory<Program> factory)
     {
         return factory.WithWebHostBuilder(builder =>
         {
+            // Provide the required options in-memory so the host passes ValidateOnStart.
+            // Presidio and the LLM are mocked in these tests, so the values only need
+            // to exist - they are never actually contacted.
+            builder.ConfigureAppConfiguration((_, config) =>
+            {
+                config.AddInMemoryCollection(TestHostConfig.RequiredOptions);
+            });
+
             builder.ConfigureServices(configureServices);
-        
+
             // JSON Options explizit auch im Test-Host setzen
             builder.ConfigureServices(services =>
             {

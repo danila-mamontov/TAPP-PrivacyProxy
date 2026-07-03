@@ -2,6 +2,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
@@ -170,6 +171,12 @@ public class LlmClientTests
         var factory = new WebApplicationFactory<Program>()
             .WithWebHostBuilder(builder =>
             {
+                // Satisfy the host's ValidateOnStart checks without depending on appsettings.
+                builder.ConfigureAppConfiguration((_, config) =>
+                {
+                    config.AddInMemoryCollection(TestHostConfig.RequiredOptions);
+                });
+
                 builder.ConfigureServices(services =>
                 {
                     services.RemoveAll<IOptions<LlmOptions>>();
