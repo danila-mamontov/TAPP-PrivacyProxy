@@ -10,8 +10,15 @@ This lets us measure what the PrivacyProxy sends to the LLM (= the anonymized
 version). On the way back, the proxy replaces the placeholders in the echoed
 answer with the original values again.
 
+The mock supports BOTH response modes:
+  - non-streaming (default): returns one JSON completion.
+  - streaming ("stream": true): returns an SSE stream of chunks. We split the
+    echoed text into deliberately small chunks so placeholders like
+    [PERSON_....] get cut across chunk boundaries - that stress-tests the proxy's
+    streaming de-anonymizer, which must reassemble them before restoring.
+
 Endpoints:
-  POST /v1/chat/completions  -> echo + record
+  POST /v1/chat/completions  -> echo + record (JSON or SSE, depending on "stream")
   GET  /v1/models            -> dummy list (for the proxy's connectivity check)
   GET  /last                 -> last received (anonymized) user message
   POST /reset                -> clear the recording
@@ -20,14 +27,36 @@ Endpoints:
 Run (local):  python mock_llm.py   (listens on http://0.0.0.0:5005)
 Run (Docker): runs as service "mock-llm" in docker-compose.yml
 """
+import json
 import os
 
-from flask import Flask, request, jsonify
+from flask import Flask, Response, request, jsonify
 
 app = Flask(__name__)
 
 # Recording: the last user message the mock received (already anonymized)
 _received: list[str] = []
+
+# Small on purpose: guarantees placeholders are split across streaming chunks.
+STREAM_CHUNK_SIZE = 12
+
+
+def _sse_stream(content, model):
+    """Echo `content` back as an OpenAI-style SSE stream, in small chunks."""
+    for start in range(0, len(content), STREAM_CHUNK_SIZE):
+        piece = content[start:start + STREAM_CHUNK_SIZE]
+        chunk = {
+            "id": "mock-llm", "object": "chat.completion.chunk", "created": 0, "model": model,
+            "choices": [{"index": 0, "delta": {"content": piece}, "finish_reason": None}],
+        }
+        yield f"data: {json.dumps(chunk)}\n\n"
+
+    done = {
+        "id": "mock-llm", "object": "chat.completion.chunk", "created": 0, "model": model,
+        "choices": [{"index": 0, "delta": {}, "finish_reason": "stop"}],
+    }
+    yield f"data: {json.dumps(done)}\n\n"
+    yield "data: [DONE]\n\n"
 
 
 @app.post("/v1/chat/completions")
@@ -38,12 +67,17 @@ def chat_completions():
     anonymized = user_messages[-1]["content"] if user_messages else ""
     _received.append(anonymized)
 
-    # Echo: return the exact (anonymized) input -> the proxy de-anonymizes it.
+    model = body.get("model", "mock")
+
+    # Echo the (anonymized) input back -> the proxy de-anonymizes it on the way out.
+    if body.get("stream"):
+        return Response(_sse_stream(anonymized, model), mimetype="text/event-stream")
+
     return jsonify({
         "id": "mock-llm",
         "object": "chat.completion",
         "created": 0,
-        "model": body.get("model", "mock"),
+        "model": model,
         "choices": [{
             "index": 0,
             "message": {"role": "assistant", "content": anonymized},

@@ -11,6 +11,11 @@ proxy…
 The real LLM is replaced by a **mock** that just echoes back whatever it receives,
 so we only need **Presidio** and the **PrivacyProxy** (no OpenClaw, no real model).
 
+Every sample is tested in **both response modes**: non-streaming and streaming.
+Anonymization is the same in both, so leaks are identical; streaming uses a
+different restore path (placeholders arrive split across chunks), so both modes
+are checked separately.
+
 > **Why this is a proxy test, not a Presidio benchmark:** we only look at the
 > entities Presidio *actually found*. Whether Presidio misses some PII is a
 > separate question — reported as a secondary **meta** number (Presidio's recall),
@@ -70,14 +75,15 @@ after that it is fast.
 
 ## Results
 Each run writes to `results/<timestamp>/`:
-- `detail.csv` — one row per Presidio-detected entity: `leaked` (did it reach the
-  LLM?) and `restored` (was it put back in the answer?).
-- `summary.csv` — the same, grouped per language and label.
-- `run_meta.json` — the headline numbers (leak rate, restore rate, Presidio recall)
-  plus which image tag and config produced them.
+- `detail.csv` — one row per Presidio-detected entity **per mode**: `mode`,
+  `leaked` (did it reach the LLM?) and `restored` (was it put back in the answer?).
+- `summary.csv` — the same, grouped per mode, language and label.
+- `run_meta.json` — the headline numbers per mode (leak rate, restore rate) plus
+  Presidio recall, and which image tag and config produced them.
 
-The console prints the headline first: **leak rate (must be 0%)** and **restore
-rate (must be 100%)**, then the secondary Presidio recall.
+The console prints a per-mode headline first — **leak rate (must be 0%)** and
+**restore rate (must be 100%)** for non-streaming and streaming — then which
+labels leaked, then the secondary Presidio recall.
 
 ## Tuning Presidio
 Edit `presidio_config.json` (entity types and per-entity thresholds) and run

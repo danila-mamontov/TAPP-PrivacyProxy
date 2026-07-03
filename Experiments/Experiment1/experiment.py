@@ -10,6 +10,12 @@ WHAT WE TEST (the important part)
     entities Presidio actually found, and check what the proxy did with them.
     That makes this a test of the PROXY, not of Presidio.
 
+    Every sample is sent through the proxy in BOTH response modes, non-streaming
+    and streaming. Anonymization is the same in both (so leaks are identical);
+    streaming uses a different de-anonymization path, so testing both checks that
+    the proxy also restores placeholders correctly when they are split across
+    streamed chunks.
+
 META INFO (secondary, not the point of this experiment)
     How many of the dataset's known PII values did Presidio catch at all?
     That is Presidio's "recall" and is reported only for context.
@@ -184,6 +190,43 @@ def detect_pii(text):
     return resolve_overlaps(found)
 
 
+def call_proxy(text, stream):
+    """Send `text` through the proxy and return (anonymized_prompt, final_answer).
+
+    - anonymized_prompt: what the mock LLM received (read back via /last).
+    - final_answer: the proxy's de-anonymized answer.
+
+    Works for both modes. In streaming mode the answer arrives as Server-Sent
+    Events; each `data:` line is normally a JSON chunk (we take delta.content),
+    but the proxy may also emit a plain-text tail when it flushes its buffer at
+    the end, so we fall back to using the raw line if it is not JSON.
+    """
+    payload = {"model": "mock", "stream": stream, "messages": [{"role": "user", "content": text}]}
+
+    if not stream:
+        response = requests.post(PROXY_URL, json=payload, timeout=120)
+        response.raise_for_status()
+        final_answer = response.json()["choices"][0]["message"]["content"] or ""
+    else:
+        final_answer = ""
+        with requests.post(PROXY_URL, json=payload, timeout=120, stream=True) as response:
+            response.raise_for_status()
+            for line in response.iter_lines(decode_unicode=True):
+                if not line or not line.startswith("data:"):
+                    continue
+                data = line[len("data:"):].strip()
+                if data == "[DONE]":
+                    break
+                try:
+                    chunk = json.loads(data)
+                    final_answer += chunk["choices"][0]["delta"].get("content") or ""
+                except (json.JSONDecodeError, KeyError, IndexError):
+                    final_answer += data  # plain-text tail flushed by the proxy
+
+    anonymized = requests.get(MOCK_LAST_URL, timeout=10).json()["content"] or ""
+    return anonymized, final_answer
+
+
 # ---------------------------------------------------------------------------
 # Load and sample the dataset
 # ---------------------------------------------------------------------------
@@ -218,7 +261,9 @@ print(f"Total: {total_samples} samples across {len(samples_by_lang)} language(s)
 # ---------------------------------------------------------------------------
 requests.post(MOCK_RESET_URL)
 
-detail_rows = []          # one row per Presidio-detected entity (the PRIMARY metric)
+MODES = ["non-stream", "stream"]  # test both response modes of the proxy
+
+detail_rows = []          # one row per detected entity PER MODE (the PRIMARY metric)
 meta_gt_total = 0         # known dataset PII values (for the META recall metric)
 meta_gt_detected = 0
 errors = 0
@@ -234,40 +279,44 @@ for i, (lang, idx, sample) in enumerate(all_samples):
         print(f"  [WARN] sample {lang}/{idx}: Presidio call failed ({ex})")
         continue
 
-    # 2) Send the same text through the proxy and read back what the LLM received.
-    payload = {"model": "mock", "stream": False, "messages": [{"role": "user", "content": text}]}
+    # 2) Send the same text through the proxy in BOTH modes and check each one.
+    #    The proxy anonymizes identically in both modes, so leaks are the same;
+    #    streaming differs in how the answer is de-anonymized, so testing both
+    #    covers both restore paths.
+    anonymized_for_meta = None
     try:
-        answer_resp = requests.post(PROXY_URL, json=payload, timeout=120)
-        answer_resp.raise_for_status()
-        final_answer = answer_resp.json()["choices"][0]["message"]["content"] or ""
-        anonymized   = requests.get(MOCK_LAST_URL, timeout=10).json()["content"] or ""
+        for mode in MODES:
+            anonymized, final_answer = call_proxy(text, stream=(mode == "stream"))
+            if anonymized_for_meta is None:
+                anonymized_for_meta = anonymized
+
+            # PRIMARY: for each detected entity, did the proxy hide and restore it?
+            for entity in detected:
+                value = entity["value"]
+                leaked = value in anonymized                       # must be False
+                restored = (value in final_answer) if not leaked else None
+                detail_rows.append({
+                    "sample_idx": idx,
+                    "language": lang,
+                    "mode": mode,
+                    "label": entity["label"],
+                    "value": value,
+                    "score": entity["score"],
+                    "leaked": leaked,
+                    "restored": restored,
+                })
     except Exception as ex:
         errors += 1
         print(f"  [WARN] sample {lang}/{idx}: proxy request failed ({ex})")
         continue
 
-    # 3) PRIMARY: for each detected entity, did the proxy hide and restore it?
-    for entity in detected:
-        value = entity["value"]
-        leaked = value in anonymized                       # must be False
-        restored = (value in final_answer) if not leaked else None  # only meaningful if hidden
-        detail_rows.append({
-            "sample_idx": idx,
-            "language": lang,
-            "label": entity["label"],
-            "value": value,
-            "score": entity["score"],
-            "leaked": leaked,
-            "restored": restored,
-        })
-
-    # 4) META: how many of the dataset's known PII values did Presidio catch?
-    #    A value that disappeared from the outgoing text was detected by Presidio.
+    # 3) META: how many of the dataset's known PII values did Presidio catch?
+    #    Anonymization is mode-independent, so we measure this once.
     for value, _label in get_ground_truth(sample):
         if not value.strip():
             continue
         meta_gt_total += 1
-        if value not in anonymized:
+        if value not in anonymized_for_meta:
             meta_gt_detected += 1
 
     if (i + 1) % 50 == 0:
@@ -278,15 +327,30 @@ for i, (lang, idx, sample) in enumerate(all_samples):
 # ---------------------------------------------------------------------------
 df = pd.DataFrame(detail_rows)
 
-detected_total = len(df)
-leaked_total = int(df["leaked"].sum()) if detected_total else 0
-hidden_total = detected_total - leaked_total
-restored_ok = int((df["restored"] == True).sum()) if detected_total else 0  # noqa: E712
 
-# Per language + label breakdown of the primary metric.
-if detected_total:
+def pct(part, whole):
+    return f"{part / whole:.2%}" if whole else "n/a"
+
+
+# Per-mode totals. Leaks are identical across modes (anonymization is the same);
+# restore may differ, because streaming uses a different de-anonymization path.
+primary_by_mode = {}
+for mode in MODES:
+    sub = df[df["mode"] == mode] if len(df) else df
+    detected = len(sub)
+    leaked = int(sub["leaked"].sum()) if detected else 0
+    hidden = detected - leaked
+    restored = int((sub["restored"] == True).sum()) if detected else 0  # noqa: E712
+    primary_by_mode[mode] = {
+        "detected": detected, "leaked": leaked, "hidden": hidden, "restored": restored,
+        "leak_rate": (leaked / detected) if detected else None,
+        "restore_rate": (restored / hidden) if hidden else None,
+    }
+
+# Full per (mode, language, label) breakdown -> summary.csv.
+if len(df):
     summary = (
-        df.groupby(["language", "label"])
+        df.groupby(["mode", "language", "label"])
         .agg(
             detected=("leaked", "size"),
             leaked=("leaked", "sum"),
@@ -298,11 +362,7 @@ if detected_total:
     summary["leak_rate"]    = summary["leaked"]   / summary["detected"]
     summary["restore_rate"] = summary["restored"] / summary["hidden"].replace(0, pd.NA)
 else:
-    summary = pd.DataFrame(columns=["language", "label", "detected", "leaked", "hidden", "restored", "leak_rate", "restore_rate"])
-
-
-def pct(part, whole):
-    return f"{part / whole:.2%}" if whole else "n/a"
+    summary = pd.DataFrame(columns=["mode", "language", "label", "detected", "leaked", "hidden", "restored", "leak_rate", "restore_rate"])
 
 
 # ---------------------------------------------------------------------------
@@ -312,19 +372,32 @@ print()
 print("=" * 70)
 print("PRIMARY RESULT - what the proxy did with the PII that Presidio detected")
 print("=" * 70)
-print(f"  PII entities detected by Presidio: {detected_total}")
-print(f"  leaked to the LLM:                 {leaked_total} ({pct(leaked_total, detected_total)})   <- must be 0%")
-print(f"  hidden as placeholder:             {hidden_total} ({pct(hidden_total, detected_total)})")
-print(f"  restored in the answer:            {restored_ok}/{hidden_total} ({pct(restored_ok, hidden_total)})   <- must be 100%")
+print(f"  {'mode':<12}{'detected':>9}{'leaked':>8}{'leak%':>9}{'restored':>16}{'restore%':>10}")
+print("  " + "-" * 62)
+for mode in MODES:
+    m = primary_by_mode[mode]
+    restored_str = f"{m['restored']}/{m['hidden']}"
+    print(f"  {mode:<12}{m['detected']:>9}{m['leaked']:>8}{pct(m['leaked'], m['detected']):>9}"
+          f"{restored_str:>16}{pct(m['restored'], m['hidden']):>10}")
+print("  (leak% must be 0%, restore% must be 100%)")
 
-if detected_total:
-    print()
-    print(f"  {'lang':<5}{'label':<20}{'detected':>9}{'leaked':>8}{'leak%':>8}{'restore%':>10}")
-    print("  " + "-" * 60)
-    for _, r in summary.iterrows():
-        restore_str = pct(int(r["restored"]), int(r["hidden"]))
-        print(f"  {r['language']:<5}{r['label']:<20}{int(r['detected']):>9}{int(r['leaked']):>8}"
-              f"{r['leak_rate']:>8.1%}{restore_str:>10}")
+# Where do leaks happen? Leaks are identical across modes, so show one mode.
+if len(df):
+    one = df[df["mode"] == MODES[0]]
+    leaked_rows = one[one["leaked"]]
+    if len(leaked_rows):
+        counts = one.groupby(["language", "label"]).size().reset_index(name="detected")
+        leaks  = leaked_rows.groupby(["language", "label"]).size().reset_index(name="leaked")
+        leaks  = leaks.merge(counts, on=["language", "label"])
+        leaks["leak_rate"] = leaks["leaked"] / leaks["detected"]
+        print()
+        print("  Leaks by language/label (identical across modes):")
+        print(f"    {'lang':<5}{'label':<20}{'detected':>9}{'leaked':>8}{'leak%':>8}")
+        print("    " + "-" * 50)
+        for _, r in leaks.iterrows():
+            print(f"    {r['language']:<5}{r['label']:<20}{int(r['detected']):>9}{int(r['leaked']):>8}{r['leak_rate']:>8.1%}")
+    else:
+        print("\n  No leaks: every detected PII entity was hidden from the LLM.")
 
 print()
 print("=" * 70)
@@ -343,26 +416,20 @@ run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
 out_dir = Path("results") / run_id
 out_dir.mkdir(parents=True, exist_ok=True)
 
-df.to_csv(out_dir / "detail.csv", index=False)       # one row per detected entity
-summary.to_csv(out_dir / "summary.csv", index=False)  # per language + label
+df.to_csv(out_dir / "detail.csv", index=False)        # one row per detected entity per mode
+summary.to_csv(out_dir / "summary.csv", index=False)  # per mode + language + label
 (out_dir / "presidio_config.json").write_text(json.dumps(presidio_config, indent=2, ensure_ascii=False))
 
 run_meta = {
     "run_id": run_id,
     "languages": LANGUAGES,
+    "modes": MODES,
     "sample_size_per_language": SAMPLE_SIZE,
     "samples_used": total_samples,
     "dataset": "ai4privacy/pii-masking-200k",
     "privacyproxy_image_tag": os.environ.get("PRIVACYPROXY_IMAGE_TAG"),
     "errors": errors,
-    "primary": {
-        "detected": detected_total,
-        "leaked": leaked_total,
-        "hidden": hidden_total,
-        "restored": restored_ok,
-        "leak_rate": (leaked_total / detected_total) if detected_total else None,
-        "restore_rate": (restored_ok / hidden_total) if hidden_total else None,
-    },
+    "primary_by_mode": primary_by_mode,
     "meta_presidio_recall": {
         "known_values": meta_gt_total,
         "detected": meta_gt_detected,
