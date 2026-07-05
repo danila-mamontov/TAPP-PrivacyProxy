@@ -1,18 +1,119 @@
+# PrivacyProxy deployment stack (API + WebUI).
+#
+# EVERYTHING is configured here and in ".env" - no need to touch the image's
+# appsettings.json. Environment variables always win over the image's built-in
+# defaults (ASP.NET Core config precedence: appsettings.json < env vars). The
+# only thing that can override an env var at runtime is the WebUI, which writes
+# the shared /config/privacyproxy.json file (per section, on explicit save).
+#
+# Config value  ->  env variable
+#   nested key  ->  double underscore  (Presidio__AnalyzerUrl)
+#   array item  ->  index              (Presidio__GermanEntityTypes__0)
+#   dict entry  ->  key                (Presidio__GermanEntityThresholds__PERSON)
+#
+# Scalars/secrets/endpoints live in ".env"; the Presidio policy (which entity
+# types to scan and their thresholds) lives inline below so it is fully visible
+# and editable in one place.
+
 services:
   privacyproxy:
     image: ghcr.io/plueschtierbaum/privacyproxy:${PRIVACYPROXY_IMAGE_TAG:-latest}
+    # Container always listens on 8080; APP_PORT only changes the HOST port.
     ports:
-      - "${BIND_HOST:-127.0.0.1}:8080:8080"
+      - "${BIND_HOST:-127.0.0.1}:${APP_PORT:-8080}:8080"
     environment:
-      ASPNETCORE_HTTP_PORTS: "${APP_PORT:-8080}"
-      # LLM
-      Llm__BaseUrl: "${LLM_BASE_URL:-http://localhost:11434/v1/}"
-      Llm__ApiKey: "${LLM_API_KEY}"
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_HTTP_PORTS: "8080"
+
+      # ---- Logging (Serilog) ----------------------------------------------
+      # Levels: Verbose, Debug, Information, Warning, Error, Fatal.
+      Serilog__MinimumLevel__Default: "${LOG_LEVEL:-Information}"
+      # Per-namespace overrides keep framework noise down; edit as needed.
+      Serilog__MinimumLevel__Override__Microsoft: Warning
+      Serilog__MinimumLevel__Override__Microsoft.AspNetCore: Warning
+
+      # ---- LLM (upstream OpenAI-compatible provider) ----------------------
+      # BaseUrl must point at the OpenAI-compatible "v1" root WITH trailing
+      # slash (requests go to "<BaseUrl>chat/completions").
+      Llm__BaseUrl: "${LLM_BASE_URL:-http://host.docker.internal:11434/v1/}"
+      Llm__ApiKey: "${LLM_API_KEY:-ollama}"
       Llm__Model: "${LLM_MODEL:-llama3}"
-      # Presidio (reached via the shared "privacyproxy-net" network)
+
+      # ---- Presidio: connection + global threshold ------------------------
       Presidio__AnalyzerUrl: "${PRESIDIO_URL:-http://presidio-analyzer:3000}"
-      # Mapping
+      # Global floor; must be <= the smallest per-entity threshold below.
+      Presidio__ScoreThreshold: "${PRESIDIO_SCORE_THRESHOLD:-0.4}"
+
+      # ---- Presidio: entity types scanned per language --------------------
+      # To stop scanning a type, remove its line here AND raise/remove its
+      # threshold below (a type without a threshold entry is ignored anyway).
+      Presidio__GermanEntityTypes__0: PERSON
+      Presidio__GermanEntityTypes__1: LOCATION
+      Presidio__GermanEntityTypes__2: ORGANIZATION
+      Presidio__GermanEntityTypes__3: EMAIL_ADDRESS
+      Presidio__GermanEntityTypes__4: PHONE_NUMBER
+      Presidio__GermanEntityTypes__5: IP_ADDRESS
+      Presidio__GermanEntityTypes__6: CREDIT_CARD
+      Presidio__GermanEntityTypes__7: IBAN_CODE
+      Presidio__GermanEntityTypes__8: URL
+      Presidio__GermanEntityTypes__9: CRYPTO
+      Presidio__GermanEntityTypes__10: MAC_ADDRESS
+      Presidio__GermanEntityTypes__11: DATE_TIME
+      Presidio__GermanEntityTypes__12: MEDICAL_LICENSE
+
+      Presidio__EnglishEntityTypes__0: PERSON
+      Presidio__EnglishEntityTypes__1: LOCATION
+      Presidio__EnglishEntityTypes__2: ORGANIZATION
+      Presidio__EnglishEntityTypes__3: EMAIL_ADDRESS
+      Presidio__EnglishEntityTypes__4: PHONE_NUMBER
+      Presidio__EnglishEntityTypes__5: IP_ADDRESS
+      Presidio__EnglishEntityTypes__6: CREDIT_CARD
+      Presidio__EnglishEntityTypes__7: IBAN_CODE
+      Presidio__EnglishEntityTypes__8: URL
+      Presidio__EnglishEntityTypes__9: CRYPTO
+      Presidio__EnglishEntityTypes__10: MAC_ADDRESS
+      Presidio__EnglishEntityTypes__11: DATE_TIME
+      Presidio__EnglishEntityTypes__12: MEDICAL_LICENSE
+
+      # ---- Presidio: per-entity confidence thresholds (0.0 - 1.0) ---------
+      # A detection is kept only if its score >= the threshold for its type.
+      Presidio__GermanEntityThresholds__PERSON: "0.85"
+      Presidio__GermanEntityThresholds__LOCATION: "0.90"
+      Presidio__GermanEntityThresholds__ORGANIZATION: "0.85"
+      Presidio__GermanEntityThresholds__EMAIL_ADDRESS: "0.40"
+      Presidio__GermanEntityThresholds__PHONE_NUMBER: "0.40"
+      Presidio__GermanEntityThresholds__IP_ADDRESS: "0.40"
+      Presidio__GermanEntityThresholds__CREDIT_CARD: "0.40"
+      Presidio__GermanEntityThresholds__IBAN_CODE: "0.40"
+      Presidio__GermanEntityThresholds__URL: "0.40"
+      Presidio__GermanEntityThresholds__CRYPTO: "0.40"
+      Presidio__GermanEntityThresholds__MAC_ADDRESS: "0.40"
+      Presidio__GermanEntityThresholds__DATE_TIME: "0.40"
+      Presidio__GermanEntityThresholds__MEDICAL_LICENSE: "0.40"
+
+      Presidio__EnglishEntityThresholds__PERSON: "0.85"
+      Presidio__EnglishEntityThresholds__LOCATION: "0.90"
+      Presidio__EnglishEntityThresholds__ORGANIZATION: "0.85"
+      Presidio__EnglishEntityThresholds__EMAIL_ADDRESS: "0.40"
+      Presidio__EnglishEntityThresholds__PHONE_NUMBER: "0.40"
+      Presidio__EnglishEntityThresholds__IP_ADDRESS: "0.40"
+      Presidio__EnglishEntityThresholds__CREDIT_CARD: "0.40"
+      Presidio__EnglishEntityThresholds__IBAN_CODE: "0.40"
+      Presidio__EnglishEntityThresholds__URL: "0.40"
+      Presidio__EnglishEntityThresholds__CRYPTO: "0.40"
+      Presidio__EnglishEntityThresholds__MAC_ADDRESS: "0.40"
+      Presidio__EnglishEntityThresholds__DATE_TIME: "0.40"
+      Presidio__EnglishEntityThresholds__MEDICAL_LICENSE: "0.40"
+
+      # ---- Presidio: allow-list & context (optional) ----------------------
+      # Never-anonymize these exact terms; add more as __1, __2, ...
+      # Presidio__AllowList__0: "PrivacyProxy"
+      # Extra context words that boost detection near them:
+      # Presidio__Context__0: "patient"
+
+      # ---- Mapping (placeholder <-> original TTL, minutes) ----------------
       Mapping__TtlMinutes: "${MAPPING_TTL:-30}"
+
     # Lets the API reach an LLM running on the Docker host (e.g. an SSH-tunnelled
     # Ollama) via http://host.docker.internal:<port>/v1/
     extra_hosts:
@@ -28,6 +129,7 @@ services:
     ports:
       - "${BIND_HOST:-127.0.0.1}:${WEBUI_PORT:-8081}:8080"
     environment:
+      ASPNETCORE_ENVIRONMENT: Production
       ASPNETCORE_HTTP_PORTS: "8080"
     volumes:
       # Same volume as the API: the WebUI writes here, the API hot-reloads it
