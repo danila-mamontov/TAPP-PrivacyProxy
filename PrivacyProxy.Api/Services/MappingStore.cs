@@ -17,12 +17,12 @@ namespace PrivacyProxy.Api.Services;
 public partial class MappingStore : IMappingStore, IDisposable
 {
     /// <summary>
-    /// Maps a normalized original value to its placeholder.
+    /// Maps an original value to its placeholder.
     /// </summary>
     /// <remarks>
-    /// Keys are normalized (case- and surrounding-whitespace-insensitive), so all variants of a value
-    /// (e.g. "Berlin", "berlin", " Berlin ") map to the SAME placeholder, keeping the LLM's coreference
-    /// intact. The placeholder combines an entity type with a hash of the normalized value.
+    /// Matching is exact: each distinct value gets its own placeholder, so it is restored with its
+    /// exact original casing and spacing (the proxy stays transparent). The placeholder combines an
+    /// entity type with a hash of the value.
     /// </remarks>
     private readonly IMemoryCache _originalToPlaceholder;
 
@@ -103,45 +103,35 @@ public partial class MappingStore : IMappingStore, IDisposable
 
     /// <summary>
     /// Retrieves the existing placeholder for the given original value, or creates and stores a new one
-    /// using the specified entity type. Matching is case- and surrounding-whitespace-insensitive, so value
-    /// variants share one placeholder; the first-seen casing is kept for later restoration.
+    /// using the specified entity type. Matching is exact, so the value is later restored with its exact
+    /// original casing and spacing.
     /// </summary>
     /// <param name="entityType">The type of entity to be associated with the placeholder. Cannot be null, empty, or whitespace.</param>
     /// <param name="original">The original value to be mapped to a placeholder. Cannot be null.</param>
-    /// <returns>The placeholder associated with the (normalized) original value, created on first use.</returns>
+    /// <returns>The placeholder associated with the original value, created on first use.</returns>
     public string GetOrCreatePlaceholder(string entityType, string original)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(entityType);
         ArgumentNullException.ThrowIfNull(original);
 
-        // Case-/whitespace-insensitive key so "Berlin", "berlin" and " Berlin " share ONE placeholder
-        // (otherwise the LLM sees different hashes and treats them as different entities).
-        var key = NormalizeKey(original);
-
-        if (_originalToPlaceholder.TryGetValue(key, out string? existing))
+        // Exact key: each distinct value gets its own placeholder, so it is restored 1:1 (the proxy
+        // stays transparent). Identical values still share a placeholder, keeping the LLM's coreference.
+        if (_originalToPlaceholder.TryGetValue(original, out string? existing))
         {
-            // Refresh sliding TTL on both directions, keeping the first-seen original casing.
-            _originalToPlaceholder.Set(key, existing!, SlidingOptions());
-            if (_placeholderToOriginal.TryGetValue(existing!, out string? firstSeen) && firstSeen is not null)
-                _placeholderToOriginal.Set(existing!, firstSeen, SlidingOptions());
+            // Refresh the sliding TTL on both directions.
+            _originalToPlaceholder.Set(original, existing!, SlidingOptions());
+            _placeholderToOriginal.Set(existing!, original, SlidingOptions());
             return existing!;
         }
 
-        var placeholder = $"[{entityType}_{ComputeHash(key)}]";
+        var placeholder = $"[{entityType}_{ComputeHash(original)}]";
 
-        _originalToPlaceholder.Set(key, placeholder, SlidingOptions());
-        // Reverse map keeps the first-seen original (with its casing) for restoration.
+        _originalToPlaceholder.Set(original, placeholder, SlidingOptions());
         _placeholderToOriginal.Set(placeholder, original, SlidingOptions());
 
         Log.Debug("Created placeholder for {Original} ({Placeholder})", original, placeholder);
         return placeholder;
     }
-
-    /// <summary>
-    /// Normalizes an original value into a lookup key so that case- and surrounding-whitespace
-    /// variants map to the SAME placeholder, preserving the LLM's coreference across the conversation.
-    /// </summary>
-    private static string NormalizeKey(string original) => original.Trim().ToLowerInvariant();
 
     private MemoryCacheEntryOptions SlidingOptions() => new() { SlidingExpiration = _ttl };
 

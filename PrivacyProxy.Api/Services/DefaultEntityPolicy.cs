@@ -16,7 +16,9 @@ public class DefaultEntityPolicy(IOptionsMonitor<PresidioOptions> options) : IEn
 {
     /// <summary>
     /// Applies the entity policy by filtering entities based on predefined thresholds
-    /// for the specified language and resolves any overlapping entities.
+    /// for the specified language and resolves any overlapping entities. Entity types without a
+    /// configured per-entity threshold fall back to the global <see cref="PresidioOptions.ScoreThreshold"/>
+    /// rather than being discarded.
     /// </summary>
     /// <param name="entities">A collection of entities to process, each containing details such as entity type, score, and positional indices.</param>
     /// <param name="sourceLanguage">The language of the source text, which determines the applicable entity thresholds.</param>
@@ -32,14 +34,16 @@ public class DefaultEntityPolicy(IOptionsMonitor<PresidioOptions> options) : IEn
         var thresholds = sourceLanguage == Language.German
                             ? currentOptions.GermanEntityThresholds
                             : currentOptions.EnglishEntityThresholds;
-        
-        // Filter the entities based on their confidence scores and language depending on scores.
+
+        // Keep an entity if its score meets the threshold for its type. A type WITHOUT a configured
+        // per-entity threshold falls back to the global ScoreThreshold instead of being dropped, so a
+        // missing entry can never silently leak PII the caller asked to have anonymized.
         var filtered = entities
-                      .Where(e =>
-                                 thresholds.TryGetValue(e.EntityType, out var threshold) &&
-                                 e.Score >= threshold)
+                      .Where(e => e.Score >= (thresholds.TryGetValue(e.EntityType, out var threshold)
+                                                  ? threshold
+                                                  : currentOptions.ScoreThreshold))
                       .ToList();
-        
+
         return ResolveOverlaps(filtered);
     }
 

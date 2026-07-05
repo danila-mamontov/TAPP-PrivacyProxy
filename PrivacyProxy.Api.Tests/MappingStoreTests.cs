@@ -94,34 +94,36 @@ public class MappingStoreTests
     }
 
     [Fact]
-    public void GetOrCreatePlaceholder_CaseInsensitive_SameNormalizedValueSharesPlaceholder()
+    public void GetOrCreatePlaceholder_CaseSensitive_DifferentCasingGetsDifferentPlaceholders()
     {
         // Arrange
         var sut = CreateSut();
 
-        // Act — different casing + surrounding whitespace must collapse to ONE placeholder
+        // Act — matching is exact, so different casing/whitespace are distinct values
         var p1 = sut.GetOrCreatePlaceholder("LOCATION", "Berlin");
         var p2 = sut.GetOrCreatePlaceholder("LOCATION", "berlin");
         var p3 = sut.GetOrCreatePlaceholder("LOCATION", "  BERLIN  ");
 
         // Assert
-        Assert.Equal(p1, p2);
-        Assert.Equal(p1, p3);
-        Assert.Equal(1, sut.PlaceholderCount);
+        Assert.NotEqual(p1, p2);
+        Assert.NotEqual(p1, p3);
+        Assert.NotEqual(p2, p3);
+        Assert.Equal(3, sut.PlaceholderCount);
     }
 
     [Fact]
-    public void Deanonymize_RestoresFirstSeenOriginalCasing()
+    public void Deanonymize_RestoresExactOriginalCasing()
     {
         // Arrange
         var sut = CreateSut();
 
-        // Act — "Berlin" is seen first, then a lowercase variant reuses the same placeholder
-        var placeholder = sut.GetOrCreatePlaceholder("LOCATION", "Berlin");
-        sut.GetOrCreatePlaceholder("LOCATION", "berlin");
+        // Act — each casing variant keeps its own placeholder and its own original value
+        var upper = sut.GetOrCreatePlaceholder("LOCATION", "Berlin");
+        var lower = sut.GetOrCreatePlaceholder("LOCATION", "berlin");
 
-        // Assert — restoration uses the first-seen casing
-        Assert.Equal("Berlin", sut.Deanonymize(placeholder));
+        // Assert — restoration returns each exact original
+        Assert.Equal("Berlin", sut.Deanonymize(upper));
+        Assert.Equal("berlin", sut.Deanonymize(lower));
     }
 
     [Fact]

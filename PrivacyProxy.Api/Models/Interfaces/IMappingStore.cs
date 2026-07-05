@@ -7,8 +7,8 @@ public interface IMappingStore
 {
     /// <summary>
     /// Retrieves an existing placeholder for the specified entity type and original value,
-    /// or creates a new placeholder if none exists. Matching is case- and surrounding-whitespace-insensitive,
-    /// so value variants (e.g. "Berlin"/"berlin") share one placeholder.
+    /// or creates a new placeholder if none exists. Matching is exact, so the value is restored
+    /// with its exact original casing and spacing.
     /// </summary>
     /// <param name="entityType">The type of the entity for which the placeholder is being requested.</param>
     /// <param name="original">The original value to be mapped or represented by the placeholder.</param>

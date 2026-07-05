@@ -155,9 +155,9 @@ public class DefaultEntityPolicyTests
     }
     
     [Fact]
-    public void ApplyUnknownEntityTypeIsFiltered()
+    public void ApplyUnknownEntityTypeAboveGlobalThresholdIsRetained()
     {
-        // Arrange
+        // Arrange - no per-type threshold, so it falls back to the global ScoreThreshold (0.4 default).
         var entity = new PresidioAnalyzerResponse
                      {
                          EntityType = "US_DRIVER_LICENSE",
@@ -165,10 +165,29 @@ public class DefaultEntityPolicyTests
                          Start      = 0,
                          End        = 10
                      };
-        
+
         // Act
         var result = CreateSut().Apply([entity], Language.German, "AC432223");
-        
+
+        // Assert
+        Assert.Single(result);
+    }
+
+    [Fact]
+    public void ApplyUnknownEntityTypeBelowGlobalThresholdIsFiltered()
+    {
+        // Arrange - below the global ScoreThreshold (0.4 default), so still filtered out.
+        var entity = new PresidioAnalyzerResponse
+                     {
+                         EntityType = "US_DRIVER_LICENSE",
+                         Score      = 0.20,
+                         Start      = 0,
+                         End        = 10
+                     };
+
+        // Act
+        var result = CreateSut().Apply([entity], Language.German, "AC432223");
+
         // Assert
         Assert.Empty(result);
     }
