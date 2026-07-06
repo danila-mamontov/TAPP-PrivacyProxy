@@ -68,9 +68,13 @@ builder.Services.AddOptions<MappingOptions>()
        .ValidateOnStart();
 builder.Services.AddSingleton<IValidateOptions<MappingOptions>, MappingOptionsValidator>();
 
-// Add MappingStore to PrivacyProxy for storing mappings between PII and their Pseudonyms
-// Singleton, because we want to have a single session with every mapping for session requests.
-builder.Services.AddSingleton<IMappingStore, MappingStore>();
+// Add MappingStore for mapping PII to placeholders. Scoped (per request): each chat-completion
+// request gets its own, isolated mapping table. The whole round-trip (anonymize -> LLM ->
+// deanonymize) happens within one request, so the mapping lives exactly as long as it is needed,
+// while no state (placeholders, entity type, casing) bleeds between requests or users. Chat
+// completions are stateless (the client resends the full, deanonymized history every turn), so a
+// request-scoped store is sufficient and avoids cross-request contamination.
+builder.Services.AddScoped<IMappingStore, MappingStore>();
 
 // Add StreamingDeanonymizer to PrivacyProxy for deanonymizing text in real-time from LLM responses
 builder.Services.AddScoped<StreamingDeanonymizer>();
