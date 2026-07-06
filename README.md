@@ -79,22 +79,16 @@ settings go in `appsettings.Development.json` (not `appsettings.json`). A typica
   "Llm": {
     "BaseUrl": "http://localhost:11434/v1/",
     "ApiKey": "ollama"
-  },
-
-  "Mapping": {
-    "TtlMinutes": 30
   }
 }
 ```
 
-Only three sections usually matter:
+Two sections usually matter:
 
 - **`Presidio`** — where to reach the analyzer and how strict detection should be. Higher thresholds
   mean fewer false positives but more risk of missing something; the allow-list and context words
   fine-tune what gets detected.
 - **`Llm`** — the OpenAI-compatible model PrivacyProxy forwards the cleaned request to.
-- **`Mapping`** — how many minutes a placeholder is remembered. The timer resets on every use, so
-  active conversations keep working.
 
 ## Running Tests
 
