@@ -111,9 +111,6 @@ services:
       # Extra context words that boost detection near them:
       # Presidio__Context__0: "patient"
 
-      # ---- Mapping (placeholder <-> original TTL, minutes) ----------------
-      Mapping__TtlMinutes: "${MAPPING_TTL:-30}"
-
     # Lets the API reach an LLM running on the Docker host (e.g. an SSH-tunnelled
     # Ollama) via http://host.docker.internal:<port>/v1/
     extra_hosts:

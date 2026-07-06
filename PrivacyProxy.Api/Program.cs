@@ -62,12 +62,6 @@ builder.Services.AddHttpClient<ILlmClient, LlmClient>((sp, client) =>
     client.BaseAddress = new Uri(baseUrl.EndsWith('/') ? baseUrl : baseUrl + "/");
 });
 
-// Add Mapping configuration (TTL for MappingStore entries) and check on startup
-builder.Services.AddOptions<MappingOptions>()
-       .BindConfiguration("Mapping")
-       .ValidateOnStart();
-builder.Services.AddSingleton<IValidateOptions<MappingOptions>, MappingOptionsValidator>();
-
 // Add MappingStore for mapping PII to placeholders. Scoped (per request): each chat-completion
 // request gets its own, isolated mapping table. The whole round-trip (anonymize -> LLM ->
 // deanonymize) happens within one request, so the mapping lives exactly as long as it is needed,

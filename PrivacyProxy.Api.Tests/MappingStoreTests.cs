@@ -1,5 +1,3 @@
-using Microsoft.Extensions.Options;
-using PrivacyProxy.Core.Configuration;
 using PrivacyProxy.Api.Services;
 
 namespace PrivacyProxy.Api.Tests;
@@ -188,64 +186,4 @@ public class MappingStoreTests
             () => CreateSut().GetOrCreatePlaceholder("PERSON", null!));
     }
 
-    [Fact]
-    public void ParameterlessConstructorUsesDefaultTtl()
-    {
-        // Arrange
-        var sut = new MappingStore();
-
-        // Act
-        var placeholder = sut.GetOrCreatePlaceholder("PERSON", "Alice");
-        var result      = sut.Deanonymize(placeholder);
-
-        // Assert - default TTL (30 minutes) keeps the mapping alive
-        Assert.Equal("Alice", result);
-    }
-
-    [Fact]
-    public void Dispose_DoesNotThrow()
-    {
-        // Arrange
-        var sut = new MappingStore();
-        sut.GetOrCreatePlaceholder("PERSON", "Alice");
-
-        // Act & Assert
-        sut.Dispose();
-    }
-
-    [Fact]
-    public async Task EntriesExpireAfterConfiguredTtl()
-    {
-        // Arrange - a very short TTL so the mapping expires almost immediately
-        var options = Options.Create(new MappingOptions { TtlMinutes = 0.0005 }); // ~30ms
-        using var sut = new MappingStore(options);
-
-        // Act
-        var placeholder = sut.GetOrCreatePlaceholder("PERSON", "Alice");
-        await Task.Delay(TimeSpan.FromMilliseconds(200));
-        var result = sut.Deanonymize(placeholder);
-
-        // Assert - the mapping has expired, so the placeholder is left unresolved
-        Assert.Equal(placeholder, result);
-        Assert.Equal(0, sut.PlaceholderCount);
-    }
-
-    [Fact]
-    public async Task AccessWithinTtlKeepsMappingAlive()
-    {
-        // Arrange - a short TTL that gets refreshed by repeated access (sliding expiration)
-        var options = Options.Create(new MappingOptions { TtlMinutes = 0.10 }); // ~6000ms
-        using var sut = new MappingStore(options);
-
-        // Act
-        var placeholder = sut.GetOrCreatePlaceholder("PERSON", "Alice");
-
-        // Repeatedly access the mapping, each time well within the TTL window,
-        // for longer than the configured TTL in total.
-        for (var i = 0; i < 5; i++)
-        {
-            await Task.Delay(TimeSpan.FromMilliseconds(100));
-            Assert.Equal("Alice", sut.Deanonymize(placeholder));
-        }
-    }
 }
