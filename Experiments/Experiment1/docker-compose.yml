@@ -1,0 +1,73 @@
+# Stack for Experiment 1: Presidio Mock + LLM Mock + PrivacyProxy.
+# Fully self-contained ("docker compose up" is enough; no external network).
+#
+# The proxy is configured entirely via environment variables here, so no Presidio
+# tuning files are needed. The mock reports each PII with the dataset's own label;
+# the proxy anonymizes unknown types by falling back to the global ScoreThreshold.
+
+networks:
+  experiment-net:
+    driver: bridge
+
+services:
+  presidio-mock:
+    build:
+      context: .
+      dockerfile: Dockerfile.presidio-mock
+    networks:
+      - experiment-net
+    ports:
+      - "${PRESIDIO_MOCK_PORT:-5002}:5002"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5002/health')"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+
+  llm-mock:
+    build:
+      context: .
+      dockerfile: Dockerfile.llm-mock
+    networks:
+      - experiment-net
+    ports:
+      - "${MOCK_LLM_PORT:-5005}:5005"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5005/health')"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+
+  privacyproxy:
+    image: ghcr.io/plueschtierbaum/privacyproxy:${PRIVACYPROXY_IMAGE_TAG}
+    networks:
+      - experiment-net
+    ports:
+      - "${PROXY_PORT:-8090}:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      # Force the internal port regardless of the pinned image's appsettings.
+      Urls: "http://+:8080"
+      Serilog__MinimumLevel__Default: Information
+
+      # LLM -> the echo mock
+      Llm__BaseUrl: http://llm-mock:5005/v1/
+      Llm__ApiKey: mock
+      Llm__Model: mock
+
+      # Presidio -> the mock. The mock reports each PII with the dataset's own label
+      # (e.g. FIRSTNAME). The proxy has no per-type threshold for those, so they fall
+      # back to the global ScoreThreshold (0) and are all anonymized as [<LABEL>_<hash>].
+      Presidio__AnalyzerUrl: http://presidio-mock:5002
+      Presidio__ScoreThreshold: "0"
+    depends_on:
+      presidio-mock:
+        condition: service_healthy
+      llm-mock:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/8080' || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s

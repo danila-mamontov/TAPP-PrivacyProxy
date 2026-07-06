@@ -1,0 +1,11 @@
+# Minimal container for llm_mock.py -- only needs Flask, nothing to build.
+FROM python:3.12-slim
+
+WORKDIR /app
+RUN pip install --no-cache-dir flask
+
+COPY llm_mock.py .
+
+EXPOSE 5005
+# llm_mock.py defines the Flask "app" but no app.run(), so start it via the CLI.
+CMD ["flask", "--app", "llm_mock", "run", "--host=0.0.0.0", "--port=5005"]
