@@ -55,10 +55,65 @@ public class ChatCompletionService(
         foreach (var message in incoming)
         {
             var anonymizedContent = await presidioService.AnonymizeAsync(message.Content, ct);
-            messages.Add(message with { Content = anonymizedContent });
+            var anonymizedExtensions = await AnonymizeToolCallArgumentsAsync(message.Extensions, ct);
+            messages.Add(message with { Content = anonymizedContent, Extensions = anonymizedExtensions });
         }
 
         return messages;
+    }
+
+    /// <summary>
+    /// Anonymizes the <c>arguments</c> of any assistant <c>tool_calls</c> carried in a message's
+    /// extension data. A real multi-round agent echoes its previous tool call (whose arguments were
+    /// deanonymized on the way out so the tool could run) back in the conversation history. Those
+    /// arguments live in <see cref="ChatMessage.Extensions"/>, not in <c>content</c>, so without this
+    /// step the real PII inside them would reach the LLM on the next round — defeating anonymization.
+    /// Returns a new extensions dictionary with anonymized tool-call arguments, or the original
+    /// reference when there is nothing to anonymize.
+    /// </summary>
+    private async Task<IDictionary<string, JsonElement>?> AnonymizeToolCallArgumentsAsync(
+        IDictionary<string, JsonElement>? extensions, CancellationToken ct)
+    {
+        if (extensions is null
+            || !extensions.TryGetValue("tool_calls", out var toolCalls)
+            || toolCalls.ValueKind != JsonValueKind.Array)
+        {
+            return extensions;
+        }
+
+        var toolCallsArray = JsonNode.Parse(toolCalls.GetRawText())!.AsArray();
+        var changed = false;
+
+        foreach (var toolCall in toolCallsArray)
+        {
+            if (toolCall?["function"]?["arguments"] is not JsonValue argumentsValue
+                || !argumentsValue.TryGetValue<string>(out var argumentsJson)
+                || string.IsNullOrEmpty(argumentsJson))
+            {
+                continue;
+            }
+
+            // The whole arguments JSON string is anonymized as text: Presidio replaces any PII
+            // value with its placeholder, and placeholders contain no JSON-breaking characters,
+            // so the argument object's structure stays intact.
+            var anonymizedArguments = await presidioService.AnonymizeAsync(argumentsJson, ct);
+            if (!string.Equals(anonymizedArguments, argumentsJson, StringComparison.Ordinal))
+            {
+                toolCall["function"]!["arguments"] = anonymizedArguments;
+                changed = true;
+            }
+        }
+
+        if (!changed)
+        {
+            return extensions;
+        }
+
+        var updated = new Dictionary<string, JsonElement>(extensions)
+        {
+            ["tool_calls"] = JsonSerializer.Deserialize<JsonElement>(toolCallsArray.ToJsonString())
+        };
+        return updated;
     }
 
     /// <summary>
