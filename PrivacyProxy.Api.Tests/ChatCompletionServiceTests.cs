@@ -279,6 +279,52 @@ public class ChatCompletionServiceTests
     }
 
     [Fact]
+    public async Task ProcessAsync_AnonymizesToolCallArgumentsInRequestHistory()
+    {
+        // Arrange — a real multi-round agent echoes a prior assistant tool_call back in the history.
+        // Its arguments (in the extension data, not in content) still hold the PII that was
+        // deanonymized on the way out so the tool could run. Those must be re-anonymized before
+        // reaching the LLM, otherwise the placeholder guarantee breaks from round 2 onwards.
+        var (sut, presidio, llm, store) = CreateSut();
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t.Replace("Alice", "[PERSON_abc123]"));
+
+        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+
+        JsonElement? captured = null;
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .Callback<JsonElement, CancellationToken>((req, _) => captured = req)
+           .ReturnsAsync(LlmResponse("ok"));
+
+        var toolCalls = JsonSerializer.SerializeToElement(new object[]
+        {
+            new { function = new { name = "send_email", arguments = "{\"to\":\"Alice\"}" }, id = "call-1", type = "function" }
+        });
+
+        // Act
+        await sut.ProcessAsync(new ChatCompletionRequest
+        {
+            Model    = "llama3",
+            Messages =
+            [
+                new ChatMessage
+                {
+                    Role       = "assistant",
+                    Content    = "",
+                    Extensions = new Dictionary<string, JsonElement> { ["tool_calls"] = toolCalls }
+                }
+            ]
+        });
+
+        // Assert — the forwarded assistant message carries the placeholder, not the real value
+        var messages     = captured!.Value.GetProperty("messages");
+        var toolCallsRaw = messages[1].GetProperty("tool_calls").GetRawText();
+        Assert.Contains("[PERSON_abc123]", toolCallsRaw);
+        Assert.DoesNotContain("Alice", toolCallsRaw);
+    }
+
+    [Fact]
     public async Task ProcessAsync_ExtensionDataIsPreservedInForwardedRequest()
     {
         // Arrange
