@@ -19,6 +19,13 @@ MEM="$HOME/.openclaw/workspace/MEMORY.md"
 ITER=${ITER:-5}
 TO=${TO:-300}
 
+# --- Central LLM config: the ONE place to set the model + provider. ---
+# Exported here so the compose stacks (shell env beats infra/.env) and the
+# control-group model below all use the same values.
+CONFIG="$ROOT/Experiments/model.env"
+[ -f "$CONFIG" ] || { echo "Missing central config: $CONFIG"; exit 1; }
+set -a; source "$CONFIG"; set +a
+
 log(){ echo "[$(date '+%F %T')] $*"; }
 fresh(){ printf '# MEMORY.md\n' > "$MEM"; rm -rf "$HOME/.openclaw/workspace/memory/"* 2>/dev/null;
          rm -f /tmp/exp2_orchestrator.lock /tmp/exp3_orchestrator.lock; }
@@ -47,7 +54,7 @@ log "== 1/3 CONTROL GROUP (ollama-direct, calendar=control) =="
 CALDAV_CAL=control docker compose -f $E2/infra/docker-compose.yml up -d --force-recreate agent-tools >/dev/null 2>&1
 wait_tools; fresh
 $PY2 $E2/orchestrator/experiment.py --iterations $ITER --timeout $TO \
-     --model ollama-direct/openai/gpt-oss-20b --group control > /tmp/run_control.log 2>&1
+     --model ollama-direct/$LLM_MODEL --group control > /tmp/run_control.log 2>&1
 cp "$(latest_csv $E2)" /tmp/result_control.csv 2>/dev/null
 log "   control group done -> /tmp/result_control.csv"
 

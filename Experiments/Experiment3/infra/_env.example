@@ -12,9 +12,9 @@
 # ghcr.io is private -> run `docker login ghcr.io` first (PAT with read:packages).
 PRIVACYPROXY_IMAGE_TAG=db36929a36c0ac6341a6bcc9d189ddac4630e9d5
 
-# --- LLM backend (the recorder forwards to this OpenAI-compatible server) ---
-LLM_MODEL=openai/gpt-oss-20b
-LLM_UPSTREAM=http://134.60.124.43:8000
+# --- LLM backend: set centrally in Experiments/model.env (the ONE place) ---
+# LLM_MODEL and LLM_UPSTREAM live there now; run.sh/run_all.sh load them from
+# there and they override anything set in this file.
 
 # --- Host ports (how you / experiment.py reach the stack from outside) ---
 PROXY_PORT=8080            # PrivacyProxy

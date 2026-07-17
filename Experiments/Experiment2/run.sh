@@ -27,6 +27,8 @@ fi
 set -a
 # shellcheck disable=SC1091
 source infra/.env
+# Central LLM config (model + provider) -- the ONE place; overrides infra/.env.
+[ -f ../model.env ] && source ../model.env
 set +a
 
 # --- 2. orchestrator venv ---
