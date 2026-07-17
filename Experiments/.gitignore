@@ -1,0 +1,5 @@
+# Vendored OpenClaw checkout — has its own .git and is only used to run the gateway
+# container for Experiment 2/3. Not part of this repository.
+/openclaw/
+/charts/
+/diagrams/

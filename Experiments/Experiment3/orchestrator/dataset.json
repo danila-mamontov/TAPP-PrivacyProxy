@@ -1,0 +1,2817 @@
+{
+  "_schema": {
+    "id": "eindeutige Zeilen-ID",
+    "domain": "conversation | email | calendar",
+    "prompt": "the message sent to OpenClaw; contains the REAL PII values inline.",
+    "pii": "Liste [{value,type}] der ECHTEN PII-Werte, die der Presidio-Mock als Ground Truth erkennt",
+    "expect": {
+      "tool": "erwartetes Tool (send_email|create_calendar_event) oder null bei conversation",
+      "args_contains": "{arg: echter Wert} — diese echten Werte MUESSEN in den Tool-Argumenten ankommen (Ebene 2/3)",
+      "reply_contains": "Strings, die in der finalen Agent-Antwort vorkommen muessen (bei conversation der de-anonymisierte echte Wert)",
+      "effect": "mailpit | radicale | null — wo der Nebeneffekt out-of-band verifiziert wird"
+    },
+    "_hinweis": "effects are correlated by a pre-run snapshot of Mailpit/Radicale (new mail to the expected recipient / new event with the expected attendee), so prompts no longer need a correlation token. DATE_TIME is deliberately not used as PII (otherwise the event start time would be anonymized)."
+  },
+  "rows": [
+    {
+      "id": "conv-01",
+      "domain": "conversation",
+      "prompt": "Ich diktiere eine Kontaktnotiz. Die E-Mail-Adresse lautet dennis.itzel@picsysteme.de. Antworte NUR mit dieser E-Mail-Adresse, exakt in dieser Schreibweise, ohne weiteren Text.",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "dennis.itzel@picsysteme.de"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-02",
+      "domain": "conversation",
+      "prompt": "Die Telefonnummer der Zentrale ist +49 721 1234567. Nenne mir NUR diese Nummer zurueck, exakt so wie angegeben.",
+      "pii": [
+        {
+          "value": "+49 721 1234567",
+          "type": "PHONE_NUMBER"
+        },
+        {
+          "value": "Zentrale",
+          "type": "ORGANIZATION"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "+49 721 1234567"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-03",
+      "domain": "conversation",
+      "prompt": "Formuliere einen einzigen hoeflichen Begruessungssatz fuer Frau Anna Berger und verwende ihren vollen Namen darin.",
+      "pii": [
+        {
+          "value": "Anna Berger",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Anna Berger"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-04",
+      "domain": "conversation",
+      "prompt": "Meine IBAN ist DE89 3704 0044 0532 0130 00. Gib sie mir NUR einmal exakt zurueck, ohne weiteren Text.",
+      "pii": [
+        {
+          "value": "DE89 3704 0044 0532 0130 00",
+          "type": "IBAN_CODE"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "DE89 3704 0044 0532 0130 00"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-05",
+      "domain": "conversation",
+      "prompt": "In welcher Stadt sitzt das Buero? Es ist Karlsruhe. Antworte NUR mit dem Stadtnamen.",
+      "pii": [
+        {
+          "value": "Karlsruhe",
+          "type": "LOCATION"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Karlsruhe"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-06",
+      "domain": "conversation",
+      "prompt": "Die Server-IP ist 192.168.10.55. Gib mir NUR diese IP-Adresse exakt zurueck.",
+      "pii": [
+        {
+          "value": "192.168.10.55",
+          "type": "IP_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "192.168.10.55"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-07",
+      "domain": "conversation",
+      "prompt": "Der Arbeitgeber heisst PICSysteme GmbH. Schreibe einen kurzen Satz, in dem dieser Firmenname genau so vorkommt.",
+      "pii": [
+        {
+          "value": "PICSysteme GmbH",
+          "type": "ORGANIZATION"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "PICSysteme GmbH"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-08",
+      "domain": "conversation",
+      "prompt": "Die Kreditkartennummer lautet 4111 1111 1111 1111. Gib sie NUR einmal exakt zurueck, ohne weiteren Text.",
+      "pii": [
+        {
+          "value": "4111 1111 1111 1111",
+          "type": "CREDIT_CARD"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "4111 1111 1111 1111"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-09",
+      "domain": "conversation",
+      "prompt": "Bestaetige mir in einem Satz, dass du den Ansprechpartner Michael Krause notiert hast. Verwende den vollen Namen.",
+      "pii": [
+        {
+          "value": "Michael Krause",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Michael Krause"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-10",
+      "domain": "conversation",
+      "prompt": "Notiere die Kontaktadresse anna.berger@example.org und gib sie mir NUR exakt zurueck.",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "anna.berger@example.org"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-11",
+      "domain": "conversation",
+      "prompt": "Die Durchwahl ist +49 30 9876543. Antworte NUR mit dieser Nummer, exakt so.",
+      "pii": [
+        {
+          "value": "+49 30 9876543",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "+49 30 9876543"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-12",
+      "domain": "conversation",
+      "prompt": "Der interne Bericht liegt unter https://intern.picsysteme.de/report. Gib mir NUR diese URL exakt zurueck.",
+      "pii": [
+        {
+          "value": "https://intern.picsysteme.de/report",
+          "type": "URL"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "https://intern.picsysteme.de/report"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-13",
+      "domain": "conversation",
+      "prompt": "Schreibe einen Satz, der bestaetigt, dass Lisa Wagner als Teilnehmerin eingetragen ist. Verwende den vollen Namen.",
+      "pii": [
+        {
+          "value": "Lisa Wagner",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Lisa Wagner"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-14",
+      "domain": "conversation",
+      "prompt": "Der Standort des Rechenzentrums ist Berlin. Antworte NUR mit diesem Stadtnamen.",
+      "pii": [
+        {
+          "value": "Berlin",
+          "type": "LOCATION"
+        },
+        {
+          "value": "Rechenzentrum",
+          "type": "ORGANIZATION"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Berlin"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-15",
+      "domain": "conversation",
+      "prompt": "Notiere die Adresse michael.krause@firma.de und gib sie mir NUR exakt zurueck.",
+      "pii": [
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "michael.krause@firma.de"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-16",
+      "domain": "conversation",
+      "prompt": "Meine zweite IBAN ist DE12 5001 0517 0648 4898 90. Gib sie NUR einmal exakt zurueck.",
+      "pii": [
+        {
+          "value": "DE12 5001 0517 0648 4898 90",
+          "type": "IBAN_CODE"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "DE12 5001 0517 0648 4898 90"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-17",
+      "domain": "conversation",
+      "prompt": "Die MAC-Adresse des Geraets ist 00:1A:2B:3C:4D:5E. Gib sie mir NUR exakt zurueck.",
+      "pii": [
+        {
+          "value": "00:1A:2B:3C:4D:5E",
+          "type": "MAC_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "00:1A:2B:3C:4D:5E"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-18",
+      "domain": "conversation",
+      "prompt": "Die Mobilnummer ist +49 151 22233344. Antworte NUR mit dieser Nummer, exakt so.",
+      "pii": [
+        {
+          "value": "+49 151 22233344",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "+49 151 22233344"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-19",
+      "domain": "conversation",
+      "prompt": "Bestaetige in einem Satz, dass Thomas Schmidt der Projektleiter ist. Verwende den vollen Namen.",
+      "pii": [
+        {
+          "value": "Thomas Schmidt",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Thomas Schmidt"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-20",
+      "domain": "conversation",
+      "prompt": "Notiere die Adresse lisa.wagner@web.de und gib sie mir NUR exakt zurueck.",
+      "pii": [
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "lisa.wagner@web.de"
+        ],
+        "effect": null
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-01",
+      "domain": "email",
+      "prompt": "Schreibe eine E-Mail an dennis.itzel@picsysteme.de mit dem Betreff 'Statusupdate' und dem Inhalt: Hallo, wie geht es Ihnen?",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-02",
+      "domain": "email",
+      "prompt": "Sende eine kurze Erinnerung per E-Mail an anna.berger@example.org. Betreff 'Erinnerung', Text: Bitte denken Sie an das Meeting.",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-03",
+      "domain": "email",
+      "prompt": "Verfasse eine E-Mail an michael.krause@firma.de, Betreff 'Angebot', Inhalt: Anbei unser Angebot.",
+      "pii": [
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-04",
+      "domain": "email",
+      "prompt": "Schicke eine E-Mail an lisa.wagner@web.de mit Betreff 'Rueckfrage' und Text: Koennen wir telefonieren?",
+      "pii": [
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-05",
+      "domain": "email",
+      "prompt": "Schreibe eine E-Mail an thomas.schmidt@example.com, Betreff 'Protokoll', Inhalt: Das Protokoll ist fertig.",
+      "pii": [
+        {
+          "value": "thomas.schmidt@example.com",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "thomas.schmidt@example.com"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-06",
+      "domain": "email",
+      "prompt": "Sende eine E-Mail an julia.meyer@example.org, Betreff 'Termin', Text: Passt Ihnen naechste Woche?",
+      "pii": [
+        {
+          "value": "julia.meyer@example.org",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "naechste Woche",
+          "type": "DATE_TIME"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "julia.meyer@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-07",
+      "domain": "email",
+      "prompt": "Schreibe eine E-Mail an dennis.itzel@picsysteme.de und richte im Text herzliche Gruesse von Anna Berger aus. Betreff 'Gruss'.",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "Anna Berger",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-08",
+      "domain": "email",
+      "prompt": "Verfasse eine E-Mail an michael.krause@firma.de. Nenne im Text die Rueckrufnummer +49 721 1234567. Betreff 'Rueckruf'.",
+      "pii": [
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "+49 721 1234567",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-09",
+      "domain": "email",
+      "prompt": "Sende eine E-Mail an anna.berger@example.org, Betreff 'Bankdaten', Text: Unsere IBAN lautet DE89 3704 0044 0532 0130 00.",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "DE89 3704 0044 0532 0130 00",
+          "type": "IBAN_CODE"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-10",
+      "domain": "email",
+      "prompt": "Schreibe eine E-Mail an info@picsysteme.de, Betreff 'Anfrage', Inhalt: Bitte um ein Angebot.",
+      "pii": [
+        {
+          "value": "info@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "info@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-11",
+      "domain": "email",
+      "prompt": "Schicke eine E-Mail an lisa.wagner@web.de, Betreff 'Einladung', Text: Sie sind herzlich eingeladen.",
+      "pii": [
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-12",
+      "domain": "email",
+      "prompt": "Verfasse eine E-Mail an dennis.itzel@picsysteme.de, Betreff 'Dokument', Inhalt: Das Dokument liegt bei.",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-13",
+      "domain": "email",
+      "prompt": "Sende eine E-Mail an anna.berger@example.org, Betreff 'Nachfrage', Text: Gibt es Neuigkeiten?",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-14",
+      "domain": "email",
+      "prompt": "Schreibe eine E-Mail an support@musterfirma.de, Betreff 'Stoerung', Inhalt: Bitte um Hilfe beim Login.",
+      "pii": [
+        {
+          "value": "support@musterfirma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "support@musterfirma.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-15",
+      "domain": "email",
+      "prompt": "Verfasse eine E-Mail an michael.krause@firma.de und erwaehne im Text den Ansprechpartner Thomas Schmidt. Betreff 'Kontakt'.",
+      "pii": [
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "Thomas Schmidt",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-16",
+      "domain": "email",
+      "prompt": "Sende eine E-Mail an julia.meyer@example.org, Betreff 'Adresse', Text: Das Buero ist in Karlsruhe.",
+      "pii": [
+        {
+          "value": "julia.meyer@example.org",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "Karlsruhe",
+          "type": "LOCATION"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "julia.meyer@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-17",
+      "domain": "email",
+      "prompt": "Schreibe eine E-Mail an thomas.schmidt@example.com, Betreff 'Server', Inhalt: Die IP ist 192.168.10.55.",
+      "pii": [
+        {
+          "value": "thomas.schmidt@example.com",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "192.168.10.55",
+          "type": "IP_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "thomas.schmidt@example.com"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-18",
+      "domain": "email",
+      "prompt": "Schicke eine E-Mail an lisa.wagner@web.de, Betreff 'Meeting', Text: Wir sehen uns morgen.",
+      "pii": [
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "morgen",
+          "type": "DATE_TIME"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-19",
+      "domain": "email",
+      "prompt": "Verfasse eine E-Mail an dennis.itzel@picsysteme.de, Betreff 'Freigabe', Inhalt: Bitte um Ihre Freigabe.",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "mail-20",
+      "domain": "email",
+      "prompt": "Sende eine E-Mail an anna.berger@example.org, Betreff 'Danke', Text: Vielen Dank fuer Ihre Hilfe.",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-01",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Projektbesprechung' am 2026-07-20 um 10:00 Uhr fuer eine Stunde ein und lade dennis.itzel@picsysteme.de als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-07-20",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "10:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-02",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Zahnarzt' am 2026-07-22 um 09:30 Uhr an. Schreibe in die Beschreibung genau: Patient Anna Berger.",
+      "pii": [
+        {
+          "value": "2026-07-22",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "09:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Anna Berger",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Anna Berger"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-03",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Kickoff' am 2026-07-23 um 14:00 Uhr ein und lade michael.krause@firma.de als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-07-23",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "14:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-04",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Rueckruf' am 2026-07-24 um 11:00 Uhr an. Schreibe in die Beschreibung genau: Nummer +49 721 1234567.",
+      "pii": [
+        {
+          "value": "2026-07-24",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "11:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "+49 721 1234567",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "+49 721 1234567"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-05",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Workshop' am 2026-07-27 um 09:00 Uhr fuer zwei Stunden ein und lade lisa.wagner@web.de als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-07-27",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "09:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-06",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Interview' am 2026-07-28 um 15:30 Uhr an. Schreibe in die Beschreibung genau: Kandidat Thomas Schmidt.",
+      "pii": [
+        {
+          "value": "2026-07-28",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "15:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Thomas Schmidt",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Thomas Schmidt"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-07",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Review' am 2026-07-29 um 13:00 Uhr ein und lade anna.berger@example.org als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-07-29",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "13:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-08",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Abrechnung' am 2026-07-30 um 10:30 Uhr an. Schreibe in die Beschreibung genau: IBAN DE89 3704 0044 0532 0130 00.",
+      "pii": [
+        {
+          "value": "2026-07-30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "10:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "DE89 3704 0044 0532 0130 00",
+          "type": "IBAN_CODE"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "DE89 3704 0044 0532 0130 00"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-09",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Abstimmung' am 2026-07-31 um 16:00 Uhr ein und lade julia.meyer@example.org als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-07-31",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "16:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "julia.meyer@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "julia.meyer@example.org"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-10",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Notiz' am 2026-08-03 um 08:30 Uhr an. Schreibe in die Beschreibung genau: Ansprechpartner Michael Krause.",
+      "pii": [
+        {
+          "value": "2026-08-03",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "08:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Michael Krause",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Michael Krause"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-11",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Call' am 2026-08-04 um 11:15 Uhr ein und lade thomas.schmidt@example.com als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-08-04",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "11:15",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "thomas.schmidt@example.com",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "thomas.schmidt@example.com"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-12",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Uebergabe' am 2026-08-05 um 14:45 Uhr an. Schreibe in die Beschreibung genau: Empfaengerin Lisa Wagner.",
+      "pii": [
+        {
+          "value": "2026-08-05",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "14:45",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Lisa Wagner",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Lisa Wagner"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-13",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Planung' am 2026-08-06 um 09:00 Uhr ein und lade dennis.itzel@picsysteme.de als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-08-06",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "09:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-14",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Besichtigung' am 2026-08-07 um 10:00 Uhr an. Schreibe in die Beschreibung genau: Ort Karlsruhe.",
+      "pii": [
+        {
+          "value": "2026-08-07",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "10:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Karlsruhe",
+          "type": "LOCATION"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Karlsruhe"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-15",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Sync' am 2026-08-10 um 15:00 Uhr ein und lade michael.krause@firma.de als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-08-10",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "15:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-16",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Gespraech' am 2026-08-11 um 13:30 Uhr an. Schreibe in die Beschreibung genau: Teilnehmerin Julia Meyer.",
+      "pii": [
+        {
+          "value": "2026-08-11",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "13:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Julia Meyer",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Julia Meyer"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-17",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Demo' am 2026-08-12 um 11:00 Uhr ein und lade anna.berger@example.org als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-08-12",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "11:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-18",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Hotline' am 2026-08-13 um 09:45 Uhr an. Schreibe in die Beschreibung genau: Durchwahl +49 30 9876543.",
+      "pii": [
+        {
+          "value": "2026-08-13",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "09:45",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "+49 30 9876543",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "+49 30 9876543"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-19",
+      "domain": "calendar",
+      "prompt": "Trage einen Termin 'Abschluss' am 2026-08-14 um 16:30 Uhr ein und lade lisa.wagner@web.de als Teilnehmer ein.",
+      "pii": [
+        {
+          "value": "2026-08-14",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "16:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "cal-20",
+      "domain": "calendar",
+      "prompt": "Lege einen Termin 'Kontaktpflege' am 2026-08-17 um 10:15 Uhr an. Schreibe in die Beschreibung genau: Kunde Anna Berger.",
+      "pii": [
+        {
+          "value": "2026-08-17",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "10:15",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Anna Berger",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Anna Berger"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "de"
+    },
+    {
+      "id": "conv-01-en",
+      "domain": "conversation",
+      "prompt": "I'm dictating a contact note. The email address is dennis.itzel@picsysteme.de. Reply with ONLY this email address, exactly as written, with no other text.",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "dennis.itzel@picsysteme.de"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-02-en",
+      "domain": "conversation",
+      "prompt": "The main office phone number is +49 721 1234567. Give me back ONLY this number, exactly as provided.",
+      "pii": [
+        {
+          "value": "+49 721 1234567",
+          "type": "PHONE_NUMBER"
+        },
+        {
+          "value": "main office",
+          "type": "ORGANIZATION"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "+49 721 1234567"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-03-en",
+      "domain": "conversation",
+      "prompt": "Write a single polite greeting sentence for Ms Anna Berger and use her full name in it.",
+      "pii": [
+        {
+          "value": "Anna Berger",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Anna Berger"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-04-en",
+      "domain": "conversation",
+      "prompt": "My IBAN is DE89 3704 0044 0532 0130 00. Return it to me ONLY once, exactly, with no other text.",
+      "pii": [
+        {
+          "value": "DE89 3704 0044 0532 0130 00",
+          "type": "IBAN_CODE"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "DE89 3704 0044 0532 0130 00"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-05-en",
+      "domain": "conversation",
+      "prompt": "In which city is the office? It is Karlsruhe. Reply with ONLY the city name.",
+      "pii": [
+        {
+          "value": "Karlsruhe",
+          "type": "LOCATION"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Karlsruhe"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-06-en",
+      "domain": "conversation",
+      "prompt": "The server IP is 192.168.10.55. Give me back ONLY this IP address, exactly.",
+      "pii": [
+        {
+          "value": "192.168.10.55",
+          "type": "IP_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "192.168.10.55"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-07-en",
+      "domain": "conversation",
+      "prompt": "The employer is called PICSysteme GmbH. Write a short sentence in which this company name appears exactly.",
+      "pii": [
+        {
+          "value": "PICSysteme GmbH",
+          "type": "ORGANIZATION"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "PICSysteme GmbH"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-08-en",
+      "domain": "conversation",
+      "prompt": "The credit card number is 4111 1111 1111 1111. Return it ONLY once, exactly, with no other text.",
+      "pii": [
+        {
+          "value": "4111 1111 1111 1111",
+          "type": "CREDIT_CARD"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "4111 1111 1111 1111"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-09-en",
+      "domain": "conversation",
+      "prompt": "Confirm in one sentence that you have noted the contact person Michael Krause. Use the full name.",
+      "pii": [
+        {
+          "value": "Michael Krause",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Michael Krause"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-10-en",
+      "domain": "conversation",
+      "prompt": "Note the contact address anna.berger@example.org and give it back to me ONLY, exactly.",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "anna.berger@example.org"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-11-en",
+      "domain": "conversation",
+      "prompt": "The extension is +49 30 9876543. Reply with ONLY this number, exactly.",
+      "pii": [
+        {
+          "value": "+49 30 9876543",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "+49 30 9876543"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-12-en",
+      "domain": "conversation",
+      "prompt": "The internal report is at https://intern.picsysteme.de/report. Give me back ONLY this URL, exactly.",
+      "pii": [
+        {
+          "value": "https://intern.picsysteme.de/report",
+          "type": "URL"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "https://intern.picsysteme.de/report"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-13-en",
+      "domain": "conversation",
+      "prompt": "Write a sentence confirming that Lisa Wagner is registered as a participant. Use the full name.",
+      "pii": [
+        {
+          "value": "Lisa Wagner",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Lisa Wagner"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-14-en",
+      "domain": "conversation",
+      "prompt": "The data center location is Berlin. Reply with ONLY this city name.",
+      "pii": [
+        {
+          "value": "Berlin",
+          "type": "LOCATION"
+        },
+        {
+          "value": "data center",
+          "type": "ORGANIZATION"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Berlin"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-15-en",
+      "domain": "conversation",
+      "prompt": "Note the address michael.krause@firma.de and give it back to me ONLY, exactly.",
+      "pii": [
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "michael.krause@firma.de"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-16-en",
+      "domain": "conversation",
+      "prompt": "My second IBAN is DE12 5001 0517 0648 4898 90. Return it ONLY once, exactly.",
+      "pii": [
+        {
+          "value": "DE12 5001 0517 0648 4898 90",
+          "type": "IBAN_CODE"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "DE12 5001 0517 0648 4898 90"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-17-en",
+      "domain": "conversation",
+      "prompt": "The device's MAC address is 00:1A:2B:3C:4D:5E. Give it back to me ONLY, exactly.",
+      "pii": [
+        {
+          "value": "00:1A:2B:3C:4D:5E",
+          "type": "MAC_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "00:1A:2B:3C:4D:5E"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-18-en",
+      "domain": "conversation",
+      "prompt": "The mobile number is +49 151 22233344. Reply with ONLY this number, exactly.",
+      "pii": [
+        {
+          "value": "+49 151 22233344",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "+49 151 22233344"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-19-en",
+      "domain": "conversation",
+      "prompt": "Confirm in one sentence that Thomas Schmidt is the project lead. Use the full name.",
+      "pii": [
+        {
+          "value": "Thomas Schmidt",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "Thomas Schmidt"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "conv-20-en",
+      "domain": "conversation",
+      "prompt": "Note the address lisa.wagner@web.de and give it back to me ONLY, exactly.",
+      "pii": [
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": null,
+        "args_contains": {},
+        "reply_contains": [
+          "lisa.wagner@web.de"
+        ],
+        "effect": null
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-01-en",
+      "domain": "email",
+      "prompt": "Write an email to dennis.itzel@picsysteme.de with the subject 'Status update' and the body: Hello, how are you?",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-02-en",
+      "domain": "email",
+      "prompt": "Please send a short reminder by email to anna.berger@example.org. Subject 'Reminder', text: Please remember the meeting.",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-03-en",
+      "domain": "email",
+      "prompt": "Compose an email to michael.krause@firma.de, subject 'Offer', body: Please find our offer attached.",
+      "pii": [
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-04-en",
+      "domain": "email",
+      "prompt": "Send an email to lisa.wagner@web.de with subject 'Question' and text: Can we talk on the phone?",
+      "pii": [
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-05-en",
+      "domain": "email",
+      "prompt": "Write an email to thomas.schmidt@example.com, subject 'Minutes', body: The minutes are ready.",
+      "pii": [
+        {
+          "value": "thomas.schmidt@example.com",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "thomas.schmidt@example.com"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-06-en",
+      "domain": "email",
+      "prompt": "Send an email to julia.meyer@example.org, subject 'Appointment', text: Does next week work for you?",
+      "pii": [
+        {
+          "value": "julia.meyer@example.org",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "next week",
+          "type": "DATE_TIME"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "julia.meyer@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-07-en",
+      "domain": "email",
+      "prompt": "Write an email to dennis.itzel@picsysteme.de and pass on warm regards from Anna Berger in the text. Subject 'Greeting'.",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "Anna Berger",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-08-en",
+      "domain": "email",
+      "prompt": "Compose an email to michael.krause@firma.de. Mention the callback number +49 721 1234567 in the text. Subject 'Callback'.",
+      "pii": [
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "+49 721 1234567",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-09-en",
+      "domain": "email",
+      "prompt": "Send an email to anna.berger@example.org, subject 'Bank details', text: Our IBAN is DE89 3704 0044 0532 0130 00.",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "DE89 3704 0044 0532 0130 00",
+          "type": "IBAN_CODE"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-10-en",
+      "domain": "email",
+      "prompt": "Write an email to info@picsysteme.de, subject 'Inquiry', body: Please send us a quote.",
+      "pii": [
+        {
+          "value": "info@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "info@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-11-en",
+      "domain": "email",
+      "prompt": "Send an email to lisa.wagner@web.de, subject 'Invitation', text: You are warmly invited.",
+      "pii": [
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-12-en",
+      "domain": "email",
+      "prompt": "Compose an email to dennis.itzel@picsysteme.de, subject 'Document', body: The document is attached.",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-13-en",
+      "domain": "email",
+      "prompt": "Send an email to anna.berger@example.org, subject 'Follow-up', text: Any news?",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-14-en",
+      "domain": "email",
+      "prompt": "Write an email to support@musterfirma.de, subject 'Issue', body: Please help with the login.",
+      "pii": [
+        {
+          "value": "support@musterfirma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "support@musterfirma.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-15-en",
+      "domain": "email",
+      "prompt": "Compose an email to michael.krause@firma.de and mention the contact person Thomas Schmidt in the text. Subject 'Contact'.",
+      "pii": [
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "Thomas Schmidt",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-16-en",
+      "domain": "email",
+      "prompt": "Send an email to julia.meyer@example.org, subject 'Address', text: The office is in Karlsruhe.",
+      "pii": [
+        {
+          "value": "julia.meyer@example.org",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "Karlsruhe",
+          "type": "LOCATION"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "julia.meyer@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-17-en",
+      "domain": "email",
+      "prompt": "Write an email to thomas.schmidt@example.com, subject 'Server', body: The IP is 192.168.10.55.",
+      "pii": [
+        {
+          "value": "thomas.schmidt@example.com",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "192.168.10.55",
+          "type": "IP_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "thomas.schmidt@example.com"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-18-en",
+      "domain": "email",
+      "prompt": "Send an email to lisa.wagner@web.de, subject 'Meeting', text: See you tomorrow.",
+      "pii": [
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        },
+        {
+          "value": "tomorrow",
+          "type": "DATE_TIME"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-19-en",
+      "domain": "email",
+      "prompt": "Compose an email to dennis.itzel@picsysteme.de, subject 'Approval', body: Please give your approval.",
+      "pii": [
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "mail-20-en",
+      "domain": "email",
+      "prompt": "Send an email to anna.berger@example.org, subject 'Thanks', text: Thank you very much for your help.",
+      "pii": [
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "send_email",
+        "args_contains": {
+          "to": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "mailpit"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-01-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Project meeting' on 2026-07-20 at 10:00 for one hour and invite dennis.itzel@picsysteme.de as a participant.",
+      "pii": [
+        {
+          "value": "2026-07-20",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "10:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-02-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Dentist' on 2026-07-22 at 09:30. Write exactly this in the description: Patient Anna Berger.",
+      "pii": [
+        {
+          "value": "2026-07-22",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "09:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Anna Berger",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Anna Berger"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-03-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Kickoff' on 2026-07-23 at 14:00 and invite michael.krause@firma.de as a participant.",
+      "pii": [
+        {
+          "value": "2026-07-23",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "14:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-04-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Callback' on 2026-07-24 at 11:00. Write exactly this in the description: Number +49 721 1234567.",
+      "pii": [
+        {
+          "value": "2026-07-24",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "11:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "+49 721 1234567",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "+49 721 1234567"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-05-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Workshop' on 2026-07-27 at 09:00 for two hours and invite lisa.wagner@web.de as a participant.",
+      "pii": [
+        {
+          "value": "2026-07-27",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "09:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-06-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Interview' on 2026-07-28 at 15:30. Write exactly this in the description: Candidate Thomas Schmidt.",
+      "pii": [
+        {
+          "value": "2026-07-28",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "15:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Thomas Schmidt",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Thomas Schmidt"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-07-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Review' on 2026-07-29 at 13:00 and invite anna.berger@example.org as a participant.",
+      "pii": [
+        {
+          "value": "2026-07-29",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "13:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-08-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Billing' on 2026-07-30 at 10:30. Write exactly this in the description: IBAN DE89 3704 0044 0532 0130 00.",
+      "pii": [
+        {
+          "value": "2026-07-30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "10:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "DE89 3704 0044 0532 0130 00",
+          "type": "IBAN_CODE"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "DE89 3704 0044 0532 0130 00"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-09-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Coordination' on 2026-07-31 at 16:00 and invite julia.meyer@example.org as a participant.",
+      "pii": [
+        {
+          "value": "2026-07-31",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "16:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "julia.meyer@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "julia.meyer@example.org"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-10-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Note' on 2026-08-03 at 08:30. Write exactly this in the description: Contact person Michael Krause.",
+      "pii": [
+        {
+          "value": "2026-08-03",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "08:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Michael Krause",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Michael Krause"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-11-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Call' on 2026-08-04 at 11:15 and invite thomas.schmidt@example.com as a participant.",
+      "pii": [
+        {
+          "value": "2026-08-04",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "11:15",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "thomas.schmidt@example.com",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "thomas.schmidt@example.com"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-12-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Handover' on 2026-08-05 at 14:45. Write exactly this in the description: Recipient Lisa Wagner.",
+      "pii": [
+        {
+          "value": "2026-08-05",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "14:45",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Lisa Wagner",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Lisa Wagner"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-13-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Planning' on 2026-08-06 at 09:00 and invite dennis.itzel@picsysteme.de as a participant.",
+      "pii": [
+        {
+          "value": "2026-08-06",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "09:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "dennis.itzel@picsysteme.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "dennis.itzel@picsysteme.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-14-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Viewing' on 2026-08-07 at 10:00. Write exactly this in the description: Location Karlsruhe.",
+      "pii": [
+        {
+          "value": "2026-08-07",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "10:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Karlsruhe",
+          "type": "LOCATION"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Karlsruhe"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-15-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Sync' on 2026-08-10 at 15:00 and invite michael.krause@firma.de as a participant.",
+      "pii": [
+        {
+          "value": "2026-08-10",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "15:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "michael.krause@firma.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "michael.krause@firma.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-16-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Conversation' on 2026-08-11 at 13:30. Write exactly this in the description: Participant Julia Meyer.",
+      "pii": [
+        {
+          "value": "2026-08-11",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "13:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Julia Meyer",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Julia Meyer"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-17-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Demo' on 2026-08-12 at 11:00 and invite anna.berger@example.org as a participant.",
+      "pii": [
+        {
+          "value": "2026-08-12",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "11:00",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "anna.berger@example.org",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "anna.berger@example.org"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-18-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Hotline' on 2026-08-13 at 09:45. Write exactly this in the description: Extension +49 30 9876543.",
+      "pii": [
+        {
+          "value": "2026-08-13",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "09:45",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "+49 30 9876543",
+          "type": "PHONE_NUMBER"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "+49 30 9876543"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-19-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Closing' on 2026-08-14 at 16:30 and invite lisa.wagner@web.de as a participant.",
+      "pii": [
+        {
+          "value": "2026-08-14",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "16:30",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "lisa.wagner@web.de",
+          "type": "EMAIL_ADDRESS"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "attendee": "lisa.wagner@web.de"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    },
+    {
+      "id": "cal-20-en",
+      "domain": "calendar",
+      "prompt": "Create an appointment 'Contact care' on 2026-08-17 at 10:15. Write exactly this in the description: Customer Anna Berger.",
+      "pii": [
+        {
+          "value": "2026-08-17",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "10:15",
+          "type": "DATE_TIME"
+        },
+        {
+          "value": "Anna Berger",
+          "type": "PERSON"
+        }
+      ],
+      "expect": {
+        "tool": "create_calendar_event",
+        "args_contains": {
+          "description": "Anna Berger"
+        },
+        "reply_contains": [],
+        "effect": "radicale"
+      },
+      "lang": "en"
+    }
+  ]
+}

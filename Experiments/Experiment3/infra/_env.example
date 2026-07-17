@@ -1,0 +1,39 @@
+# Copy this file to ".env" and adjust it. ".env" itself is gitignored.
+# docker compose reads ".env" automatically; run.sh also exports it for the
+# orchestrator, so the compose stack and experiment.py always agree.
+#
+# Experiment 3 uses the REAL Presidio (not the mock). Same host ports as Exp2, so
+# do NOT run both stacks at the same time.
+
+# --- PrivacyProxy image (the system under test) ---
+# Pin a FIXED commit SHA (not the floating "dev" tag) so a run stays reproducible.
+# Tags are full commit hashes WITHOUT a prefix. Available tags:
+# https://github.com/plueschtierbaum/OpenClaw-PrivacyProxy/pkgs/container/privacyproxy
+# ghcr.io is private -> run `docker login ghcr.io` first (PAT with read:packages).
+PRIVACYPROXY_IMAGE_TAG=db36929a36c0ac6341a6bcc9d189ddac4630e9d5
+
+# --- LLM backend (the recorder forwards to this OpenAI-compatible server) ---
+LLM_MODEL=openai/gpt-oss-20b
+LLM_UPSTREAM=http://134.60.124.43:8000
+
+# --- Host ports (how you / experiment.py reach the stack from outside) ---
+PROXY_PORT=8080            # PrivacyProxy
+PRESIDIO_PORT=5002         # REAL Presidio /analyze (published as 5002 -> container 3000)
+RECORDER_PORT=8000         # llm-recorder /log (what the LLM saw = level 1)
+TOOLS_PORT=3100            # agent-tools MCP /last (tool arguments = level 2/3)
+MAILPIT_SMTP_PORT=1025     # SMTP the mail tool sends to
+MAILPIT_UI_PORT=8025       # Mailpit REST API + web UI
+CALDAV_PORT=5232           # Radicale CalDAV
+CALENDAR_VIEWER_PORT=8090  # read-only HTML calendar viewer
+
+# --- Calendar name in Radicale (one per constellation: control / exp2 / exp3) ---
+CALDAV_CAL=exp3
+
+# --- OpenClaw (external: gateway container + the agent-tools container name) ---
+OPENCLAW_CONTAINER=openclaw-openclaw-gateway-1
+AGENT_TOOLS_CONTAINER=exp3-agent-tools
+
+# --- Orchestrator defaults (can still be overridden on the command line) ---
+GROUP=exp3-real            # CSV label for this constellation
+ITERATIONS=1               # repetitions per dataset row
+AGENT_TIMEOUT=180          # seconds per agent turn

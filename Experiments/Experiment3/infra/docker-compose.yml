@@ -1,0 +1,182 @@
+name: exp3-infra
+
+# Experiment 3 = EXACTLY like Experiment 2, but with the REAL Presidio instead of
+# the value-matching mock. This additionally measures Presidio's real detection
+# (false negatives = real PII it does NOT find -> level-1 leak; false positives =
+# non-PII it anonymizes by mistake). Dataset, OpenClaw, tools and orchestrator are
+# identical; the orchestrator tells the analyzer NOTHING about the PII (no /set-pii)
+# -> Presidio must detect it on its own.
+#
+# Same host ports as Exp2 -> do NOT run both stacks at the same time. Bring exp2-infra
+# down first, then exp3-infra up. OpenClaw stays on host.docker.internal:8080 (now the
+# Exp3 proxy) and :3100 (agent-tools). All configuration comes from ".env" (copy
+# "_env.example" to ".env" first).
+
+services:
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: exp3-mailpit
+    restart: unless-stopped
+    ports:
+      - "${MAILPIT_SMTP_PORT:-1025}:1025"
+      - "${MAILPIT_UI_PORT:-8025}:8025"
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: "true"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+      MP_MAX_MESSAGES: "0"
+
+  radicale:
+    image: tomsquest/docker-radicale:latest
+    container_name: exp3-radicale
+    restart: unless-stopped
+    ports:
+      - "${CALDAV_PORT:-5232}:5232"
+    environment:
+      TAKE_FILE_OWNERSHIP: "true"
+    volumes:
+      - ./radicale/config:/config:ro
+      - radicale-data:/data
+
+  # REAL Presidio (Microsoft Analyzer + de/en spaCy + transformer NER). The image is
+  # built from the project's Presidio directory (already present as
+  # presidio-presidio-analyzer:latest -> cached, no re-download). The container
+  # listens on 3000; the proxy reaches it by service name presidio:3000.
+  presidio:
+    image: presidio-presidio-analyzer:latest
+    build:
+      context: ../../../Presidio
+      dockerfile: Dockerfile
+    container_name: exp3-presidio
+    restart: unless-stopped
+    ports:
+      - "${PRESIDIO_PORT:-5002}:3000"
+
+  calendar-viewer:
+    build:
+      context: .
+      dockerfile: Dockerfile.calendar-viewer
+    container_name: exp3-calendar-viewer
+    restart: unless-stopped
+    ports:
+      - "${CALENDAR_VIEWER_PORT:-8090}:5000"
+    depends_on:
+      - radicale
+    environment:
+      CALDAV_URL: "http://radicale:5232/"
+      CALDAV_USER: test
+      CALDAV_PASS: test
+
+  agent-tools:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent-tools
+    container_name: exp3-agent-tools
+    restart: unless-stopped
+    ports:
+      - "${TOOLS_PORT:-3100}:3100"
+    depends_on:
+      - mailpit
+      - radicale
+    environment:
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      CALDAV_URL: "http://radicale:5232/"
+      CALDAV_USER: test
+      CALDAV_PASS: test
+      CALDAV_CAL: "${CALDAV_CAL:-exp3}"
+
+  llm-recorder:
+    build:
+      context: .
+      dockerfile: Dockerfile.llm-recorder
+    container_name: exp3-llm-recorder
+    restart: unless-stopped
+    ports:
+      - "${RECORDER_PORT:-8000}:8000"
+    environment:
+      UPSTREAM: "${LLM_UPSTREAM:-http://host.docker.internal:11434}"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # The PrivacyProxy itself (the system under test), pulled by commit SHA from GHCR.
+  # EXACTLY like Exp2, only AnalyzerUrl -> real Presidio.
+  privacyproxy:
+    image: ghcr.io/plueschtierbaum/privacyproxy:${PRIVACYPROXY_IMAGE_TAG}
+    container_name: exp3-privacyproxy
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${PROXY_PORT:-8080}:8080"
+    depends_on:
+      - presidio
+      - llm-recorder
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_HTTP_PORTS: "8080"
+      Serilog__MinimumLevel__Default: "Information"
+
+      Llm__BaseUrl: "http://llm-recorder:8000/v1/"
+      Llm__ApiKey: "ollama"
+      Llm__Model: "${LLM_MODEL:-kimi-k2.6:cloud}"
+
+      # <<< the only substantive difference from Exp2 >>>
+      Presidio__AnalyzerUrl: "http://presidio:3000"
+      Presidio__ScoreThreshold: "0"
+
+      Presidio__GermanEntityTypes__0: PERSON
+      Presidio__GermanEntityTypes__1: LOCATION
+      Presidio__GermanEntityTypes__2: ORGANIZATION
+      Presidio__GermanEntityTypes__3: EMAIL_ADDRESS
+      Presidio__GermanEntityTypes__4: PHONE_NUMBER
+      Presidio__GermanEntityTypes__5: IP_ADDRESS
+      Presidio__GermanEntityTypes__6: CREDIT_CARD
+      Presidio__GermanEntityTypes__7: IBAN_CODE
+      Presidio__GermanEntityTypes__8: URL
+      Presidio__GermanEntityTypes__9: CRYPTO
+      Presidio__GermanEntityTypes__10: MAC_ADDRESS
+      Presidio__GermanEntityTypes__11: DATE_TIME
+      Presidio__GermanEntityTypes__12: MEDICAL_LICENSE
+
+      Presidio__EnglishEntityTypes__0: PERSON
+      Presidio__EnglishEntityTypes__1: LOCATION
+      Presidio__EnglishEntityTypes__2: ORGANIZATION
+      Presidio__EnglishEntityTypes__3: EMAIL_ADDRESS
+      Presidio__EnglishEntityTypes__4: PHONE_NUMBER
+      Presidio__EnglishEntityTypes__5: IP_ADDRESS
+      Presidio__EnglishEntityTypes__6: CREDIT_CARD
+      Presidio__EnglishEntityTypes__7: IBAN_CODE
+      Presidio__EnglishEntityTypes__8: URL
+      Presidio__EnglishEntityTypes__9: CRYPTO
+      Presidio__EnglishEntityTypes__10: MAC_ADDRESS
+      Presidio__EnglishEntityTypes__11: DATE_TIME
+      Presidio__EnglishEntityTypes__12: MEDICAL_LICENSE
+
+      Presidio__GermanEntityThresholds__PERSON: "0"
+      Presidio__GermanEntityThresholds__LOCATION: "0"
+      Presidio__GermanEntityThresholds__ORGANIZATION: "0"
+      Presidio__GermanEntityThresholds__EMAIL_ADDRESS: "0"
+      Presidio__GermanEntityThresholds__PHONE_NUMBER: "0"
+      Presidio__GermanEntityThresholds__IP_ADDRESS: "0"
+      Presidio__GermanEntityThresholds__CREDIT_CARD: "0"
+      Presidio__GermanEntityThresholds__IBAN_CODE: "0"
+      Presidio__GermanEntityThresholds__URL: "0"
+      Presidio__GermanEntityThresholds__CRYPTO: "0"
+      Presidio__GermanEntityThresholds__MAC_ADDRESS: "0"
+      Presidio__GermanEntityThresholds__DATE_TIME: "0"
+      Presidio__GermanEntityThresholds__MEDICAL_LICENSE: "0"
+
+      Presidio__EnglishEntityThresholds__PERSON: "0"
+      Presidio__EnglishEntityThresholds__LOCATION: "0"
+      Presidio__EnglishEntityThresholds__ORGANIZATION: "0"
+      Presidio__EnglishEntityThresholds__EMAIL_ADDRESS: "0"
+      Presidio__EnglishEntityThresholds__PHONE_NUMBER: "0"
+      Presidio__EnglishEntityThresholds__IP_ADDRESS: "0"
+      Presidio__EnglishEntityThresholds__CREDIT_CARD: "0"
+      Presidio__EnglishEntityThresholds__IBAN_CODE: "0"
+      Presidio__EnglishEntityThresholds__URL: "0"
+      Presidio__EnglishEntityThresholds__CRYPTO: "0"
+      Presidio__EnglishEntityThresholds__MAC_ADDRESS: "0"
+      Presidio__EnglishEntityThresholds__DATE_TIME: "0"
+      Presidio__EnglishEntityThresholds__MEDICAL_LICENSE: "0"
+
+volumes:
+  radicale-data:

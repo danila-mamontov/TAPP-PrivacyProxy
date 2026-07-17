@@ -6,10 +6,15 @@ We do NOT test Presidio's detection here. A MOCK Presidio is TOLD where the PII 
 Then we check two things for each row:
 
   1. Pseudonymized?    The text the LLM received is the original text with every
-                       PII span replaced by a [PII_<hash>] placeholder - nothing
+                       PII span replaced by a [TYPE_<hash>] placeholder - nothing
                        more, nothing less. (The original PII never reaches the LLM.)
-  2. De-pseudonymized? The proxy's answer equals the original text again, i.e. the
+  2. De-pseudonymized? The original text comes back in the proxy's answer, i.e. the
                        placeholders were restored to the real values (round-trip).
+
+Every row is sent through the proxy in BOTH response modes, non-streaming and
+streaming. Anonymization is the same in both, so pseudonymization is identical;
+streaming uses a different restore path (placeholders arrive split across chunks),
+so de-pseudonymization is checked separately for each mode.
 
 FLOW per row (see the diagram):
   privacy_mask --POST /send-solution--> Presidio Mock     (tell it where the PII is)
@@ -97,6 +102,47 @@ def expected_anonymized_pattern(source_text, mask):
     return "".join(parts)
 
 
+MODES = ["non-stream", "stream"]  # test both response modes of the proxy
+
+
+def call_proxy(source_text, stream):
+    """Send `source_text` through the proxy and return (anonymized, final_answer).
+
+    - anonymized:   the (last) user message the LLM Mock received (read via /last).
+                    Anonymization is identical in both modes.
+    - final_answer: the proxy's de-anonymized answer. In streaming mode it arrives
+                    as Server-Sent Events; each `data:` line is normally a JSON chunk
+                    (we take delta.content), but the proxy may also emit a plain-text
+                    tail when it flushes its buffer at the end, so we fall back to the
+                    raw line if it is not JSON.
+    """
+    payload = {"model": "mock", "stream": stream, "messages": [{"role": "user", "content": source_text}]}
+
+    if not stream:
+        response = requests.post(PROXY_URL, json=payload, timeout=120)
+        response.raise_for_status()
+        final_answer = response.json()["choices"][0]["message"]["content"] or ""
+    else:
+        final_answer = ""
+        with requests.post(PROXY_URL, json=payload, timeout=120, stream=True) as response:
+            response.raise_for_status()
+            for line in response.iter_lines(decode_unicode=True):
+                if not line or not line.startswith("data:"):
+                    continue
+                data = line[len("data:"):].strip()
+                if data == "[DONE]":
+                    break
+                try:
+                    final_answer += json.loads(data)["choices"][0]["delta"].get("content") or ""
+                except (json.JSONDecodeError, KeyError, IndexError):
+                    final_answer += data  # plain-text tail flushed by the proxy
+
+    messages = requests.get(MOCK_LAST_URL, timeout=10).json()["privacyproxy_sent"]["messages"]
+    user_texts = [m.get("content", "") or "" for m in messages if m.get("role") == "user"]
+    anonymized = user_texts[-1] if user_texts else ""
+    return anonymized, final_answer
+
+
 # ---------------------------------------------------------------------------
 # Load and sample the dataset (only de/en; all other languages are skipped)
 # ---------------------------------------------------------------------------
@@ -121,7 +167,8 @@ print(f"Total: {len(rows)} rows\n")
 # Run the experiment
 # ---------------------------------------------------------------------------
 results = []
-pseudo_ok = deanon_ok = errors = 0
+pseudo_ok = errors = 0
+deanon_ok = {mode: 0 for mode in MODES}   # de-pseudonymization is checked per mode
 failures_shown = 0
 
 for i, (lang, row) in enumerate(rows):
@@ -141,47 +188,47 @@ for i, (lang, row) in enumerate(rows):
         print(f"  [WARN] row {i}: send-solution failed ({ex})")
         continue
 
-    # 2) Send the source text through the proxy (as OpenClaw would) and read back
-    #    both the proxy's answer and what the LLM actually received.
-    payload = {"model": "mock", "stream": False, "messages": [{"role": "user", "content": source_text}]}
+    # 2) Send the source text through the proxy in BOTH modes and read each answer.
+    #    Anonymization is identical in both, so we take `anonymized` from the first.
     try:
-        resp = requests.post(PROXY_URL, json=payload, timeout=120)
-        resp.raise_for_status()
-        final_answer = resp.json()["choices"][0]["message"]["content"] or ""
-        # /last returns all messages the proxy sent to the LLM; the anonymized
-        # source text is the (last) user message.
-        messages = requests.get(MOCK_LAST_URL, timeout=10).json()["privacyproxy_sent"]["messages"]
-        user_texts = [m.get("content", "") or "" for m in messages if m.get("role") == "user"]
-        anonymized = user_texts[-1] if user_texts else ""
+        anonymized = None
+        final_answers = {}
+        for mode in MODES:
+            anon, final = call_proxy(source_text, stream=(mode == "stream"))
+            if anonymized is None:
+                anonymized = anon
+            final_answers[mode] = final
     except Exception as ex:
         errors += 1
         print(f"  [WARN] row {i}: proxy request failed ({ex})")
         continue
 
     # 3) The checks.
-    #    Pseudonymized: the text the LLM received is the original with every PII
-    #    span turned into a placeholder - and nothing else changed.
+    #    Pseudonymized (mode-independent): the text the LLM received is the original
+    #    with every PII span turned into a placeholder - and nothing else changed.
     pseudonymized = re.fullmatch(expected_anonymized_pattern(source_text, mask), anonymized) is not None
-    #    De-pseudonymized: the original text comes back in the answer. (The answer
-    #    also contains the proxy's system instruction, so we check "contains", not
-    #    "equals". The proxy restores each value exactly, so this is an exact match.)
-    depseudonymized = source_text in final_answer
+    #    De-pseudonymized (per mode): the original text comes back in the answer. (The
+    #    answer also contains the proxy's system instruction, so we check "contains".)
+    depseud = {mode: source_text in final_answers[mode] for mode in MODES}
 
     pseudo_ok += int(pseudonymized)
-    deanon_ok += int(depseudonymized)
+    for mode in MODES:
+        deanon_ok[mode] += int(depseud[mode])
     results.append({
         "row": i, "language": lang, "pii_count": len(mask),
         "pseudonymized": pseudonymized,
-        "depseudonymized": depseudonymized,
+        **{f"depseudonymized_{mode}": depseud[mode] for mode in MODES},
     })
 
     # Show the first few failures so problems are easy to inspect.
-    if (not pseudonymized or not depseudonymized) and failures_shown < 5:
+    if (not pseudonymized or not all(depseud.values())) and failures_shown < 5:
         failures_shown += 1
-        print(f"  [FAIL] row {i} ({lang}) pseudo={pseudonymized} depseudo={depseudonymized}")
+        print(f"  [FAIL] row {i} ({lang}) pseudo={pseudonymized} "
+              f"depseudo={ {m: depseud[m] for m in MODES} }")
         print(f"         original : {source_text[:120]!r}")
         print(f"         to LLM   : {anonymized[:120]!r}")
-        print(f"         answer   : {final_answer[:120]!r}")
+        for mode in MODES:
+            print(f"         answer ({mode}): {final_answers[mode][:100]!r}")
 
     if (i + 1) % 50 == 0:
         print(f"  {i + 1}/{len(rows)} rows processed ...")
@@ -200,11 +247,12 @@ print()
 print("=" * 60)
 print("RESULT")
 print("=" * 60)
-print(f"  rows tested:                 {total}")
-print(f"  pseudonymized correctly:     {pseudo_ok}/{total} ({pct(pseudo_ok, total)})   <- must be 100%")
-print(f"  de-pseudonymized correctly:  {deanon_ok}/{total} ({pct(deanon_ok, total)})   <- must be 100%")
+print(f"  rows tested:                     {total}")
+print(f"  pseudonymized correctly:         {pseudo_ok}/{total} ({pct(pseudo_ok, total)})   <- must be 100%")
+for mode in MODES:
+    print(f"  de-pseudonymized ({mode:<10}): {deanon_ok[mode]}/{total} ({pct(deanon_ok[mode], total)})   <- must be 100%")
 if errors:
-    print(f"  failed requests:             {errors}")
+    print(f"  failed requests:                 {errors}")
 
 # ---------------------------------------------------------------------------
 # Write per-row results to results/<timestamp>/detail.csv
@@ -212,7 +260,8 @@ if errors:
 out_dir = Path("results") / datetime.now().strftime("%Y%m%d_%H%M%S")
 out_dir.mkdir(parents=True, exist_ok=True)
 with open(out_dir / "detail.csv", "w", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=["row", "language", "pii_count", "pseudonymized", "depseudonymized"])
+    fieldnames = ["row", "language", "pii_count", "pseudonymized"] + [f"depseudonymized_{m}" for m in MODES]
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(results)
 

@@ -11,6 +11,12 @@ so the test is deterministic: we know exactly what the proxy must hide.
 2. **De-pseudonymized?** The original text comes back in the proxy's answer (the
    placeholders were restored). Both must be **100%**.
 
+Every row is sent in **both response modes**: non-streaming and streaming.
+Anonymization is the same in both, so pseudonymization is identical; streaming uses
+a different restore path — the mock streams the answer back in small chunks, which
+splits placeholders across chunk boundaries and stress-tests the proxy's streaming
+de-anonymizer. De-pseudonymization is therefore reported separately per mode.
+
 ## Data flow
 ```
 privacy_mask ── POST /send-solution ──▶ Presidio Mock      (tell it where the PII is)
@@ -52,12 +58,13 @@ runs `experiment.py`, then tears the stack down again.
 ## Results
 The console prints the headline:
 ```
-  pseudonymized correctly:     N/N (100.0%)   <- must be 100%
-  de-pseudonymized correctly:  N/N (100.0%)   <- must be 100%
+  pseudonymized correctly:         N/N (100.0%)   <- must be 100%
+  de-pseudonymized (non-stream): N/N (100.0%)   <- must be 100%
+  de-pseudonymized (stream    ): N/N (100.0%)   <- must be 100%
 ```
-`results/<timestamp>/detail.csv` has one row per tested sample. The first few failing
-rows are printed with the original / anonymized / restored text so problems are easy
-to inspect.
+`results/<timestamp>/detail.csv` has one row per tested sample, with a
+`depseudonymized_<mode>` column per response mode. The first few failing rows are
+printed with the original / anonymized / restored text so problems are easy to inspect.
 
 ## Dataset
 `experiment.py` downloads `ai4privacy/pii-masking-200k` automatically (cached after
