@@ -223,6 +223,7 @@ public class ChatCompletionService(
         // tool_call arguments are NOT streamed out fragment by fragment (see part 2).
         // They are collected puffered here (key = position in the tool_calls array) and sent as ONE
         // complete, JSON-aware deanonymized chunk right before [DONE].
+        // DSR Approach found in exp for RQ1, see exp FINDINGS.md
         var toolCallArguments   = new Dictionary<int, string>();
         var toolCallChoiceIndex = 0;
 
@@ -274,13 +275,12 @@ public class ChatCompletionService(
             }
 
             // parse Chunk as JsonNode
-            var chunkNode = JsonNode.Parse(data) as JsonObject;
-            if (chunkNode == null) continue;
+            if (JsonNode.Parse(data) is not JsonObject chunkNode) continue;
 
             var choices = chunkNode["choices"]?.AsArray();
             if (choices == null || choices.Count == 0)
             {
-                // chunk without choice → continue, no processing  
+                // chunk without choice -> continue, no processing  
                 await WriteChunk(httpResponse, chunkNode, ct);
                 continue;
             }
@@ -321,7 +321,7 @@ public class ChatCompletionService(
                 }
             }
 
-            // path 2: tool_calls available → collect the arguments instead of streaming them.
+            // path 2: tool_calls available -> collect the arguments instead of streaming them.
             // Deanonymizing fragment by fragment cannot escape restored values correctly
             // (a '"' inside an original value would corrupt the arguments JSON). So the raw
             // fragments are buffered and sent as ONE complete chunk at [DONE] - no one
