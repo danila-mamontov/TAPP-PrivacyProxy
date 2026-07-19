@@ -920,4 +920,56 @@ public class ChatCompletionServiceTests
         // Assert
         Assert.Contains("[DONE]", output);
     }
+
+    [Fact]
+    public async Task ProcessStreamAsync_UnclosedBracketAtStreamEndIsFlushedAsValidChunk()
+    {
+        // Arrange - the streamed text ends with "[URL_": an unclosed '[' that looks
+        // like a placeholder start, so the deanonymizer buffers it until the end.
+        // The flushed leftover must be a PARSEABLE chunk, not a raw text line.
+        var store    = new MappingStore();
+        var presidio = new Mock<IPresidioService>();
+        var llm      = new Mock<ILlmClient>();
+        var deanon   = new StreamingDeanonymizer(store);
+        var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
+
+        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync((string t, CancellationToken _) => t);
+
+        var chunkJson = "{\"id\":\"1\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"link at [URL_\"}}]}";
+        llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
+           .ReturnsAsync(SseResponse($"data: {chunkJson}\n\ndata: [DONE]\n\n"));
+
+        var context = CreateHttpContext();
+
+        // Act
+        await sut.ProcessStreamAsync(
+            new ChatCompletionRequest
+            {
+                Model    = "llama3",
+                Messages = [new ChatMessage { Role = "user", Content = "Hello" }]
+            },
+            context.Response);
+
+        context.Response.Body.Seek(0, SeekOrigin.Begin);
+        var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
+
+        // Assert - every data line (except [DONE]) must be valid JSON, and the
+        // buffered "[URL_" must arrive inside a proper delta.content.
+        var reassembled = "";
+        foreach (var line in output.Split("\n"))
+        {
+            if (!line.StartsWith("data: ")) continue;
+            var payload = line["data: ".Length..];
+            if (payload == "[DONE]") continue;
+
+            var chunk = JsonSerializer.Deserialize<JsonElement>(payload);   // throws on raw text
+            foreach (var choice in chunk.GetProperty("choices").EnumerateArray())
+            {
+                if (choice.GetProperty("delta").TryGetProperty("content", out var content))
+                    reassembled += content.GetString();
+            }
+        }
+        Assert.Contains("link at [URL_", reassembled);
+    }
 }

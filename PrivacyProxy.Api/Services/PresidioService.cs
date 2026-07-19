@@ -48,22 +48,45 @@ public class PresidioService(
         
         // Sort descending by start so replacements don't shift indices
         var sorted = combined.OrderByDescending(e => e.Start).ToList();
-        
-        // Replace each entity with its placeholder
+
+        // Replace each entity with its placeholder.
+        // Presidio is a Python service and counts offsets in Unicode CODE POINTS,
+        // .NET strings count in UTF-16 units. Both agree until a character outside
+        // the Basic Multilingual Plane appears (e.g. an emoji = 2 UTF-16 units):
+        // from there on every span would be shifted and PII would leak partially.
+        // So the offsets are converted before slicing.
         var sb = new StringBuilder(text);
         foreach (var entity in sorted)
         {
-            var original    = text[entity.Start..entity.End];
+            var start = CodePointToUtf16Index(text, entity.Start);
+            var end   = CodePointToUtf16Index(text, entity.End);
+
+            var original    = text[start..end];
             var placeholder = mappingStore.GetOrCreatePlaceholder(entity.EntityType, original);
-            sb.Remove(entity.Start, entity.End - entity.Start)
-              .Insert(entity.Start, placeholder);
+            sb.Remove(start, end - start)
+              .Insert(start, placeholder);
         }
         
         Log.Information("Anonymized {Count} entities in message", combined.Count);
         Log.Debug("Original message: {Message}", text);
         Log.Debug("Anonymized message: {Message}", sb.ToString());
         Log.Debug("Anonymized entities: {@Entities}", combined);
-        
+
         return sb.ToString();
+    }
+
+    /// <summary>
+    /// Converts a Unicode code point index (as reported by the Python-based Presidio)
+    /// into a UTF-16 index (as used by .NET strings). Characters outside the Basic
+    /// Multilingual Plane (e.g. emojis) occupy two UTF-16 units but one code point.
+    /// </summary>
+    private static int CodePointToUtf16Index(string text, int codePointIndex)
+    {
+        var utf16Index = 0;
+        for (var i = 0; i < codePointIndex && utf16Index < text.Length; i++)
+        {
+            utf16Index += char.IsHighSurrogate(text[utf16Index]) ? 2 : 1;
+        }
+        return utf16Index;
     }
 }

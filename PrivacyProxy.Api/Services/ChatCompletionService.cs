@@ -264,11 +264,26 @@ public class ChatCompletionService(
                     await WriteChunk(httpResponse, finalChunk, ct);
                 }
 
+                // Leftover carry (e.g. the text ends with an unclosed '[' that looked
+                // like a placeholder start) must go out as a PROPER chunk - a raw text
+                // line would be invalid SSE JSON and break every OpenAI client.
                 var remaining = streamingDeanonymizer.FlushAll();
-                foreach (var (_, content) in remaining)
+                foreach (var (contextKey, leftover) in remaining)
                 {
-                    if (!string.IsNullOrEmpty(content))
-                        await httpResponse.WriteAsync($"data: {content}\n\n", ct);
+                    if (string.IsNullOrEmpty(leftover)) continue;
+                    var leftoverChunk = new JsonObject
+                    {
+                        ["object"]  = "chat.completion.chunk",
+                        ["choices"] = new JsonArray(new JsonObject
+                        {
+                            ["index"] = 0,
+                            ["delta"] = new JsonObject
+                            {
+                                [contextKey == "reasoning" ? "reasoning" : "content"] = leftover
+                            }
+                        })
+                    };
+                    await WriteChunk(httpResponse, leftoverChunk, ct);
                 }
                 await httpResponse.WriteAsync("data: [DONE]\n\n", ct);
                 break;

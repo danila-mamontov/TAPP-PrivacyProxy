@@ -270,4 +270,27 @@ public class PresidioServiceTests
         var unused = store.Deanonymize(result[..result.IndexOf(' ')]);
         Assert.Equal(result[..result.IndexOf(' ')], result[(result.LastIndexOf(' ') + 1)..]);
     }
+
+    [Fact]
+    public async Task AnonymizeAsyncEmojiBeforeEntityUsesCodePointOffsets()
+    {
+        // Arrange: "😅 Anna!" - Presidio (Python) counts code points, so "Anna" is
+        // at 2..6. In UTF-16 the emoji occupies TWO units, so "Anna" is at 3..7
+        // there. Without the offset conversion the replacement would be shifted by
+        // one character and leak part of the value.
+        var (sut, analyzer, _, store) = CreateSut();
+        var text = "\U0001F605 Anna!";
+
+        analyzer.Setup(a => a.AnalyzeAsync(text, Language.English, It.IsAny<CancellationToken>()))
+                .ReturnsAsync([Entity("PERSON", 1.0, 2, 6)]);
+        store.Setup(s => s.GetOrCreatePlaceholder("PERSON", "Anna"))
+             .Returns("[PERSON_0123456789abcdef]");
+
+        // Act
+        var anonymized = await sut.AnonymizeAsync(text);
+
+        // Assert: the placeholder sits exactly where "Anna" was - nothing leaked,
+        // nothing swallowed.
+        Assert.Equal("\U0001F605 [PERSON_0123456789abcdef]!", anonymized);
+    }
 }
