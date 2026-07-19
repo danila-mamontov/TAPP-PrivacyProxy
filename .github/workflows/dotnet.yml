@@ -60,6 +60,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # Multi-arch: QEMU lets the amd64 runner build arm64 images, buildx is the
+      # builder that can produce both platforms in one image.
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -92,5 +100,8 @@ jobs:
         with:
           context: .
           file: ${{ matrix.dockerfile }}
+          # amd64 (Intel servers) + arm64 (Apple Silicon) in one image:
+          # docker pull picks the matching one automatically.
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
