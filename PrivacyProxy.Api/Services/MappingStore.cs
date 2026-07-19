@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 using PrivacyProxy.Api.Models.Interfaces;
 using Serilog;
@@ -102,20 +103,91 @@ public partial class MappingStore : IMappingStore
     }
 
     /// <summary>
-    /// Like <see cref="Deanonymize"/>, but for text that is serialized JSON (e.g. tool_call arguments).
-    /// A raw original value containing '"', '\' or control characters would terminate or corrupt the
-    /// surrounding JSON string, so each restored value is JSON-escaped before insertion.
+    /// JSON serializer options that keep non-ASCII characters (e.g. umlauts) readable
+    /// while still escaping everything JSON requires ('"', '\', control characters).
+    /// </summary>
+    private static readonly JsonSerializerOptions RelaxedJson = new()
+    {
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
+
+    /// <summary>
+    /// Like <see cref="Deanonymize"/>, but for text that is serialized JSON (e.g. tool_calls).
+    /// Instead of replacing in the raw text (where a restored '"' or '\' would corrupt the
+    /// document), the JSON is parsed, placeholders are replaced inside the string values, and
+    /// the document is serialized again - so escaping is correct on every nesting level,
+    /// including string values that themselves contain serialized JSON (tool_call arguments).
     /// </summary>
     /// <param name="json">The anonymized raw JSON text containing placeholders.</param>
-    /// <returns>The JSON text with placeholders replaced by their JSON-escaped original values.</returns>
+    /// <returns>The JSON text with placeholders replaced by their original values.</returns>
     public string DeanonymizeJson(string json)
     {
         if (string.IsNullOrEmpty(json)) return json;
 
-        return PlaceholderRegex.Replace(json, m =>
-            _placeholderToOriginal.TryGetValue(m.Value, out var original)
-                ? JsonEncodedText.Encode(original, JavaScriptEncoder.UnsafeRelaxedJsonEscaping).ToString()
-                : m.Value);
+        var node = JsonNode.Parse(json);
+        node = DeanonymizeNode(node);
+        return node?.ToJsonString(RelaxedJson) ?? json;
+    }
+
+    /// <summary>
+    /// Recursively deanonymizes all string values of a JSON tree in place.
+    /// </summary>
+    private JsonNode? DeanonymizeNode(JsonNode? node)
+    {
+        switch (node)
+        {
+            case JsonObject obj:
+                foreach (var key in obj.Select(property => property.Key).ToList())
+                {
+                    var child    = obj[key];
+                    var replaced = DeanonymizeNode(child);
+                    if (!ReferenceEquals(child, replaced)) obj[key] = replaced;
+                }
+                return obj;
+
+            case JsonArray array:
+                for (var i = 0; i < array.Count; i++)
+                {
+                    var child    = array[i];
+                    var replaced = DeanonymizeNode(child);
+                    if (!ReferenceEquals(child, replaced)) array[i] = replaced;
+                }
+                return array;
+
+            case JsonValue value when value.TryGetValue<string>(out var text):
+                return JsonValue.Create(DeanonymizeStringValue(text));
+
+            default:
+                return node;
+        }
+    }
+
+    /// <summary>
+    /// Deanonymizes a single JSON string value. If the string itself contains serialized JSON
+    /// (like tool_call "arguments"), the placeholders live one encoding level deeper: the string
+    /// is parsed, deanonymized recursively and serialized again, so the restored values are
+    /// escaped correctly at that level too. Otherwise it is treated as plain text.
+    /// </summary>
+    private string DeanonymizeStringValue(string text)
+    {
+        var trimmed = text.TrimStart();
+        if (trimmed.StartsWith('{') || trimmed.StartsWith('['))
+        {
+            try
+            {
+                var inner = JsonNode.Parse(text);
+                if (inner is JsonObject or JsonArray)
+                {
+                    DeanonymizeNode(inner);
+                    return inner.ToJsonString(RelaxedJson);
+                }
+            }
+            catch (JsonException)
+            {
+                // not valid JSON -> fall through and treat it as plain text
+            }
+        }
+        return Deanonymize(text);
     }
 
     /// <summary>

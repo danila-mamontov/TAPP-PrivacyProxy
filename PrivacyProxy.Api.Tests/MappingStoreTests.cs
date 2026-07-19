@@ -221,14 +221,41 @@ public class MappingStoreTests
     }
 
     [Fact]
+    public void DeanonymizeJsonNestedArgumentsJsonStaysValidOnBothLevels()
+    {
+        // Arrange: the OpenAI tool_call shape - "arguments" is a STRING that itself
+        // contains serialized JSON. A restored '"' must be escaped for the INNER
+        // document, not just the outer one.
+        var sut         = CreateSut();
+        var placeholder = sut.GetOrCreatePlaceholder("HEIGHT", "6' 4\"");
+        var arguments   = JsonSerializer.Serialize(new { pii_text = $"my height is {placeholder}" });
+        var toolCalls   = JsonSerializer.Serialize(new[]
+                          {
+                              new { function = new { name = "f", arguments } }
+                          });
+
+        // Act
+        var deanonymized = sut.DeanonymizeJson(toolCalls);
+
+        // Assert: outer level parses, and the inner arguments string parses too
+        var outer     = JsonSerializer.Deserialize<JsonElement>(deanonymized);
+        var innerJson = outer[0].GetProperty("function").GetProperty("arguments").GetString();
+        var inner     = JsonSerializer.Deserialize<JsonElement>(innerJson!);
+        Assert.Equal("my height is 6' 4\"", inner.GetProperty("pii_text").GetString());
+    }
+
+    [Fact]
     public void DeanonymizeJsonUnknownPlaceholderIsLeftUnchanged()
     {
-        // Arrange
+        // Arrange (note: re-serialization may change whitespace, so compare the VALUE)
         var sut  = CreateSut();
         var json = "{\"pii_text\": \"[PERSON_0123456789abcdef]\"}";
 
-        // Act & Assert
-        Assert.Equal(json, sut.DeanonymizeJson(json));
+        // Act
+        var parsed = JsonSerializer.Deserialize<JsonElement>(sut.DeanonymizeJson(json));
+
+        // Assert: the unknown placeholder is still there, untouched
+        Assert.Equal("[PERSON_0123456789abcdef]", parsed.GetProperty("pii_text").GetString());
     }
 
 }
