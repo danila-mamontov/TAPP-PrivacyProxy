@@ -202,11 +202,11 @@ public class ChatCompletionService(
     {
         Log.Information("Processing {MessageCount} messages...", request.Messages.Count);
 
-        // Every caller message (any role) is anonymized; our own instruction is prepended verbatim.
+        // Every caller message (any role) is anonymized
         var anonymizedMessages = await BuildAnonymizedMessagesAsync(request.Messages, ct);
 
         // Force the configured model regardless of what the client sent, so the proxy
-        // owns the model selection (the WebUI/Llm.Model setting is the single source).
+        // owns the model selection
         var anonymizedRequest = request with { Model = llmOptions.CurrentValue.Model, Messages = anonymizedMessages };
         var requestElement    = JsonSerializer.SerializeToElement(anonymizedRequest, JsonOptions);
 
@@ -220,6 +220,12 @@ public class ChatCompletionService(
         await using var stream       = await llmHttpResponse.Content.ReadAsStreamAsync(ct);
         using       var streamReader = new StreamReader(stream);
 
+        // tool_call arguments are NOT streamed out fragment by fragment (see part 2).
+        // They are collected puffered here (key = position in the tool_calls array) and sent as ONE
+        // complete, JSON-aware deanonymized chunk right before [DONE].
+        var toolCallArguments   = new Dictionary<int, string>();
+        var toolCallChoiceIndex = 0;
+
         while (await streamReader.ReadLineAsync(ct) is { } line && !ct.IsCancellationRequested)
         {
             Log.Debug("Received SSE line: {Line}", line);
@@ -231,6 +237,32 @@ public class ChatCompletionService(
             // [DONE] → flush and terminate stream
             if (data == "[DONE]")
             {
+                // Send the held-back tool_call arguments (see path 2): complete and
+                // deanonymized JSON-aware, so restored values are escaped correctly.
+                foreach (var (index, arguments) in toolCallArguments)
+                {
+                    var finalChunk = new JsonObject
+                    {
+                        ["object"]  = "chat.completion.chunk",
+                        ["choices"] = new JsonArray(new JsonObject
+                        {
+                            ["index"] = toolCallChoiceIndex,
+                            ["delta"] = new JsonObject
+                            {
+                                ["tool_calls"] = new JsonArray(new JsonObject
+                                {
+                                    ["index"]    = index,
+                                    ["function"] = new JsonObject
+                                    {
+                                        ["arguments"] = mappingStore.DeanonymizeJson(arguments)
+                                    }
+                                })
+                            }
+                        })
+                    };
+                    await WriteChunk(httpResponse, finalChunk, ct);
+                }
+
                 var remaining = streamingDeanonymizer.FlushAll();
                 foreach (var (_, content) in remaining)
                 {
@@ -289,7 +321,11 @@ public class ChatCompletionService(
                 }
             }
 
-            // path 2: tool_calls available → foreach tool_call.arguments deanonymize
+            // path 2: tool_calls available → collect the arguments instead of streaming them.
+            // Deanonymizing fragment by fragment cannot escape restored values correctly
+            // (a '"' inside an original value would corrupt the arguments JSON). So the raw
+            // fragments are buffered and sent as ONE complete chunk at [DONE] - no one
+            // consumes a half tool_call anyway, so nothing is lost by waiting.
             var toolCallsArray = delta?["tool_calls"]?.AsArray();
             if (toolCallsArray != null)
             {
@@ -301,10 +337,10 @@ public class ChatCompletionService(
                         continue;
 
                     var argsFragment = argsNode.GetValue<string>();
-                    var deanonymized = streamingDeanonymizer.ProcessFragment(
-                        argsFragment, isFinal: false, contextKey: $"tool_call_{i}");
+                    toolCallArguments[i] = toolCallArguments.GetValueOrDefault(i, "") + argsFragment;
+                    toolCallChoiceIndex  = firstChoice["index"]?.GetValue<int>() ?? 0;
 
-                    toolCall!["function"]!["arguments"] = deanonymized;
+                    toolCall!["function"]!["arguments"] = "";   // hold the text back for now
                 }
             }
 

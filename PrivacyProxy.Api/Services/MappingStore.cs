@@ -124,9 +124,18 @@ public partial class MappingStore : IMappingStore
     {
         if (string.IsNullOrEmpty(json)) return json;
 
-        var node = JsonNode.Parse(json);
-        node = DeanonymizeNode(node);
-        return node?.ToJsonString(RelaxedJson) ?? json;
+        try
+        {
+            var node = JsonNode.Parse(json);
+            node = DeanonymizeNode(node);
+            return node?.ToJsonString(RelaxedJson) ?? json;
+        }
+        catch (JsonException)
+        {
+            // Not valid JSON at all (some models emit malformed arguments):
+            // fall back to plain text replacement instead of failing the request.
+            return Deanonymize(json);
+        }
     }
 
     /// <summary>
