@@ -1,3 +1,4 @@
+using System.Text.Json;
 using PrivacyProxy.Api.Services;
 
 namespace PrivacyProxy.Api.Tests;
@@ -184,6 +185,50 @@ public class MappingStoreTests
         // Arrange & Act & Assert
         Assert.Throws<ArgumentNullException>(
             () => CreateSut().GetOrCreatePlaceholder("PERSON", null!));
+    }
+
+    [Fact]
+    public void DeanonymizeJsonValueWithQuoteKeepsJsonValid()
+    {
+        // Arrange: a value like a body height 6' 4" contains a double quote that would
+        // terminate the surrounding JSON string if inserted unescaped.
+        var sut         = CreateSut();
+        var placeholder = sut.GetOrCreatePlaceholder("HEIGHT", "6' 4\"");
+        var json        = $"{{\"pii_text\": \"my height is {placeholder} thanks\"}}";
+
+        // Act
+        var deanonymized = sut.DeanonymizeJson(json);
+
+        // Assert: still parseable JSON, and the decoded value is the original again
+        var parsed = JsonSerializer.Deserialize<JsonElement>(deanonymized);
+        Assert.Equal("my height is 6' 4\" thanks", parsed.GetProperty("pii_text").GetString());
+    }
+
+    [Fact]
+    public void DeanonymizeJsonValueWithBackslashAndNewlineKeepsJsonValid()
+    {
+        // Arrange
+        var sut         = CreateSut();
+        var placeholder = sut.GetOrCreatePlaceholder("PATH", "C:\\Users\\alice\nline2");
+        var json        = $"{{\"pii_text\": \"{placeholder}\"}}";
+
+        // Act
+        var deanonymized = sut.DeanonymizeJson(json);
+
+        // Assert
+        var parsed = JsonSerializer.Deserialize<JsonElement>(deanonymized);
+        Assert.Equal("C:\\Users\\alice\nline2", parsed.GetProperty("pii_text").GetString());
+    }
+
+    [Fact]
+    public void DeanonymizeJsonUnknownPlaceholderIsLeftUnchanged()
+    {
+        // Arrange
+        var sut  = CreateSut();
+        var json = "{\"pii_text\": \"[PERSON_0123456789abcdef]\"}";
+
+        // Act & Assert
+        Assert.Equal(json, sut.DeanonymizeJson(json));
     }
 
 }
