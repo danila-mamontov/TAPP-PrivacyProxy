@@ -349,8 +349,9 @@ public class ChatCompletionService(
         // deanonymize choice content
         var deanonymizedContent = mappingStore.Deanonymize(choice.Message.Content);
         
-        // deanonymize choice extensions (e.g., tool_calls) by running their jaw JSON through MappingStore
-        // The regex pattern there works as well as with "normal" message content
+        // deanonymize choice extensions (e.g., tool_calls) by running their raw JSON through MappingStore.
+        // JSON-aware variant: restored values are escaped, so a '"' or '\' inside an original
+        // value cannot break the surrounding JSON (which would make the Deserialize below throw).
         Dictionary<string, JsonElement>? deanonymizedChoiceExtensions = null;
 
         // Start if there are extensions
@@ -359,7 +360,7 @@ public class ChatCompletionService(
             // Create a new dictionary with the same keys and values, but with the JSON elements deanonymized.
             deanonymizedChoiceExtensions = choice.Message.Extensions.ToDictionary(
                  kv => kv.Key,
-                 kv => JsonSerializer.Deserialize<JsonElement>(mappingStore.Deanonymize(kv.Value.GetRawText())));
+                 kv => JsonSerializer.Deserialize<JsonElement>(mappingStore.DeanonymizeJson(kv.Value.GetRawText())));
         }
 
         // Return the choice with the deanonymized content and extensions

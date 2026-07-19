@@ -23,6 +23,15 @@ public interface IMappingStore
     string Deanonymize(string text);
 
     /// <summary>
+    /// Like <see cref="Deanonymize"/>, but for text that is serialized JSON (e.g. tool_call arguments):
+    /// restored values are JSON-escaped so characters like '"' or '\' in an original value
+    /// cannot break the surrounding JSON document.
+    /// </summary>
+    /// <param name="json">The anonymized raw JSON text containing placeholders.</param>
+    /// <returns>The JSON text with placeholders replaced by their JSON-escaped original values.</returns>
+    string DeanonymizeJson(string json);
+
+    /// <summary>
     /// Gets the total count of placeholders currently stored in the mapping store.
     /// </summary>
     /// <remarks>

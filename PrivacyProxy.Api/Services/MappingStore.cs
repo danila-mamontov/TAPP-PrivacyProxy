@@ -1,5 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using PrivacyProxy.Api.Models.Interfaces;
 using Serilog;
@@ -97,6 +99,23 @@ public partial class MappingStore : IMappingStore
 
         return PlaceholderRegex.Replace(anonymizedText, m =>
             _placeholderToOriginal.TryGetValue(m.Value, out var original) ? original : m.Value);
+    }
+
+    /// <summary>
+    /// Like <see cref="Deanonymize"/>, but for text that is serialized JSON (e.g. tool_call arguments).
+    /// A raw original value containing '"', '\' or control characters would terminate or corrupt the
+    /// surrounding JSON string, so each restored value is JSON-escaped before insertion.
+    /// </summary>
+    /// <param name="json">The anonymized raw JSON text containing placeholders.</param>
+    /// <returns>The JSON text with placeholders replaced by their JSON-escaped original values.</returns>
+    public string DeanonymizeJson(string json)
+    {
+        if (string.IsNullOrEmpty(json)) return json;
+
+        return PlaceholderRegex.Replace(json, m =>
+            _placeholderToOriginal.TryGetValue(m.Value, out var original)
+                ? JsonEncodedText.Encode(original, JavaScriptEncoder.UnsafeRelaxedJsonEscaping).ToString()
+                : m.Value);
     }
 
     /// <summary>
