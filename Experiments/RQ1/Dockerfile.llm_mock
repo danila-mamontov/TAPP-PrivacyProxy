@@ -1,0 +1,9 @@
+FROM python:3.14-slim
+
+WORKDIR /app
+RUN pip install --no-cache-dir flask python-dotenv
+
+COPY llm_mock.py .
+
+EXPOSE 5005
+CMD ["python", "llm_mock.py"]

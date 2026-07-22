@@ -1,0 +1,9 @@
+FROM python:3.14-slim
+
+WORKDIR /app
+RUN pip install --no-cache-dir flask
+
+COPY presidio_mock.py .
+
+EXPOSE 5002
+CMD ["python", "presidio_mock.py"]

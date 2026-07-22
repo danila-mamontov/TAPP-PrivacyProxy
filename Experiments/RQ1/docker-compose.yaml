@@ -1,0 +1,49 @@
+networks:
+  experiment-1-network:
+    driver: bridge
+
+services:
+  presidio_mock:
+    build:
+      context: .
+      dockerfile: Dockerfile.presidio_mock
+    networks:
+      - experiment-1-network
+    ports:
+      - "${PRESIDIO_MOCK_PORT:-5002}:5002"
+    healthcheck:
+      test: [ "CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5002/health')" ]
+      timeout: 10s
+  llm_mock:
+    build:
+      context: .
+      dockerfile: Dockerfile.llm_mock
+    networks:
+      - experiment-1-network
+    ports:
+      - "${LLM_MOCK_PORT:-5005}:5005"
+    healthcheck:
+      test: [ "CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5005/health')" ]
+      timeout: 10s
+
+  privacyproxy:
+    image: ghcr.io/plueschtierbaum/privacyproxy:${PRIVACYPROXY_IMAGE_TAG}
+    networks:
+      - experiment-1-network
+    ports:
+      - "${PROXY_PORT:-8080}:8080"
+    depends_on:
+      - presidio_mock
+      - llm_mock
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+
+      # The "LLM" behind the proxy = the llm_mock container.
+      Llm__BaseUrl: "http://llm_mock:5005/v1/"
+      # The proxy refuses to start with an empty ApiKey; the mock never checks it.
+      Llm__ApiKey: "unused"
+      Llm__Model: "mocked-llm"
+
+      # PII detection = the presidio_mock container.
+      Presidio__AnalyzerUrl: "http://presidio_mock:5002"
+      Presidio__ScoreThreshold: "0"

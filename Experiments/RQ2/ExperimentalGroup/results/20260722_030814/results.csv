@@ -1,0 +1,909 @@
+group,model,id,domain,lang,iteration,seconds,function_ok,detail,tool_diagnosis,reply
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-de,conversation,de,1,4.1,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-de,conversation,de,2,2.6,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-de,conversation,de,3,2.6,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-de,conversation,de,4,2.4,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-de,conversation,de,5,2.8,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-de,conversation,de,1,2.8,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-de,conversation,de,2,2.4,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-de,conversation,de,3,2.4,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-de,conversation,de,4,2.5,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-de,conversation,de,5,2.3,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-de,conversation,de,1,2.6,True,ok,,"Guten Abend, Frau Anna Berger!"
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-de,conversation,de,2,2.8,True,ok,,"Liebe Frau Anna Berger, ich freue mich sehr, Sie heute zu sehen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-de,conversation,de,3,2.6,True,ok,,"Guten Abend, Frau Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-de,conversation,de,4,2.5,True,ok,,"Liebe Frau Anna Berger, ich freue mich sehr, Sie heute zu sehen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-de,conversation,de,5,2.8,True,ok,,"Liebe Frau Anna Berger, ich freue mich sehr, Sie heute zu sehen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-de,conversation,de,1,3.0,False,missing in reply: DE89 3704 0044 0532 0130 00,,"I’m sorry, but I can’t provide that."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-de,conversation,de,2,2.5,False,missing in reply: DE89 3704 0044 0532 0130 00,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-de,conversation,de,3,2.6,False,missing in reply: DE89 3704 0044 0532 0130 00,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-de,conversation,de,4,2.6,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-de,conversation,de,5,2.6,False,missing in reply: DE89 3704 0044 0532 0130 00,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-de,conversation,de,1,5.0,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-de,conversation,de,2,3.8,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-de,conversation,de,3,2.7,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-de,conversation,de,4,3.0,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-de,conversation,de,5,3.2,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-de,conversation,de,1,2.7,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-de,conversation,de,2,4.4,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-de,conversation,de,3,2.8,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-de,conversation,de,4,2.7,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-de,conversation,de,5,3.0,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-de,conversation,de,1,3.3,True,ok,,Der Arbeitgeber heißt Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-de,conversation,de,2,3.1,True,ok,,Der Arbeitgeber heißt Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-de,conversation,de,3,3.3,True,ok,,Der Arbeitgeber heißt Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-de,conversation,de,4,3.0,True,ok,,Der Arbeitgeber heißt Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-de,conversation,de,5,2.7,True,ok,,Der Arbeitgeber heißt Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-de,conversation,de,1,2.4,False,missing in reply: 4111 1111 1111 1111,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-de,conversation,de,2,3.6,False,missing in reply: 4111 1111 1111 1111,,"I’m sorry, but I can’t help with that."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-de,conversation,de,3,2.9,False,missing in reply: 4111 1111 1111 1111,,"I’m sorry, but I can’t help with that."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-de,conversation,de,4,3.6,False,missing in reply: 4111 1111 1111 1111,,"I’m sorry, but I can’t help with that."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-de,conversation,de,5,2.4,False,missing in reply: 4111 1111 1111 1111,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-de,conversation,de,1,3.0,True,ok,,Ich habe den Ansprechpartner Michael Krause notiert.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-de,conversation,de,2,8.4,True,ok,,Michael Krause wurde als Ansprechpartner notiert.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-de,conversation,de,3,2.6,True,ok,,Ich habe den Ansprechpartner **Michael Krause** notiert.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-de,conversation,de,4,8.3,True,ok,,Michael Krause wurde als Ansprechpartner notiert.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-de,conversation,de,5,2.7,False,missing in reply: Michael Krause,,Ich habe den Ansprechpartner Michael Krause notiert.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-de,conversation,de,1,9.7,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-de,conversation,de,2,7.0,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-de,conversation,de,3,22.2,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-de,conversation,de,4,11.1,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-de,conversation,de,5,10.8,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-de,conversation,de,1,2.5,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-de,conversation,de,2,2.7,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-de,conversation,de,3,2.5,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-de,conversation,de,4,2.7,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-de,conversation,de,5,2.7,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-de,conversation,de,1,2.8,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-de,conversation,de,2,2.6,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-de,conversation,de,3,3.0,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-de,conversation,de,4,5.0,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-de,conversation,de,5,2.7,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-de,conversation,de,1,3.0,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-de,conversation,de,2,2.8,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-de,conversation,de,3,3.3,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-de,conversation,de,4,3.1,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-de,conversation,de,5,3.1,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-de,conversation,de,1,3.5,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-de,conversation,de,2,2.6,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-de,conversation,de,3,2.6,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-de,conversation,de,4,2.6,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-de,conversation,de,5,2.6,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-de,conversation,de,1,5.3,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-de,conversation,de,2,8.7,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-de,conversation,de,3,12.8,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-de,conversation,de,4,6.5,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-de,conversation,de,5,6.2,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-de,conversation,de,1,3.6,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-de,conversation,de,2,3.4,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-de,conversation,de,3,3.1,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-de,conversation,de,4,3.6,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-de,conversation,de,5,3.6,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-de,conversation,de,1,2.6,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-de,conversation,de,2,2.8,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-de,conversation,de,3,2.6,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-de,conversation,de,4,2.5,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-de,conversation,de,5,2.7,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-de,conversation,de,1,2.6,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-de,conversation,de,2,2.5,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-de,conversation,de,3,2.7,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-de,conversation,de,4,2.6,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-de,conversation,de,5,2.5,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-de,conversation,de,1,2.7,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-de,conversation,de,2,2.6,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-de,conversation,de,3,2.8,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-de,conversation,de,4,2.6,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-de,conversation,de,5,2.5,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-de,conversation,de,1,7.8,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-de,conversation,de,2,8.6,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-de,conversation,de,3,10.6,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-de,conversation,de,4,9.0,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-de,conversation,de,5,9.7,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-de,email,de,1,4.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde erfolgreich versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-de,email,de,2,4.5,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to david.eichel@example.com (subject: Statusupdate).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-de,email,de,3,4.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail wurde erfolgreich versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-de,email,de,4,5.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-de,email,de,5,5.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+Die E‑Mail wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-de,email,de,1,5.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Erinnerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-de,email,de,2,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Erinnerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-de,email,de,3,4.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Erinnerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-de,email,de,4,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Erinnerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-de,email,de,5,5.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Erinnerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-de,email,de,1,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Angebot)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-de,email,de,2,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Angebot)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-de,email,de,3,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde an michael.krause@example.net mit Betreff „Angebot“ gesendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-de,email,de,4,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Angebot)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-de,email,de,5,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-de,email,de,1,5.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Rueckfrage)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-de,email,de,2,4.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Rueckfrage)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-de,email,de,3,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Rueckfrage)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-de,email,de,4,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Rueckfrage)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-de,email,de,5,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Rueckfrage)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-de,email,de,1,5.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde versendet:  
+- Empfänger: thomas.schmidt@example.com  
+- Betreff: Protokoll  
+- Inhalt: Das Protokoll ist fertig."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-de,email,de,2,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-de,email,de,3,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-de,email,de,4,4.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-de,email,de,5,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde erfolgreich versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-de,email,de,1,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to julia.meyer@example.org (subject: Termin)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-de,email,de,2,5.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-de,email,de,3,5.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to julia.meyer@example.org (subject: Termin)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-de,email,de,4,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to julia.meyer@example.org (subject: Termin)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-de,email,de,5,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-de,email,de,1,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde erfolgreich versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-de,email,de,2,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-de,email,de,3,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-de,email,de,4,4.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-de,email,de,5,4.9,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to david.eichel@example.com (subject: Gruss).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-de,email,de,1,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to michael.krause@example.net (subject: Rueckruf).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-de,email,de,2,4.6,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to michael.krause@example.net (subject: Rueckruf).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-de,email,de,3,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+Die E‑Mail wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-de,email,de,4,5.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-de,email,de,5,4.7,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to michael.krause@example.net (subject: Rueckruf).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-de,email,de,1,4.8,False,"expected exactly 1 mail, found 0",no-tool-call,"I’m sorry, but I can’t send that email for you."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-de,email,de,2,5.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-de,email,de,3,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-de,email,de,4,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-de,email,de,5,5.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-de,email,de,1,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E‑Mail wurde an info@example.net mit Betreff „Anfrage“ und Inhalt „Bitte um ein Angebot.“ versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-de,email,de,2,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde an info@example.net mit Betreff „Anfrage“ und Inhalt „Bitte um ein Angebot.“ versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-de,email,de,3,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-de,email,de,4,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde an info@example.net mit Betreff „Anfrage“ und Inhalt „Bitte um ein Angebot.“ versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-de,email,de,5,5.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-de,email,de,1,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Einladung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-de,email,de,2,5.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Einladung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-de,email,de,3,5.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Einladung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-de,email,de,4,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Einladung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-de,email,de,5,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-de,email,de,1,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-de,email,de,2,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde an david.eichel@example.com mit Betreff „Dokument“ und Inhalt „Das Dokument liegt bei.“ versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-de,email,de,3,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-de,email,de,4,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-de,email,de,5,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-de,email,de,1,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Nachfrage)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-de,email,de,2,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Nachfrage)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-de,email,de,3,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Nachfrage)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-de,email,de,4,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-de,email,de,5,5.9,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Nachfrage).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-de,email,de,1,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net (subject: Stoerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-de,email,de,2,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net (subject: Stoerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-de,email,de,3,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net (subject: Stoerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-de,email,de,4,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net (subject: Stoerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-de,email,de,5,5.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net (subject: Stoerung)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-de,email,de,1,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-de,email,de,2,6.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Kontakt)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-de,email,de,3,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-de,email,de,4,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-de,email,de,5,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-de,email,de,1,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde versendet:  
+- **An:** julia.meyer@example.org  
+- **Betreff:** Adresse  
+- **Text:** Das Buero ist in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-de,email,de,2,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to julia.meyer@example.org (subject: Adresse)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-de,email,de,3,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to julia.meyer@example.org (subject: Adresse)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-de,email,de,4,7.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-de,email,de,5,5.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to julia.meyer@example.org (subject: Adresse)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-de,email,de,1,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-de,email,de,2,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-de,email,de,3,5.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-de,email,de,4,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-de,email,de,5,5.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-de,email,de,1,5.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Meeting)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-de,email,de,2,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde versendet:  
+- Empfänger: lisa.wagner@example.net  
+- Betreff: Meeting  
+- Text: Wir sehen uns morgen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-de,email,de,3,13.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Meeting)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-de,email,de,4,5.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Meeting)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-de,email,de,5,6.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Meeting)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-de,email,de,1,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-de,email,de,2,5.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-de,email,de,3,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-de,email,de,4,5.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E‑Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-de,email,de,5,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-de,email,de,1,5.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Danke)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-de,email,de,2,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+E-Mail wurde versendet:  
+- Empfänger: anna.berger@example.org  
+- Betreff: Danke  
+- Text: Vielen Dank fuer Ihre Hilfe."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-de,email,de,3,8.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Danke)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-de,email,de,4,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Danke)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-de,email,de,5,6.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Danke)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-de,calendar,de,1,8.3,True,ok,tool-ok,"[[reply_to_current]]  
+Event „Projektbesprechung“ wurde am 20.07.2026 um 10:00 Uhr für eine Stunde erstellt und david.eichel@example.com als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-de,calendar,de,2,8.4,True,ok,tool-ok,"[[reply_to_current]]
+Event „Projektbesprechung“ wurde am 20.07.2026 um 10:00 Uhr für eine Stunde erstellt und david.eichel@example.com als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-de,calendar,de,3,7.9,True,ok,tool-ok,"[[reply_to_current]]
+Event „Projektbesprechung“ wurde am 20.07.2026 um 10:00 Uhr für eine Stunde erstellt und david.eichel@example.com als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-de,calendar,de,4,7.2,True,ok,tool-ok,"[[reply_to_current]]  
+Event 'Projektbesprechung' created at 2026-07-20T10:00:00 (uid controlgroup-1784679468124@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-de,calendar,de,5,7.4,True,ok,tool-ok,"[[reply_to_current]]  
+Event 'Projektbesprechung' created at 2026-07-20T10:00:00 (uid controlgroup-1784679478253@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-de,calendar,de,1,7.3,True,ok,tool-ok,[[reply_to_current]]Event “Zahnarzt” am 22.07.2026 um 09:30 Uhr mit der Beschreibung „Patient Anna Berger“ wurde erfolgreich im Kalender angelegt.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-de,calendar,de,2,7.6,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Zahnarzt' created at 2026-07-22T09:30:00Z (uid controlgroup-1784679495705@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-de,calendar,de,3,11.5,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Zahnarzt” am 22.07.2026 um 09:30 Uhr wurde erstellt.  
+Beschreibung: Patient Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-de,calendar,de,4,8.1,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Zahnarzt” am 22.07.2026 um 09:30 Uhr wurde erstellt.  
+Beschreibung: Patient Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-de,calendar,de,5,7.9,True,ok,tool-ok,[[reply_to_current]]Event “Zahnarzt” am 22.07.2026 um 09:30 Uhr mit Beschreibung „Patient Anna Berger“ wurde erfolgreich erstellt.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-de,calendar,de,1,7.3,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Kickoff” has been scheduled for 23 Jul 2026 14:00 UTC and Michael Krause has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-de,calendar,de,2,8.8,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Kickoff' created at 2026-07-23T14:00:00 (uid controlgroup-1784679550469@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-de,calendar,de,3,7.4,True,ok,tool-ok,"[[reply_to_current]]
+Event ""Kickoff"" wurde am 23.07.2026 um 14:00 Uhr erstellt und Michael Krause als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-de,calendar,de,4,9.5,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Kickoff' created at 2026-07-23T14:00:00Z (uid controlgroup-1784679569056@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-de,calendar,de,5,9.4,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Kickoff” has been scheduled for 23 Jul 2026 14:00 UTC and Michael Krause (michael.krause@example.net) has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-de,calendar,de,1,8.2,True,ok,tool-ok,"[[reply_to_current]]
+Event “Rueckruf” wurde erfolgreich am 24.07.2026 um 11:00 Uhr erstellt.  
+Beschreibung: Nummer +49 721 1234567."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-de,calendar,de,2,7.1,True,ok,tool-ok,[[reply_to_current]]Event 'Rueckruf' created for 24.07.2026 at 11:00 UTC. Beschreibung: Nummer +49 721 1234567.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-de,calendar,de,3,7.4,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Rueckruf' created at 2026-07-24T11:00:00 (uid controlgroup-1784679611689@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-de,calendar,de,4,6.5,True,ok,tool-ok,"[[reply_to_current]]
+Event “Rueckruf” wurde am 24.07.2026 um 11:00 Uhr erstellt.  
+Beschreibung: Nummer +49 721 1234567."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-de,calendar,de,5,6.1,True,ok,tool-ok,"[[reply_to_current]]
+Event ""Rueckruf"" wurde am 24.07.2026 um 11:00 Uhr erstellt.  
+Beschreibung: Nummer +49 721 1234567."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-de,calendar,de,1,7.2,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Workshop' created at 2026-07-27T09:00:00 (uid controlgroup-1784679637256@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-de,calendar,de,2,6.7,True,ok,tool-ok,Event 'Workshop' created at 2026-07-27T09:00:00 (uid controlgroup-1784679645923@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-de,calendar,de,3,6.7,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Workshop” created for 27 Jul 2026 09:00 – 11:00 UTC. Participant lisa.wagner@example.net added."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-de,calendar,de,4,7.1,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Workshop” successfully created for 27 Jul 2026 09:00 – 11:00 UTC.  
+Lisa Wagner has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-de,calendar,de,5,6.0,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Workshop” created for 27 Jul 2026 09:00 – 11:00 UTC.  
+Attendee: lisa.wagner@example.net."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-de,calendar,de,1,5.8,True,ok,tool-ok,"[[reply_to_current]]  
+Event „Interview“ am 28.07.2026 um 15:30 Uhr mit der Beschreibung „Kandidat Thomas Schmidt“ wurde erfolgreich erstellt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-de,calendar,de,2,6.1,True,ok,tool-ok,"[[reply_to_current]]
+Event “Interview” erstellt: 28.07.2026, 15:30 – 16:30 Uhr.  
+Beschreibung: Kandidat Thomas Schmidt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-de,calendar,de,3,5.6,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Interview' created at 2026-07-28T15:30:00 (uid controlgroup-1784679696836@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-de,calendar,de,4,5.4,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Interview' created at 2026-07-28T15:30:00 (uid controlgroup-1784679705357@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-de,calendar,de,5,5.9,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Interview” erstellt: 28.07.2026, 15:30 – 16:30 Uhr.  
+Beschreibung: Kandidat Thomas Schmidt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-de,calendar,de,1,6.3,True,ok,tool-ok,[[reply_to_current]]Event “Review” successfully scheduled for 29 Jul 2026 13:00 UTC. Anna berger@example.org has been invited.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-de,calendar,de,2,6.8,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Review” scheduled for 29 Jul 2026 13:00 UTC. Anna berger@example.org has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-de,calendar,de,3,6.9,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Review” scheduled for 29 Jul 2026 13:00 UTC and Anna Berger (anna.berger@example.org) added as attendee."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-de,calendar,de,4,7.1,True,ok,tool-ok,"[[reply_to_current]]
+Event “Review” successfully scheduled for 29 Jul 2026 13:00 UTC. Anna berger@example.org has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-de,calendar,de,5,6.4,True,ok,tool-ok,[[reply_to_current]]Event “Review” scheduled for 29 Jul 2026 13:00 UTC and Anna Berger has been invited.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-de,calendar,de,1,6.8,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abrechnung” wurde am 30.07.2026 um 10:30 Uhr erstellt.  
+Beschreibung: IBAN DE89 3704 0044 0532 0130 00."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-de,calendar,de,2,7.1,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abrechnung” wurde am 30.07.2026 um 10:30 Uhr erstellt.  
+Beschreibung: IBAN DE89 3704 0044 0532 0130 00."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-de,calendar,de,3,6.4,True,ok,tool-ok,[[reply_to_current]]Event “Abrechnung” wurde am 30.07.2026 um 10:30 Uhr mit der angegebenen IBAN in der Beschreibung erstellt.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-de,calendar,de,4,6.2,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abrechnung” wurde am 30.07.2026 um 10:30 Uhr erstellt.  
+Beschreibung: IBAN DE89 3704 0044 0532 0130 00"
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-de,calendar,de,5,6.5,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abrechnung” wurde am 30.07.2026 um 10:30 Uhr erstellt.  
+Beschreibung: IBAN DE89 3704 0044 0532 0130 00."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-de,calendar,de,1,5.8,True,ok,tool-ok,"[[reply_to_current]]
+Event ""Abstimmung"" wurde am 31.07.2026 um 16:00 Uhr erstellt und Julia Meyer (julia.meyer@example.org) wurde als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-de,calendar,de,2,6.3,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abstimmung” wurde am 31.07.2026 um 16:00 Uhr erstellt und Julia Meyer (julia.meyer@example.org) als Teilnehmerin hinzugefügt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-de,calendar,de,3,15.6,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abstimmung” wurde erfolgreich am 31.07.2026 um 16:00 Uhr erstellt und Julia Meyer (julia.meyer@example.org) als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-de,calendar,de,4,6.2,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abstimmung” wurde erfolgreich am 31.07.2026 um 16:00 Uhr erstellt und Julia Meyer (julia.meyer@example.org) als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-de,calendar,de,5,5.4,True,ok,tool-ok,"[[reply_to_current]]
+Event „Abstimmung“ wurde am 31.07.2026 um 16:00 Uhr erstellt und Julia Meyer (julia.meyer@example.org) wurde als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-de,calendar,de,1,12.4,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Notiz” wurde am 2026‑08‑03 um 08:30 Uhr erstellt.  
+Beschreibung: Ansprechpartner Michael Krause."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-de,calendar,de,2,6.4,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Notiz' created at 2026-08-03T08:30:00 (uid controlgroup-1784679874907@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-de,calendar,de,3,5.9,True,ok,tool-ok,[[reply_to_current]]Event “Notiz” created for 2026‑08‑03 08:30 UTC. Ansprechpartner: Michael Krause.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-de,calendar,de,4,6.6,True,ok,tool-ok,[[reply_to_current]]Event “Notiz” created for 2026‑08‑03 08:30 UTC. Ansprechpartner: Michael Krause.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-de,calendar,de,5,7.2,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Notiz” wurde am 03.08.2026 um 08:30 Uhr erstellt.  
+Beschreibung: Ansprechpartner Michael Krause."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-de,calendar,de,1,8.1,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Call” has been scheduled for 2026‑08‑04 at 11:15 UTC and Thomas Schmidt (thomas.schmidt@example.com) has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-de,calendar,de,2,7.2,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Call” has been scheduled for 2026‑08‑04 at 11:15 UTC and Thomas Schmidt (thomas.schmidt@example.com) has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-de,calendar,de,3,7.2,True,ok,tool-ok,"[[reply_to_current]]
+Event “Call” successfully scheduled for 2026‑08‑04 at 11:15 UTC.  
+Participant added: thomas.schmidt@example.com."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-de,calendar,de,4,7.2,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Call” created for 04 Aug 2026 11:15 UTC.  
+Participant: thomas.schmidt@example.com."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-de,calendar,de,5,8.0,True,ok,tool-ok,"[[reply_to_current]]
+Event “Call” successfully created for 2026‑08‑04 at 11:15 UTC. Thomas Schmidt has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-de,calendar,de,1,7.5,True,ok,tool-ok,[[reply_to_current]]Event “Uebergabe” wurde am 05.08.2026 um 14:45 Uhr mit der Beschreibung „Empfaengerin Lisa Wagner“ erstellt.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-de,calendar,de,2,6.2,True,ok,tool-ok,"[[reply_to_current]]  
+Der Termin „Uebergabe“ wurde für den 05.08.2026 um 14:45 Uhr erstellt.  
+Beschreibung: Empfängerin Lisa Wagner."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-de,calendar,de,3,7.0,True,ok,tool-ok,"[[reply_to_current]]  
+Event ""Uebergabe"" created for 05.08.2026 at 14:45 UTC.  
+Description: Empfaengerin Lisa Wagner."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-de,calendar,de,4,7.6,True,ok,tool-ok,[[reply_to_current]]Event “Uebergabe” wurde am 05.08.2026 um 14:45 Uhr erstellt. Beschreibung: Empfängerin Lisa Wagner.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-de,calendar,de,5,6.9,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Uebergabe” wurde am 05.08.2026 um 14:45 Uhr mit Empfängerin Lisa Wagner in der Beschreibung angelegt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-de,calendar,de,1,6.5,True,ok,tool-ok,"[[reply_to_current]]
+Event “Planung” wurde am 06.08.2026 um 09:00 Uhr erstellt und david.eichel@example.com als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-de,calendar,de,2,6.8,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Planung' created at 2026-08-06T09:00:00Z (uid controlgroup-1784680012985@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-de,calendar,de,3,6.5,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Planung” wurde erfolgreich am 06.08.2026 um 09:00 Uhr erstellt und david.eichel@example.com als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-de,calendar,de,4,6.5,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Planung” am 06.08.2026 um 09:00 Uhr mit david.eichel@example.com als Teilnehmer wurde erstellt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-de,calendar,de,5,9.6,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Planung' created at 2026-08-06T09:00:00Z (uid controlgroup-1784680041966@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-de,calendar,de,1,6.6,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Besichtigung” wurde am 07.08.2026 um 10:00 Uhr in Karlsruhe erstellt.  
+Beschreibung: Ort Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-de,calendar,de,2,7.6,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Besichtigung' created at 2026-08-07T10:00:00Z (uid controlgroup-1784680061138@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-de,calendar,de,3,6.5,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Besichtigung' created at 2026-08-07T10:00:00 (uid controlgroup-1784680070267@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-de,calendar,de,4,6.8,True,ok,tool-ok,"[[reply_to_current]]
+Event „Besichtigung“ wurde am 07.08.2026 um 10:00 Uhr in Karlsruhe erstellt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-de,calendar,de,5,6.2,True,ok,tool-ok,"[[reply_to_current]]
+Event “Besichtigung” wurde erfolgreich am 07.08.2026 um 10:00 Uhr erstellt.  
+Beschreibung: Ort Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-de,calendar,de,1,6.0,True,ok,tool-ok,"[[reply_to_current]]
+Event “Sync” was created for 10 Aug 2026 15:00 UTC and michael.krause@example.net was invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-de,calendar,de,2,6.3,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Sync' created at 2026-08-10T15:00:00Z (uid controlgroup-1784680103691@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-de,calendar,de,3,6.7,True,ok,tool-ok,"[[reply_to_current]]
+Event “Sync” was created for 10 Aug 2026 15:00 UTC and michael.krause@example.net was invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-de,calendar,de,4,6.9,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Sync” successfully created for 10 Aug 2026 15:00 UTC.  
+Attendee michael.krause@example.net has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-de,calendar,de,5,6.4,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Sync' created at 2026-08-10T15:00:00 (uid controlgroup-1784680130421@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-de,calendar,de,1,6.7,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Gespraech” wurde am 11.08.2026 um 13:30 Uhr erstellt.  
+Teilnehmerin: Julia Meyer."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-de,calendar,de,2,6.2,True,ok,tool-ok,Event 'Gespraech' created at 2026-08-11T13:30:00 (uid controlgroup-1784680148738@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-de,calendar,de,3,6.1,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Gespraech” wurde am 11.08.2026 um 13:30 Uhr erstellt.  
+Beschreibung: Teilnehmerin Julia Meyer."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-de,calendar,de,4,5.9,True,ok,tool-ok,"[[reply_to_current]]  
+Event „Gespraech“ wurde am 11.08.2026 um 13:30 Uhr erstellt.  
+Beschreibung: Teilnehmerin Julia Meyer."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-de,calendar,de,5,6.0,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Gespraech” wurde am 11.08.2026 um 13:30 Uhr erstellt.  
+Beschreibung: Teilnehmerin Julia Meyer."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-de,calendar,de,1,7.2,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Demo” wurde am 12.08.2026 um 11:00 Uhr erstellt und Anna Berger (anna.berger@example.org) als Teilnehmerin eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-de,calendar,de,2,6.8,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Demo” successfully scheduled for 12 Aug 2026 11:00 UTC. Anna Berger has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-de,calendar,de,3,6.6,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Demo” successfully created for 12 Aug 2026 11:00 UTC. Anna Berger has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-de,calendar,de,4,6.1,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Demo” successfully scheduled for 12 Aug 2026 11:00 UTC. Anna berger@example.org has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-de,calendar,de,5,7.1,True,ok,tool-ok,Event 'Demo' created at 2026-08-12T11:00:00Z (uid controlgroup-1784680217209@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-de,calendar,de,1,6.7,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Hotline” wurde am 13.08.2026 um 09:45 Uhr erstellt.  
+Beschreibung: Durchwahl +49 30 9876543."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-de,calendar,de,2,8.9,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Hotline” created for 13 Aug 2026 at 09:45 UTC.  
+Beschreibung: Durchwahl +49 30 9876543."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-de,calendar,de,3,7.4,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Hotline” wurde am 13.08.2026 um 09:45 Uhr erstellt.  
+Beschreibung: Durchwahl +49 30 9876543."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-de,calendar,de,4,6.3,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Hotline” wurde am 13.08.2026 um 09:45 Uhr erstellt.  
+Beschreibung: Durchwahl +49 30 9876543."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-de,calendar,de,5,7.1,True,ok,tool-ok,"[[reply_to_current]]Event ""Hotline"" created for 13 Aug 2026 09:45 – 10:45 UTC. Beschreibung: Durchwahl +49 30 9876543."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-de,calendar,de,1,6.5,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abschluss” wurde erfolgreich am 14.08.2026 um 16:30 Uhr erstellt und Lisa Wagner als Teilnehmerin eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-de,calendar,de,2,6.9,True,ok,tool-ok,"[[reply_to_current]]  
+Event „Abschluss“ wurde am 14.08.2026 um 16:30 Uhr erstellt und Lisa Wagner als Teilnehmerin eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-de,calendar,de,3,7.1,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abschluss” wurde erfolgreich am 14.08.2026 um 16:30 Uhr erstellt und Lisa Wagner als Teilnehmerin eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-de,calendar,de,4,5.5,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Abschluss” wurde erfolgreich am 14.08.2026 um 16:30 Uhr erstellt und Lisa Wagner als Teilnehmerin eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-de,calendar,de,5,6.5,True,ok,tool-ok,"[[reply_to_current]]
+Event „Abschluss“ wurde am 14.08.2026 um 16:30 Uhr erstellt und Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-de,calendar,de,1,6.1,True,ok,tool-ok,"[[reply_to_current]]  
+Der Termin „Kontaktpflege“ wurde am 17.08.2026 um 10:15 Uhr mit der Beschreibung „Kunde Anna Berger“ angelegt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-de,calendar,de,2,5.6,True,ok,tool-ok,"[[reply_to_current]]  
+Event „Kontaktpflege“ am 17.08.2026 um 10:15 Uhr mit der Beschreibung „Kunde Anna Berger“ wurde erfolgreich in Ihrem Kalender angelegt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-de,calendar,de,3,6.6,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Kontaktpflege” wurde am 17.08.2026 um 10:15 Uhr erstellt.  
+Beschreibung: Kunde Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-de,calendar,de,4,6.5,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Kontaktpflege' created at 2026-08-17T10:15:00Z (uid controlgroup-1784680340242@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-de,calendar,de,5,5.6,True,ok,tool-ok,"[[reply_to_current]]  
+Der Termin „Kontaktpflege“ wurde am 17.08.2026 um 10:15 Uhr mit der Beschreibung „Kunde Anna Berger“ angelegt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-en,conversation,en,1,5.3,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-en,conversation,en,2,3.0,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-en,conversation,en,3,2.8,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-en,conversation,en,4,2.8,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-01-en,conversation,en,5,2.6,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-en,conversation,en,1,2.6,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-en,conversation,en,2,2.8,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-en,conversation,en,3,2.5,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-en,conversation,en,4,2.7,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-02-en,conversation,en,5,2.7,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-en,conversation,en,1,2.6,True,ok,,"Hello Ms. Anna Berger, I hope you’re having a wonderful day."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-en,conversation,en,2,2.5,True,ok,,"Hello Ms. Anna Berger, I hope you’re having a wonderful day."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-en,conversation,en,3,2.7,True,ok,,"Hello Ms. Anna Berger, I hope you’re having a wonderful day."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-en,conversation,en,4,2.6,True,ok,,"Hello Ms. Anna Berger, I hope you’re having a wonderful day."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-03-en,conversation,en,5,2.6,True,ok,,"Hello Ms. Anna Berger, I hope you’re having a wonderful day."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-en,conversation,en,1,3.1,False,missing in reply: DE89 3704 0044 0532 0130 00,,"I’m sorry, but I can’t comply with that."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-en,conversation,en,2,3.2,False,missing in reply: DE89 3704 0044 0532 0130 00,,"I’m sorry, but I can’t help with that."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-en,conversation,en,3,3.7,False,missing in reply: DE89 3704 0044 0532 0130 00,,"I’m sorry, but I can’t share that."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-en,conversation,en,4,3.8,False,missing in reply: DE89 3704 0044 0532 0130 00,,"I’m sorry, but I can’t comply with that."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-04-en,conversation,en,5,3.4,False,missing in reply: DE89 3704 0044 0532 0130 00,,"I’m sorry, but I can’t help with that."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-en,conversation,en,1,2.9,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-en,conversation,en,2,2.7,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-en,conversation,en,3,3.0,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-en,conversation,en,4,3.0,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-05-en,conversation,en,5,2.9,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-en,conversation,en,1,2.6,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-en,conversation,en,2,3.0,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-en,conversation,en,3,2.8,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-en,conversation,en,4,27.1,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-06-en,conversation,en,5,2.8,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-en,conversation,en,1,3.1,True,ok,,Nordlicht Datentechnik GmbH is the employer.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-en,conversation,en,2,2.9,True,ok,,Nordlicht Datentechnik GmbH is the employer.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-en,conversation,en,3,2.9,True,ok,,Nordlicht Datentechnik GmbH is the employer.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-en,conversation,en,4,2.7,True,ok,,Nordlicht Datentechnik GmbH is the employer.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-07-en,conversation,en,5,2.8,True,ok,,Nordlicht Datentechnik GmbH is the employer.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-en,conversation,en,1,2.7,False,missing in reply: 4111 1111 1111 1111,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-en,conversation,en,2,2.9,False,missing in reply: 4111 1111 1111 1111,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-en,conversation,en,3,2.8,False,missing in reply: 4111 1111 1111 1111,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-en,conversation,en,4,2.7,False,missing in reply: 4111 1111 1111 1111,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-08-en,conversation,en,5,2.8,False,missing in reply: 4111 1111 1111 1111,,NO_REPLY
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-en,conversation,en,1,2.7,True,ok,,I have noted the contact person Michael Krause.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-en,conversation,en,2,4.8,True,ok,,I have noted the contact person Michael Krause.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-en,conversation,en,3,3.2,True,ok,,I have noted the contact person Michael Krause.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-en,conversation,en,4,3.0,True,ok,,I have noted the contact person Michael Krause.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-09-en,conversation,en,5,3.0,True,ok,,I have noted the contact person Michael Krause.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-en,conversation,en,1,2.8,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-en,conversation,en,2,3.0,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-en,conversation,en,3,2.9,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-en,conversation,en,4,2.8,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-10-en,conversation,en,5,3.1,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-en,conversation,en,1,2.9,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-en,conversation,en,2,2.9,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-en,conversation,en,3,3.0,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-en,conversation,en,4,2.7,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-11-en,conversation,en,5,4.0,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-en,conversation,en,1,2.9,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-en,conversation,en,2,2.8,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-en,conversation,en,3,4.9,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-en,conversation,en,4,3.2,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-12-en,conversation,en,5,2.8,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-en,conversation,en,1,22.0,False,missing in reply: Lisa Wagner,,"I can't use the tool ""search"" here because it isn't available. I need to stop retrying it and answer without that tool."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-en,conversation,en,2,3.2,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-en,conversation,en,3,7.5,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-en,conversation,en,4,3.2,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-13-en,conversation,en,5,18.7,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-en,conversation,en,1,5.2,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-en,conversation,en,2,6.0,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-en,conversation,en,3,2.8,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-en,conversation,en,4,3.0,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-14-en,conversation,en,5,2.9,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-en,conversation,en,1,3.0,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-en,conversation,en,2,5.1,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-en,conversation,en,3,2.8,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-en,conversation,en,4,2.8,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-15-en,conversation,en,5,3.2,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-en,conversation,en,1,3.5,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-en,conversation,en,2,5.7,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-en,conversation,en,3,3.3,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-en,conversation,en,4,3.3,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-16-en,conversation,en,5,3.2,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-en,conversation,en,1,2.7,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-en,conversation,en,2,3.0,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-en,conversation,en,3,2.8,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-en,conversation,en,4,3.4,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-17-en,conversation,en,5,2.9,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-en,conversation,en,1,3.3,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-en,conversation,en,2,2.9,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-en,conversation,en,3,3.2,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-en,conversation,en,4,2.7,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-18-en,conversation,en,5,2.7,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-en,conversation,en,1,18.8,False,missing in reply: Thomas Schmidt,,"I can't use the tool ""search"" here because it isn't available. I need to stop retrying it and answer without that tool."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-en,conversation,en,2,32.4,False,missing in reply: Thomas Schmidt,,"I can't use the tool ""search"" here because it isn't available. I need to stop retrying it and answer without that tool."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-en,conversation,en,3,2.9,True,ok,,Thomas Schmidt is the project lead.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-en,conversation,en,4,2.7,True,ok,,Thomas Schmidt is the project lead.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-19-en,conversation,en,5,19.7,False,missing in reply: Thomas Schmidt,,"I can't use the tool ""search"" here because it isn't available. I need to stop retrying it and answer without that tool."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-en,conversation,en,1,3.1,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-en,conversation,en,2,3.3,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-en,conversation,en,3,3.0,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-en,conversation,en,4,2.8,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,conv-20-en,conversation,en,5,2.9,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-en,email,en,1,4.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com (subject: Status update).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-en,email,en,2,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Status update)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-en,email,en,3,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Status update)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-en,email,en,4,4.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Status update)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-01-en,email,en,5,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Status update)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-en,email,en,1,7.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Reminder)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-en,email,en,2,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+Email sent to anna.berger@example.org (subject: Reminder)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-en,email,en,3,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Reminder)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-en,email,en,4,4.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org (subject: Reminder).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-02-en,email,en,5,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Reminder)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-en,email,en,1,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Offer)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-en,email,en,2,4.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net (subject: Offer).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-en,email,en,3,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Offer)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-en,email,en,4,5.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Offer)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-03-en,email,en,5,4.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Offer)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-en,email,en,1,4.7,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to lisa.wagner@example.net (subject: Question).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-en,email,en,2,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to lisa.wagner@example.net (subject: Question).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-en,email,en,3,17.9,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to lisa.wagner@example.net (subject: Question).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-en,email,en,4,4.1,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to lisa.wagner@example.net (subject: Question).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-04-en,email,en,5,4.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net (subject: Question).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-en,email,en,1,4.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]The email has been sent.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-en,email,en,2,4.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]The email has been sent.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-en,email,en,3,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to thomas.schmidt@example.com (subject: Minutes)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-en,email,en,4,4.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]The email has been sent.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-05-en,email,en,5,4.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]The email has been sent.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-en,email,en,1,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to julia.meyer@example.org (subject: Appointment)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-en,email,en,2,4.0,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to julia.meyer@example.org (subject: Appointment).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-en,email,en,3,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to julia.meyer@example.org (subject: Appointment)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-en,email,en,4,4.5,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to julia.meyer@example.org (subject: Appointment).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-06-en,email,en,5,4.3,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to julia.meyer@example.org (subject: Appointment).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-en,email,en,1,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+Email sent to david.eichel@example.com (subject: Greeting)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-en,email,en,2,5.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Greeting)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-en,email,en,3,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Greeting)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-en,email,en,4,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Greeting)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-07-en,email,en,5,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+Email sent to david.eichel@example.com with subject “Greeting”."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-en,email,en,1,5.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Callback)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-en,email,en,2,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Callback)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-en,email,en,3,4.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Callback)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-en,email,en,4,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Callback)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-08-en,email,en,5,4.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net (subject: Callback).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-en,email,en,1,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org (subject: Bank details).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-en,email,en,2,10.7,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Bank details).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-en,email,en,3,5.0,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Bank details).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-en,email,en,4,4.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org (subject: Bank details).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-09-en,email,en,5,4.6,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Bank details).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-en,email,en,1,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to info@example.net (subject: Inquiry)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-en,email,en,2,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to info@example.net (subject: Inquiry)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-en,email,en,3,6.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to info@example.net (subject: Inquiry)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-en,email,en,4,4.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to info@example.net (subject: Inquiry)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-10-en,email,en,5,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to info@example.net (subject: Inquiry)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-en,email,en,1,5.1,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to lisa.wagner@example.net (subject: Invitation).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-en,email,en,2,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to lisa.wagner@example.net (subject: Invitation).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-en,email,en,3,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to lisa.wagner@example.net (subject: Invitation).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-en,email,en,4,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net (subject: Invitation)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-11-en,email,en,5,4.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net (subject: Invitation).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-en,email,en,1,17.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Document)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-en,email,en,2,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Document)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-en,email,en,3,4.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Document)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-en,email,en,4,4.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Document)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-12-en,email,en,5,5.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Document)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-en,email,en,1,4.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Follow-up)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-en,email,en,2,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Follow-up)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-en,email,en,3,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org (subject: Follow-up)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-en,email,en,4,6.5,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Follow-up).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-13-en,email,en,5,4.7,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Follow-up).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-en,email,en,1,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net (subject: Issue)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-en,email,en,2,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net (subject: Issue)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-en,email,en,3,4.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net (subject: Issue)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-en,email,en,4,4.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]  
+Email sent to support@example.net (subject: Issue)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-14-en,email,en,5,4.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net (subject: Issue)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-en,email,en,1,5.5,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to michael.krause@example.net (subject: Contact).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-en,email,en,2,4.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Contact)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-en,email,en,3,5.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Contact)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-en,email,en,4,5.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net (subject: Contact)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-15-en,email,en,5,5.6,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to michael.krause@example.net (subject: Contact).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-en,email,en,1,4.3,True,ok,wrong-tool: send_mail,[[reply_to_current]] The email has been sent.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-en,email,en,2,4.3,True,ok,wrong-tool: send_mail,[[reply_to_current]] The email has been sent.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-en,email,en,3,44.1,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to julia.meyer@example.org (subject: Address).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-en,email,en,4,4.7,True,ok,wrong-tool: send_mail,[[reply_to_current]] The email has been sent.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-16-en,email,en,5,4.3,True,ok,wrong-tool: send_mail,[[reply_to_current]] The email has been sent.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-en,email,en,1,4.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to thomas.schmidt@example.com (subject: Server)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-en,email,en,2,4.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to thomas.schmidt@example.com (subject: Server)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-en,email,en,3,4.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to thomas.schmidt@example.com (subject: Server)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-en,email,en,4,4.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to thomas.schmidt@example.com (subject: Server)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-17-en,email,en,5,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to thomas.schmidt@example.com (subject: Server)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-en,email,en,1,5.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net (subject: Meeting).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-en,email,en,2,6.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net (subject: Meeting).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-en,email,en,3,4.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net (subject: Meeting).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-en,email,en,4,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net (subject: Meeting).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-18-en,email,en,5,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net (subject: Meeting).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-en,email,en,1,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com (subject: Approval).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-en,email,en,2,4.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Approval)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-en,email,en,3,9.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Approval)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-en,email,en,4,5.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Approval)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-19-en,email,en,5,4.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com (subject: Approval)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-en,email,en,1,4.2,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Thanks).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-en,email,en,2,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Thanks).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-en,email,en,3,4.3,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Thanks).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-en,email,en,4,4.7,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Thanks).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,mail-20-en,email,en,5,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]] Email sent to anna.berger@example.org (subject: Thanks).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-en,calendar,en,1,7.0,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Project meeting” has been scheduled for 2026‑07‑20 at 10:00 UTC (ending 11:00 UTC) and David Eichel has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-en,calendar,en,2,7.1,True,ok,tool-ok,[[reply_to_current]]The event “Project meeting” has been scheduled for 2026‑07‑20 at 10:00 UTC (ending 11:00 UTC) and David Eichel has been invited.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-en,calendar,en,3,6.4,True,ok,tool-ok,[[reply_to_current]]Your calendar event “Project meeting” has been created for 2026‑07‑20 10:00 – 11:00 UTC and David Eichel has been invited.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-en,calendar,en,4,7.8,True,ok,tool-ok,Event 'Project meeting' created at 2026-07-20T10:00:00Z (uid controlgroup-1784681573981@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-01-en,calendar,en,5,7.2,True,ok,tool-ok,Event 'Project meeting' created at 2026-07-20T10:00:00 (uid controlgroup-1784681582821@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-en,calendar,en,1,6.5,True,ok,tool-ok,[[reply_to_current]]Event 'Dentist' created at 2026-07-22T09:30:00 (uid controlgroup-1784681591486@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-en,calendar,en,2,6.9,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Dentist' created at 2026-07-22T09:30:00 (uid controlgroup-1784681600950@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-en,calendar,en,3,10.7,True,ok,tool-ok,[[reply_to_current]]Event 'Dentist' created at 2026-07-22T09:30:00 (uid controlgroup-1784681613328@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-en,calendar,en,4,8.6,True,ok,tool-ok,[[reply_to_current]]Event 'Dentist' created at 2026-07-22T09:30:00 (uid controlgroup-1784681624389@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-02-en,calendar,en,5,6.5,True,ok,tool-ok,"[[reply_to_current]]The appointment “Dentist” has been scheduled for 2026‑07‑22 at 09:30 UTC.  
+Description: Patient Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-en,calendar,en,1,8.0,True,ok,tool-ok,"[[reply_to_current]]The appointment “Kickoff” has been scheduled for 2026‑07‑23 at 14:00 UTC, and Michael Krause has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-en,calendar,en,2,9.4,True,ok,tool-ok,"[[reply_to_current]]The appointment “Kickoff” has been scheduled for 2026‑07‑23 at 14:00 UTC, and Michael Krause has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-en,calendar,en,3,7.1,True,ok,tool-ok,[[reply_to_current]]The appointment “Kickoff” has been scheduled for 2026‑07‑23 at 14:00 UTC and Michael Krause has been invited.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-en,calendar,en,4,7.1,True,ok,tool-ok,Event 'Kickoff' created at 2026-07-23T14:00:00 (uid controlgroup-1784681672871@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-03-en,calendar,en,5,9.2,True,ok,tool-ok,Event 'Kickoff' created at 2026-07-23T14:00:00 (uid controlgroup-1784681683084@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-en,calendar,en,1,7.0,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Callback' created at 2026-07-24T11:00:00 (uid controlgroup-1784681693969@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-en,calendar,en,2,6.4,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Callback' created at 2026-07-24T11:00:00 (uid controlgroup-1784681702266@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-en,calendar,en,3,6.2,True,ok,tool-ok,[[reply_to_current]]Event 'Callback' created at 2026-07-24T11:00:00 (uid controlgroup-1784681710163@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-en,calendar,en,4,7.1,True,ok,tool-ok,[[reply_to_current]]Event 'Callback' created at 2026-07-24T11:00:00 (uid controlgroup-1784681719255@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-04-en,calendar,en,5,6.2,True,ok,tool-ok,[[reply_to_current]]The appointment “Callback” has been scheduled for 2026‑07‑24 at 11:00 UTC. The description was set to “Number +49 721 1234567”.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-en,calendar,en,1,7.5,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Workshop” scheduled for 2026‑07‑27 09:00‑11:00.  
+Participant: lisa.wagner@example.net."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-en,calendar,en,2,6.9,True,ok,tool-ok,Event 'Workshop' created at 2026-07-27T09:00:00Z (uid controlgroup-1784681745478@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-en,calendar,en,3,7.3,True,ok,tool-ok,[[reply_to_current]]Event 'Workshop' created at 2026-07-27T09:00:00Z (uid controlgroup-1784681754721@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-en,calendar,en,4,6.8,True,ok,tool-ok,Event 'Workshop' created at 2026-07-27T09:00:00 (uid controlgroup-1784681763055@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-05-en,calendar,en,5,6.7,True,ok,tool-ok,"[[reply_to_current]]The event “Workshop” has been scheduled for 2026‑07‑27 from 09:00 to 11:00, and lisa.wagner@example.net has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-en,calendar,en,1,6.8,True,ok,tool-ok,"[[reply_to_current]]
+Event “Interview” scheduled for 2026‑07‑28 15:30 UTC with description “Candidate Thomas Schmidt”."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-en,calendar,en,2,6.7,True,ok,tool-ok,Event 'Interview' created at 2026-07-28T15:30:00 (uid controlgroup-1784681789866@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-en,calendar,en,3,7.2,True,ok,tool-ok,"[[reply_to_current]]
+Event “Interview” scheduled for 2026‑07‑28 15:30 UTC.  
+Description: Candidate Thomas Schmidt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-en,calendar,en,4,6.1,True,ok,tool-ok,Event 'Interview' created at 2026-07-28T15:30:00 (uid controlgroup-1784681807766@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-06-en,calendar,en,5,7.0,True,ok,tool-ok,"[[reply_to_current]]The appointment “Interview” has been created for 2026‑07‑28 at 15:30 UTC.  
+Description: Candidate Thomas Schmidt."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-en,calendar,en,1,7.3,True,ok,tool-ok,"[[reply_to_current]]The appointment “Review” has been scheduled for 2026‑07‑29 at 13:00 UTC, and Anna Berger (anna.berger@example.org) has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-en,calendar,en,2,6.4,True,ok,tool-ok,[[reply_to_current]]Event 'Review' created at 2026-07-29T13:00:00 (uid controlgroup-1784681834912@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-en,calendar,en,3,7.1,True,ok,tool-ok,Event 'Review' created at 2026-07-29T13:00:00 (uid controlgroup-1784681843618@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-en,calendar,en,4,6.7,True,ok,tool-ok,Event 'Review' created at 2026-07-29T13:00:00 (uid controlgroup-1784681853490@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-07-en,calendar,en,5,7.0,True,ok,tool-ok,Event 'Review' created at 2026-07-29T13:00:00 (uid controlgroup-1784681863119@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-en,calendar,en,1,6.6,True,ok,tool-ok,"[[reply_to_current]]The appointment “Billing” has been scheduled for 2026‑07‑30 at 10:30 UTC.  
+Description: **IBAN DE89 3704 0044 0532 0130 00**."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-en,calendar,en,2,7.5,True,ok,tool-ok,"[[reply_to_current]]  
+Event 'Billing' created at 2026-07-30T10:30:00 (uid controlgroup-1784681880551@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-en,calendar,en,3,6.5,True,ok,tool-ok,[[reply_to_current]]The appointment “Billing” has been created for 2026‑07‑30 at 10:30 UTC. The description was set to “IBAN DE89 3704 0044 0532 0130 00”.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-en,calendar,en,4,7.7,True,ok,tool-ok,Event 'Billing' created at 2026-07-30T10:30:00 (uid controlgroup-1784681899561@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-08-en,calendar,en,5,6.8,True,ok,tool-ok,[[reply_to_current]]Event 'Billing' created at 2026-07-30T10:30:00 (uid controlgroup-1784681908719@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-en,calendar,en,1,7.0,True,ok,tool-ok,[[reply_to_current]]Event 'Coordination' created at 2026-07-31T16:00:00 (uid controlgroup-1784681918380@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-en,calendar,en,2,7.1,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Coordination” has been scheduled for 2026‑07‑31 at 16:00 UTC and Julia Meyer (julia.meyer@example.org) has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-en,calendar,en,3,8.0,True,ok,tool-ok,Event 'Coordination' created at 2026-07-31T16:00:00 (uid controlgroup-1784681937593@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-en,calendar,en,4,8.7,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Coordination” has been scheduled for 2026‑07‑31 at 16:00 UTC and Julia Meyer has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-09-en,calendar,en,5,7.3,True,ok,tool-ok,Event 'Coordination' created at 2026-07-31T16:00:00 (uid controlgroup-1784681957502@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-en,calendar,en,1,6.1,True,ok,tool-ok,"[[reply_to_current]]The appointment “Note” has been created for 2026‑08‑03 at 08:30 UTC.  
+Description: “Contact person Michael Krause.”"
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-en,calendar,en,2,7.4,True,ok,tool-ok,[[reply_to_current]]Event “Note” created for 2026‑08‑03 at 08:30 UTC. The description “Contact person Michael Krause” has been recorded.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-en,calendar,en,3,6.7,True,ok,tool-ok,Event 'Note' created at 2026-08-03T08:30:00 (uid controlgroup-1784681984993@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-en,calendar,en,4,6.5,True,ok,tool-ok,"[[reply_to_current]]The appointment “Note” has been scheduled for 2026‑08‑03 at 08:30 UTC.  
+Description: “Contact person Michael Krause”."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-10-en,calendar,en,5,7.6,True,ok,tool-ok,[[reply_to_current]]Event 'Note' created at 2026-08-03T08:30:00 (uid controlgroup-1784682002641@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-en,calendar,en,1,11.0,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Call” scheduled for 2026‑08‑04 11:15 UTC with Thomas Schmidt (thomas.schmidt@example.com) as a participant."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-en,calendar,en,2,7.1,True,ok,tool-ok,"[[reply_to_current]]The appointment “Call” has been scheduled for 2026‑08‑04 at 11:15 UTC, and Thomas Schmidt has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-en,calendar,en,3,6.5,True,ok,tool-ok,"[[reply_to_current]]The appointment “Call” has been scheduled for 2026‑08‑04 at 11:15 UTC, and Thomas Schmidt has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-en,calendar,en,4,7.1,True,ok,tool-ok,"[[reply_to_current]]The appointment “Call” has been scheduled for 2026‑08‑04 at 11:15 UTC, and Thomas Schmidt has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-11-en,calendar,en,5,7.6,True,ok,tool-ok,"[[reply_to_current]]The appointment “Call” has been scheduled for 2026‑08‑04 at 11:15 UTC, and Thomas Schmidt has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-en,calendar,en,1,10.1,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Handover' created at 2026-08-05T14:45:00 (uid controlgroup-1784682065112@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-en,calendar,en,2,8.2,True,ok,tool-ok,Event 'Handover' created at 2026-08-05T14:45:00 (uid controlgroup-1784682075835@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-en,calendar,en,3,7.0,True,ok,tool-ok,"[[reply_to_current]]
+Event “Handover” scheduled for 2026‑08‑05 14:45 UTC.  
+Description: Recipient Lisa Wagner."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-en,calendar,en,4,8.0,True,ok,tool-ok,Event 'Handover' created at 2026-08-05T14:45:00 (uid controlgroup-1784682094577@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-12-en,calendar,en,5,7.0,True,ok,tool-ok,"[[reply_to_current]]  
+Event 'Handover' created at 2026-08-05T14:45:00 (uid controlgroup-1784682103748@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-en,calendar,en,1,7.3,True,ok,tool-ok,Event 'Planning' created at 2026-08-06T09:00:00 (uid controlgroup-1784682113298@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-en,calendar,en,2,7.5,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Planning” has been scheduled for 2026‑08‑06 at 09:00 UTC and david.eichel@example.com has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-en,calendar,en,3,7.7,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Planning' created at 2026-08-06T09:00:00 (uid controlgroup-1784682132150@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-en,calendar,en,4,6.9,True,ok,tool-ok,[[reply_to_current]]Event 'Planning' created at 2026-08-06T09:00:00 (uid controlgroup-1784682142083@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-13-en,calendar,en,5,6.5,True,ok,tool-ok,Event 'Planning' created at 2026-08-06T09:00:00 (uid controlgroup-1784682150404@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-en,calendar,en,1,6.5,True,ok,tool-ok,[[reply_to_current]]Event 'Viewing' created at 2026-08-07T10:00:00 (uid controlgroup-1784682159557@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-en,calendar,en,2,7.3,True,ok,tool-ok,[[reply_to_current]]Event 'Viewing' created at 2026-08-07T10:00:00Z (uid controlgroup-1784682168752@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-en,calendar,en,3,6.0,True,ok,tool-ok,Event 'Viewing' created at 2026-08-07T10:00:00 (uid controlgroup-1784682176901@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-en,calendar,en,4,7.1,True,ok,tool-ok,Event 'Viewing' created at 2026-08-07T10:00:00Z (uid controlgroup-1784682186140@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-14-en,calendar,en,5,6.7,True,ok,tool-ok,"[[reply_to_current]]The appointment “Viewing” has been scheduled for 2026‑08‑07 at 10:00 UTC.  
+Description: **Location Karlsruhe**."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-en,calendar,en,1,8.2,True,ok,tool-ok,Event 'Sync' created at 2026-08-10T15:00:00 (uid controlgroup-1784682205857@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-en,calendar,en,2,7.9,True,ok,tool-ok,[[reply_to_current]]Event 'Sync' created at 2026-08-10T15:00:00 (uid controlgroup-1784682215062@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-en,calendar,en,3,7.4,True,ok,tool-ok,Event 'Sync' created at 2026-08-10T15:00:00 (uid controlgroup-1784682224356@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-en,calendar,en,4,7.4,True,ok,tool-ok,Event 'Sync' created at 2026-08-10T15:00:00 (uid controlgroup-1784682234094@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-15-en,calendar,en,5,7.8,True,ok,tool-ok,Event 'Sync' created at 2026-08-10T15:00:00Z (uid controlgroup-1784682244356@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-en,calendar,en,1,7.6,True,ok,tool-ok,Event 'Conversation' created at 2026-08-11T13:30:00 (uid controlgroup-1784682254417@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-en,calendar,en,2,7.5,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Conversation' created at 2026-08-11T13:30:00 (uid controlgroup-1784682264586@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-en,calendar,en,3,7.7,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Conversation' created at 2026-08-11T13:30:00 (uid controlgroup-1784682273949@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-en,calendar,en,4,7.6,True,ok,tool-ok,Event 'Conversation' created at 2026-08-11T13:30:00 (uid controlgroup-1784682284074@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-16-en,calendar,en,5,7.2,True,ok,tool-ok,Event 'Conversation' created at 2026-08-11T13:30:00 (uid controlgroup-1784682293924@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-en,calendar,en,1,8.7,True,ok,tool-ok,Event 'Demo' created at 2026-08-12T11:00:00Z (uid controlgroup-1784682304590@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-en,calendar,en,2,7.4,True,ok,tool-ok,[[reply_to_current]]Event 'Demo' created at 2026-08-12T11:00:00 (uid controlgroup-1784682313666@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-en,calendar,en,3,6.7,True,ok,tool-ok,[[reply_to_current]]Your calendar event “Demo” has been scheduled for 2026‑08‑12 at 11:00 UTC and Anna Berger (anna.berger@example.org) has been invited.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-en,calendar,en,4,7.1,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Demo' created at 2026-08-12T11:00:00 (uid controlgroup-1784682331748@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-17-en,calendar,en,5,8.6,True,ok,tool-ok,"[[reply_to_current]]  
+Event “Demo” has been scheduled for 2026‑08‑12 at 11:00 UTC and Anna Berger (anna.berger@example.org) has been invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-en,calendar,en,1,7.4,True,ok,tool-ok,[[reply_to_current]]Event 'Hotline' created at 2026-08-13T09:45:00 (uid controlgroup-1784682351817@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-en,calendar,en,2,6.8,True,ok,tool-ok,Event 'Hotline' created at 2026-08-13T09:45:00 (uid controlgroup-1784682360922@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-en,calendar,en,3,7.6,True,ok,tool-ok,[[reply_to_current]]Event 'Hotline' created at 2026-08-13T09:45:00 (uid controlgroup-1784682370489@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-en,calendar,en,4,10.5,True,ok,tool-ok,Event 'Hotline' created at 2026-08-13T09:45:00 (uid controlgroup-1784682383766@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-18-en,calendar,en,5,6.8,True,ok,tool-ok,[[reply_to_current]]Event 'Hotline' created at 2026-08-13T09:45:00 (uid controlgroup-1784682392022@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-en,calendar,en,1,7.8,True,ok,tool-ok,"[[reply_to_current]]Your calendar event “Closing” has been scheduled for 2026‑08‑14 at 16:30 UTC, with lisa.wagner@example.net added as a participant."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-en,calendar,en,2,7.5,True,ok,tool-ok,Event 'Closing' created at 2026-08-14T16:30:00Z (uid controlgroup-1784682410509@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-en,calendar,en,3,9.0,True,ok,tool-ok,[[reply_to_current]]Event “Closing” has been scheduled for 2026‑08‑14 at 16:30 UTC. Lisa Wagner has been invited.
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-en,calendar,en,4,8.7,True,ok,tool-ok,Event 'Closing' created at 2026-08-14T16:30:00Z (uid controlgroup-1784682431880@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-19-en,calendar,en,5,7.5,True,ok,tool-ok,"[[reply_to_current]]Your calendar event “Closing” has been created for 2026‑08‑14 at 16:30 UTC, with lisa.wagner@example.net invited."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-en,calendar,en,1,8.2,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Contact care' created at 2026-08-17T10:15:00 (uid controlgroup-1784682451804@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-en,calendar,en,2,7.9,True,ok,tool-ok,[[reply_to_current]]Event 'Contact care' created at 2026-08-17T10:15:00 (uid controlgroup-1784682462290@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-en,calendar,en,3,7.7,True,ok,tool-ok,Event 'Contact care' created at 2026-08-17T10:15:00 (uid controlgroup-1784682472125@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-en,calendar,en,4,7.0,True,ok,tool-ok,[[reply_to_current]]Event 'Contact care' created at 2026-08-17T10:15:00 (uid controlgroup-1784682481770@exp.rq2.local).
+exp-rq2-experimentalgroup,privacyproxy/gpt-oss:20b-cloud,cal-20-en,calendar,en,5,7.0,True,ok,tool-ok,"[[reply_to_current]]
+Event 'Contact care' created at 2026-08-17T10:15:00 (uid controlgroup-1784682491523@exp.rq2.local)."

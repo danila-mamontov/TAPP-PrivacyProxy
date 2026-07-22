@@ -1,0 +1,6 @@
+mcp
+starlette
+caldav
+icalendar
+requests
+python-dotenv

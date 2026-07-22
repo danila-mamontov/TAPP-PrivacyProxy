@@ -1,0 +1,1649 @@
+group,model,id,domain,lang,iteration,seconds,function_ok,pseudonymized,pseudo_detail,detail,tool_diagnosis,reply
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,1,3.6,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,2,3.0,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,3,3.3,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,4,3.5,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,5,3.8,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,1,3.8,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,2,4.1,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,3,4.1,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,4,4.9,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,5,14.9,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,1,9.3,True,True,ok,ok,,"Sehr geehrte Frau Anna Berger, es ist mir eine Freude, Sie hier herzlich willkommen zu heißen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,2,6.1,True,True,ok,ok,,"Sehr geehrte Frau Anna Berger, es ist mir eine große Freude, Sie hier persönlich begrüßen zu dürfen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,3,6.2,True,True,ok,ok,,"Sehr geehrte Frau Anna Berger, ich heiße Sie herzlich willkommen und freue mich sehr, Sie kennenzulernen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,4,6.0,True,True,ok,ok,,"Sehr geehrte Frau Anna Berger, es ist mir eine große Freude, Sie begrüßen zu dürfen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,5,17.2,True,True,ok,ok,,"Sehr geehrte Frau Anna Berger, es ist mir eine besondere Freude, Sie heute hier persönlich begrüßen zu dürfen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,1,4.8,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,2,5.5,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,3,4.7,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,4,4.8,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,5,4.7,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,1,41.6,True,True,ok,ok,,Karlsruhe
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,2,26.8,True,True,ok,ok,,Karlsruhe
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,3,28.9,False,True,ok,missing in reply: Karlsruhe,,Ich habe keine Informationen zu diesem Standort.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,4,25.7,True,True,ok,ok,,Karlsruhe
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,5,21.2,True,True,ok,ok,,"Ich kann den Stadtnamen für Karlsruhe nicht bestimmen, da mir keine Daten zu diesem spezifischen Platzhalter vorliegen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,1,4.2,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,2,7.6,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,3,8.4,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,4,6.0,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,5,5.4,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,1,4.3,True,True,ok,ok,,Bei Nordlicht Datentechnik GmbH habe ich mich sofort wohlgefühlt.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,2,6.2,True,True,ok,ok,,"Ich freue mich darauf, meine berufliche Zukunft bei Nordlicht Datentechnik GmbH zu gestalten."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,3,5.6,True,True,ok,ok,,Bei Nordlicht Datentechnik GmbH habe ich mich vor Kurzem erfolgreich auf eine neue Position beworben.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,4,4.9,True,True,ok,ok,,"Hier ist ein kurzer Satz mit dem Firmennamen:
+
+„Ich freue mich sehr auf meine neue Tätigkeit bei Nordlicht Datentechnik GmbH.“"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,5,5.1,True,True,ok,ok,,"Hier ist ein kurzer Satz mit dem Firmennamen:
+
+„Ich freue mich darauf, meine Bewerbung bei Nordlicht Datentechnik GmbH einzureichen.“"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,1,4.7,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,2,5.3,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,3,4.1,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,4,3.1,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,5,3.2,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,1,8.0,True,True,ok,ok,,Ich habe den Ansprechpartner Michael Krause notiert.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,2,4.4,True,True,ok,ok,,Ich habe den Ansprechpartner Michael Krause notiert.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,3,4.5,True,True,ok,ok,,"Ich bestätige, dass ich den Ansprechpartner Michael Krause für Sie notiert habe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,4,6.0,True,True,ok,ok,,"Ich bestätige, dass ich den Ansprechpartner Michael Krause notiert habe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,5,6.4,True,True,ok,ok,,Ich habe den Ansprechpartner Michael Krause für Sie notiert.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,1,4.2,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,2,5.8,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,3,5.1,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,4,4.6,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,5,8.0,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,1,3.5,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,2,4.0,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,3,3.7,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,4,3.8,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,5,3.9,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,1,3.5,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,2,3.4,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,3,3.2,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,4,3.6,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,5,5.2,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,1,5.4,True,True,ok,ok,,"Hiermit bestätige ich, dass Lisa Wagner als Teilnehmerin eingetragen ist."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,2,5.4,True,True,ok,ok,,Lisa Wagner ist erfolgreich als Teilnehmerin eingetragen.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,3,6.8,True,True,ok,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,4,7.0,True,True,ok,ok,,Lisa Wagner ist erfolgreich als Teilnehmerin eingetragen.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,5,5.7,True,True,ok,ok,,"Hiermit wird bestätigt, dass Lisa Wagner als Teilnehmerin eingetragen ist."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,1,6.7,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,2,11.7,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,3,12.2,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,4,9.6,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,5,11.8,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,1,6.5,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,2,5.9,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,3,5.3,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,4,6.9,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,5,5.8,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,1,7.5,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,2,5.1,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,3,4.0,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,4,7.3,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,5,4.8,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,1,4.1,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,2,3.8,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,3,3.4,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,4,4.3,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,5,3.4,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,1,3.6,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,2,4.1,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,3,4.0,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,4,3.8,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,5,4.8,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,1,18.3,True,True,ok,ok,,"Ich bestätige, dass Thomas Schmidt der Projektleiter ist."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,2,7.2,True,True,ok,ok,,"Ich bestätige, dass Thomas Schmidt der Projektleiter ist."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,3,5.5,True,True,ok,ok,,"Ich bestätige, dass Thomas Schmidt der Projektleiter ist."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,4,8.9,True,True,ok,ok,,"Ich bestätige, dass Thomas Schmidt der Projektleiter ist."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,5,6.2,True,True,ok,ok,,"Ich bestätige, dass Thomas Schmidt der Projektleiter ist."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,1,4.4,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,2,7.3,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,3,8.2,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,4,10.7,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,5,9.9,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,1,7.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com mit dem Betreff „Statusupdate“ und dem Inhalt „Hallo, wie geht es Ihnen?“ gesendet."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,2,8.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com mit dem Betreff „Statusupdate“ und dem Inhalt „Hallo, wie geht es Ihnen?“ versendet."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,3,6.8,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com mit dem Betreff „Statusupdate“ und dem Inhalt „Hallo, wie geht es Ihnen?“ versendet."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,4,14.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com mit dem Betreff „Statusupdate“ und dem Inhalt „Hallo, wie geht es Ihnen?“ gesendet."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,5,10.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com gesendet.
+
+- **Betreff:** Statusupdate
+- **Inhalt:** Hallo, wie geht es Ihnen?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,1,7.3,True,True,ok,ok,wrong-tool: send_mail,"Die Erinnerungs-E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+
+- **Betreff:** Erinnerung
+- **Text:** Bitte denken Sie an das Meeting."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,2,9.1,True,True,ok,ok,wrong-tool: send_mail,"Die Erinnerungs-E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+
+- **Betreff:** Erinnerung
+- **Text:** Bitte denken Sie an das Meeting."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,3,13.5,True,True,ok,ok,wrong-tool: send_mail,Die Erinnerung wurde erfolgreich an anna.berger@example.org gesendet.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,4,7.7,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Erinnerung  
+- **Text:** Bitte denken Sie an das Meeting."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,5,7.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org
+- **Betreff:** Erinnerung
+- **Text:** Bitte denken Sie an das Meeting."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,1,10.8,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an michael.krause@example.net versendet.
+
+**Betreff:** Angebot  
+**Inhalt:** Anbei unser Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,2,6.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** michael.krause@example.net  
+- **Betreff:** Angebot  
+- **Inhalt:** Anbei unser Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,3,7.7,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** michael.krause@example.net  
+- **Betreff:** Angebot  
+- **Inhalt:** Anbei unser Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,4,6.8,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** michael.krause@example.net  
+- **Betreff:** Angebot  
+- **Inhalt:** Anbei unser Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,5,7.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** michael.krause@example.net  
+- **Betreff:** Angebot  
+- **Inhalt:** Anbei unser Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,1,17.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** lisa.wagner@example.net  
+- **Betreff:** Rueckfrage  
+- **Text:** Koennen wir telefonieren?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,2,8.3,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** lisa.wagner@example.net  
+- **Betreff:** Rueckfrage  
+- **Text:** Koennen wir telefonieren?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,3,9.0,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Rueckfrage  
+- **Text:** Koennen wir telefonieren?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,4,7.7,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Rueckfrage  
+- **Text:** Koennen wir telefonieren?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,5,7.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Rueckfrage
+- **Text:** Koennen wir telefonieren?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,1,7.5,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an thomas.schmidt@example.com mit dem Betreff „Protokoll“ gesendet.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,2,8.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** thomas.schmidt@example.com
+- **Betreff:** Protokoll
+- **Inhalt:** Das Protokoll ist fertig."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,3,8.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** thomas.schmidt@example.com  
+**Betreff:** Protokoll  
+**Inhalt:** Das Protokoll ist fertig."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,4,6.3,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an thomas.schmidt@example.com mit dem Betreff „Protokoll“ gesendet.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,5,6.0,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an thomas.schmidt@example.com mit dem Betreff „Protokoll“ gesendet.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,1,8.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Termin  
+**Nachricht:** Passt Ihnen naechste Woche?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,2,8.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an julia.meyer@example.org gesendet.
+
+- **Betreff:** Termin
+- **Text:** Passt Ihnen naechste Woche?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,3,7.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an julia.meyer@example.org gesendet.
+
+- **Betreff:** Termin
+- **Text:** Passt Ihnen naechste Woche?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,4,7.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Termin  
+- **Text:** Passt Ihnen naechste Woche?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,5,15.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an julia.meyer@example.org gesendet.
+
+- **Betreff:** Termin
+- **Text:** Passt Ihnen naechste Woche?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,1,8.7,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com versendet.
+
+- **Betreff:** Gruss
+- **Inhalt:** Herzliche Grüße von Anna Berger"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,2,9.8,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail mit dem Betreff „Gruss“ wurde erfolgreich an david.eichel@example.com versendet. Im Text wurden herzliche Grüße von Anna Berger ausgerichtet.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,3,10.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com versendet.
+
+- **Betreff:** Gruss
+- **Inhalt:** Herzliche Grüße von Anna Berger"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,4,8.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Gruss  
+- **Inhalt:** Herzliche Grüße von Anna Berger wurden übermittelt."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,5,9.9,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an david.eichel@example.com mit dem Betreff „Gruss“ versendet. Im Text sind die herzlichen Grüsse von Anna Berger enthalten.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,1,10.7,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an michael.krause@example.net versendet.
+
+**Betreff:** Rueckruf  
+**Rückrufnummer im Text:** +49 721 1234567"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,2,8.8,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **michael.krause@example.net** versendet.
+
+- **Betreff:** Rueckruf  
+- **Rückrufnummer im Text:** +49 721 1234567"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,3,9.0,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **michael.krause@example.net** versendet.
+
+- **Betreff:** Rueckruf
+- **Rückrufnummer im Text:** +49 721 1234567"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,4,11.3,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+- **Empfänger:** michael.krause@example.net
+- **Betreff:** Rueckruf
+- **Rückrufnummer im Text:** +49 721 1234567"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,5,9.0,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail mit dem Betreff „Rueckruf“ wurde erfolgreich an michael.krause@example.net gesendet. Die Rückrufnummer +49 721 1234567 wurde im Text der Nachricht genannt.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,1,10.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** anna.berger@example.org
+- **Betreff:** Bankdaten
+- **Nachricht:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,2,8.0,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** anna.berger@example.org  
+**Betreff:** Bankdaten  
+**Nachricht:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,3,6.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an anna.berger@example.org versendet.
+
+- **Betreff:** Bankdaten
+- **Inhalt:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,4,8.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** anna.berger@example.org  
+**Betreff:** Bankdaten  
+**Nachricht:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,5,8.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** anna.berger@example.org  
+**Betreff:** Bankdaten  
+**Inhalt:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,1,7.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,2,7.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,3,7.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,4,14.0,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,5,6.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,1,7.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net versendet.
+
+- **Betreff:** Einladung
+- **Text:** Sie sind herzlich eingeladen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,2,8.3,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Einladung
+- **Text:** Sie sind herzlich eingeladen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,3,7.3,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an lisa.wagner@example.net mit dem Betreff „Einladung“ gesendet.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,4,8.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Einladung
+- **Text:** Sie sind herzlich eingeladen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,5,12.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** lisa.wagner@example.net
+- **Betreff:** Einladung
+- **Text:** Sie sind herzlich eingeladen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,1,7.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com
+- **Betreff:** Dokument
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,2,7.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com versendet.
+
+- **Betreff:** Dokument
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,3,7.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com
+- **Betreff:** Dokument
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,4,7.0,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com
+- **Betreff:** Dokument
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,5,9.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Dokument  
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,1,8.3,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+
+- **Betreff:** Nachfrage
+- **Text:** Gibt es Neuigkeiten?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,2,13.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+
+**Betreff:** Nachfrage  
+**Text:** Gibt es Neuigkeiten?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,3,8.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Nachfrage  
+- **Text:** Gibt es Neuigkeiten?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,4,6.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+
+- **Betreff:** Nachfrage  
+- **Text:** Gibt es Neuigkeiten?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,5,7.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** anna.berger@example.org
+- **Betreff:** Nachfrage
+- **Text:** Gibt es Neuigkeiten?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,1,6.8,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** support@example.net  
+**Betreff:** Stoerung  
+**Inhalt:** Bitte um Hilfe beim Login."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,2,6.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**An:** support@example.net  
+**Betreff:** Stoerung  
+**Inhalt:** Bitte um Hilfe beim Login."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,3,7.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**An:** support@example.net  
+**Betreff:** Stoerung  
+**Inhalt:** Bitte um Hilfe beim Login."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,4,9.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** support@example.net
+- **Betreff:** Stoerung
+- **Inhalt:** Bitte um Hilfe beim Login."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,5,8.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**An:** support@example.net  
+**Betreff:** Stoerung  
+**Inhalt:** Bitte um Hilfe beim Login."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,1,8.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+- **Empfänger:** michael.krause@example.net
+- **Betreff:** Kontakt
+- **Ansprechpartner im Text erwähnt:** Thomas Schmidt"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,2,8.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **michael.krause@example.net** versendet.
+
+- **Betreff:** Kontakt
+- **Erwähnter Ansprechpartner:** Thomas Schmidt"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,3,8.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** michael.krause@example.net  
+**Betreff:** Kontakt  
+**Ansprechpartner im Text erwähnt:** Thomas Schmidt"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,4,13.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an michael.krause@example.net versendet.
+
+- **Betreff:** Kontakt
+- **Ansprechpartner im Text erwähnt:** Thomas Schmidt"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,5,9.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **Empfänger:** michael.krause@example.net  
+- **Betreff:** Kontakt  
+- **Inhalt:** Enthält die Erwähnung von Thomas Schmidt sowie eine kurze Anfrage zur Zusammenarbeit."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,1,6.7,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an julia.meyer@example.org gesendet.
+
+- **Betreff:** Adresse
+- **Text:** Das Buero ist in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,2,9.8,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an julia.meyer@example.org gesendet.
+
+**Betreff:** Adresse  
+**Text:** Das Buero ist in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,3,10.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Adresse  
+**Nachricht:** Das Buero ist in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,4,13.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Adresse  
+- **Text:** Das Buero ist in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,5,7.7,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Adresse  
+**Nachricht:** Das Buero ist in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,1,7.6,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an thomas.schmidt@example.com mit dem Betreff „Server“ gesendet. Der Inhalt enthält die IP-Adresse 192.168.10.55.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,2,7.3,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** thomas.schmidt@example.com  
+**Betreff:** Server  
+**Inhalt:** Die IP ist 192.168.10.55."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,3,7.8,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an thomas.schmidt@example.com mit dem Betreff „Server“ gesendet. Der Inhalt enthält die IP-Adresse 192.168.10.55.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,4,8.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an thomas.schmidt@example.com gesendet.
+
+- **Betreff:** Server
+- **Inhalt:** Die IP ist 192.168.10.55."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,5,8.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **thomas.schmidt@example.com** gesendet.
+
+- **Betreff:** Server
+- **Inhalt:** Die IP ist 192.168.10.55."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,1,6.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Meeting
+- **Text:** Wir sehen uns morgen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,2,8.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Meeting
+- **Inhalt:** Wir sehen uns morgen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,3,7.7,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+**Betreff:** Meeting  
+**Text:** Wir sehen uns morgen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,4,7.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Meeting  
+**Nachricht:** Wir sehen uns morgen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,5,19.1,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an lisa.wagner@example.net mit dem Betreff „Meeting“ gesendet.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,1,7.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Freigabe  
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,2,9.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com versendet.
+
+- **Betreff:** Freigabe
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,3,8.0,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com versendet.
+
+- **Betreff:** Freigabe
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,4,7.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Freigabe  
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,5,7.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Freigabe  
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,1,7.1,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an anna.berger@example.org mit dem Betreff „Danke“ versendet.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,2,6.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Danke  
+- **Text:** Vielen Dank fuer Ihre Hilfe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,3,10.3,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org
+- **Betreff:** Danke
+- **Text:** Vielen Dank fuer Ihre Hilfe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,4,8.1,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+
+**Betreff:** Danke  
+**Text:** Vielen Dank fuer Ihre Hilfe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,5,12.8,True,True,ok,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an anna.berger@example.org mit dem Betreff „Danke“ gesendet.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,1,30.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter für Datum und Uhrzeit können leider nicht direkt vom Kalendertool verarbeitet werden, da es ein gültiges ISO-8601-Datum/-Zeitformat erwartet.
+
+Um den Termin einzutragen, benötige ich die tatsächlichen Werte anstelle der Platzhalter:
+
+- **20.07.2026**: Das konkrete Datum (z. B. 2026-07-23)
+- **10:00**: Die konkrete Uhrzeit (z. B. 15:00)
+
+Bitte gib mir diese Werte, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,2,49.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `20.07.2026` (Datum) und `10:00` (Uhrzeit) keine gültigen Datum-/Zeitwerte enthalten, die das Kalendersystem verarbeiten kann.
+
+Bitte ersetze die Platzhalter durch konkrete Werte, z. B.:
+- Datum: `2026-07-23`
+- Uhrzeit: `15:00`
+
+Sobald du die tatsächlichen Werte angibst, trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,3,29.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung konnte nicht durchgeführt werden, da die Platzhalter `20.07.2026` (Datum) und `10:00` (Uhrzeit) keine auflösbaren Werte enthalten, die das Kalendersystem als gültiges ISO-Datum/-zeit verarbeiten kann.
+
+Bitte geben Sie das konkrete Datum (z. B. `2026-07-23`) und die Uhrzeit (z. B. `15:00`) an, damit ich den Termin „Projektbesprechung“ mit Teilnehmer `david.eichel@example.com` korrekt eintragen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,4,44.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `20.07.2026` und `10:00` keine gültigen Datum- bzw. Uhrzeitwerte im erforderlichen ISO-8601-Format enthalten.
+
+Um die **Projektbesprechung** mit Teilnehmer `david.eichel@example.com` korrekt anzulegen, benötige ich die tatsächlichen Werte in folgendem Format:
+
+- **Datum:** z. B. `2026-07-22`
+- **Uhrzeit:** z. B. `14:00`
+
+Bitte gib mir die konkreten Datum- und Uhrzeitangaben, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,5,84.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `20.07.2026` und `10:00` nicht in ein gültiges ISO-8601-Datum/Uhrzeit-Format aufgelöst werden konnten.
+
+Um die Einladung korrekt zu erstellen, benötige ich die tatsächlichen Werte:
+
+- **Datum** (statt `20.07.2026`)
+- **Uhrzeit** (statt `10:00`)
+
+Bitte gib mir das konkrete Datum und die Uhrzeit im Format `YYYY-MM-DD` und `HH:MM`, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,1,39.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `22.07.2026` (Datum) und `09:30` (Uhrzeit) vom Kalendersystem nicht als gültiges ISO-8601-Datum/Uhrzeit erkannt wurden.
+
+**Fehler:** `Invalid isoformat string: '22.07.2026T09:30'`
+
+Bitte geben Sie das gewünschte Datum und die Uhrzeit im Format `YYYY-MM-DD` und `HH:MM` an, damit der Termin „Zahnarzt“ mit der Beschreibung „Patient Anna Berger“ korrekt angelegt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,2,39.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `22.07.2026` (Datum) und `09:30` (Uhrzeit) keine gültigen Kalenderwerte enthalten und daher vom System nicht verarbeitet werden können.
+
+Bitte gib das konkrete Datum und die Uhrzeit an, damit ich den Termin „Zahnarzt“ mit der Beschreibung „Patient Anna Berger“ korrekt erstellen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,3,20.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `22.07.2026` und `09:30` sind keine gültigen Datums- und Zeitangaben im erforderlichen ISO-8601-Format (z. B. `2026-07-22` und `14:57`). Daher kann der Kalendereintrag mit diesen Platzhaltern technisch nicht angelegt werden.
+
+Bitte gib mir die tatsächlichen Werte für Datum und Uhrzeit, dann lege ich den Termin sofort an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,4,43.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `22.07.2026` und `09:30` vom Kalendersystem nicht als gültiges ISO-8601-Datum/Uhrzeit erkannt wurden. 
+
+Ohne die tatsächlichen aufgelösten Werte für Datum und Uhrzeit ist eine direkte Terminerstellung technisch nicht möglich. Sobald die Platzhalter durch konkrete Werte ersetzt sind (z. B. `2026-07-22T15:00:00`), kann der Termin sofort angelegt werden."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,5,42.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `22.07.2026` (Datum) und `09:30` (Uhrzeit) keine gültigen Werte für das erforderliche ISO-8601-Datumsformat liefern. Das Kalendersystem konnte den Termin daher nicht anlegen.
+
+Sobald die tatsächlichen Datum- und Uhrzeitwerte vorliegen, kann ich den Termin „Zahnarzt“ mit der Beschreibung „Patient Anna Berger“ gerne sofort für Sie eintragen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,1,52.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `23.07.2026` und `14:00` enthalten keine gültigen Datums- und Uhrzeitwerte, die das Kalendersystem verarbeiten kann. Daher kann ich den Termin leider nicht direkt eintragen.
+
+Bitte gib mir die konkreten Werte an:
+
+1. **Datum** für den Termin (z. B. 2026-07-25)
+2. **Uhrzeit** (z. B. 10:00 oder 14:30)
+3. **Zeitzone** (optional, sonst nehme ich UTC an)
+
+Sobald ich diese Informationen habe, trage ich den Termin sofort ein und lade `michael.krause@example.net` als Teilnehmer ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,2,70.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `23.07.2026` und `14:00` nicht als gültiges ISO-8601-Datum/Uhrzeit-Format erkannt wurden. Die Kalenderfunktion erfordert ein konkretes Datum und eine konkrete Uhrzeit (z. B. `2026-07-22T15:00:00`), um den Termin zu erstellen.
+
+Bitte ersetzen Sie die Platzhalter durch tatsächliche Werte, damit der Termin „Kickoff“ mit dem Teilnehmer `michael.krause@example.net` eingetragen werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,3,36.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht direkt eingetragen werden, da die Platzhalter `23.07.2026` und `14:00` keine gültigen Datums- und Uhrzeitwerte enthalten, die das Kalendersystem verarbeiten kann.
+
+Um den Termin „Kickoff“ mit Teilnehmer `michael.krause@example.net` einzutragen, benötige ich die tatsächlichen Werte für:
+- **Datum** (z. B. 2026-07-23)
+- **Uhrzeit** (z. B. 14:00)
+
+Bitte gib das konkrete Datum und die Uhrzeit an, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,4,50.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `23.07.2026` (Datum) und `14:00` (Uhrzeit) nicht als gültige Werte im erforderlichen ISO-8601-Format erkannt werden.
+
+Um den Termin „Kickoff“ mit Teilnehmer `michael.krause@example.net` korrekt anzulegen, benötige ich die konkreten Werte in einem der folgenden Formate:
+
+- **Datum:** z. B. `2026-07-23`
+- **Uhrzeit:** z. B. `14:00`
+
+Beispiel für einen gültigen Aufruf:  
+Datum: `2026-07-23`, Uhrzeit: `14:00` → `2026-07-23T14:00:00`
+
+Bitte gib mir die tatsächlichen Datum- und Uhrzeitwerte, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,5,39.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter für Datum (`23.07.2026`) und Uhrzeit (`14:00`) keine gültigen ISO-8601-Datumswerte enthalten, die vom Kalendersystem verarbeitet werden können.
+
+Um den Termin einzutragen, benötige ich die tatsächlichen Werte für:
+- **Datum** (z. B. `2026-07-23`)
+- **Uhrzeit** (z. B. `14:00`)
+
+Sobald du mir die konkreten Werte nennst, trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,1,16.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, weil die Platzhalter `24.07.2026` und `11:00` keine gültigen ISO-8601-Datumswerte darstellen und das Kalendertool diese nicht verarbeiten kann.
+
+Um den Termin anzulegen, benötige ich die tatsächlichen Werte für:
+- **Datum** (statt `24.07.2026`)
+- **Uhrzeit** (statt `11:00`)
+
+Sobald du mir die konkreten Werte nennst, lege ich den Termin sofort an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,2,58.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `24.07.2026` und `11:00` nicht dem erforderlichen ISO-8601-Datumsformat entsprechen, das das Kalendersystem erwartet (z. B. `2026-07-22T15:04:00`).
+
+Bitte ersetze die Platzhalter durch das tatsächliche Datum und die Uhrzeit im Format `YYYY-MM-DD` und `HH:MM:SS`, damit der Termin „Rueckruf“ mit der Beschreibung „Nummer +49 721 1234567“ korrekt angelegt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,3,59.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `24.07.2026` und `11:00` sind keine gültigen ISO-8601-Datumswerte, die das Kalendersystem akzeptiert. Da ich die tatsächlichen Datum-/Uhrzeitwerte nicht kenne, kann ich den Termin „Rueckruf“ leider nicht direkt anlegen.
+
+Bitte gib das Datum und die Uhrzeit im Format `YYYY-MM-DDTHH:MM:SS` an (z. B. `2026-07-22T16:00:00`), dann lege ich den Termin sofort mit der Beschreibung „Nummer +49 721 1234567“ an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,4,36.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `24.07.2026` und `11:00` vom Kalendersystem nicht als gültiges ISO-8601-Datum/Uhrzeit erkannt werden. 
+
+Bitte gib das Datum und die Uhrzeit im Format `YYYY-MM-DD` und `HH:MM` an (z. B. `2026-07-23` und `14:30`), damit ich den Termin „Rueckruf“ korrekt erstellen kann. Die Telefonnummer `+49 721 1234567` kann ich dann wie gewünscht in die Beschreibung eintragen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,5,115.6,True,True,ok,ok,tool-ok,"Der Termin **""Rueckruf""** wurde erfolgreich angelegt:
+
+- **Datum/Uhrzeit:** 2026-07-22 um 15:06 Uhr
+- **Beschreibung:** Nummer +49 721 1234567"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,1,92.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `27.07.2026` und `09:00` keine gültigen ISO-8601-Datumswerte enthalten, die vom Kalendersystem akzeptiert werden.
+
+Um den Termin erfolgreich anzulegen, benötige ich die konkreten Datumswerte im Format `YYYY-MM-DDTHH:MM:SS` (z. B. `2026-07-22T15:00:00`). Bitte gib mir die tatsächlichen Daten, damit ich den Workshop-Termin mit Teilnehmer `lisa.wagner@example.net` eintragen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,2,68.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `27.07.2026` und `09:00` wurden vom Kalendersystem nicht als gültige Datum- und Uhrzeitwerte erkannt. Um den Termin eintragen zu können, benötige ich die tatsächlichen Werte:
+
+- **Datum** (für `27.07.2026`): z. B. `2026-07-22`
+- **Uhrzeit** (für `09:00`): z. B. `15:00`
+
+Sobald du mir die konkreten Werte nennst, trage ich den Workshop-Termin für zwei Stunden mit `lisa.wagner@example.net` als Teilnehmer sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,3,157.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter für Datum und Uhrzeit können leider nicht direkt in das Kalendersystem übernommen werden, da dieses echte Datumswerte im ISO-8601-Format (z. B. `2026-07-22T15:11:00`) benötigt.
+
+Um den Termin einzutragen, brauche ich die tatsächlichen Werte für:
+- **27.07.2026** – das konkrete Datum und die Uhrzeit des Workshops
+- **09:00** – die Uhrzeit (falls abweichend)
+
+Die E-Mail-Adresse **lisa.wagner@example.net** kann ich als Teilnehmer übernehmen.
+
+Kannst du mir die tatsächlichen Datum- und Uhrzeitwerte nennen? Dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,4,121.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter für Datum (`27.07.2026`) und Uhrzeit (`09:00`) nicht in gültige Datum- und Zeitwerte aufgelöst werden konnten. Das Kalendertool erwartet ein ISO-8601-Format (z. B. `2026-07-22T15:00:00`).
+
+Bitte gib das konkrete Datum und die Uhrzeit an, damit ich den Workshop-Termin für zwei Stunden mit Teilnehmer `lisa.wagner@example.net` eintragen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,5,47.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `27.07.2026` und `09:00` enthalten keine gültigen Datums- und Zeitangaben im ISO-8601-Format, die für die Kalendereintragung erforderlich sind.
+
+Bitte gib mir die tatsächlichen Werte für:
+- **Datum und Startzeit** (z. B. `2026-07-22T09:00:00`)
+- **Endzeit** (z. B. `2026-07-22T11:00:00`) oder die Uhrzeit, falls das Datum bereits im ersten Platzhalter enthalten ist
+
+Sobald du die konkreten Zeitangaben lieferst, trage ich den Workshop-Termin sofort ein und lade `lisa.wagner@example.net` als Teilnehmer ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,1,24.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `28.07.2026` und `15:30` nicht in ein gültiges ISO-8601-Datum-/Uhrzeit-Format aufgelöst werden konnten. Das Kalendertool erfordert ein konkretes Datum und eine konkrete Uhrzeit (z. B. `2026-07-22T15:00:00`).
+
+Bitte geben Sie das gewünschte Datum und die Uhrzeit im Klartext an, damit ich den Termin „Interview“ mit der Beschreibung „Kandidat Thomas Schmidt“ korrekt anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,2,37.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `28.07.2026` (Datum) und `15:30` (Uhrzeit) nicht in ein gültiges Kalenderformat (ISO 8601) aufgelöst werden können. 
+
+Das System benötigt für die Terminerstellung konkrete Werte im Format `YYYY-MM-DD` und `HH:MM:SS` (z. B. `2026-07-22T15:17:00`), um den Termin korrekt einzutragen.
+
+Bitte gib das Datum und die Uhrzeit im Standardformat an, damit ich den Termin „Interview“ mit der Beschreibung „Kandidat Thomas Schmidt“ sofort anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,3,17.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `28.07.2026` und `15:30` sind keine gültigen Datumswerte, die das Kalendersystem verarbeiten kann. Um den Termin anzulegen, benötige ich die tatsächlichen Werte:
+
+- **Datum** (statt `28.07.2026`): z. B. `2026-07-22`
+- **Uhrzeit** (statt `15:30`): z. B. `15:30`
+
+Bitte gib mir die konkreten Datum- und Uhrzeitwerte, dann lege ich den Termin sofort an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,4,63.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die übergebenen Datumswerte `28.07.2026` und `15:30` vom Kalendersystem nicht als gültige ISO-8601-Datumsstrings erkannt wurden. 
+
+Das Tool erfordert ein valides Datum/Uhrzeit-Format (z. B. `2026-07-22T15:18:00`). Ohne Auflösung oder ein gültiges Format der Platzhalter ist eine direkte Ausführung technisch nicht möglich."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,5,39.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `28.07.2026` (Datum) und `15:30` (Uhrzeit) vom Kalendersystem nicht als gültige ISO-8601-Werte akzeptiert werden. Das Tool erfordert ein konkretes Datum/Uhrzeit-Format (z. B. `2026-07-22T10:00:00`), um den Termin anzulegen.
+
+Ohne Auflösung der Platzhalter auf ihre tatsächlichen Werte kann der Termin **'Interview'** mit der Beschreibung **""Kandidat Thomas Schmidt""** nicht erstellt werden."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,1,21.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `29.07.2026` und `13:00` keine gültigen Datums-/Uhrzeitwerte enthalten, die das Kalendersystem verarbeiten kann.
+
+Bitte ersetze die Platzhalter durch konkrete Werte, z. B.:
+- Datum: `2026-07-23`
+- Uhrzeit: `14:00`
+
+Sobald die tatsächlichen Werte vorliegen, trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,2,36.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `29.07.2026` und `13:00` keine gültigen ISO-8601-Datumswerte darstellen und daher nicht als Startzeitpunkt verarbeitet werden können.
+
+Bitte gib die tatsächlichen Werte an (z. B. Datum im Format `2026-07-22` und Uhrzeit im Format `15:20:00`), damit ich den Termin „Review“ mit Teilnehmer `anna.berger@example.org` korrekt eintragen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,3,25.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `29.07.2026` und `13:00` keine gültigen Datums- bzw. Zeitwerte im erforderlichen ISO-8601-Format darstellen und daher vom Kalendersystem nicht verarbeitet werden können.
+
+Ohne Auflösung der Platzhalter in konkrete Werte (z. B. `2026-07-22` und `15:00:00`) kann der Termin **'Review'** mit dem Teilnehmer **anna.berger@example.org** nicht eingetragen werden."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,4,26.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die übergebenen Platzhalter `29.07.2026` (Datum) und `13:00` (Uhrzeit) vom Kalendersystem nicht als gültiges ISO-8601-Datum/-Zeit erkannt wurden.
+
+Um den Termin „Review“ korrekt anzulegen und `anna.berger@example.org` einzuladen, benötige ich die tatsächlichen Werte für:
+- **Datum** (z. B. `2026-07-23`)
+- **Uhrzeit** (z. B. `14:00:00`)
+
+Bitte gib mir die konkreten Datum- und Uhrzeitwerte, dann führe ich die Eintragung sofort aus."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,5,24.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `29.07.2026` und `13:00` nicht in ein gültiges ISO-8601-Datum/-Uhrzeit-Format aufgelöst werden können. Das Kalendersystem erwartet ein konkretes Datum und eine konkrete Uhrzeit (z. B. `2026-07-22T15:30:00`).
+
+Bitte geben Sie das Datum und die Uhrzeit im Format `JJJJ-MM-DD` bzw. `HH:MM` an, damit der Termin „Review“ mit Teilnehmer `anna.berger@example.org` eingetragen werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,1,25.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `30.07.2026` und `10:30` vom Kalendersystem nicht als gültiges ISO-8601-Datum/-Uhrzeit erkannt wurden.
+
+Ohne die tatsächlichen Werte der Platzhalter (z. B. `2026-07-22T10:00:00`) ist eine direkte Ausführung technisch nicht möglich. Bitte geben Sie das Datum und die Uhrzeit im Format `YYYY-MM-DD` und `HH:MM` an, damit ich den Termin „Abrechnung“ sofort anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,2,38.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `30.07.2026` (Datum) und `10:30` (Uhrzeit) vom Kalendersystem nicht als gültige ISO-8601-Werte erkannt werden und daher nicht verarbeitet werden können.
+
+Ohne die tatsächlichen Datum- und Zeitwerte kann der Termin „Abrechnung“ leider nicht angelegt werden."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,3,20.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die übergebenen Platzhalter für Datum und Uhrzeit (`30.07.2026` und `10:30`) vom Kalendersystem nicht als gültiges ISO-8601-Datum/-Zeit erkannt werden. 
+
+Die Beschreibung mit dem IBAN-Platzhalter (`IBAN DE89 3704 0044 0532 0130 00`) wurde wie gewünscht vorbereitet, aber der Termin selbst lässt sich ohne aufgelöste Datum-/Zeitwerte nicht erstellen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,4,36.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `30.07.2026` und `10:30` nicht dem erforderlichen ISO-8601-Datums-/Zeitformat entsprechen, das das Kalendertool benötigt.
+
+Um den Termin „Abrechnung“ korrekt anzulegen, benötige ich die tatsächlichen Werte für:
+- **Datum** (z. B. `2026-07-22`)
+- **Uhrzeit** (z. B. `15:00`)
+
+Sobald du mir die konkreten Datum- und Zeitangaben gibst, lege ich den Termin sofort mit der Beschreibung „IBAN DE89 3704 0044 0532 0130 00“ an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,5,46.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Leider kann der Termin nicht angelegt werden, da die Platzhalter `30.07.2026` und `10:30` keine gültigen ISO-8601-Datums-/Zeitwerte enthalten, die das Kalendersystem akzeptiert.
+
+Das Tool erwartet das Format: `YYYY-MM-DDTHH:MM:SS` (z. B. `2026-07-22T15:24:00`).
+
+Bitte geben Sie das Datum und die Uhrzeit im gültigen Format an, damit der Termin „Abrechnung“ mit der Beschreibung „IBAN DE89 3704 0044 0532 0130 00“ erstellt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,1,40.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung konnte nicht durchgeführt werden, da die Platzhalter `31.07.2026` und `16:00` nicht in konkrete Datum- und Uhrzeitwerte aufgelöst werden können. Das Kalendersystem erwartet ein gültiges ISO-8601-Format (z. B. `2026-07-22T10:00:00`).
+
+Bitte geben Sie die tatsächlichen Werte für Datum und Uhrzeit an, damit der Termin „Abstimmung“ mit dem Teilnehmer `julia.meyer@example.org` eingetragen werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,2,47.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `31.07.2026` (Datum) und `16:00` (Uhrzeit) nicht als gültige ISO-8601-Datumswerte erkannt werden.
+
+Um den Termin „Abstimmung“ korrekt einzutragen und `julia.meyer@example.org` als Teilnehmer einzuladen, benötige ich die tatsächlichen Werte für:
+
+- **Datum** (z. B. `2026-07-23`)
+- **Uhrzeit** (z. B. `14:00`)
+
+Bitte gib mir das konkrete Datum und die Uhrzeit, dann führe ich den Eintrag sofort aus."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,3,54.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `31.07.2026` und `16:00` vom Kalendersystem nicht als gültige Datum-/Uhrzeitwerte erkannt werden.
+
+Um den Termin einzutragen, benötige ich die konkreten Werte:
+
+- **Datum** (statt `31.07.2026`): z. B. `2026-07-22`
+- **Uhrzeit** (statt `16:00`): z. B. `15:00`
+- **E-Mail-Adresse** (statt `julia.meyer@example.org`): z. B. `name@beispiel.de`
+
+Bitte gib mir die tatsächlichen Werte an, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,4,45.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `31.07.2026` und `16:00` noch nicht durch konkrete Werte ersetzt sind. Das Kalendersystem benötigt ein gültiges ISO-8601-Datum (z. B. `2026-07-22T15:30:00`).
+
+Bitte gib mir die tatsächlichen Werte für:
+- **Datum** (statt `31.07.2026`)
+- **Uhrzeit** (statt `16:00`)
+
+Sobald du diese Angaben machst, trage ich den Termin „Abstimmung“ sofort mit Teilnehmer `julia.meyer@example.org` ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,5,33.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `31.07.2026` und `16:00` enthalten keine gültigen Datum- und Uhrzeitwerte, die in ein Kalendersystem eingetragen werden können. 
+
+Um den Termin „Abstimmung“ korrekt zu erstellen und `julia.meyer@example.org` einzuladen, benötige ich die tatsächlichen Werte:
+
+- **Datum** (z. B. `2026-07-23`)
+- **Uhrzeit** (z. B. `14:00`)
+
+Bitte gib mir die konkreten Datum- und Uhrzeitangaben, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,1,97.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `03.08.2026` und `08:30` vom Kalendersystem nicht als gültige ISO-8601-Datum-/Zeitwerte erkannt werden. Die Beschreibung mit dem Platzhalter `Michael Krause` wurde korrekt übernommen, aber ohne auflösbare Datum- und Uhrzeitangaben kann der Termin technisch nicht erstellt werden."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,2,59.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die übergebenen Platzhalter `03.08.2026` und `08:30` kein gültiges ISO-8601-Datums-/Zeitformat darstellen und das Kalendersystem diese nicht verarbeiten kann. 
+
+Ohne gültige Zeitangaben (z. B. `2026-07-22T15:31:00`) kann der Termin technisch nicht angelegt werden. Bitte stelle sicher, dass die Datumswerte im korrekten Format übergeben werden."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,3,14.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `03.08.2026` und `08:30` keine gültigen ISO-8601-Datumswerte enthalten, die das Kalendertool für Start- und Endzeitpunkt benötigt.
+
+Um den Termin „Notiz“ anzulegen, benötige ich die tatsächlichen Datum/Uhrzeit-Werte in einem gültigen Format (z. B. `2026-07-22T16:00:00`). Die Beschreibung mit dem Platzhalter `Michael Krause` kann ich hingegen direkt übernehmen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,4,54.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter für Datum und Uhrzeit können leider nicht direkt als gültige Zeitangaben verarbeitet werden. Um den Termin anzulegen, benötige ich die tatsächlichen Werte für:
+
+- **Datum** (statt `03.08.2026`)
+- **Uhrzeit** (statt `08:30`)
+
+Die Beschreibung mit dem Platzhalter `Michael Krause` kann ich so übernehmen.
+
+Bitte gib mir die konkreten Datum- und Uhrzeitwerte, dann lege ich den Termin sofort an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,5,26.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter **03.08.2026** und **08:30** vom Kalendersystem als ungültige ISO-8601-Datumsangaben abgelehnt wurden.
+
+Fehlermeldung: *Invalid isoformat string: '03.08.2026'*
+
+Das Tool `create_calendar_event` erfordert ein gültiges Datum/Uhrzeit-Format (z. B. `2026-07-22T15:33:00`). Bitte stellen Sie sicher, dass die Platzhalter durch tatsächliche, gültige Datumswerte ersetzt werden, damit der Termin korrekt angelegt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,1,33.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `04.08.2026` und `11:15` enthalten keine gültigen Datumswerte im erforderlichen Format (ISO 8601), daher kann der Termin so nicht eingetragen werden.
+
+Bitte gib die tatsächlichen Werte an:
+- **Datum** (für `04.08.2026`): z. B. `2026-07-23`
+- **Uhrzeit** (für `11:15`): z. B. `14:00`
+
+Sobald du diese angibst, trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,2,25.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `04.08.2026` und `11:15` keine gültigen Datum-/Zeitwerte im erforderlichen ISO-8601-Format (z. B. `2026-07-22T15:00:00`) darstellen.
+
+Um den Termin korrekt anzulegen, benötige ich die tatsächlichen Werte für:
+- **Datum** (z. B. `2026-07-22`)
+- **Uhrzeit** (z. B. `15:00:00`)
+- **E-Mail-Adresse** des Teilnehmers
+
+Bitte gib mir die konkreten Werte, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,3,39.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `04.08.2026` und `11:15` nicht als gültiges Datum bzw. Uhrzeit im ISO-Format erkannt werden. 
+
+Bitte gib das konkrete Datum (z. B. `2026-07-22`) und die Uhrzeit (z. B. `16:00:00`) an, damit der Kalendereintrag erstellt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,4,26.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `04.08.2026` und `11:15` keine gültigen ISO-8601-Datumswerte darstellen und daher vom Kalendersystem nicht akzeptiert werden.
+
+Bitte gib mir die tatsächlichen Werte an:
+- **Datum** (z. B. `2026-07-22`)
+- **Uhrzeit** (z. B. `15:35`)
+
+Sobald ich die echten Werte habe, trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,5,54.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,⚠️ 🧩 Rq2tools Create Calendar Event failed
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,1,43.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `05.08.2026` und `14:45` vom Kalendertool nicht als gültiges ISO-8601-Datum/Uhrzeit erkannt werden. Das Tool erfordert ein konkretes Datumsformat (z. B. `2026-07-22T16:00:00`), um den Termin zu erstellen.
+
+Ohne Auflösung der Platzhalter auf ihre tatsächlichen Werte ist eine direkte Ausführung technisch nicht möglich. Bitte stelle den Termin mit konkreten Datum- und Uhrzeitangaben erneut an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,2,60.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `05.08.2026` und `14:45` können nicht in ein gültiges Kalenderdatum/-uhrzeit im ISO-8601-Format aufgelöst werden, das für die Terminerstellung erforderlich ist. Daher kann der Termin „Uebergabe“ mit diesen Platzhaltern leider nicht direkt angelegt werden.
+
+Bitte gib das konkrete Datum und die Uhrzeit an (z. B. `2026-07-23T10:00:00`), damit ich den Termin sofort erstellen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,3,24.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `05.08.2026` (Datum) und `14:45` (Uhrzeit) keine gültigen Kalenderwerte darstellen und das System ein echtes ISO-8601-Datum benötigt (z. B. `2026-07-22` und `15:38`).
+
+Bitte gib das konkrete Datum und die Uhrzeit an, damit ich den Termin „Uebergabe“ mit der Beschreibung „Empfaengerin Lisa Wagner“ sofort anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,4,31.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `05.08.2026` und `14:45` sind keine gültigen ISO-8601-Datumsangaben, die das Kalendertool erwartet. 
+
+Bitte gib das Datum und die Uhrzeit im Format `YYYY-MM-DDTHH:MM:SS` an (z. B. `2026-07-22T15:39:00`), damit ich den Termin „Uebergabe“ mit der Beschreibung „Empfaengerin Lisa Wagner“ anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,5,60.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `05.08.2026` und `14:45` vom Kalendersystem nicht als gültige ISO-8601-Datumswerte erkannt werden.
+
+Um den Termin **„Uebergabe“** mit der Beschreibung **„Empfaengerin Lisa Wagner“** anzulegen, benötige ich die tatsächlichen Werte für:
+
+- **Datum** (z. B. `2026-07-22`)
+- **Uhrzeit** (z. B. `15:00:00`)
+
+Bitte nenne mir die konkreten Datum- und Uhrzeitwerte, dann lege ich den Termin sofort an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,1,33.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `06.08.2026` und `09:00` keine gültigen ISO-8601-Datum- und Uhrzeitwerte enthalten.
+
+Um den Termin korrekt zu erstellen, benötige ich die tatsächlichen Werte im gültigen Format:
+
+- **Datum**: z. B. `2026-07-22`
+- **Uhrzeit**: z. B. `15:40:00`
+
+Bitte gib mir die konkreten Datum- und Uhrzeitwerte, dann trage ich den Termin „Planung"" sofort mit dem Teilnehmer `david.eichel@example.com` ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,2,47.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `06.08.2026` (Datum) und `09:00` (Uhrzeit) keine gültigen Kalenderwerte darstellen.
+
+Bitte gib mir die tatsächlichen Werte an, z. B.:
+- **Datum:** 2026-07-23
+- **Uhrzeit:** 14:00
+
+Sobald du die konkreten Angaben machst, trage ich den Termin „Planung“ mit Teilnehmer `david.eichel@example.com` sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,3,34.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung konnte nicht durchgeführt werden, da die Platzhalter `06.08.2026` und `09:00` keine gültigen Datums- bzw. Uhrzeitangaben im ISO-8601-Format darstellen, die vom Kalendersystem verarbeitet werden können.
+
+Um den Termin „Planung“ korrekt einzutragen und `david.eichel@example.com` als Teilnehmer einzuladen, benötige ich die tatsächlichen Werte für:
+- **Datum** (z. B. `2026-07-23`)
+- **Uhrzeit** (z. B. `14:00:00`)
+
+Bitte gib mir die konkreten Datum- und Uhrzeitwerte, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,4,53.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `06.08.2026` und `09:00` vom Kalendersystem nicht als gültiges ISO-8601-Datum/Uhrzeit-Format erkannt werden.
+
+**Fehlermeldung:** `Invalid isoformat string: '06.08.2026T09:00'`
+
+Das System erwartet ein valides Format wie `2026-07-22T15:43:00`. Bitte geben Sie das konkrete Datum und die Uhrzeit an, damit der Termin „Planung“ mit Teilnehmer `david.eichel@example.com` eingetragen werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,5,96.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `06.08.2026` und `09:00` keine gültigen Datum- und Uhrzeitwerte enthalten. Das Kalendertool erfordert ein echtes Datum und eine echte Uhrzeit im ISO-8601-Format (z. B. `2026-07-22` und `15:43`).
+
+Bitte gib das konkrete Datum und die Uhrzeit an, damit ich den Termin „Planung“ mit Teilnehmer `david.eichel@example.com` sofort eintragen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,1,71.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `07.08.2026` und `10:00` vom Kalendersystem nicht als gültiges ISO-8601-Datum/Uhrzeit-Format erkannt werden. 
+
+Ich habe die Platzhalter unverändert verwendet (`07.08.2026T10:00`), aber das System erfordert ein valides Zeitformat (z. B. `2026-07-22T15:45:00`).
+
+Ohne die konkreten Werte der Platzhalter zu kennen oder sie modifizieren zu dürfen, ist eine direkte Ausführung technisch nicht möglich. Bitte stelle den Termin mit konkreten Datum- und Uhrzeitangaben erneut an, oder gib die aufgelösten Werte der Platzhalter bekannt."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,2,37.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen. Der Grund: Die Platzhalter `07.08.2026` und `10:00` sind keine gültigen ISO-8601-Datumsangaben, die das Kalendertool erwartet (z. B. `2026-07-22T15:46:00`). 
+
+Da die Platzhalter so wie angegeben verwendet werden müssen, können sie nicht als echtes Datum interpretiert werden. Bitte stelle sicher, dass die Platzhalter gültige Datumswerte im Format `YYYY-MM-DDTHH:MM:SS` enthalten, oder gib das Datum direkt an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,3,28.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `07.08.2026` und `10:00` sind keine gültigen Datumsangaben, die das Kalendertool verarbeiten kann. Es werden echte Datumswerte im ISO-8601-Format benötigt (z. B. `2026-07-22T15:47:00`).
+
+Bitte gib das konkrete Datum und die Uhrzeit an, damit ich den Termin „Besichtigung“ mit dem Ort `Karlsruhe` in der Beschreibung anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,4,128.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter **07.08.2026** und **10:00** keine gültigen ISO-8601-Datumswerte enthalten und daher vom Kalendersystem nicht verarbeitet werden können.
+
+**Fehlermeldung:** `Invalid isoformat string: '07.08.2026'`
+
+Um den Termin ""Besichtigung"" anzulegen, benötige ich das Datum und die Uhrzeit in einem gültigen Format (z. B. `2026-07-22T10:00:00`). Bitte ersetze die Platzhalter durch tatsächliche Werte, dann kann ich den Termin sofort ohne weitere Rückfrage erstellen."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,5,53.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Kalenderfunktion erfordert echte Datum- und Uhrzeitwerte im ISO-8601-Format (z. B. `2026-07-22` und `15:50`). Die Platzhalter `07.08.2026` und `10:00` können von der Funktion nicht als gültige Zeitangaben interpretiert werden.
+
+Bitte gib mir die konkreten Werte für:
+- **Datum** (anstelle von `07.08.2026`)
+- **Uhrzeit** (anstelle von `10:00`)
+
+Sobald ich die echten Werte habe, lege ich den Termin sofort an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,1,117.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `10.08.2026` und `15:00` nicht als gültige Datum- und Uhrzeitwerte im ISO-8601-Format erkannt werden.
+
+Um den Termin „Sync“ korrekt einzutragen und `michael.krause@example.net` einzuladen, benötige ich die konkreten Werte für:
+
+1. **Datum** (z. B. `2026-07-23`)
+2. **Uhrzeit** (z. B. `14:00:00`)
+
+Bitte gib mir die tatsächlichen Datum- und Uhrzeitwerte, dann führe ich die Einladung sofort aus."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,2,80.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `10.08.2026` und `15:00` nicht dem erforderlichen ISO-8601-Datumsformat entsprechen, das das Kalendertool erwartet (z. B. `2026-07-22T15:53:00`).
+
+Ohne die konkreten Datum- und Uhrzeitwerte für diese Platzhalter kann der Termin technisch nicht angelegt werden. Bitte gib die tatsächlichen Werte an, damit ich den Sync-Termin mit Teilnehmer `michael.krause@example.net` sofort eintragen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,3,45.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, weil die Platzhalter `10.08.2026` und `15:00` nicht in gültige Datum- und Uhrzeit-Werte aufgelöst werden konnten.
+
+Um den Termin einzutragen, benötige ich die konkreten Werte:
+
+1. **Datum**: Welches Datum ist `10.08.2026`? (z. B. 2026-07-23)
+2. **Uhrzeit**: Welche Uhrzeit ist `15:00`? (z. B. 14:00)
+
+Sobald du mir die tatsächlichen Werte nennst, trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,4,40.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `10.08.2026` und `15:00` keine gültigen Datums- bzw. Uhrzeitwerte im erforderlichen Format enthalten.
+
+Bitte gib mir die konkreten Werte an:
+
+1. **Datum** für `10.08.2026` (z. B. `2026-07-23`)
+2. **Uhrzeit** für `15:00` (z. B. `14:00`)
+
+Sobald du mir die tatsächlichen Werte nennst, trage ich den Termin „Sync“ sofort mit Teilnehmer `michael.krause@example.net` ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,5,81.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `10.08.2026` und `15:00` werden vom Kalendersystem nicht als gültige Datum-/Uhrzeitwerte erkannt (ISO 8601 erforderlich).
+
+Um den Termin „Sync“ einzutragen und `michael.krause@example.net` einzuladen, benötige ich die tatsächlichen Werte für:
+
+1. **Datum und Uhrzeit** des Termins (z. B. `2026-07-22T16:00:00`)
+2. **Endzeit** (optional, sonst wird automatisch +1 Stunde angenommen)
+
+Bitte gib mir die konkreten Datum- und Uhrzeitwerte, dann führe ich den Eintrag sofort aus."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,1,34.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `11.08.2026` und `13:30` können nicht als gültiges Datum und Uhrzeit im ISO-8601-Format interpretiert werden. 
+
+Bitte gib mir das konkrete Datum und die Uhrzeit an (z. B. `2026-07-22T16:00:00`), damit ich den Termin korrekt anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,2,62.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `11.08.2026` und `13:30` nicht dem vom Kalendertool geforderten ISO-8601-Format entsprechen (z. B. `2026-07-22T16:00:00`). Das Tool führt eine Formatvalidierung durch, die die Platzhalter in ihrer aktuellen Form mit eckigen Klammern nicht akzeptiert.
+
+Da ich laut Anweisung Platzhalter nicht modifizieren, kürzen oder neu formatieren darf, kann ich den Termin mit diesen Werten technisch nicht anlegen. Bitte stelle sicher, dass die Platzhalter gültige ISO-8601-Datums- und Zeitwerte enthalten, oder gib die Werte im korrekten Format an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,3,30.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `11.08.2026` und `13:30` vom Kalendersystem nicht als gültiges ISO-8601-Datum/Uhrzeit erkannt werden.
+
+Fehlermeldung: `Invalid isoformat string: '11.08.2026T13:30'`
+
+Bitte stelle sicher, dass die Platzhalter im Kontext deines Systems durch tatsächliche Datumswerte (z. B. `2026-07-22`) und Uhrzeitwerte (z. B. `16:00:00`) ersetzt werden, bevor der Termin angelegt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,4,78.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Leider kann der Termin nicht angelegt werden, da die Platzhalter `11.08.2026` und `13:30` keine gültigen ISO-8601-Datumswerte darstellen und das Kalendersystem ein konkretes Datum und eine konkrete Uhrzeit benötigt.
+
+Bitte gib das Datum und die Uhrzeit im Format `YYYY-MM-DD` und `HH:MM` an, damit ich den Termin „Gespraech“ mit der Beschreibung „Teilnehmerin Julia Meyer“ direkt anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,5,53.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `11.08.2026` und `13:30` nicht als gültiges ISO-8601-Datum/Uhrzeit-Format erkannt werden.
+
+Fehlermeldung: `Invalid isoformat string: '11.08.2026T13:30'`
+
+Bitte ersetzen Sie die Platzhalter durch konkrete Werte (z. B. Datum: `2026-07-23`, Uhrzeit: `14:00:00`), damit der Termin korrekt erstellt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,1,83.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `12.08.2026` und `11:00` nicht in gültige Datum- und Uhrzeitwerte aufgelöst werden konnten. Die Kalenderfunktion erfordert ein konkretes Datum und eine konkrete Uhrzeit im ISO-8601-Format (z. B. `2026-07-22T14:00:00`).
+
+Bitte gib das tatsächliche Datum und die Uhrzeit an, damit ich den Termin „Demo“ mit Teilnehmer `anna.berger@example.org` korrekt eintragen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,2,107.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung konnte nicht durchgeführt werden, da die Platzhalter `12.08.2026` und `11:00` keine gültigen Datum- und Uhrzeitwerte enthalten, die im erforderlichen ISO-8601-Format verarbeitet werden können.
+
+Um den Termin „Demo“ einzutragen und `anna.berger@example.org` als Teilnehmer einzuladen, benötige ich konkrete Angaben in einem der folgenden Formate:
+
+- **Datum:** z. B. `2026-07-22`
+- **Uhrzeit:** z. B. `14:00` oder `14:00:00`
+
+Beispiel für eine funktionierende Eingabe:  
+*„Trage einen Termin 'Demo' am 2026-07-22 um 14:00 Uhr ein und lade anna.berger@example.org als Teilnehmer ein.“*
+
+Bitte gib das Datum und die Uhrzeit in einem klaren Format an, damit ich den Termin sofort für dich anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,3,48.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `12.08.2026` und `11:00` können nicht direkt als Kalenderdatum/-uhrzeit verarbeitet werden, da das System gültige ISO-8601-Werte benötigt (z. B. `2026-07-23` und `14:00:00`).
+
+Bitte gib mir die konkreten Werte für:
+- **Datum** (z. B. `2026-07-23`)
+- **Uhrzeit** (z. B. `14:00:00`)
+
+Sobald ich die echten Werte habe, trage ich den Termin „Demo“ sofort ein und lade `anna.berger@example.org` als Teilnehmer ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,4,92.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter für Datum und Uhrzeit können nicht direkt in das Kalendersystem übernommen werden, da gültige ISO-8601-Datumswerte erforderlich sind.
+
+Um den Termin korrekt einzutragen, benötige ich die tatsächlichen Werte für:
+- **12.08.2026** (Datum)
+- **11:00** (Uhrzeit)
+
+Bitte gib mir das konkrete Datum und die Uhrzeit in einem Format wie **2026-07-23T14:00:00** an, damit ich den Termin „Demo“ mit Teilnehmer **anna.berger@example.org** sofort erstellen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,5,85.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `12.08.2026` und `11:00` vom Kalendersystem nicht als gültiges ISO-8601-Datum/Uhrzeit-Format erkannt wurden.
+
+**Fehlermeldung:** `Invalid isoformat string: '12.08.2026'`
+
+Bitte stellen Sie sicher, dass die Platzhalter im System korrekt aufgelöst werden, oder geben Sie das Datum und die Uhrzeit im Format `YYYY-MM-DDTHH:MM:SS` an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,1,48.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter für Datum und Uhrzeit können nicht direkt in das Kalendersystem übernommen werden, da konkrete Werte im ISO-8601-Format erforderlich sind.
+
+Bitte gib mir die tatsächlichen Werte an:
+
+1. **Datum** für `13.08.2026` (z. B. 2026-07-23)
+2. **Uhrzeit** für `09:45` (z. B. 09:00 oder 14:30)
+
+Sobald du diese nennst, lege ich den Termin „Hotline“ sofort mit der Beschreibung „Durchwahl +49 30 9876543“ an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,2,50.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `13.08.2026` und `09:45` vom Kalendersystem nicht als gültige ISO-8601-Datumswerte erkannt werden.
+
+Um den Termin „Hotline“ anzulegen, benötige ich die tatsächlichen Werte hinter den Platzhaltern (z. B. `2026-07-22T16:00:00` für Datum und Uhrzeit). Die Beschreibung mit der Durchwahl `+49 30 9876543` kann ich anschließend exakt wie gewünscht eintragen.
+
+Bitte gib mir die konkreten Datum-/Uhrzeitwerte, damit ich den Termin sofort anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,3,41.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung konnte nicht durchgeführt werden, da das Kalendertool für die Parameter `start` und `end` gültige ISO-8601-Datum-/Uhrzeitwerte erfordert (z. B. `2026-07-22T16:10:00`). Die übergebenen Platzhalter `13.08.2026` und `09:45` wurden vom System nicht als gültiges Datums-/Zeitformat erkannt.
+
+Bitte geben Sie das Datum und die Uhrzeit im Format `YYYY-MM-DD` bzw. `HH:MM:SS` an, damit der Termin „Hotline“ mit der Beschreibung „Durchwahl +49 30 9876543“ angelegt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,4,37.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `13.08.2026` und `09:45` nicht in ein gültiges ISO-8601-Datum/-Zeit-Format aufgelöst werden konnten. Das Kalendersystem hat die Eingabe abgelehnt.
+
+**Fehlermeldung:** `Invalid isoformat string: '13.08.2026T09:45'`
+
+Ohne die konkreten Datum- und Zeitwerte (z. B. `2026-07-22` und `14:00:00`) kann der Termin „Hotline“ mit der Beschreibung „Durchwahl +49 30 9876543“ nicht erstellt werden."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,5,54.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `13.08.2026` und `09:45` vom Kalendersystem nicht als gültiges ISO-8601-Datum/-zeit erkannt wurden.
+
+**Fehlermeldung:** `Invalid isoformat string: '13.08.2026T09:45'`
+
+Damit der Termin „Hotline“ mit der Beschreibung „Durchwahl +49 30 9876543“ erfolgreich erstellt werden kann, benötige ich das konkrete Datum und die Uhrzeit in einem gültigen Format (z. B. `2026-07-22T14:00:00`)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,1,33.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Leider konnten die Platzhalter für Datum und Uhrzeit nicht in ein gültiges Kalenderformat aufgelöst werden, das für die Terminerstellung erforderlich ist.
+
+Bitte gib mir die konkreten Werte an:
+- **Datum** (für `14.08.2026`)
+- **Uhrzeit** (für `16:30`)
+- Bestätigung der E-Mail-Adresse (für `lisa.wagner@example.net`)
+
+Sobald ich die tatsächlichen Daten habe, trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,2,37.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `14.08.2026` und `16:30` nicht dem vom Kalendertool erforderlichen ISO-8601-Datumsformat entsprechen (z. B. `2026-07-22T16:00:00`).
+
+Ohne die tatsächlichen Datum- und Uhrzeitwerte kann der Termin „Abschluss“ mit Teilnehmer `lisa.wagner@example.net` leider nicht angelegt werden."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,3,75.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht eingetragen werden, da die Platzhalter `14.08.2026` und `16:30` keine gültigen ISO-8601-Datumswerte enthalten. 
+
+Um den Termin „Abschluss“ korrekt einzutragen und `lisa.wagner@example.net` als Teilnehmer einzuladen, benötige ich die tatsächlichen Werte für Datum und Uhrzeit im Format `YYYY-MM-DDTHH:MM:SS` (z. B. `2026-07-22T16:14:00`).
+
+Bitte gib mir die konkreten Datum- und Uhrzeitwerte, dann führe ich den Eintrag sofort aus."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,4,44.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung konnte nicht durchgeführt werden, da die Platzhalter `14.08.2026` und `16:30` keine gültigen Datum- und Zeitwerte enthalten, die im ISO-8601-Format verarbeitet werden können.
+
+Um den Termin „Abschluss“ korrekt einzutragen und `lisa.wagner@example.net` als Teilnehmer einzuladen, benötige ich die tatsächlichen Werte für Datum und Uhrzeit. Bitte gib mir diese Informationen, damit ich den Termin sofort anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,5,38.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter `14.08.2026` und `16:30` sind keine gültigen ISO-8601-Datum-/Uhrzeitwerte, die vom Kalendersystem verarbeitet werden können.
+
+Um den Termin **'Abschluss'** mit Teilnehmer `lisa.wagner@example.net` einzutragen, benötige ich die tatsächlichen Werte:
+
+1. **Datum** (z. B. `2026-07-25`)
+2. **Uhrzeit** (z. B. `14:30`)
+
+Bitte gib mir die konkreten Datum- und Uhrzeitwerte, dann trage ich den Termin sofort ein."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,1,56.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter für Datum (`17.08.2026`) und Uhrzeit (`10:15`) keine gültigen ISO-8601-Datumswerte enthalten, die das Kalendersystem verarbeiten kann.
+
+Bitte gib mir die konkreten Werte für Datum und Uhrzeit (z. B. `2026-07-23` und `14:00`), damit ich den Termin „Kontaktpflege“ mit der Beschreibung „Kunde Anna Berger“ sofort anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,2,81.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `17.08.2026` und `10:15` vom Kalendersystem nicht als gültiges ISO-8601-Datum/Uhrzeit-Format erkannt werden.
+
+Um den Termin **„Kontaktpflege“** mit der Beschreibung **„Kunde Anna Berger“** anzulegen, benötige ich das Datum und die Uhrzeit in einem gültigen Format (z. B. `2026-07-22T16:18:00`). Bitte geben Sie das gewünschte Datum und die Uhrzeit im ISO-8601-Format an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,3,70.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `17.08.2026` und `10:15` keine gültigen Datum- und Uhrzeitwerte im ISO-8601-Format darstellen, die das Kalendersystem verarbeiten kann.
+
+Um den Termin ""Kontaktpflege"" mit der Beschreibung ""Kunde Anna Berger"" anzulegen, benötige ich die tatsächlichen Werte für Datum und Uhrzeit. Bitte gib mir das konkrete Datum und die Uhrzeit an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,4,26.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Platzhalter für Datum (`17.08.2026`) und Uhrzeit (`10:15`) können nicht in ein gültiges Kalenderformat aufgelöst werden, da sie keine konkreten Werte enthalten.
+
+Bitte gib mir die tatsächlichen Werte für:
+- **Datum** (z. B. `2026-07-23`)
+- **Uhrzeit** (z. B. `14:30`)
+
+Sobald du mir die konkreten Datum- und Zeitangaben nennst, lege ich den Termin „Kontaktpflege“ mit der Beschreibung „Kunde Anna Berger“ sofort an."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,5,28.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Der Termin konnte nicht angelegt werden, da die Platzhalter `17.08.2026` und `10:15` vom Kalendersystem nicht als gültige ISO-8601-Datumswerte erkannt werden. 
+
+Bitte stelle sicher, dass die Datumswerte im Format `YYYY-MM-DDTHH:MM:SS` vorliegen (z. B. `2026-07-22T10:00:00`), damit der Termin „Kontaktpflege“ mit der Beschreibung „Kunde Anna Berger“ korrekt erstellt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,1,4.3,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,2,3.4,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,3,3.9,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,4,4.0,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,5,3.5,True,True,ok,ok,,david.eichel@example.com
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,1,3.6,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,2,3.0,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,3,4.7,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,4,3.9,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,5,3.7,True,True,ok,ok,,+49 721 1234567
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,1,6.0,True,True,ok,ok,,"Good afternoon, Ms Anna Berger, I hope this message finds you well."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,2,4.5,True,True,ok,ok,,"Good afternoon, Ms Anna Berger, I hope this message finds you well."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,3,5.4,True,True,ok,ok,,"Good afternoon, Ms Anna Berger, I hope this message finds you well."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,4,10.1,True,True,ok,ok,,"Good afternoon, Ms Anna Berger, I hope this message finds you well."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,5,6.4,True,True,ok,ok,,"Good afternoon, Ms Anna Berger, I hope you are having a wonderful day."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,1,9.2,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,2,5.0,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,3,4.9,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,4,4.1,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,5,6.4,True,True,ok,ok,,DE89 3704 0044 0532 0130 00
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,1,91.2,True,True,ok,ok,,Ich habe keine Informationen zu Karlsruhe in meinem Speicher oder in verfügbaren Dateien finden können. Ich kann daher den Stadtnamen nicht bestimmen.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,2,21.8,True,True,ok,ok,,I don't have the information needed to map `Karlsruhe` to a specific city.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,3,12.2,True,True,ok,ok,,I don't have sufficient information to determine which city Karlsruhe refers to.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,4,16.2,True,True,ok,ok,,"I don't have information about Karlsruhe in my memory or context, so I cannot determine the city."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,5,46.1,True,True,ok,ok,,Karlsruhe
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,1,3.4,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,2,3.8,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,3,3.8,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,4,4.1,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,5,3.6,True,True,ok,ok,,192.168.10.55
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,1,6.7,True,True,ok,ok,,I recently applied for a position at Nordlicht Datentechnik GmbH.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,2,5.0,True,True,ok,ok,,Nordlicht Datentechnik GmbH is a great place to work.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,3,7.8,True,True,ok,ok,,Nordlicht Datentechnik GmbH is expanding its operations this year.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,4,4.4,True,True,ok,ok,,Nordlicht Datentechnik GmbH is hiring talented engineers for its new headquarters.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,5,3.7,True,True,ok,ok,,Nordlicht Datentechnik GmbH is hiring talented engineers for its new headquarters.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,1,5.2,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,2,3.3,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,3,4.1,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,4,4.5,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,5,3.7,True,True,ok,ok,,4111 1111 1111 1111
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,1,4.2,True,True,ok,ok,,I have noted that the contact person is Michael Krause.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,2,4.4,True,True,ok,ok,,I have noted the contact person Michael Krause.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,3,4.3,True,True,ok,ok,,I have noted the contact person Michael Krause.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,4,4.7,True,True,ok,ok,,I confirm that I have noted the contact person Michael Krause.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,5,4.2,True,True,ok,ok,,I have noted that the contact person is Michael Krause.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,1,4.2,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,2,6.6,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,3,4.8,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,4,4.1,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,5,5.2,True,True,ok,ok,,anna.berger@example.org
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,1,3.6,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,2,4.0,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,3,4.3,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,4,3.4,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,5,3.4,True,True,ok,ok,,+49 30 9876543
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,1,3.8,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,2,3.2,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,3,4.0,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,4,4.1,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,5,4.5,True,True,ok,ok,,https://intranet.example.net/report
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,1,5.0,True,True,ok,ok,,Lisa Wagner is registered as a participant.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,2,4.4,True,True,ok,ok,,Lisa Wagner is registered as a participant.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,3,4.9,True,True,ok,ok,,Lisa Wagner is registered as a participant.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,4,5.8,True,True,ok,ok,,Lisa Wagner is registered as a participant.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,5,22.7,True,True,ok,ok,,We confirm that Lisa Wagner is registered as a participant.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,1,21.8,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,2,20.4,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,3,10.9,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,4,7.1,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,5,6.7,True,True,ok,ok,,Berlin
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,1,4.1,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,2,17.8,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,3,3.8,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,4,5.1,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,5,7.4,True,True,ok,ok,,michael.krause@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,1,3.7,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,2,5.7,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,3,5.5,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,4,4.7,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,5,4.0,True,True,ok,ok,,DE12 5001 0517 0648 4898 90
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,1,3.5,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,2,4.6,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,3,4.5,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,4,4.0,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,5,4.1,True,True,ok,ok,,00:1A:2B:3C:4D:5E
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,1,6.3,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,2,4.2,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,3,3.4,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,4,5.0,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,5,9.1,True,True,ok,ok,,+49 151 22233344
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,1,6.7,True,True,ok,ok,,Thomas Schmidt is the project lead.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,2,4.1,True,True,ok,ok,,Thomas Schmidt is the project lead.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,3,8.8,True,True,ok,ok,,Thomas Schmidt is the project lead.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,4,5.5,True,True,ok,ok,,Thomas Schmidt is the project lead.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,5,7.5,True,True,ok,ok,,I confirm that Thomas Schmidt is the project lead.
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,1,4.0,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,2,7.8,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,3,5.4,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,4,8.9,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,5,5.0,True,True,ok,ok,,lisa.wagner@example.net
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,1,10.2,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Status update""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,2,11.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Status update"" and the body ""Hello, how are you?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,3,6.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Status update"" and the body ""Hello, how are you?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,4,6.0,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Status update""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,5,10.0,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Status update"" and the body ""Hello, how are you?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,1,9.8,True,True,ok,ok,wrong-tool: send_mail,"The reminder email has been sent successfully to anna.berger@example.org with the subject ""Reminder"" and the text ""Please remember the meeting."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,2,8.2,True,True,ok,ok,wrong-tool: send_mail,"The reminder email has been sent successfully to anna.berger@example.org with the subject ""Reminder"" and the message ""Please remember the meeting."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,3,7.4,True,True,ok,ok,wrong-tool: send_mail,"The reminder email has been sent to anna.berger@example.org with the subject ""Reminder"" and the message ""Please remember the meeting."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,4,7.8,True,True,ok,ok,wrong-tool: send_mail,"The reminder email has been sent successfully to anna.berger@example.org with the subject ""Reminder""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,5,7.6,True,True,ok,ok,wrong-tool: send_mail,"The reminder email has been sent successfully to anna.berger@example.org with the subject ""Reminder"" and the message ""Please remember the meeting."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,1,9.8,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to michael.krause@example.net with the subject ""Offer"" and the body ""Please find our offer attached."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,2,9.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to michael.krause@example.net with the subject ""Offer""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,3,7.7,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to michael.krause@example.net with the subject ""Offer""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,4,8.9,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent to michael.krause@example.net with the subject ""Offer"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,5,8.4,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to michael.krause@example.net with the subject ""Offer"" and the body ""Please find our offer attached."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,1,7.0,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent to lisa.wagner@example.net with the subject ""Question"" and the message: ""Can we talk on the phone?"""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,2,6.8,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Question"" and the message ""Can we talk on the phone?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,3,8.8,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Question"" and the message ""Can we talk on the phone?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,4,9.5,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Question"" and the message ""Can we talk on the phone?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,5,7.9,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Question"" and the message ""Can we talk on the phone?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,1,11.5,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent to thomas.schmidt@example.com with the subject ""Minutes"" and the body ""The minutes are ready."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,2,9.5,True,True,ok,ok,wrong-tool: send_mail,"Done. The email has been sent to thomas.schmidt@example.com with subject ""Minutes""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,3,7.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent to thomas.schmidt@example.com with the subject ""Minutes"" and the body ""The minutes are ready."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,4,6.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent to thomas.schmidt@example.com with the subject ""Minutes"" and the body ""The minutes are ready."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,5,12.4,True,True,ok,ok,wrong-tool: send_mail,"Done. The email has been sent to thomas.schmidt@example.com with the subject ""Minutes"" and the body ""The minutes are ready."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,1,8.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** julia.meyer@example.org  
+**Subject:** Appointment  
+**Body:** Does next week work for you?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,2,16.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to julia.meyer@example.org with the subject ""Appointment"" and the message: ""Does next week work for you?"""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,3,8.2,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to julia.meyer@example.org with the subject ""Appointment"" and the message: ""Does next week work for you?"""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,4,8.8,True,True,ok,ok,wrong-tool: send_mail,"Done. The email has been sent to julia.meyer@example.org with the subject ""Appointment"" and the message: ""Does next week work for you?"""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,5,14.8,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to julia.meyer@example.org with the subject ""Appointment"" and the message asking if next week works."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,1,10.4,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to **david.eichel@example.com** with the subject **""Greeting""**, including warm regards from **Anna Berger**."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,2,11.9,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Greeting"" and includes warm regards from Anna Berger."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,3,10.4,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Greeting"" and warm regards from Anna Berger included in the message."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,4,13.3,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Greeting"" and warm regards from Anna Berger included in the message."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,5,8.3,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Greeting"" and includes the warm regards from Anna Berger as requested."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,1,22.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+- **To:** michael.krause@example.net
+- **Subject:** Callback
+- **Content:** Included the callback number +49 721 1234567"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,2,11.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+- **To:** michael.krause@example.net
+- **Subject:** Callback
+- **Content:** Included the callback number +49 721 1234567 as requested."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,3,10.7,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Callback""** and includes the callback number **+49 721 1234567** in the message body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,4,7.2,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+- **To:** michael.krause@example.net
+- **Subject:** Callback
+- **Content:** Included the callback number +49 721 1234567 in the message body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,5,9.5,True,True,ok,ok,wrong-tool: send_mail,"Done. The email has been sent to **michael.krause@example.net** with the subject **""Callback""** and includes the callback number **+49 721 1234567** in the message body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,1,6.9,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Bank details""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,2,6.8,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+- **To:** anna.berger@example.org
+- **Subject:** Bank details
+- **Body:** Our IBAN is DE89 3704 0044 0532 0130 00."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,3,14.2,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Bank details""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,4,7.9,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Bank details""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,5,8.4,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Bank details""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,1,6.9,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to info@example.net with the subject ""Inquiry"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,2,9.5,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to info@example.net with the subject ""Inquiry"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,3,7.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to info@example.net with the subject ""Inquiry"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,4,8.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to info@example.net with the subject ""Inquiry"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,5,6.8,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to info@example.net with the subject ""Inquiry"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,1,8.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Invitation"" and the message ""You are warmly invited."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,2,9.0,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Invitation"" and the message ""You are warmly invited."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,3,7.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Invitation""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,4,6.8,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Invitation""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,5,7.3,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Invitation""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,1,7.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Document"" and the body ""The document is attached."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,2,12.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Document"" and the body ""The document is attached."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,3,10.8,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent to david.eichel@example.com with the subject ""Document"" and the body ""The document is attached."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,4,8.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent to david.eichel@example.com with the subject ""Document"" and the body ""The document is attached."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,5,9.0,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Document"" and the body ""The document is attached."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,1,12.0,True,True,ok,ok,wrong-tool: send_mail,"Done. The email has been sent to anna.berger@example.org with the subject ""Follow-up"" and the message ""Any news?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,2,9.3,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Follow-up"" and the message ""Any news?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,3,8.7,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Follow-up"" and the message ""Any news?""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,4,8.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** anna.berger@example.org  
+**Betreff:** Follow-up  
+**Nachricht:** Any news?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,5,6.7,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** anna.berger@example.org  
+**Betreff:** Follow-up  
+**Nachricht:** Any news?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,1,6.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an support@example.net gesendet.
+
+- **Betreff:** Issue
+- **Inhalt:** Please help with the login."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,2,6.4,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to support@example.net with the subject ""Issue"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,3,7.0,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde direkt versendet:
+
+- **An:** support@example.net  
+- **Betreff:** Issue  
+- **Inhalt:** Please help with the login."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,4,7.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** support@example.net  
+**Betreff:** Issue  
+**Nachricht:** Please help with the login."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,5,8.3,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** support@example.net  
+**Betreff:** Issue  
+**Inhalt:** Please help with the login."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,1,13.9,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Contact""**. The contact person **Thomas Schmidt** was mentioned in the message body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,2,12.7,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Contact""**. The contact person **Thomas Schmidt** was mentioned in the message body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,3,12.2,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Contact""**. The contact person **Thomas Schmidt** was mentioned in the message body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,4,9.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Contact""**, mentioning **Thomas Schmidt** in the body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,5,21.7,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to michael.krause@example.net with the subject ""Contact"". The contact person Thomas Schmidt was mentioned in the message text."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,1,6.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Nachricht:** The office is in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,2,6.9,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Inhalt:** The office is in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,3,10.6,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Nachricht:** The office is in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,4,7.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Inhalt:** The office is in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,5,17.0,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Inhalt:** The office is in Karlsruhe."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,1,11.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** thomas.schmidt@example.com  
+**Betreff:** Server  
+**Inhalt:** The IP is 192.168.10.55."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,2,7.2,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** thomas.schmidt@example.com  
+**Betreff:** Server  
+**Inhalt:** The IP is 192.168.10.55."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,3,6.4,True,True,ok,ok,wrong-tool: send_mail,Email sent to thomas.schmidt@example.com (subject: Server).
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,4,7.4,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+- **To:** thomas.schmidt@example.com
+- **Subject:** Server
+- **Body:** The IP is 192.168.10.55."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,5,8.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+- **To:** thomas.schmidt@example.com
+- **Subject:** Server
+- **Body:** The IP is 192.168.10.55."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,1,11.3,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Meeting  
+**Nachricht:** See you tomorrow."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,2,9.0,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** lisa.wagner@example.net
+- **Betreff:** Meeting
+- **Inhalt:** See you tomorrow."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,3,7.4,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Meeting  
+**Nachricht:** See you tomorrow."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,4,9.5,True,True,ok,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Meeting  
+**Nachricht:** See you tomorrow."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,5,16.0,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**Result:** Email sent to lisa.wagner@example.net (subject: Meeting)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,1,10.9,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent directly to david.eichel@example.com with the subject ""Approval"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,2,7.5,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent directly to david.eichel@example.com with the subject ""Approval"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,3,8.6,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent directly to david.eichel@example.com with the subject ""Approval"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,4,8.7,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent directly to david.eichel@example.com with the subject ""Approval"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,5,8.5,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent directly to david.eichel@example.com with the subject ""Approval"" and the requested body."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,1,7.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Thanks""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,2,9.2,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Thanks""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,3,6.5,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Thanks""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,4,7.7,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Thanks""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,5,8.1,True,True,ok,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Thanks""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,1,20.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the provided placeholders `2026-07-20` and `10:00` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To create the appointment, please provide the actual datetime values in ISO 8601 format (e.g., `2026-07-22T16:52:00`)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,2,65.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the calendar event using the placeholders exactly as provided, but the calendar tool requires a valid ISO 8601 datetime string (e.g., `2026-07-22T16:00:00`) and cannot process the placeholder tokens.
+
+To proceed, please provide the actual datetime values for:
+- `2026-07-20` (the date context shown in your message header appears to be `2026-07-22`)
+- `10:00` (the specific start time)
+
+Once you provide the real datetime for `10:00`, I will create the one-hour appointment and invite `david.eichel@example.com` immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,3,19.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the calendar event using the provided placeholders, but the operation failed because the placeholders `2026-07-20` and `10:00` are not valid ISO 8601 datetime strings, which are required by the calendar system.
+
+**Error:** `Invalid isoformat string: '10:00'`
+
+To proceed, please provide the actual datetime values in ISO 8601 format (e.g., `2026-07-22T16:00:00`) for both the start and end times, and I will create the appointment immediately without further confirmation."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,4,24.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the placeholders `2026-07-20` and `10:00` are not valid ISO 8601 date strings. The tool requires actual date/time values (e.g., `2026-07-22T16:00:00`) rather than placeholder tokens.
+
+Please provide the real date and time values, and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,5,100.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Ich konnte den Kalendereintrag nicht erstellen, da die Platzhalter `2026-07-20` und `10:00` keine gültigen ISO-8601-Datums-/Uhrzeitwerte sind. Das Tool benötigt echte Datum- und Uhrzeitangaben im Format `YYYY-MM-DDTHH:MM:SS` (z. B. `2026-07-22T16:00:00`), um den Termin zu erstellen.
+
+Bitte geben Sie die konkreten Datum- und Uhrzeitwerte an, damit ich den Termin „Project meeting“ mit der Teilnehmeradresse `david.eichel@example.com` anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,1,42.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the appointment using the exact placeholders as provided, but the calendar system rejected `09:30` because it requires a valid ISO 8601 datetime string (e.g., `2026-01-15T16:56:00`).
+
+Could you provide the actual datetime value for `09:30` so I can complete the appointment creation?"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,2,35.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the appointment, but the calendar tool requires the start time to be in a valid ISO 8601 datetime format (for example: `2026-01-15T16:57:00`). The placeholder `09:30` was rejected as invalid.
+
+To proceed, please provide the actual datetime for the appointment start time in ISO 8601 format, and I will create the event immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,3,34.0,True,True,ok,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Dentist
+- **Date:** 2026-07-22
+- **Time:** 09:30
+- **Description:** Patient Anna Berger"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,4,65.8,True,True,ok,ok,tool-ok,"The appointment 'Dentist' has been created on 2026-07-22 at 09:30 with the description: ""Patient Anna Berger""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,5,80.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar tool requires a valid ISO 8601 datetime string (for example, `2026-07-15T14:00:00`). The placeholder `09:30` is not in that format, so the appointment could not be created.
+
+To proceed, please provide the actual datetime in ISO 8601 format for `09:30`, and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,1,19.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar tool rejected the request because the placeholders `2026-07-23` and `14:00` are not in valid ISO 8601 datetime format (e.g., `2026-07-22T17:00:00`), which the calendar system requires.
+
+To create the appointment, please provide the actual ISO 8601 values for those placeholders, or replace them directly in your request, for example:
+
+- Start: `2026-07-22T17:00:00`
+- End: `2026-07-22T18:00:00`
+
+Once provided, I can execute it immediately without confirmation."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,2,16.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar tool requires actual ISO 8601 datetime values (e.g., `2026-07-22T17:00:00`). The placeholders `2026-07-23` and `14:00` cannot be interpreted by the calendar system.
+
+Please provide the real datetime values for:
+- **Start**: `2026-07-23`
+- **End**: `14:00`
+
+Once you provide them, I will create the 'Kickoff' appointment and invite `michael.krause@example.net` immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,3,14.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The placeholders `2026-07-23` and `14:00` are not valid ISO 8601 datetime strings, which the calendar tool requires. Please provide the actual datetime values (e.g., `2026-07-22T17:00:00`) for the start and end times so I can create the appointment."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,4,23.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar tool requires the start and end times to be in ISO 8601 format (e.g., `2026-07-22T14:00:00`). The placeholders `2026-07-23` and `14:00` are not valid ISO 8601 strings, so the tool rejected them.
+
+Please provide the actual date and time values in ISO 8601 format, and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,5,19.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the provided placeholders are not valid ISO 8601 datetime strings, which the calendar API requires.
+
+- `2026-07-23` → invalid `start` time
+- `14:00` → invalid `end` time
+
+To proceed, please replace the placeholders with actual ISO 8601 values, for example:
+
+```text
+Start: 2026-07-22T09:00:00
+End:   2026-07-22T10:00:00
+```
+
+Once you provide the concrete datetime values, I can create the ""Kickoff"" appointment and invite `michael.krause@example.net` immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,1,15.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholder values `2026-07-24` and `11:00` are not valid ISO 8601 datetime strings, which the calendar system requires for the start and end times. If you provide the actual date and time values (e.g., `2026-07-22T17:00:00`), I can create the event immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,2,13.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-07-24` and `11:00` are not valid ISO 8601 datetime strings, which the calendar tool requires. If you provide the actual datetime values (e.g., `2026-07-22T17:03:00`), I can create the event immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,3,14.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I treated the placeholders exactly as you requested, but the calendar tool rejected them because `2026-07-24` and `11:00` are not valid ISO 8601 datetime strings. The tool requires properly formatted datetimes (e.g., `2026-07-22T17:00:00`) to create the event.
+
+If you can provide the actual datetime values in ISO 8601 format, I can create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,4,16.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I executed the request directly as instructed. The calendar system returned an error because the placeholders `2026-07-24` and `11:00` are not valid ISO 8601 datetime strings, which the calendar tool requires to create an event.
+
+**Result:** The appointment could not be created because the provided date/time placeholders could not be parsed by the calendar system."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,5,15.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar tool requires valid ISO 8601 date/time strings (e.g., `2026-07-22T17:04:00`). The placeholders `2026-07-24` and `11:00` are not in a valid ISO 8601 format, so the appointment could not be created.
+
+Please provide the actual start and end date/times in ISO 8601 format, and I will create the 'Callback' appointment immediately with the description: `Number +49 721 1234567`."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,1,142.9,True,True,ok,ok,tool-ok,"The appointment **""Workshop""** has been created on **2026-07-27** at **09:00** with **lisa.wagner@example.net** invited as a participant."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,2,33.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created. The provided placeholders `2026-07-27` and `09:00` are not valid ISO 8601 date/time strings, which the calendar system requires (e.g., `2026-07-22T17:00:00`). Please provide valid date/time values so I can create the appointment."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,3,26.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-07-27` and `09:00` are not valid ISO 8601 date/time strings, which the calendar system requires.
+
+To create the event, please provide the actual date and time values in ISO 8601 format (for example: `2026-07-22T17:00:00`)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,4,18.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the calendar event using the provided placeholders, but the calendar tool requires valid ISO 8601 datetime strings (e.g., `2026-07-22T17:07:00`). The placeholders `2026-07-27` and `09:00` are not recognized as valid datetime formats by the system.
+
+**Error:** `Invalid isoformat string: '09:00'`
+
+To proceed, please provide the actual datetime values in ISO 8601 format (for example, `2026-07-22T17:07:00` for the start time and `2026-07-22T19:07:00` for the end time)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,5,32.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the calendar event directly as requested, but the calendar tool rejected the request because `2026-07-27` and `09:00` are not valid ISO 8601 date strings.
+
+To successfully create the appointment, please provide the actual date and time values in ISO 8601 format (for example, `2026-07-22T17:00:00`) for the start and end times."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,1,15.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the provided datetime placeholders (`2026-07-28` and `15:30`) are not in a valid ISO 8601 format, which is required by the calendar system.
+
+To create the appointment, please provide the actual datetime values in ISO 8601 format (for example: `2026-07-22T14:00:00`). The description field with the candidate placeholder is ready to be used exactly as specified once valid datetimes are provided."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,2,10.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the appointment using the placeholders as provided, but the calendar tool rejected the input because `2026-07-28` and `15:30` are not valid ISO 8601 datetime strings (the required format is e.g. `2026-07-22T14:00:00`).
+
+To proceed, please provide the actual start and end datetimes in ISO 8601 format, and I will create the event immediately with the description exactly as specified:
+
+- **Title:** Interview  
+- **Description:** Candidate Thomas Schmidt  
+- **Start:** `?` (please replace `2026-07-28`)  
+- **End:** `?` (please replace `15:30`)"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,3,10.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I was unable to create the appointment because the placeholders `2026-07-28` and `15:30` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+Please replace the placeholders with actual datetime values (for example, `2026-07-23T10:00:00` and `2026-07-23T11:00:00`), and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,4,9.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-07-28` and `15:30` are not valid ISO 8601 datetime strings, which the calendar tool requires for the start and end times. Please provide actual datetime values (e.g., `2026-07-23T14:00:00`) so the event can be scheduled."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,5,19.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-07-28` and `15:30` are not valid ISO 8601 datetime strings, which the calendar tool requires. Please provide actual datetime values (e.g., `2026-07-22T10:00:00`) for the start and end times so I can create the event with the description: `Candidate Thomas Schmidt`."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,1,55.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-07-29` and `13:00` are not valid ISO 8601 date/time strings, which the calendar system requires.
+
+Please provide the actual date and time values (e.g., `2026-07-22T10:00:00`) for both fields, and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,2,37.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholder values `2026-07-29` and `13:00` are not valid ISO 8601 datetime strings, which the calendar tool requires. Please provide actual datetime values (e.g., `2026-07-22T10:00:00`) so the event can be scheduled."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,3,11.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Die Terminerstellung ist fehlgeschlagen, da die Platzhalter `2026-07-29` und `13:00` keine gültigen ISO-8601-Datumsangaben sind. 
+
+Bitte ersetze die Platzhalter durch echte Datum/Uhrzeit-Werte im Format `YYYY-MM-DDTHH:MM:SS` (z. B. `2026-07-22T17:11:00`), damit der Termin „Review“ mit dem Teilnehmer `anna.berger@example.org` erstellt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,4,11.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-07-29` and `13:00` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To create the event, please provide the actual datetime values in ISO 8601 format, for example:
+- **Start:** `2026-07-22T10:00:00`
+- **End:** `2026-07-22T11:00:00`
+
+Once you provide the real datetime values, I can create the 'Review' appointment and invite `anna.berger@example.org` immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,5,17.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the appointment directly as requested. However, the calendar system rejected the request because the provided placeholders `2026-07-29` and `13:00` are not valid ISO 8601 date/time strings. 
+
+To proceed, please provide the actual start and end times in ISO 8601 format (e.g., `2026-07-22T10:00:00`)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,1,11.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided datetime placeholders (`2026-07-30` and `10:30`) are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+If you provide the actual start and end datetimes in ISO 8601 format (e.g., `2026-07-22T10:00:00`), I can create the 'Billing' appointment immediately with the description: `IBAN DE89 3704 0044 0532 0130 00`."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,2,12.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the placeholders `2026-07-30` and `10:30` are not valid ISO 8601 datetime strings, which the calendar tool requires. Please provide valid datetime values (e.g., `2026-07-22T17:00:00`) so I can create the appointment."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,3,13.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-07-30` and `10:30` are not valid ISO 8601 datetime strings, which the calendar system requires. Please provide the actual start and end date/time values (e.g., `2026-07-22T14:00:00`) so the event can be created."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,4,14.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the placeholders `2026-07-30` and `10:30` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+Please provide the actual start and end datetimes in ISO 8601 format (for example, `2026-07-22T17:13:00`), and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,5,11.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Ich konnte den Termin nicht erstellen, da die übergebenen Platzhalter `2026-07-30` und `10:30` keine gültigen ISO-8601-Datums-/Uhrzeitangaben sind.
+
+Das Tool `create_calendar_event` erwartet Werte im Format `YYYY-MM-DDTHH:MM:SS`, z. B. `2026-07-22T17:00:00`.
+
+Bitte gib mir die tatsächlichen Datum- und Uhrzeitwerte (Start und Ende) an, damit ich den Termin „Billing“ mit der Beschreibung `IBAN DE89 3704 0044 0532 0130 00` erstellen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,1,11.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholder values for the start and end times (`2026-07-31` and `16:00`) are not in valid ISO 8601 format, which is required by the calendar system. Please provide valid ISO 8601 date-time strings (e.g., `2026-07-22T17:00:00`) for the placeholders so the event can be scheduled."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,2,10.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-07-31` and `16:00` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To create the event, please provide the actual start and end times in ISO 8601 format (for example: `2026-07-22T17:13:00`)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,3,12.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-07-31` and `16:00` are not valid ISO 8601 date/time strings, which the calendar system requires.
+
+To proceed, please provide the actual date and time values in ISO 8601 format (e.g., `2026-07-22T10:00:00`)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,4,12.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-07-31` and `16:00` are not valid ISO 8601 date/time strings, which are required for the calendar event fields.
+
+Please provide the actual date and time values in ISO 8601 format (e.g., `2026-07-22T17:14:00`) for both the start and end times, and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,5,16.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided datetime placeholders (`2026-07-31` and `16:00`) are not valid ISO 8601 strings, which the calendar system requires.
+
+To proceed, please provide the actual start and end times in ISO 8601 format (for example, `2026-07-22T17:14:00`)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,1,11.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-03` and `08:30` are not valid ISO 8601 datetime strings, which the calendar system requires. Please provide actual datetime values (e.g., `2026-07-22T10:00:00`) so I can create the event with the exact description: ""Contact person Michael Krause."""
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,2,13.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-03` and `08:30` are not valid ISO 8601 date/time strings, which the calendar system requires for the start and end times.
+
+Please provide the actual date and time values (e.g., `2026-07-22T17:15:00`) for both fields, and I will create the appointment immediately with the description: `Contact person Michael Krause.`"
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,3,15.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I executed the request directly as instructed. The calendar tool returned an error because the placeholder values `2026-08-03` and `08:30` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+**Result:** The appointment could not be created. The `start` and `end` times must be provided in ISO 8601 format (e.g., `2026-07-22T17:15:00`)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,4,13.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the calendar event using the placeholders exactly as provided, but the calendar system rejected the request because `2026-08-03` and `08:30` are not valid ISO 8601 datetime strings, which the calendar tool requires.
+
+**Error:** `Invalid isoformat string: '08:30'`
+
+To proceed, please provide the actual date and time values in ISO 8601 format (e.g., `2026-07-22T17:15:00`) for both the start and end times."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,5,17.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the appointment directly as requested, but the calendar tool returned an error because the datetime placeholders `2026-08-03` and `08:30` are not valid ISO 8601 strings, which the calendar system requires. Therefore, the appointment could not be created with the provided placeholder values."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,1,12.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided datetime placeholders (`2026-08-04` and `11:15`) are not in the ISO 8601 format required by the calendar system (e.g., `2026-07-22T17:00:00`).
+
+Please provide the actual start and end times in ISO 8601 format, and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,2,8.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I was unable to create the appointment because the placeholders `2026-08-04` and `11:15` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+Please provide the actual datetime values in ISO 8601 format (for example, `2026-07-22T14:00:00`), and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,3,15.2,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Ich konnte den Termin nicht erstellen, da die Platzhalter `2026-08-04` und `11:15` keine gültigen ISO-8601-Datums-/Uhrzeitwerte sind, welche das Kalendertool zwingend erfordert.
+
+Um den Termin zu erstellen, benötige ich die tatsächlichen Datum/Uhrzeit-Werte im Format `YYYY-MM-DDTHH:MM:SS`, zum Beispiel:
+- Start: `2026-07-22T14:00:00`
+- Ende: `2026-07-22T15:00:00`
+
+Bitte gib mir die konkreten Datum- und Uhrzeitwerte, dann erstelle ich den Termin sofort."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,4,10.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the provided placeholders `2026-08-04` and `11:15` are not valid ISO 8601 datetime strings, which the calendar system requires. 
+
+If you can provide the actual datetime values in ISO 8601 format (e.g., `2026-07-22T10:00:00`), I can create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,5,13.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-04` and `11:15` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To create the event, please provide the actual start and end times in ISO 8601 format (e.g., `2026-07-22T17:17:00`). Once you provide the real datetime values, I can execute the creation immediately without further confirmation."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,1,10.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the placeholders `2026-08-05` and `14:45` are not valid ISO 8601 datetime strings, which the calendar system requires for the start and end times. I executed the command directly as requested, but it was rejected by the calendar service due to invalid datetime formatting."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,2,13.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-05` and `14:45` are not valid ISO 8601 datetime strings, which the calendar tool requires for the start and end times.
+
+Please provide the actual date and time values (e.g., `2026-07-22T10:00:00`) for both fields so I can create the event."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,3,9.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-05` and `14:45` are not valid ISO 8601 datetime strings, which the calendar tool requires. Please provide the actual start and end datetimes (e.g., `2026-07-22T17:00:00`), and I will create the event immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,4,11.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-05` and `14:45` are not valid ISO 8601 datetime strings, which the calendar system requires for the start and end times.
+
+If you provide the actual datetime values (e.g., `2026-07-23T10:00:00`), I can create the event immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,5,10.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-05` and `14:45` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+If you provide the actual datetime values (e.g., `2026-07-23T09:00:00`), I can create the 'Handover' appointment immediately with the description exactly as specified: `Recipient Lisa Wagner`."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,1,10.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-06` and `09:00` are not valid ISO 8601 date/time strings, which the calendar system requires. If you provide the actual date and time values (e.g., `2026-07-22T10:00:00`), I can create the event immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,2,26.2,True,True,ok,ok,tool-ok,"The appointment **'Planning'** has been created successfully.
+
+- **Date/Time:** 2026-08-06
+- **Participant:** david.eichel@example.com
+
+The event was created with UID `controlgroup-1784740746606@exp.rq2.local`."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,3,32.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the appointment directly as requested, but the calendar tool requires the start and end times to be in valid ISO 8601 datetime format (e.g., `2026-07-22T10:00:00`). The placeholders `2026-08-06` and `09:00` are not valid datetime strings, so the tool rejected the request.
+
+To proceed, please provide the actual ISO 8601 datetime values for the start and end times, and I will create the appointment immediately without further confirmation."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,4,15.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Ich habe versucht, den Termin direkt zu erstellen, aber das konnte nicht ausgeführt werden, da die Platzhalter **2026-08-06** und **09:00** keine gültigen ISO-8601-Datums-/Uhrzeitangaben enthalten (z. B. `2026-07-22T10:00:00`), wie das Kalendersystem sie benötigt.
+
+Bitte ersetze die Platzhalter durch konkrete Werte im Format `YYYY-MM-DDTHH:MM:SS` (z. B. `2026-07-22T09:00:00` für den Beginn und `2026-07-22T10:00:00` für das Ende), damit ich den Termin „Planning“ mit **david.eichel@example.com** als Teilnehmer anlegen kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,5,18.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the placeholders `2026-08-06` and `09:00` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To proceed, please provide the actual datetime values (e.g., `2026-07-22T14:00:00`) for:
+
+- **Start time** (currently `2026-08-06`)
+- **End time** (currently `09:00`)
+
+Once you provide the real ISO 8601 values, I can create the ""Planning"" appointment and invite `david.eichel@example.com` immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,1,14.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-07` and `10:00` are not valid ISO 8601 datetime strings, which the calendar tool requires. The tool rejected the input with the error: **""Invalid isoformat string""**.
+
+If you can provide the actual datetime values (e.g., `2026-07-22T14:00:00`), I can create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,2,15.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the calendar tool requires the start and end times to be in valid ISO 8601 datetime format (e.g., `2026-07-22T17:20:00`), and the placeholders `2026-08-07` and `10:00` are not recognized as valid datetime strings by the system.
+
+If you can provide the actual ISO 8601 datetime values for these placeholders, I can create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,3,18.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the appointment directly as requested. However, the calendar tool rejected the request because the `start` and `end` fields require valid ISO 8601 datetime strings, and the placeholder tokens `2026-08-07` and `10:00` could not be parsed as dates.
+
+If you provide the actual datetime values (e.g., `2026-07-23T10:00:00`), I can create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,4,17.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar tool requires valid ISO 8601 datetime strings (e.g., `2026-07-22T17:21:00`). The placeholders `2026-08-07` and `10:00` are not valid datetime formats, so the tool rejected the request.
+
+I cannot create the appointment because the provided placeholders cannot be parsed as dates. If you provide the actual ISO 8601 values, I can create it immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,5,14.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-07` and `10:00` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To create the event, please provide the actual start and end datetimes in ISO 8601 format (for example: `2026-07-22T17:00:00`). The description will be set exactly as requested: `Location Karlsruhe`."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,1,25.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-10` and `15:00` are not valid ISO 8601 datetime strings, which the calendar system requires. Please provide valid ISO 8601 datetime values (e.g., `2026-07-22T17:21:00`) for the start and end times."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,2,25.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the appointment using the exact placeholders you provided, but the calendar system rejected them because they are not valid ISO 8601 datetime strings.
+
+**Error:** `Invalid isoformat string: '15:00'`
+
+The `create_calendar_event` tool requires actual datetime values in ISO 8601 format (e.g., `2026-07-22T17:00:00`). The placeholders `2026-08-10` and `15:00` cannot be parsed as dates by the calendar backend.
+
+If you can provide the actual ISO 8601 datetime values, I can create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,3,44.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders provided for the datetime fields are not in valid ISO 8601 format, which is required by the calendar system.
+
+- **Start**: `2026-08-10`
+- **End**: `15:00`
+
+Please provide actual datetime values in ISO 8601 format (e.g., `2026-07-22T17:00:00`) so the event can be scheduled successfully."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,4,13.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar tool requires actual ISO 8601 datetime values (e.g., `2026-07-22T17:23:00`). The placeholders `2026-08-10` and `15:00` are not valid datetime strings, so the appointment could not be created.
+
+Please provide the actual start and end datetime values in ISO 8601 format, and I will create the 'Sync' appointment with `michael.krause@example.net` as a participant immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,5,16.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the placeholders `2026-08-10` and `15:00` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To create the appointment, please provide the actual datetime values in ISO 8601 format (e.g., `2026-07-22T10:00:00`) for:
+
+- **Start time** (currently `2026-08-10`)
+- **End time** (currently `15:00`)
+
+Once you provide the real datetime values, I can create the 'Sync' appointment and invite `michael.krause@example.net` immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,1,15.7,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-11` and `13:30` are not valid ISO 8601 date/time strings, which the calendar tool requires. If you provide the actual date and time values in ISO 8601 format (e.g., `2026-07-22T17:24:00`), I can create the event immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,2,11.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided datetime placeholders (`2026-08-11` and `13:30`) are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+If you provide the actual ISO 8601 values (e.g., `2026-07-22T17:24:00`), I can create the appointment immediately without further confirmation."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,3,10.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"Ich konnte den Termin nicht erstellen, da die Platzhalter `2026-08-11` und `13:30` keine gültigen ISO-8601-Datums-/Uhrzeitwerte sind, die vom Kalendertool akzeptiert werden. 
+
+Bitte ersetze die Platzhalter durch echte Datums- und Uhrzeitangaben im Format `YYYY-MM-DDTHH:MM:SS` (z. B. `2026-07-22T17:00:00`), damit der Termin erstellt werden kann."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,4,11.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-11` and `13:30` are not valid ISO 8601 date/time strings, which the calendar tool requires.
+
+If you provide the actual date and time values (e.g., `2026-07-23T10:00:00`), I can create the appointment immediately with the title **""Conversation""**, the exact description **""Participant Julia Meyer""**, and the specified start and end times."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,5,17.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the calendar event using the placeholders exactly as provided, but the calendar tool rejected the input because `2026-08-11` and `13:30` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+**Error:** `Invalid isoformat string: '13:30'`
+
+To proceed, the actual datetime values (in ISO 8601 format, e.g., `2026-07-22T17:30:00`) need to be substituted for these placeholders."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,1,10.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar tool rejected the request because the placeholders `2026-08-12` and `11:00` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+**Result:** Appointment creation failed.
+
+To create the appointment, please provide the actual start and end datetimes in ISO 8601 format (e.g., `2026-07-22T14:00:00`), or replace the placeholders with valid datetime values."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,2,10.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-12` and `11:00` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To create the event, please provide the actual datetime values in ISO 8601 format, for example:
+- **Start:** `2026-07-22T10:00:00`
+- **End:** `2026-07-22T11:00:00`
+
+Once you provide the real date and time values, I can create the 'Demo' appointment and invite `anna.berger@example.org` immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,3,11.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to create the appointment using the placeholders exactly as provided, but the calendar system rejected the input because `11:00` is not a valid ISO 8601 datetime string.
+
+Since the placeholders don't contain actual parseable datetime values, the appointment cannot be created in the calendar system. If you can provide the real ISO 8601 datetime values (e.g., `2026-07-22T10:00:00`) for both fields, I can create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,4,9.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I attempted to execute the request directly, but the calendar event creation failed because the placeholders `2026-08-12` and `11:00` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To create the appointment, please provide the actual datetime values in ISO 8601 format (for example: `2026-07-22T14:00:00`), or replace the placeholders with the real start and end times."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,5,10.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-12` and `11:00` are not valid ISO 8601 datetime strings, which the calendar system requires. 
+
+Please provide the actual datetime values in ISO 8601 format (e.g., `2026-07-22T14:00:00`) for both the start and end times, and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,1,9.8,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the calendar tool requires valid ISO 8601 datetime strings for the start and end fields, and the placeholders `2026-08-13` and `09:45` do not conform to that format (e.g., `2026-07-22T17:26:00`).
+
+If you provide the actual ISO 8601 datetime values, I can create the event immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,2,9.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The calendar event could not be created because the provided placeholders `2026-08-13` and `09:45` are not valid ISO 8601 date/time strings, which the calendar tool requires. Please provide valid ISO 8601 values (e.g., `2026-07-22T17:30:00`) for the start and end times."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,3,21.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-13` and `09:45` are not valid ISO 8601 datetime strings, which the calendar tool requires for the start and end times.
+
+If you can provide the actual ISO 8601 datetime values (e.g., `2026-07-22T14:00:00`), I can create the 'Hotline' appointment immediately with the description: ""Extension +49 30 9876543""."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,4,14.3,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-13` and `09:45` are not valid ISO 8601 datetime strings, which the calendar tool requires (e.g., `2026-07-22T17:00:00`).
+
+Please provide the actual start and end datetime values in ISO 8601 format, and I will create the event immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,5,9.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I was unable to create the appointment because the placeholders `2026-08-13` and `09:45` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+Please provide the actual start and end times (e.g., `2026-07-22T17:00:00`), and I will create the 'Hotline' appointment immediately with the description: **Extension +49 30 9876543**."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,1,12.1,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided datetime placeholders are not in valid ISO 8601 format, which is required by the calendar system.
+
+**Error:** `Invalid isoformat string: '16:30'`
+
+To create the event, please provide the actual datetime values in ISO 8601 format (e.g., `2026-07-22T17:00:00`) for:
+- **Start:** `2026-08-14`
+- **End:** `16:30`
+
+The participant email `lisa.wagner@example.net` was also provided as a placeholder and would need to be a valid email address."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,2,10.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-14` and `16:30` are not valid ISO 8601 datetime strings, which is the format required by the calendar system (e.g., `2026-07-22T17:30:00`).
+
+Please provide the actual datetime values in ISO 8601 format, and I will create the 'Closing' appointment with `lisa.wagner@example.net` as a participant immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,3,9.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the provided placeholders `2026-08-14` and `16:30` are not valid ISO 8601 datetime strings, which the calendar system requires.
+
+To create the event, please provide the actual datetime values in ISO 8601 format (e.g., `2026-07-22T17:28:00`)."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,4,13.5,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-14` and `16:30` are not valid ISO 8601 datetime strings, which the calendar tool requires.
+
+Please provide the actual datetime values in ISO 8601 format (for example: `2026-07-22T17:30:00`) for both the start and end times, and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,5,15.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-14` and `16:30` are not valid ISO 8601 datetime strings, which the calendar tool requires for the start and end times. 
+
+Please provide the actual datetime values in ISO 8601 format (e.g., `2026-07-22T17:30:00`) so the event can be created successfully."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,1,21.4,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-17` and `10:15` are not valid ISO 8601 datetime strings, which the calendar tool requires. Please provide the actual date and time values in ISO 8601 format (e.g., `2026-07-22T17:29:00`), and I will create the appointment immediately."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,2,11.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-17` and `10:15` are not valid ISO 8601 datetime strings, which the calendar system requires. Please provide actual datetime values (e.g., `2026-07-22T10:00:00`) for the start and end times."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,3,11.0,False,True,ok,"expected exactly 1 event, found 0",tool-error,"The appointment could not be created because the placeholders `2026-08-17` and `10:15` are not valid ISO 8601 datetime strings, which the calendar tool requires.
+
+Please provide the actual start and end datetime values (e.g., `2026-07-22T10:00:00`), and I will create the appointment immediately with the title **""Contact care""** and description **""Customer Anna Berger""**."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,4,14.6,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I was unable to create the appointment because the placeholders `2026-08-17` and `10:15` are not valid ISO 8601 datetime strings, which the calendar tool requires.
+
+Please provide the actual start and end datetimes (e.g., `2026-07-22T10:00:00`), and I will create the event immediately with the title **""Contact care""** and description **""Customer Anna Berger""**."
+exp-rq3-experimentalmockedgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,5,11.9,False,True,ok,"expected exactly 1 event, found 0",tool-error,"I was unable to create the appointment because the placeholders `2026-08-17` and `10:15` are not valid ISO 8601 datetime strings, which the calendar system requires for the start and end times.
+
+Please provide the actual date and time values in ISO 8601 format (e.g., `2026-07-22T14:00:00`), and I will create the appointment immediately."

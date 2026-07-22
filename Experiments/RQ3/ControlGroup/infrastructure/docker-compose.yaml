@@ -1,0 +1,63 @@
+services:
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: exp-rq3-control-mailpit
+    restart: unless-stopped
+    ports:
+      - "${MAILPIT_SMTP_PORT:-1025}:1025"
+      - "${MAILPIT_UI_PORT:-8025}:8025"
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: "true"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+      MP_MAX_MESSAGES: "0"
+
+  radicale:
+    image: tomsquest/docker-radicale:latest
+    container_name: exp-rq3-control-radicale
+    restart: unless-stopped
+    ports:
+      - "${CALDAV_PORT:-5232}:5232"
+    environment:
+      TAKE_FILE_OWNERSHIP: "true"
+    volumes:
+      - ./radicale/config:/config:ro
+      - radicale-data:/data
+
+  calendar-viewer:
+    build:
+      context: .
+      dockerfile: Dockerfile.calendar_viewer
+    container_name: exp-rq3-control-calendar_viewer
+    restart: unless-stopped
+    ports:
+      - "${CALENDAR_VIEWER_PORT:-8090}:5000"
+    depends_on:
+      - radicale
+    environment:
+      CALDAV_URL: "http://radicale:5232/"
+      CALDAV_USER: test
+      CALDAV_PASS: test
+
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp_server
+    container_name: exp-rq3-control-mcp_server
+    restart: unless-stopped
+    ports:
+      - "${TOOLS_PORT:-3100}:3100"
+    depends_on:
+      - mailpit
+      - radicale
+    environment:
+      # Inside the compose network the targets are reached by SERVICE NAME.
+      # These override the localhost values from .env (load_dotenv never
+      # overrides variables that are already set).
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      CALDAV_URL: "http://radicale:5232/"
+      MAILPIT_API: "http://mailpit:8025"
+      CALDAV_CAL: "${CALDAV_CAL:-exp_rq2_controlgroup}"
+
+volumes:
+  radicale-data:

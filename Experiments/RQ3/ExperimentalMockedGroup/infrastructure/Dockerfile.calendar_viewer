@@ -1,0 +1,9 @@
+FROM python:3.14-slim
+
+WORKDIR /app
+RUN pip install --no-cache-dir flask caldav icalendar
+
+COPY calendar_viewer.py .
+
+EXPOSE 5000
+CMD ["python", "calendar_viewer.py"]

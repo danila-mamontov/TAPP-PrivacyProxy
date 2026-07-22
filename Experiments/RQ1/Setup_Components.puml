@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+[Dataset\nai4privacy/pii-masking-200k] -- datasets
+
+IPresidioMock -- [PresidioMock]
+[PresidioMock] - IAnalyzeService
+
+IEndpointRouteBuilder -- [PrivacyProxy]
+
+"OpenAI\nChat\nCompletions" - [LlmMock]
+ILlmMock -- [LlmMock]
+
+datasets <-- [experiment]: http
+IPresidioMock <- [experiment]: http
+[experiment] -> ILlmMock: http
+[experiment] --> IEndpointRouteBuilder: http
+
+IAnalyzeService <- [PrivacyProxy]: http
+[PrivacyProxy] -> "OpenAI\nChat\nCompletions": http
+
+@enduml

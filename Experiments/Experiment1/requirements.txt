@@ -1,4 +1,0 @@
-datasets
-requests
-flask
-python-dotenv

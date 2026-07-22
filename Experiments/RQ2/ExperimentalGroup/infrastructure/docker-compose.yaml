@@ -1,0 +1,94 @@
+services:
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: exp-rq2-experimental-mailpit
+    restart: unless-stopped
+    ports:
+      - "${MAILPIT_SMTP_PORT:-1025}:1025"
+      - "${MAILPIT_UI_PORT:-8025}:8025"
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: "true"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+      MP_MAX_MESSAGES: "0"
+
+  radicale:
+    image: tomsquest/docker-radicale:latest
+    container_name: exp-rq2-experimental-radicale
+    restart: unless-stopped
+    ports:
+      - "${CALDAV_PORT:-5232}:5232"
+    environment:
+      TAKE_FILE_OWNERSHIP: "true"
+    volumes:
+      - ./radicale/config:/config:ro
+      - radicale-data:/data
+
+  calendar-viewer:
+    build:
+      context: .
+      dockerfile: Dockerfile.calendar_viewer
+    container_name: exp-rq2-experimental-calendar_viewer
+    restart: unless-stopped
+    ports:
+      - "${CALENDAR_VIEWER_PORT:-8090}:5000"
+    depends_on:
+      - radicale
+    environment:
+      CALDAV_URL: "http://radicale:5232/"
+      CALDAV_USER: test
+      CALDAV_PASS: test
+
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp_server
+    container_name: exp-rq2-experimental-mcp_server
+    restart: unless-stopped
+    ports:
+      - "${TOOLS_PORT:-3100}:3100"
+    depends_on:
+      - mailpit
+      - radicale
+    environment:
+      # Inside the compose network the targets are reached by SERVICE NAME.
+      # These override the localhost values from .env (load_dotenv never
+      # overrides variables that are already set).
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      CALDAV_URL: "http://radicale:5232/"
+      MAILPIT_API: "http://mailpit:8025"
+      CALDAV_CAL: "${CALDAV_CAL:-exp_rq2_experimentalgroup}"
+
+  privacyproxy:
+    image: ghcr.io/plueschtierbaum/privacyproxy:${PRIVACYPROXY_IMAGE_TAG}
+    container_name: exp-rq2-experimental-privacy_proxy
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${PROXY_PORT:-8080}:8080"
+    depends_on:
+      - presidio-mock
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_HTTP_PORTS: "8080"
+      Serilog__MinimumLevel__Default: "Information"
+
+      # The real LLM behind the proxy
+      Llm__BaseUrl: "http://host.docker.internal:11434/v1/"
+      Llm__ApiKey: "ollama"
+      Llm__Model: "${LLM_MODEL:-kimi-k2.6:cloud}"
+
+      # Presidio mock
+      Presidio__AnalyzerUrl: "http://presidio-mock:5002"
+      Presidio__ScoreThreshold: "0"
+
+  presidio-mock:
+    build:
+      context: .
+      dockerfile: Dockerfile.presidio_mock
+    container_name: exp-rq2-experimental-presidio_mock
+    restart: unless-stopped
+    ports:
+      - "${PRESIDIO_PORT:-5002}:5002"
+
+volumes:
+  radicale-data:

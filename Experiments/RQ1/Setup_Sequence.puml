@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+"Dataset \n ai4privacy/pii-masking-200k" as ds <- Experiment: get_dataset()
+ds --> Experiment: dataset
+
+    loop foreach row in dataset
+        note over Experiment: 1. Select subsets of dataset\nwhere configured language is used\n2. Process them first non-streamed and\nthen streamed like following sequence:
+        Experiment -> PresidioMock: POST /mock row.privacy_mask
+        Experiment <-- PresidioMock: OK 200
+
+        Experiment -> PrivacyProxy: POST /v1/chat/completions row.source_text
+        PresidioMock <- PrivacyProxy: POST /analyze row.source_text
+        PresidioMock --> PrivacyProxy: PII entries
+
+        loop foreach PII entry in PII entries
+            PrivacyProxy -> PrivacyProxy: pseudonymize(entry)
+        end
+
+        PrivacyProxy -> LlmMock: POST /v1/chat/completions row.source_text[pseudonymized]
+        LlmMock -> LlmMock: set last_retrieved=row.source_text[pseudonymized]
+        PrivacyProxy <-- LlmMock: response[pseudonymized]
+
+        PrivacyProxy -> PrivacyProxy: depseudonymize(response)
+
+        Experiment <-- PrivacyProxy: response[depseudonymized]
+
+        Experiment -> LlmMock: GET /last
+        Experiment <-- LlmMock: response[pseudonymized]
+    end
+
+
+
+
+@enduml

@@ -1,0 +1,672 @@
+group,model,id,domain,lang,iteration,seconds,function_ok,detail,tool_diagnosis,reply
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-de,conversation,de,1,4.3,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-de,conversation,de,2,3.3,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-de,conversation,de,3,6.3,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-de,conversation,de,4,4.1,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-de,conversation,de,5,3.7,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-de,conversation,de,1,4.5,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-de,conversation,de,2,3.6,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-de,conversation,de,3,4.1,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-de,conversation,de,4,5.1,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-de,conversation,de,5,4.6,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-de,conversation,de,1,3.9,True,ok,,"[[reply_to_current]]Sehr geehrte Frau Anna Berger, ich begrüße Sie herzlich."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-de,conversation,de,2,3.2,True,ok,,"[[reply_to_current]]Sehr geehrte Frau Anna Berger, ich begrüße Sie herzlich."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-de,conversation,de,3,4.0,True,ok,,"[[reply_to_current]]Sehr geehrte Frau Anna Berger, ich begrüße Sie herzlich."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-de,conversation,de,4,4.4,True,ok,,"[[reply_to_current]]Sehr geehrte Frau Anna Berger, ich begrüße Sie herzlich."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-de,conversation,de,5,3.8,True,ok,,"[[reply_to_current]]Sehr geehrte Frau Anna Berger, ich begrüße Sie herzlich."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-de,conversation,de,1,3.5,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-de,conversation,de,2,3.3,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-de,conversation,de,3,4.2,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-de,conversation,de,4,4.4,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-de,conversation,de,5,4.1,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-de,conversation,de,1,5.9,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-de,conversation,de,2,3.4,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-de,conversation,de,3,3.9,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-de,conversation,de,4,4.0,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-de,conversation,de,5,5.2,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-de,conversation,de,1,7.2,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-de,conversation,de,2,7.8,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-de,conversation,de,3,4.0,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-de,conversation,de,4,3.8,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-de,conversation,de,5,4.4,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-de,conversation,de,1,3.7,True,ok,,Die Nordlicht Datentechnik GmbH ist Ihr Arbeitgeber.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-de,conversation,de,2,4.2,True,ok,,[[reply_to_current]]Ich arbeite bei der Nordlicht Datentechnik GmbH.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-de,conversation,de,3,4.8,True,ok,,[[reply_to_current]]Ich bewerbe mich bei der Nordlicht Datentechnik GmbH.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-de,conversation,de,4,58.4,True,ok,,Ich arbeite bei der Nordlicht Datentechnik GmbH.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-de,conversation,de,5,4.3,True,ok,,[[reply_to_current]]Ich bewerbe mich mit großem Interesse bei der Nordlicht Datentechnik GmbH.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-de,conversation,de,1,4.7,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-de,conversation,de,2,5.3,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-de,conversation,de,3,6.1,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-de,conversation,de,4,3.5,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-de,conversation,de,5,7.1,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-de,conversation,de,1,26.4,True,ok,,[[reply_to_current]]Ich habe mir Michael Krause als Ansprechpartner notiert.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-de,conversation,de,2,3.3,True,ok,,[[reply_to_current]]Ich habe mir Michael Krause als Ansprechpartner notiert. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-de,conversation,de,3,5.9,True,ok,,[[reply_to_current]]Ich habe mir Michael Krause als Ansprechpartner notiert. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-de,conversation,de,4,4.6,True,ok,,[[reply_to_current]]Ich habe mir Michael Krause als Ansprechpartner notiert.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-de,conversation,de,5,7.3,True,ok,,[[reply_to_current]]Ich habe mir Michael Krause als Ansprechpartner notiert. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-de,conversation,de,1,8.0,True,ok,,[[reply_to_current]]anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-de,conversation,de,2,7.5,True,ok,,anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-de,conversation,de,3,11.2,True,ok,,anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-de,conversation,de,4,4.8,True,ok,,anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-de,conversation,de,5,5.1,True,ok,,anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-de,conversation,de,1,3.2,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-de,conversation,de,2,3.3,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-de,conversation,de,3,3.9,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-de,conversation,de,4,3.7,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-de,conversation,de,5,3.2,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-de,conversation,de,1,3.1,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-de,conversation,de,2,3.9,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-de,conversation,de,3,3.8,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-de,conversation,de,4,3.8,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-de,conversation,de,5,3.3,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-de,conversation,de,1,3.6,True,ok,,[[reply_to_current]]Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-de,conversation,de,2,9.8,True,ok,,"[[reply_to_current]]
+Lisa Wagner ist als Teilnehmerin eingetragen."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-de,conversation,de,3,3.2,True,ok,,"[[reply_to_current]]
+Lisa Wagner ist als Teilnehmerin eingetragen."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-de,conversation,de,4,7.4,True,ok,,"[[reply_to_current]]
+Lisa Wagner ist als Teilnehmerin eingetragen."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-de,conversation,de,5,3.9,True,ok,,"[[reply_to_current]]
+Lisa Wagner ist als Teilnehmerin eingetragen."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-de,conversation,de,1,24.5,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-de,conversation,de,2,6.7,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-de,conversation,de,3,26.7,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-de,conversation,de,4,6.3,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-de,conversation,de,5,4.3,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-de,conversation,de,1,7.8,True,ok,,michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-de,conversation,de,2,8.3,True,ok,,michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-de,conversation,de,3,5.8,True,ok,,michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-de,conversation,de,4,7.6,True,ok,,michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-de,conversation,de,5,30.6,True,ok,,michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-de,conversation,de,1,4.8,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-de,conversation,de,2,17.4,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-de,conversation,de,3,11.6,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-de,conversation,de,4,3.4,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-de,conversation,de,5,4.5,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-de,conversation,de,1,3.2,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-de,conversation,de,2,11.5,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-de,conversation,de,3,4.3,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-de,conversation,de,4,3.1,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-de,conversation,de,5,12.5,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-de,conversation,de,1,4.9,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-de,conversation,de,2,3.8,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-de,conversation,de,3,4.2,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-de,conversation,de,4,4.0,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-de,conversation,de,5,3.5,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-de,conversation,de,1,10.1,True,ok,,[[reply_to_current]]Thomas Schmidt ist der Projektleiter.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-de,conversation,de,2,3.8,True,ok,,[[reply_to_current]]Thomas Schmidt ist der Projektleiter.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-de,conversation,de,3,3.3,True,ok,,[[reply_to_current]]Thomas Schmidt ist der Projektleiter.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-de,conversation,de,4,3.6,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-de,conversation,de,5,4.6,True,ok,,"[[reply_to_current]]
+Thomas Schmidt ist der Projektleiter."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-de,conversation,de,1,4.3,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-de,conversation,de,2,3.9,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-de,conversation,de,3,4.4,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-de,conversation,de,4,4.0,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-de,conversation,de,5,28.3,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-de,email,de,1,8.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit dem Betreff „Statusupdate“ wurde erfolgreich versendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-de,email,de,2,11.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail an david.eichel@example.com erfolgreich versendet."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-de,email,de,3,7.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit dem Betreff „Statusupdate“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-de,email,de,4,31.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit dem Betreff 'Statusupdate' wurde erfolgreich versendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-de,email,de,5,6.8,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit dem Betreff „Statusupdate“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-de,email,de,1,5.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Erinnerungs-E-Mail an anna.berger@example.org wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-de,email,de,2,7.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Erinnerungs-E-Mail an anna.berger@example.org erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-de,email,de,3,6.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-de,email,de,4,7.1,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Erinnerung an anna.berger@example.org wurde gesendet."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-de,email,de,5,6.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Erinnerung an anna.berger@example.org wurde gesendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-de,email,de,1,6.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an michael.krause@example.net wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-de,email,de,2,8.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an michael.krause@example.net mit dem Betreff 'Angebot' wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-de,email,de,3,5.6,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an michael.krause@example.net versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-de,email,de,4,5.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an michael.krause@example.net mit dem Betreff „Angebot“ wurde erfolgreich versendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-de,email,de,5,6.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an michael.krause@example.net mit dem Betreff „Angebot“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-de,email,de,1,5.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net mit dem Betreff „Rueckfrage“ wurde gesendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-de,email,de,2,24.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-de,email,de,3,31.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-de,email,de,4,4.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net erfolgreich gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-de,email,de,5,16.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-de,email,de,1,6.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an thomas.schmidt@example.com wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-de,email,de,2,5.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an thomas.schmidt@example.com wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-de,email,de,3,6.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an thomas.schmidt@example.com mit dem Betreff 'Protokoll' wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-de,email,de,4,4.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an thomas.schmidt@example.com wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-de,email,de,5,5.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail erfolgreich an thomas.schmidt@example.com gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-de,email,de,1,7.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-de,email,de,2,5.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-de,email,de,3,5.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-de,email,de,4,7.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org mit dem Betreff „Termin“ wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-de,email,de,5,7.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org mit dem Betreff „Termin“ wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-de,email,de,1,11.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit den Grüßen von Anna Berger wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-de,email,de,2,8.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an david.eichel@example.com mit den herzlichen Grüßen von Anna Berger wurde versendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-de,email,de,3,7.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit den Grüßen von Anna Berger wurde versendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-de,email,de,4,7.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit herzlichen Grüßen von Anna Berger wurde versendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-de,email,de,5,6.9,True,ok,wrong-tool: send_mail,Die E-Mail an david.eichel@example.com wurde soeben versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-de,email,de,1,13.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an michael.krause@example.net mit dem Betreff „Rueckruf“ wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-de,email,de,2,7.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an michael.krause@example.net mit dem Betreff „Rueckruf“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-de,email,de,3,7.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an michael.krause@example.net wurde mit dem Betreff „Rueckruf“ und der angegebenen Telefonnummer versendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-de,email,de,4,6.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an michael.krause@example.net wurde mit dem Betreff „Rueckruf“ und der angegebenen Rückrufnummer versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-de,email,de,5,6.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an michael.krause@example.net wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-de,email,de,1,7.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org mit dem Betreff 'Bankdaten' wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-de,email,de,2,7.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org mit den Bankdaten wurde versendet. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-de,email,de,3,7.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-de,email,de,4,6.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-de,email,de,5,7.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-de,email,de,1,8.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail an info@example.net erfolgreich versendet."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-de,email,de,2,7.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail erfolgreich an info@example.net gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-de,email,de,3,6.8,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an info@example.net mit dem Betreff „Anfrage“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-de,email,de,4,6.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an info@example.net mit dem Betreff „Anfrage“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-de,email,de,5,6.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an info@example.net mit dem Betreff „Anfrage“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-de,email,de,1,4.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-de,email,de,2,6.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-de,email,de,3,6.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail erfolgreich an lisa.wagner@example.net gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-de,email,de,4,6.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-de,email,de,5,6.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail erfolgreich an lisa.wagner@example.net gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-de,email,de,1,7.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an david.eichel@example.com wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-de,email,de,2,6.8,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit dem Betreff „Dokument“ wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-de,email,de,3,6.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail an david.eichel@example.com wurde versendet."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-de,email,de,4,7.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit dem Betreff „Dokument“ wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-de,email,de,5,7.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an david.eichel@example.com wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-de,email,de,1,6.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-de,email,de,2,7.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail an anna.berger@example.org wurde gesendet."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-de,email,de,3,33.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-de,email,de,4,7.8,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org mit dem Betreff „Nachfrage“ wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-de,email,de,5,7.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-de,email,de,1,7.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an support@example.net wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-de,email,de,2,5.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an support@example.net mit dem Betreff „Stoerung“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-de,email,de,3,5.2,True,ok,wrong-tool: send_mail,Die E-Mail an support@example.net mit dem Betreff „Stoerung“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-de,email,de,4,4.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an support@example.net mit dem Betreff 'Stoerung' wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-de,email,de,5,6.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an support@example.net wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-de,email,de,1,8.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E-Mail an michael.krause@example.net mit dem Betreff „Kontakt“ und dem Hinweis auf Thomas Schmidt wurde versendet. 🔷"
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-de,email,de,2,9.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Die E-Mail an michael.krause@example.net wurde versendet."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-de,email,de,3,7.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an michael.krause@example.net mit dem Betreff „Kontakt“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-de,email,de,4,8.0,True,ok,wrong-tool: send_mail,Die E-Mail an michael.krause@example.net mit dem Betreff „Kontakt“ und dem Hinweis auf Thomas Schmidt wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-de,email,de,5,7.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an michael.krause@example.net mit dem Betreff „Kontakt“ und der Erwähnung von Thomas Schmidt wurde versandt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-de,email,de,1,4.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org erfolgreich gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-de,email,de,2,16.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-de,email,de,3,4.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-de,email,de,4,6.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org mit dem Betreff „Adresse“ wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-de,email,de,5,6.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an julia.meyer@example.org wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-de,email,de,1,7.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an thomas.schmidt@example.com mit dem Betreff 'Server' wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-de,email,de,2,8.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail an thomas.schmidt@example.com erfolgreich versendet."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-de,email,de,3,5.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Die E-Mail an thomas.schmidt@example.com wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-de,email,de,4,7.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an thomas.schmidt@example.com wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-de,email,de,5,6.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an thomas.schmidt@example.com wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-de,email,de,1,6.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail an lisa.wagner@example.net erfolgreich versendet."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-de,email,de,2,8.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net mit dem Betreff „Meeting“ wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-de,email,de,3,8.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net mit dem Betreff „Meeting“ wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-de,email,de,4,7.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net mit dem Betreff „Meeting“ wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-de,email,de,5,7.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an lisa.wagner@example.net erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-de,email,de,1,5.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+E-Mail an david.eichel@example.com wurde erfolgreich versendet."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-de,email,de,2,7.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit dem Betreff „Freigabe“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-de,email,de,3,6.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com mit dem Betreff „Freigabe“ wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-de,email,de,4,6.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com wurde versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-de,email,de,5,4.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an david.eichel@example.com wurde gesendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-de,email,de,1,6.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-de,email,de,2,7.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-de,email,de,3,7.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-de,email,de,4,5.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-de,email,de,5,6.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]E-Mail an anna.berger@example.org mit dem Betreff „Danke“ wurde erfolgreich versendet.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-de,calendar,de,1,9.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Projektbesprechung' wurde für den 20.07.2026 von 10:00 bis 11:00 Uhr eingetragen; david.eichel@example.com ist eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-de,calendar,de,2,12.6,True,ok,tool-ok,[[reply_to_current]]Termin 'Projektbesprechung' wurde für den 20.07.2026 um 10:00 Uhr eingetragen und David Eichel eingeladen.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-de,calendar,de,3,10.0,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Projektbesprechung' wurde für den 20.07.2026 von 10:00 bis 11:00 Uhr eingetragen und david.eichel@example.com wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-de,calendar,de,4,9.0,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Projektbesprechung' wurde für den 20.07.2026 von 10:00 bis 11:00 Uhr eingetragen und david.eichel@example.com wurde eingeladen.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-de,calendar,de,5,8.2,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Projektbesprechung' wurde für den 20.07.2026 von 10:00 bis 11:00 Uhr eingetragen und David Eichel wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-de,calendar,de,1,11.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Zahnarzt' wurde für den 22.07.2026 um 09:30 Uhr angelegt (Beschreibung: Patient Anna Berger). 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-de,calendar,de,2,7.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Zahnarzt' wurde für den 22.07.2026 um 09:30 Uhr angelegt (Beschreibung: Patient Anna Berger). 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-de,calendar,de,3,8.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Zahnarzt' für den 22.07.2026 um 09:30 Uhr wurde angelegt (Beschreibung: Patient Anna Berger). 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-de,calendar,de,4,9.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Zahnarzt' am 22.07.2026 um 09:30 Uhr wurde erfolgreich angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-de,calendar,de,5,6.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Zahnarzt' für den 22.07.2026 um 09:30 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-de,calendar,de,1,9.6,True,ok,tool-ok,[[reply_to_current]]Termin 'Kickoff' am 23.07.2026 um 14:00 Uhr wurde eingetragen und michael.krause@example.net wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-de,calendar,de,2,9.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Kickoff' wurde für den 23.07.2026 um 14:00 Uhr eingetragen und Michael Krause wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-de,calendar,de,3,72.8,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Kickoff' wurde für den 23.07.2026 um 14:00 Uhr eingetragen und michael.krause@example.net wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-de,calendar,de,4,48.4,True,ok,tool-ok,"[[reply_to_current]]
+Der Termin 'Kickoff' wurde für den 23.07.2026 um 14:00 Uhr eingetragen und Michael Krause wurde eingeladen. 🔷"
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-de,calendar,de,5,8.6,True,ok,tool-ok,Der Termin 'Kickoff' wurde für den 23.07.2026 um 14:00 Uhr eingetragen und michael.krause@example.net wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-de,calendar,de,1,7.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Rueckruf' wurde für den 24.07.2026 um 11:00 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-de,calendar,de,2,36.1,True,ok,tool-ok,"[[reply_to_current]]
+Termin 'Rueckruf' für den 24.07.2026 um 11:00 Uhr wurde erfolgreich angelegt."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-de,calendar,de,3,9.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Rueckruf' wurde für den 24.07.2026 um 11:00 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-de,calendar,de,4,9.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Rueckruf' für den 24.07.2026 um 11:00 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-de,calendar,de,5,8.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Rueckruf' wurde für den 24.07.2026 um 11:00 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-de,calendar,de,1,9.3,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Workshop' wurde für den 27.07.2026 von 09:00 bis 11:00 Uhr eingetragen und Lisa Wagner wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-de,calendar,de,2,11.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Workshop' wurde für den 27.07.2026 von 09:00 bis 11:00 Uhr eingetragen und Lisa Wagner wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-de,calendar,de,3,10.0,True,ok,tool-ok,[[reply_to_current]]Termin 'Workshop' am 27.07.2026 von 09:00 bis 11:00 Uhr eingetragen; lisa.wagner@example.net wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-de,calendar,de,4,8.9,True,ok,tool-ok,Der Termin 'Workshop' am 27.07.2026 von 09:00 bis 11:00 Uhr wurde eingetragen und lisa.wagner@example.net wurde eingeladen.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-de,calendar,de,5,9.0,True,ok,tool-ok,[[reply_to_current]]Termin 'Workshop' wurde für den 27.07.2026 von 09:00 bis 11:00 Uhr eingetragen; lisa.wagner@example.net ist als Teilnehmerin eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-de,calendar,de,1,8.7,True,ok,tool-ok,Termin 'Interview' am 28.07.2026 um 15:30 Uhr wurde erfolgreich angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-de,calendar,de,2,7.2,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Interview' wurde für den 28.07.2026 um 15:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-de,calendar,de,3,7.4,True,ok,tool-ok,[[reply_to_current]]Termin 'Interview' wurde für den 28.07.2026 um 15:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-de,calendar,de,4,7.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Interview' am 28.07.2026 um 15:30 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-de,calendar,de,5,6.4,True,ok,tool-ok,Termin 'Interview' am 28.07.2026 um 15:30 Uhr wurde erfolgreich angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-de,calendar,de,1,10.5,True,ok,tool-ok,[[reply_to_current]]Termin 'Review' für den 29.07.2026 um 13:00 Uhr eingetragen. Anna Berger wurde als Teilnehmerin eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-de,calendar,de,2,11.6,True,ok,tool-ok,[[reply_to_current]]Termin 'Review' am 29.07.2026 um 13:00 Uhr eingetragen; anna.berger@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-de,calendar,de,3,12.0,True,ok,tool-ok,[[reply_to_current]]Termin 'Review' wurde für den 29.07.2026 um 13:00 Uhr eingetragen und anna.berger@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-de,calendar,de,4,8.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Review' am 29.07.2026 um 13:00 Uhr eingetragen; anna.berger@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-de,calendar,de,5,11.2,True,ok,tool-ok,[[reply_to_current]]Termin 'Review' wurde für den 29.07.2026 um 13:00 Uhr eingetragen und anna.berger@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-de,calendar,de,1,8.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Abrechnung' wurde für den 30.07.2026 um 10:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-de,calendar,de,2,23.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Abrechnung' wurde für den 30.07.2026 um 10:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-de,calendar,de,3,29.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Abrechnung' wurde für den 30.07.2026 um 10:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-de,calendar,de,4,37.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Abrechnung' wurde für den 30.07.2026 um 10:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-de,calendar,de,5,9.5,True,ok,tool-ok,[[reply_to_current]]Termin 'Abrechnung' am 30.07.2026 um 10:30 Uhr wurde erfolgreich mit der angegebenen IBAN in der Beschreibung angelegt. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-de,calendar,de,1,10.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Abstimmung' für den 31.07.2026 um 16:00 Uhr eingetragen; julia.meyer@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-de,calendar,de,2,8.9,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Abstimmung' wurde für den 31.07.2026 um 16:00 Uhr eingetragen und julia.meyer@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-de,calendar,de,3,7.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Abstimmung' am 31.07.2026 um 16:00 Uhr eingetragen und julia.meyer@example.org eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-de,calendar,de,4,12.5,True,ok,tool-ok,[[reply_to_current]]Termin 'Abstimmung' am 31.07.2026 um 16:00 Uhr eingetragen. Julia Meyer (julia.meyer@example.org) wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-de,calendar,de,5,8.5,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Abstimmung' wurde für den 31.07.2026 um 16:00 Uhr eingetragen und julia.meyer@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-de,calendar,de,1,17.6,True,ok,tool-ok,"[[reply_to_current]]
+Termin 'Notiz' am 03.08.2026 um 08:30 Uhr wurde erfolgreich angelegt."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-de,calendar,de,2,8.2,True,ok,tool-ok,[[reply_to_current]]Termin 'Notiz' wurde für den 03.08.2026 um 08:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-de,calendar,de,3,8.0,True,ok,tool-ok,[[reply_to_current]]Termin 'Notiz' am 03.08.2026 um 08:30 Uhr wurde erfolgreich angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-de,calendar,de,4,8.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Notiz' wurde für den 03.08.2026 um 08:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-de,calendar,de,5,7.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Notiz' wurde für den 03.08.2026 um 08:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-de,calendar,de,1,9.2,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Call' am 04.08.2026 um 11:15 Uhr wurde eingetragen und thomas.schmidt@example.com wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-de,calendar,de,2,7.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Call' am 04.08.2026 um 11:15 Uhr eingetragen und thomas.schmidt@example.com eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-de,calendar,de,3,10.5,True,ok,tool-ok,[[reply_to_current]]Termin 'Call' am 04.08.2026 um 11:15 Uhr eingetragen und thomas.schmidt@example.com wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-de,calendar,de,4,8.4,True,ok,tool-ok,[[reply_to_current]]Termin 'Call' am 04.08.2026 um 11:15 Uhr eingetragen und thomas.schmidt@example.com eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-de,calendar,de,5,10.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Call' am 04.08.2026 um 11:15 Uhr eingetragen und thomas.schmidt@example.com eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-de,calendar,de,1,9.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Uebergabe' am 05.08.2026 um 14:45 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-de,calendar,de,2,6.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Uebergabe' wurde für den 05.08.2026 um 14:45 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-de,calendar,de,3,8.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Uebergabe' am 05.08.2026 um 14:45 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-de,calendar,de,4,8.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Uebergabe' am 05.08.2026 um 14:45 Uhr wurde erfolgreich angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-de,calendar,de,5,7.4,True,ok,tool-ok,[[reply_to_current]]Termin 'Uebergabe' am 05.08.2026 um 14:45 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-de,calendar,de,1,12.5,True,ok,tool-ok,[[reply_to_current]]Termin 'Planung' am 06.08.2026 um 09:00 Uhr wurde eingetragen und david.eichel@example.com wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-de,calendar,de,2,8.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Planung' wurde für den 06.08.2026 um 09:00 Uhr eingetragen und david.eichel@example.com wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-de,calendar,de,3,9.8,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Planung' wurde für den 06.08.2026 um 09:00 Uhr eingetragen und david.eichel@example.com wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-de,calendar,de,4,8.3,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Planung' wurde für den 06.08.2026 um 09:00 Uhr eingetragen und david.eichel@example.com wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-de,calendar,de,5,8.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Planung' wurde für den 06.08.2026 um 09:00 Uhr eingetragen und david.eichel@example.com wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-de,calendar,de,1,9.4,True,ok,tool-ok,[[reply_to_current]]Termin 'Besichtigung' für den 07.08.2026 um 10:00 Uhr (Ort: Karlsruhe) wurde erfolgreich angelegt. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-de,calendar,de,2,8.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Besichtigung' am 07.08.2026 um 10:00 Uhr (Ort Karlsruhe) wurde angelegt. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-de,calendar,de,3,11.2,True,ok,tool-ok,[[reply_to_current]]Termin 'Besichtigung' wurde für den 07.08.2026 um 10:00 Uhr angelegt (Beschreibung: Ort Karlsruhe). 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-de,calendar,de,4,9.2,True,ok,tool-ok,[[reply_to_current]]Termin 'Besichtigung' für den 07.08.2026 um 10:00 Uhr in Karlsruhe wurde erfolgreich angelegt. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-de,calendar,de,5,11.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Besichtigung' am 07.08.2026 um 10:00 Uhr (Ort Karlsruhe) wurde angelegt. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-de,calendar,de,1,10.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Sync' am 10.08.2026 um 15:00 Uhr eingetragen und Michael Krause eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-de,calendar,de,2,8.7,True,ok,tool-ok,[[reply_to_current]]Termin 'Sync' für den 10.08.2026 um 15:00 Uhr eingetragen und michael.krause@example.net eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-de,calendar,de,3,9.6,True,ok,tool-ok,[[reply_to_current]]Termin 'Sync' am 10.08.2026 um 15:00 Uhr eingetragen; michael.krause@example.net wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-de,calendar,de,4,7.2,True,ok,tool-ok,[[reply_to_current]]Termin 'Sync' am 10.08.2026 um 15:00 Uhr eingetragen und michael.krause@example.net eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-de,calendar,de,5,7.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Sync' wurde für den 10.08.2026 um 15:00 Uhr eingetragen und michael.krause@example.net wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-de,calendar,de,1,10.2,True,ok,tool-ok,"[[reply_to_current]]
+Termin 'Gespraech' am 11.08.2026 um 13:30 Uhr wurde angelegt."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-de,calendar,de,2,10.1,True,ok,tool-ok,[[reply_to_current]]Termin 'Gespraech' wurde für den 11.08.2026 um 13:30 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-de,calendar,de,3,10.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Gespraech' am 11.08.2026 um 13:30 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-de,calendar,de,4,7.6,True,ok,tool-ok,[[reply_to_current]]Termin 'Gespraech' am 11.08.2026 um 13:30 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-de,calendar,de,5,14.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Gespraech' am 11.08.2026 um 13:30 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-de,calendar,de,1,8.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Demo' am 12.08.2026 um 11:00 Uhr eingetragen; anna.berger@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-de,calendar,de,2,9.1,True,ok,tool-ok,[[reply_to_current]]Termin 'Demo' wurde für den 12.08.2026 um 11:00 Uhr eingetragen und anna.berger@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-de,calendar,de,3,13.5,True,ok,tool-ok,[[reply_to_current]]Termin 'Demo' am 12.08.2026 um 11:00 Uhr eingetragen und anna.berger@example.org eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-de,calendar,de,4,13.0,True,ok,tool-ok,[[reply_to_current]]Termin 'Demo' wurde für den 12.08.2026 um 11:00 Uhr eingetragen und anna.berger@example.org wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-de,calendar,de,5,25.4,True,ok,tool-ok,[[reply_to_current]]Termin 'Demo' für den 12.08.2026 um 11:00 Uhr eingetragen und anna.berger@example.org eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-de,calendar,de,1,14.2,True,ok,tool-ok,[[reply_to_current]]Termin 'Hotline' für den 13.08.2026 um 09:45 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-de,calendar,de,2,10.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Hotline' wurde für den 13.08.2026 um 09:45 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-de,calendar,de,3,8.1,True,ok,tool-ok,[[reply_to_current]]Termin 'Hotline' für den 13.08.2026 um 09:45 Uhr wurde angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-de,calendar,de,4,9.4,True,ok,tool-ok,[[reply_to_current]]Termin 'Hotline' wurde für den 13.08.2026 um 09:45 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-de,calendar,de,5,7.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Hotline' wurde für den 13.08.2026 um 09:45 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-de,calendar,de,1,11.7,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Abschluss' wurde für den 14.08.2026 um 16:30 Uhr eingetragen und lisa.wagner@example.net wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-de,calendar,de,2,7.5,True,ok,tool-ok,[[reply_to_current]]Termin 'Abschluss' wurde für den 14.08.2026 um 16:30 Uhr eingetragen und Lisa Wagner wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-de,calendar,de,3,7.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Abschluss' wurde für den 14.08.2026 um 16:30 Uhr eingetragen und Lisa Wagner wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-de,calendar,de,4,10.8,True,ok,tool-ok,[[reply_to_current]]Termin 'Abschluss' am 14.08.2026 um 16:30 Uhr wurde eingetragen und lisa.wagner@example.net wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-de,calendar,de,5,10.7,True,ok,tool-ok,[[reply_to_current]]Der Termin 'Abschluss' wurde für den 14.08.2026 um 16:30 Uhr eingetragen und lisa.wagner@example.net wurde eingeladen. 🔷
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-de,calendar,de,1,10.4,True,ok,tool-ok,[[reply_to_current]]Termin 'Kontaktpflege' wurde für den 17.08.2026 um 10:15 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-de,calendar,de,2,7.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Kontaktpflege' wurde für den 17.08.2026 um 10:15 Uhr erstellt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-de,calendar,de,3,8.9,True,ok,tool-ok,[[reply_to_current]]Termin 'Kontaktpflege' wurde für den 17.08.2026 um 10:15 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-de,calendar,de,4,9.1,True,ok,tool-ok,[[reply_to_current]]Termin 'Kontaktpflege' wurde für den 17.08.2026 um 10:15 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-de,calendar,de,5,10.3,True,ok,tool-ok,[[reply_to_current]]Termin 'Kontaktpflege' wurde für den 17.08.2026 um 10:15 Uhr angelegt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-en,conversation,en,1,4.9,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-en,conversation,en,2,4.8,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-en,conversation,en,3,4.7,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-en,conversation,en,4,7.8,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-01-en,conversation,en,5,4.8,True,ok,,david.eichel@example.com
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-en,conversation,en,1,4.5,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-en,conversation,en,2,4.0,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-en,conversation,en,3,4.6,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-en,conversation,en,4,4.9,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-02-en,conversation,en,5,4.3,True,ok,,+49 721 1234567
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-en,conversation,en,1,3.8,True,ok,,"[[reply_to_current]]Dear Ms. Anna Berger, I hope you are having a wonderful day."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-en,conversation,en,2,4.6,True,ok,,"[[reply_to_current]]Dear Ms. Anna Berger, I hope this message finds you well."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-en,conversation,en,3,11.7,True,ok,,"[[reply_to_current]]Dear Ms. Anna Berger, I hope you are having a wonderful day."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-en,conversation,en,4,4.4,True,ok,,"[[reply_to_current]]
+Dear Ms. Anna Berger, I hope you are having a wonderful day."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-03-en,conversation,en,5,5.1,True,ok,,"Dear Ms. Anna Berger, I hope you are having a wonderful day."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-en,conversation,en,1,5.5,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-en,conversation,en,2,4.5,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-en,conversation,en,3,8.7,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-en,conversation,en,4,4.3,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-04-en,conversation,en,5,4.2,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-en,conversation,en,1,3.7,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-en,conversation,en,2,4.2,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-en,conversation,en,3,4.2,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-en,conversation,en,4,23.5,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-05-en,conversation,en,5,66.3,True,ok,,Karlsruhe
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-en,conversation,en,1,4.4,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-en,conversation,en,2,5.5,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-en,conversation,en,3,4.3,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-en,conversation,en,4,3.9,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-06-en,conversation,en,5,4.4,True,ok,,192.168.10.55
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-en,conversation,en,1,4.7,True,ok,,The employer is called Nordlicht Datentechnik GmbH.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-en,conversation,en,2,5.0,True,ok,,The employer is Nordlicht Datentechnik GmbH.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-en,conversation,en,3,4.2,True,ok,,[[reply_to_current]]The employer is Nordlicht Datentechnik GmbH.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-en,conversation,en,4,4.8,True,ok,,[[reply_to_current]]The employer is Nordlicht Datentechnik GmbH.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-07-en,conversation,en,5,4.0,True,ok,,The employer is Nordlicht Datentechnik GmbH.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-en,conversation,en,1,4.8,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-en,conversation,en,2,7.2,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-en,conversation,en,3,5.1,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-en,conversation,en,4,4.7,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-08-en,conversation,en,5,4.0,True,ok,,4111 1111 1111 1111
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-en,conversation,en,1,4.4,True,ok,,[[reply_to_current]]I have noted that Michael Krause is the contact person.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-en,conversation,en,2,8.1,True,ok,,[[reply_to_current]]I have noted that Michael Krause is the contact person.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-en,conversation,en,3,5.3,True,ok,,[[reply_to_current]]I have noted that the contact person is Michael Krause.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-en,conversation,en,4,5.4,True,ok,,[[reply_to_current]]I have noted that Michael Krause is the contact person.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-09-en,conversation,en,5,4.6,True,ok,,[[reply_to_current]]I have noted that Michael Krause is the contact person.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-en,conversation,en,1,5.7,True,ok,,anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-en,conversation,en,2,4.6,True,ok,,anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-en,conversation,en,3,3.6,True,ok,,anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-en,conversation,en,4,17.2,True,ok,,anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-10-en,conversation,en,5,5.5,True,ok,,anna.berger@example.org
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-en,conversation,en,1,4.7,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-en,conversation,en,2,4.8,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-en,conversation,en,3,5.6,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-en,conversation,en,4,5.3,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-11-en,conversation,en,5,4.5,True,ok,,+49 30 9876543
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-en,conversation,en,1,4.2,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-en,conversation,en,2,5.3,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-en,conversation,en,3,4.6,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-en,conversation,en,4,3.7,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-12-en,conversation,en,5,4.4,True,ok,,https://intranet.example.net/report
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-en,conversation,en,1,4.4,True,ok,,[[reply_to_current]]Lisa Wagner is registered as a participant.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-en,conversation,en,2,5.4,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-en,conversation,en,3,4.9,True,ok,,[[reply_to_current]]Lisa Wagner is registered as a participant.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-en,conversation,en,4,4.3,True,ok,,[[reply_to_current]]Lisa Wagner is registered as a participant.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-13-en,conversation,en,5,4.8,True,ok,,[[reply_to_current]]Lisa Wagner is registered as a participant.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-en,conversation,en,1,4.2,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-en,conversation,en,2,4.2,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-en,conversation,en,3,3.5,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-en,conversation,en,4,3.5,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-14-en,conversation,en,5,3.8,True,ok,,Berlin
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-en,conversation,en,1,4.1,True,ok,,michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-en,conversation,en,2,26.7,True,ok,,michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-en,conversation,en,3,5.2,True,ok,,[[reply_to_current]]michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-en,conversation,en,4,4.1,True,ok,,[[reply_to_current]]michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-15-en,conversation,en,5,4.5,True,ok,,michael.krause@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-en,conversation,en,1,4.4,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-en,conversation,en,2,5.8,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-en,conversation,en,3,5.0,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-en,conversation,en,4,4.7,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-16-en,conversation,en,5,4.6,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-en,conversation,en,1,4.6,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-en,conversation,en,2,4.3,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-en,conversation,en,3,5.9,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-en,conversation,en,4,4.6,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-17-en,conversation,en,5,3.8,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-en,conversation,en,1,4.5,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-en,conversation,en,2,4.0,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-en,conversation,en,3,5.2,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-en,conversation,en,4,5.1,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-18-en,conversation,en,5,5.4,True,ok,,+49 151 22233344
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-en,conversation,en,1,14.6,True,ok,,"I cannot confirm that Thomas Schmidt is the project lead as I found no mention of him in my memory, workspace files, or session history."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-en,conversation,en,2,4.5,True,ok,,[[reply_to_current]]I confirm that Thomas Schmidt is the project lead.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-en,conversation,en,3,4.9,True,ok,,[[reply_to_current]]Thomas Schmidt is the project lead.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-en,conversation,en,4,4.5,True,ok,,[[reply_to_current]]I confirm that Thomas Schmidt is the project lead.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-19-en,conversation,en,5,20.9,True,ok,,I cannot confirm that Thomas Schmidt is the project lead because I found no mention of him in your workspace files or project documentation.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-en,conversation,en,1,6.4,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-en,conversation,en,2,5.1,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-en,conversation,en,3,5.0,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-en,conversation,en,4,4.5,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,conv-20-en,conversation,en,5,5.1,True,ok,,lisa.wagner@example.net
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-en,email,en,1,7.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-en,email,en,2,8.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-en,email,en,3,7.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-en,email,en,4,7.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-01-en,email,en,5,15.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-en,email,en,1,30.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-en,email,en,2,8.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-en,email,en,3,6.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Reminder email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-en,email,en,4,6.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-02-en,email,en,5,5.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Reminder sent to anna.berger@example.org."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-en,email,en,1,5.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-en,email,en,2,8.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-en,email,en,3,7.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net with the subject 'Offer'.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-en,email,en,4,8.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-03-en,email,en,5,8.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-en,email,en,1,7.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-en,email,en,2,7.8,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-en,email,en,3,8.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-en,email,en,4,7.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-04-en,email,en,5,8.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-en,email,en,1,9.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-en,email,en,2,7.8,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-en,email,en,3,7.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to thomas.schmidt@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-en,email,en,4,7.8,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-05-en,email,en,5,8.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to thomas.schmidt@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-en,email,en,1,9.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-en,email,en,2,15.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-en,email,en,3,8.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-en,email,en,4,6.9,True,ok,wrong-tool: send_mail,Done. I've sent the email to julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-06-en,email,en,5,8.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-en,email,en,1,12.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com with warm regards from Anna Berger.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-en,email,en,2,10.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-en,email,en,3,8.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com with warm regards from Anna Berger."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-en,email,en,4,11.0,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com with warm regards from Anna Berger."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-07-en,email,en,5,5.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com with warm regards from Anna Berger.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-en,email,en,1,6.7,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net with the subject ""Callback"" and the callback number included."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-en,email,en,2,23.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net with the subject 'Callback' and the requested callback number.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-en,email,en,3,8.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-en,email,en,4,6.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net with the subject 'Callback'.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-08-en,email,en,5,6.8,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net with the subject 'Callback'.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-en,email,en,1,31.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-en,email,en,2,6.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-en,email,en,3,5.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-en,email,en,4,7.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org with the bank details.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-09-en,email,en,5,7.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org with the requested bank details.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-en,email,en,1,5.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to info@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-en,email,en,2,6.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]Email sent to info@example.net with the subject ""Inquiry""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-en,email,en,3,6.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to info@example.net with the subject ""Inquiry""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-en,email,en,4,12.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to info@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-10-en,email,en,5,9.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to info@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-en,email,en,1,33.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-en,email,en,2,85.6,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-en,email,en,3,6.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-en,email,en,4,10.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-11-en,email,en,5,9.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to lisa.wagner@example.net."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-en,email,en,1,10.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-en,email,en,2,7.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-en,email,en,3,114.7,True,ok,wrong-tool: send_mail,Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-en,email,en,4,7.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com with the subject 'Document'.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-12-en,email,en,5,8.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-en,email,en,1,5.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-en,email,en,2,7.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-en,email,en,3,8.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-en,email,en,4,6.6,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-13-en,email,en,5,6.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-en,email,en,1,7.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to support@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-en,email,en,2,10.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to support@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-en,email,en,3,5.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to support@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-en,email,en,4,7.4,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to support@example.net."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-14-en,email,en,5,7.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to support@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-en,email,en,1,6.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-en,email,en,2,8.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-en,email,en,3,18.9,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to michael.krause@example.net."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-en,email,en,4,7.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]Email sent to michael.krause@example.net with the subject 'Contact', mentioning Thomas Schmidt as the contact person."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-15-en,email,en,5,7.9,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to michael.krause@example.net with the subject 'Contact' and mention of Thomas Schmidt.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-en,email,en,1,7.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-en,email,en,2,25.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-en,email,en,3,8.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-en,email,en,4,195.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-16-en,email,en,5,8.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to julia.meyer@example.org."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-en,email,en,1,8.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-en,email,en,2,9.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-en,email,en,3,7.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-en,email,en,4,10.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-17-en,email,en,5,8.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-en,email,en,1,25.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-en,email,en,2,5.7,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-en,email,en,3,7.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-en,email,en,4,10.3,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-18-en,email,en,5,9.5,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to lisa.wagner@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-en,email,en,1,10.3,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-en,email,en,2,8.0,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-en,email,en,3,7.5,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to david.eichel@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-en,email,en,4,7.2,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-19-en,email,en,5,8.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-en,email,en,1,14.1,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-en,email,en,2,5.2,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-en,email,en,3,6.8,True,ok,wrong-tool: send_mail,"[[reply_to_current]]
+Email sent to anna.berger@example.org."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-en,email,en,4,7.4,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,mail-20-en,email,en,5,7.8,True,ok,wrong-tool: send_mail,[[reply_to_current]]Email sent to anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-en,calendar,en,1,9.5,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Project meeting' has been created for 2026-07-20 from 10:00 to 11:00, with david.eichel@example.com invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-en,calendar,en,2,12.6,True,ok,tool-ok,"[[reply_to_current]]
+Done. I've created the 'Project meeting' appointment for 2026-07-20 from 10:00 to 11:00 and invited david.eichel@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-en,calendar,en,3,8.1,True,ok,tool-ok,[[reply_to_current]]Done. I've created the 'Project meeting' appointment for 2026-07-20 from 10:00 to 11:00 and invited david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-en,calendar,en,4,10.0,True,ok,tool-ok,"[[reply_to_current]]
+Done. I've created the 'Project meeting' appointment for 2026-07-20 from 10:00 to 11:00 and invited david.eichel@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-01-en,calendar,en,5,21.9,False,attendee 'david.eichel@example.com' missing in event,wrong-tool: send_mail,"[[reply_to_current]]
+Done. I've created the 'Project meeting' appointment for 2026-07-20 at 10:00 and sent the invitation email to david.eichel@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-en,calendar,en,1,33.4,True,ok,tool-ok,"[[reply_to_current]]
+Done. I've created the 'Dentist' appointment for 2026-07-22 at 09:30 with the description ""Patient Anna Berger""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-en,calendar,en,2,9.3,True,ok,tool-ok,[[reply_to_current]]Appointment 'Dentist' has been created for 2026-07-22 at 09:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-en,calendar,en,3,8.5,True,ok,tool-ok,[[reply_to_current]]Appointment 'Dentist' has been created for 2026-07-22 at 09:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-en,calendar,en,4,12.7,True,ok,tool-ok,[[reply_to_current]]Appointment 'Dentist' created for 2026-07-22 at 09:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-02-en,calendar,en,5,10.5,True,ok,tool-ok,[[reply_to_current]]Appointment 'Dentist' created for 2026-07-22 at 09:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-en,calendar,en,1,10.5,True,ok,tool-ok,[[reply_to_current]]Done. I've created the 'Kickoff' appointment for 2026-07-23 at 14:00 and invited michael.krause@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-en,calendar,en,2,10.3,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Kickoff' has been created for 2026-07-23 at 14:00, and michael.krause@example.net has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-en,calendar,en,3,10.6,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Kickoff' has been created for 2026-07-23 at 14:00, with michael.krause@example.net invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-en,calendar,en,4,8.8,True,ok,tool-ok,[[reply_to_current]]Done. I've created the 'Kickoff' appointment for 2026-07-23 at 14:00 and invited michael.krause@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-03-en,calendar,en,5,20.5,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Kickoff' has been created for 2026-07-23 at 14:00, with michael.krause@example.net invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-en,calendar,en,1,12.9,True,ok,tool-ok,[[reply_to_current]]Appointment 'Callback' created for 2026-07-24 at 11:00.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-en,calendar,en,2,12.2,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Callback' has been created for 2026-07-24 at 11:00."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-en,calendar,en,3,9.7,True,ok,tool-ok,[[reply_to_current]]Appointment 'Callback' has been created for 2026-07-24 at 11:00.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-en,calendar,en,4,27.0,True,ok,tool-ok,[[reply_to_current]]Appointment 'Callback' created for 2026-07-24 at 11:00.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-04-en,calendar,en,5,11.0,True,ok,tool-ok,[[reply_to_current]]Appointment 'Callback' created for 2026-07-24 at 11:00.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-en,calendar,en,1,8.6,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Workshop' has been created for 2026-07-27 from 09:00 to 11:00, with lisa.wagner@example.net invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-en,calendar,en,2,10.5,True,ok,tool-ok,"[[reply_to_current]]
+Done. The 'Workshop' appointment has been created for 2026-07-27 from 09:00 to 11:00, and lisa.wagner@example.net has been invited. 🔷"
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-en,calendar,en,3,11.6,True,ok,tool-ok,"[[reply_to_current]]
+Done. I've created the 'Workshop' appointment for July 27, 2026, from 09:00 to 11:00 and invited lisa.wagner@example.net."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-en,calendar,en,4,10.6,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Workshop' has been created for 2026-07-27 from 09:00 to 11:00, and an invitation has been sent to lisa.wagner@example.net."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-05-en,calendar,en,5,11.7,True,ok,tool-ok,"[[reply_to_current]]
+Done. I've created the 'Workshop' appointment for 2026-07-27 from 09:00 to 11:00 and invited lisa.wagner@example.net."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-en,calendar,en,1,10.1,True,ok,tool-ok,"[[reply_to_current]]Done. I've created the 'Interview' appointment for 2026-07-28 at 15:30 with the description ""Candidate Thomas Schmidt""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-en,calendar,en,2,18.1,True,ok,tool-ok,[[reply_to_current]]Appointment 'Interview' has been created for 2026-07-28 at 15:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-en,calendar,en,3,9.0,True,ok,tool-ok,[[reply_to_current]]Appointment 'Interview' created for 2026-07-28 at 15:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-en,calendar,en,4,8.8,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Interview' has been created for 2026-07-28 at 15:30 with the description ""Candidate Thomas Schmidt""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-06-en,calendar,en,5,9.0,True,ok,tool-ok,[[reply_to_current]]Appointment 'Interview' created for 2026-07-28 at 15:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-en,calendar,en,1,11.0,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Review' has been created for 2026-07-29 at 13:00, with anna.berger@example.org invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-en,calendar,en,2,8.9,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Review' has been created for 2026-07-29 at 13:00, with anna.berger@example.org invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-en,calendar,en,3,10.7,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Review' has been created for 2026-07-29 at 13:00, with anna.berger@example.org invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-en,calendar,en,4,39.5,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Review' has been created for 2026-07-29 at 13:00, with anna.berger@example.org invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-07-en,calendar,en,5,8.8,True,ok,tool-ok,[[reply_to_current]]Done. I've created the 'Review' appointment for 2026-07-29 at 13:00 and invited anna.berger@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-en,calendar,en,1,12.6,True,ok,tool-ok,[[reply_to_current]]Appointment 'Billing' has been created for 2026-07-30 at 10:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-en,calendar,en,2,9.5,True,ok,tool-ok,"[[reply_to_current]]
+Done. I've created the 'Billing' appointment for 2026-07-30 at 10:30."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-en,calendar,en,3,19.7,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Billing' created for 2026-07-30 at 10:30."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-en,calendar,en,4,10.8,True,ok,tool-ok,[[reply_to_current]]Appointment 'Billing' has been created for 2026-07-30 at 10:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-08-en,calendar,en,5,12.4,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Billing' created for 2026-07-30 at 10:30."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-en,calendar,en,1,9.2,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Coordination' has been created for 2026-07-31 at 16:00, and julia.meyer@example.org has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-en,calendar,en,2,9.6,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Coordination' has been created for 2026-07-31 at 16:00, with julia.meyer@example.org invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-en,calendar,en,3,39.2,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Coordination' has been created for 2026-07-31 at 16:00, and julia.meyer@example.org has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-en,calendar,en,4,8.6,True,ok,tool-ok,Done. I've created the 'Coordination' appointment for 2026-07-31 at 16:00 and invited julia.meyer@example.org.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-09-en,calendar,en,5,7.8,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Coordination' has been created for 2026-07-31 at 16:00, with julia.meyer@example.org invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-en,calendar,en,1,7.1,True,ok,tool-ok,[[reply_to_current]]Appointment 'Note' created for 2026-08-03 at 08:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-en,calendar,en,2,12.0,True,ok,tool-ok,[[reply_to_current]]Appointment 'Note' has been created for 2026-08-03 at 08:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-en,calendar,en,3,11.8,True,ok,tool-ok,[[reply_to_current]]Appointment 'Note' created for 2026-08-03 at 08:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-en,calendar,en,4,54.0,True,ok,tool-ok,[[reply_to_current]]Appointment 'Note' created for 2026-08-03 at 08:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-10-en,calendar,en,5,9.2,True,ok,tool-ok,"[[reply_to_current]]Done. I've created the appointment 'Note' for 2026-08-03 at 08:30 with the description: ""Contact person Michael Krause""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-en,calendar,en,1,12.4,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Call' has been created for 2026-08-04 at 11:15, with thomas.schmidt@example.com invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-en,calendar,en,2,10.5,True,ok,tool-ok,[[reply_to_current]]Done. I've created the appointment 'Call' for 2026-08-04 at 11:15 and invited thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-en,calendar,en,3,7.7,True,ok,tool-ok,"[[reply_to_current]]
+Done. I've created the 'Call' appointment for 2026-08-04 at 11:15 and invited thomas.schmidt@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-en,calendar,en,4,6.5,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Call' has been created for 2026-08-04 at 11:15, and thomas.schmidt@example.com has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-11-en,calendar,en,5,8.4,True,ok,tool-ok,[[reply_to_current]]Done. I've created the 'Call' appointment for 2026-08-04 at 11:15 and invited thomas.schmidt@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-en,calendar,en,1,8.8,True,ok,tool-ok,"[[reply_to_current]]Done. I've created the 'Handover' appointment for August 5th, 2026, at 14:45."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-en,calendar,en,2,7.3,True,ok,tool-ok,[[reply_to_current]]Appointment 'Handover' has been created for 2026-08-05 at 14:45.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-en,calendar,en,3,9.1,True,ok,tool-ok,[[reply_to_current]]Appointment 'Handover' created for 2026-08-05 at 14:45.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-en,calendar,en,4,7.5,True,ok,tool-ok,[[reply_to_current]]Done. Appointment 'Handover' has been created for 2026-08-05 at 14:45.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-12-en,calendar,en,5,9.8,True,ok,tool-ok,[[reply_to_current]]Appointment 'Handover' has been created for 2026-08-05 at 14:45.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-en,calendar,en,1,7.9,True,ok,tool-ok,"[[reply_to_current]]
+Done. I've created the 'Planning' appointment for 2026-08-06 at 09:00 and invited david.eichel@example.com."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-en,calendar,en,2,9.3,True,ok,tool-ok,[[reply_to_current]]Done. I've created the 'Planning' appointment for 2026-08-06 at 09:00 and invited david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-en,calendar,en,3,8.4,True,ok,tool-ok,[[reply_to_current]]Done. I've created the 'Planning' appointment for 2026-08-06 at 09:00 and invited david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-en,calendar,en,4,8.2,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Planning' has been created for 2026-08-06 at 09:00, and david.eichel@example.com has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-13-en,calendar,en,5,6.8,True,ok,tool-ok,[[reply_to_current]]Done. I've created the 'Planning' appointment for 2026-08-06 at 09:00 and invited david.eichel@example.com.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-en,calendar,en,1,7.8,True,ok,tool-ok,[[reply_to_current]]Appointment 'Viewing' has been created for 2026-08-07 at 10:00.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-en,calendar,en,2,8.7,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Viewing' has been created for August 7, 2026, at 10:00 UTC with the description ""Location Karlsruhe""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-en,calendar,en,3,11.2,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Viewing' has been created for 2026-08-07 at 10:00 with the description ""Location Karlsruhe""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-en,calendar,en,4,17.1,True,ok,tool-ok,[[reply_to_current]]Appointment 'Viewing' created for 2026-08-07 at 10:00 (Location Karlsruhe).
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-14-en,calendar,en,5,12.0,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Viewing' created for 2026-08-07 at 10:00 with the description ""Location Karlsruhe""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-en,calendar,en,1,10.0,True,ok,tool-ok,[[reply_to_current]]Done. I've created the 'Sync' appointment for 2026-08-10 at 15:00 and invited michael.krause@example.net.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-en,calendar,en,2,11.2,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Sync' has been created for 2026-08-10 at 15:00, with michael.krause@example.net invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-en,calendar,en,3,7.8,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Sync' has been created for 2026-08-10 at 15:00, with michael.krause@example.net invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-en,calendar,en,4,16.1,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Sync' has been created for 2026-08-10 at 15:00, and michael.krause@example.net has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-15-en,calendar,en,5,10.2,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Sync' has been created for 2026-08-10 at 15:00, and michael.krause@example.net has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-en,calendar,en,1,9.7,True,ok,tool-ok,[[reply_to_current]]Appointment 'Conversation' has been created for 2026-08-11 at 13:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-en,calendar,en,2,7.3,True,ok,tool-ok,[[reply_to_current]]Appointment 'Conversation' created for 2026-08-11 at 13:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-en,calendar,en,3,9.7,True,ok,tool-ok,[[reply_to_current]]Appointment 'Conversation' created for 2026-08-11 at 13:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-en,calendar,en,4,8.5,True,ok,tool-ok,[[reply_to_current]]Appointment 'Conversation' has been created for 2026-08-11 at 13:30.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-16-en,calendar,en,5,10.3,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Conversation' has been created for 2026-08-11 at 13:30 with the description ""Participant Julia Meyer""."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-en,calendar,en,1,9.0,True,ok,tool-ok,"[[reply_to_current]]
+Done. I've created the 'Demo' appointment for 2026-08-12 at 11:00 and invited anna.berger@example.org."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-en,calendar,en,2,7.7,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Demo' has been created for 2026-08-12 at 11:00, with anna.berger@example.org invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-en,calendar,en,3,7.6,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Demo' has been created for 2026-08-12 at 11:00, with anna.berger@example.org invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-en,calendar,en,4,11.1,True,ok,tool-ok,"[[reply_to_current]]Done. The 'Demo' appointment has been created for 2026-08-12 at 11:00, and anna.berger@example.org has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-17-en,calendar,en,5,911.9,True,ok,tool-ok,"[[reply_to_current]]Appointment 'Demo' has been created for 2026-08-12 at 11:00, and anna.berger@example.org has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-en,calendar,en,1,13.9,False,"expected exactly 1 event, found 0",no-tool-call,LLM request failed.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-en,calendar,en,2,70.3,True,ok,tool-ok,[[reply_to_current]]Appointment 'Hotline' has been created for 2026-08-13 at 09:45.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-en,calendar,en,3,40.4,True,ok,tool-ok,[[reply_to_current]]Appointment 'Hotline' has been created for 2026-08-13 at 09:45.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-en,calendar,en,4,11.6,True,ok,tool-ok,[[reply_to_current]]Appointment 'Hotline' has been created for 2026-08-13 at 09:45.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-18-en,calendar,en,5,12.6,True,ok,tool-ok,[[reply_to_current]]Appointment 'Hotline' has been created for 2026-08-13 at 09:45.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-en,calendar,en,1,12.1,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Closing' has been created for 2026-08-14 at 16:30, with lisa.wagner@example.net invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-en,calendar,en,2,65.1,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Closing' has been created for 2026-08-14 at 16:30, and lisa.wagner@example.net has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-en,calendar,en,3,10.9,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Closing' has been created for 2026-08-14 at 16:30, and lisa.wagner@example.net has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-en,calendar,en,4,13.2,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Closing' has been created for 2026-08-14 at 16:30, and lisa.wagner@example.net has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-19-en,calendar,en,5,12.5,True,ok,tool-ok,"[[reply_to_current]]
+Appointment 'Closing' has been created for 2026-08-14 at 16:30, and lisa.wagner@example.net has been invited."
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-en,calendar,en,1,90.1,True,ok,tool-ok,[[reply_to_current]]Appointment 'Contact care' has been created for 2026-08-17 at 10:15.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-en,calendar,en,2,59.7,True,ok,tool-ok,[[reply_to_current]]Appointment 'Contact care' has been created for 2026-08-17 at 10:15.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-en,calendar,en,3,15.8,True,ok,tool-ok,[[reply_to_current]]Appointment 'Contact care' has been created for 2026-08-17 at 10:15.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-en,calendar,en,4,52.7,True,ok,tool-ok,[[reply_to_current]]Appointment 'Contact care' has been created for 2026-08-17 at 10:15.
+exp-rq2-controlgroup,llm-direct/gemma4:cloud,cal-20-en,calendar,en,5,13.1,True,ok,tool-ok,[[reply_to_current]]Appointment 'Contact care' has been created for 2026-08-17 at 10:15.

@@ -1,0 +1,626 @@
+group,model,id,domain,lang,iteration,seconds,function_ok,detail,tool_diagnosis,reply
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-de,conversation,de,1,4.5,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-de,conversation,de,2,3.9,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-de,conversation,de,3,3.1,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-de,conversation,de,4,3.3,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-de,conversation,de,5,3.1,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-de,conversation,de,1,3.2,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-de,conversation,de,2,2.9,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-de,conversation,de,3,2.9,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-de,conversation,de,4,3.9,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-de,conversation,de,5,3.7,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-de,conversation,de,1,3.4,True,ok,,"Guten Tag, Frau Anna Berger – es freut mich sehr, Sie kennenzulernen!"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-de,conversation,de,2,3.6,True,ok,,"Guten Tag, Frau Anna Berger – es freut mich sehr, Sie kennenzulernen!"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-de,conversation,de,3,5.2,True,ok,,"Sehr geehrte Frau Anna Berger, ich freue mich, Sie kennenzulernen und stehe Ihnen gerne zur Verfügung."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-de,conversation,de,4,3.3,True,ok,,"Sehr geehrte Frau Anna Berger, ich freue mich, Sie kennenzulernen und heiße Sie herzlich willkommen."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-de,conversation,de,5,7.1,True,ok,,"Sehr geehrte Frau Anna Berger, ich freue mich, Sie kennenzulernen und heiße Sie herzlich willkommen."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-de,conversation,de,1,3.0,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-de,conversation,de,2,6.7,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-de,conversation,de,3,3.4,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-de,conversation,de,4,3.0,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-de,conversation,de,5,3.1,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-de,conversation,de,1,3.0,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-de,conversation,de,2,3.1,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-de,conversation,de,3,3.5,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-de,conversation,de,4,3.3,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-de,conversation,de,5,3.0,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-de,conversation,de,1,5.5,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-de,conversation,de,2,3.0,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-de,conversation,de,3,4.4,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-de,conversation,de,4,2.9,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-de,conversation,de,5,3.2,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-de,conversation,de,1,3.3,True,ok,,Nordlicht Datentechnik GmbH entwickelt innovative Softwarelösungen für den Mittelstand.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-de,conversation,de,2,3.2,True,ok,,Mein aktueller Arbeitgeber ist die Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-de,conversation,de,3,3.2,True,ok,,Michael Krause arbeitet bei der Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-de,conversation,de,4,3.6,True,ok,,Die Nordlicht Datentechnik GmbH entwickelt innovative Softwarelösungen für den Mittelstand.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-de,conversation,de,5,3.4,True,ok,,Michael Krause ist bei der Nordlicht Datentechnik GmbH angestellt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-de,conversation,de,1,3.3,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-de,conversation,de,2,3.6,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-de,conversation,de,3,3.2,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-de,conversation,de,4,3.5,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-de,conversation,de,5,6.0,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-de,conversation,de,1,3.1,True,ok,,Ich habe Michael Krause als Ansprechpartner notiert.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-de,conversation,de,2,9.1,True,ok,,"Habe ich – dein Ansprechpartner ist Michael Krause, notiert in USER.md."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-de,conversation,de,3,3.1,True,ok,,Habe den Ansprechpartner Michael Krause notiert.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-de,conversation,de,4,3.1,True,ok,,"Habe ich – dein Ansprechpartner ist Michael Krause, notiert in USER.md. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-de,conversation,de,5,3.2,True,ok,,Habe ich – Ansprechpartner Michael Krause ist in USER.md notiert. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-de,conversation,de,1,10.3,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-de,conversation,de,2,7.4,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-de,conversation,de,3,8.1,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-de,conversation,de,4,6.5,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-de,conversation,de,5,5.4,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-de,conversation,de,1,9.7,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-de,conversation,de,2,3.1,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-de,conversation,de,3,3.2,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-de,conversation,de,4,3.9,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-de,conversation,de,5,4.0,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-de,conversation,de,1,6.1,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-de,conversation,de,2,4.8,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-de,conversation,de,3,5.3,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-de,conversation,de,4,8.3,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-de,conversation,de,5,6.5,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-de,conversation,de,1,3.3,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-de,conversation,de,2,4.0,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-de,conversation,de,3,3.1,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-de,conversation,de,4,3.8,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-de,conversation,de,5,5.9,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-de,conversation,de,1,3.1,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-de,conversation,de,2,3.0,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-de,conversation,de,3,8.2,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-de,conversation,de,4,3.1,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-de,conversation,de,5,2.9,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-de,conversation,de,1,40.3,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-de,conversation,de,2,6.3,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-de,conversation,de,3,5.8,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-de,conversation,de,4,7.2,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-de,conversation,de,5,5.4,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-de,conversation,de,1,3.2,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-de,conversation,de,2,6.2,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-de,conversation,de,3,5.3,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-de,conversation,de,4,5.4,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-de,conversation,de,5,5.0,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-de,conversation,de,1,4.7,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-de,conversation,de,2,4.4,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-de,conversation,de,3,5.4,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-de,conversation,de,4,5.0,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-de,conversation,de,5,6.8,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-de,conversation,de,1,6.9,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-de,conversation,de,2,6.7,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-de,conversation,de,3,3.2,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-de,conversation,de,4,4.0,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-de,conversation,de,5,5.0,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-de,conversation,de,1,3.1,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-de,conversation,de,2,3.1,True,ok,,Bestätigt: Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-de,conversation,de,3,4.1,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-de,conversation,de,4,3.8,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-de,conversation,de,5,3.0,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-de,conversation,de,1,4.2,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-de,conversation,de,2,10.2,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-de,conversation,de,3,6.5,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-de,conversation,de,4,8.2,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-de,conversation,de,5,3.6,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-de,email,de,1,6.5,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-de,email,de,2,6.1,True,ok,wrong-tool: send_mail,E-Mail wurde an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-de,email,de,3,5.7,True,ok,wrong-tool: send_mail,Die E-Mail wurde an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-de,email,de,4,9.5,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-de,email,de,5,5.5,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-de,email,de,1,5.4,True,ok,wrong-tool: send_mail,E-Mail gesendet an anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-de,email,de,2,6.4,True,ok,wrong-tool: send_mail,E-Mail wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-de,email,de,3,5.4,True,ok,wrong-tool: send_mail,Die E-Mail wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-de,email,de,4,15.4,True,ok,wrong-tool: send_mail,Die E-Mail wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-de,email,de,5,5.6,True,ok,wrong-tool: send_mail,Erledigt. Die E-Mail wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-de,email,de,1,5.6,True,ok,wrong-tool: send_mail,Die E-Mail wurde an michael.krause@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-de,email,de,2,5.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde versendet an michael.krause@example.net mit Betreff „Angebot""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-de,email,de,3,6.1,True,ok,wrong-tool: send_mail,Die E-Mail wurde an michael.krause@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-de,email,de,4,5.7,True,ok,wrong-tool: send_mail,Die E-Mail wurde an michael.krause@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-de,email,de,5,6.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff „Angebot"", Inhalt „Anbei unser Angebot."""
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-de,email,de,1,5.7,True,ok,wrong-tool: send_mail,E-Mail ist raus an lisa.wagner@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-de,email,de,2,7.6,True,ok,wrong-tool: send_mail,E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-de,email,de,3,5.3,True,ok,wrong-tool: send_mail,E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-de,email,de,4,6.0,True,ok,wrong-tool: send_mail,Die E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-de,email,de,5,5.1,True,ok,wrong-tool: send_mail,E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-de,email,de,1,7.0,True,ok,wrong-tool: send_mail,"E-Mail an thomas.schmidt@example.com mit Betreff „Protokoll"" wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-de,email,de,2,6.0,True,ok,wrong-tool: send_mail,Die E-Mail wurde an thomas.schmidt@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-de,email,de,3,7.7,True,ok,wrong-tool: send_mail,Die E-Mail wurde an thomas.schmidt@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-de,email,de,4,5.7,True,ok,wrong-tool: send_mail,Die E-Mail wurde an thomas.schmidt@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-de,email,de,5,5.4,True,ok,wrong-tool: send_mail,Die E-Mail wurde an thomas.schmidt@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-de,email,de,1,5.5,True,ok,wrong-tool: send_mail,E-Mail wurde gesendet an julia.meyer@example.org mit Betreff „Termin“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-de,email,de,2,5.4,True,ok,wrong-tool: send_mail,E-Mail wurde an julia.meyer@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-de,email,de,3,5.3,True,ok,wrong-tool: send_mail,Die E-Mail wurde an julia.meyer@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-de,email,de,4,5.5,True,ok,wrong-tool: send_mail,E-Mail wurde an julia.meyer@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-de,email,de,5,5.6,True,ok,wrong-tool: send_mail,E-Mail wurde an julia.meyer@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-de,email,de,1,5.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an david.eichel@example.com gesendet – Betreff „Gruss“, mit herzlichen Grüssen von Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-de,email,de,2,6.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an david.eichel@example.com gesendet – Betreff „Gruss“, mit herzlichen Grüssen von Anna Berger im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-de,email,de,3,6.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an david.eichel@example.com gesendet – Betreff „Gruss“, mit herzlichen Grüssen von Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-de,email,de,4,5.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an david.eichel@example.com gesendet – Betreff „Gruss“, mit herzlichen Grüssen von Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-de,email,de,5,6.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an david.eichel@example.com gesendet – Betreff „Gruss“, mit herzlichen Grüßen von Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-de,email,de,1,9.1,True,ok,wrong-tool: send_mail,E-Mail wurde versendet an michael.krause@example.net mit Betreff „Rueckruf“ und der Rückrufnummer +49 721 1234567.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-de,email,de,2,6.1,True,ok,wrong-tool: send_mail,E-Mail wurde versendet an michael.krause@example.net mit Betreff „Rueckruf“ und der Rückrufnummer +49 721 1234567.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-de,email,de,3,6.0,True,ok,wrong-tool: send_mail,E-Mail wurde versendet: **Rueckruf** an michael.krause@example.net mit der Rückrufnummer +49 721 1234567.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-de,email,de,4,6.3,True,ok,wrong-tool: send_mail,E-Mail wurde versendet an michael.krause@example.net mit Betreff „Rueckruf“ und der Rückrufnummer +49 721 1234567.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-de,email,de,5,6.1,True,ok,wrong-tool: send_mail,"E-Mail ist raus. 📧
+
+- **An:** michael.krause@example.net
+- **Betreff:** Rueckruf
+- **Rückrufnummer:** +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-de,email,de,1,13.4,True,ok,wrong-tool: send_mail,E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-de,email,de,2,8.9,True,ok,wrong-tool: send_mail,E-Mail wurde gesendet an anna.berger@example.org mit Betreff „Bankdaten“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-de,email,de,3,6.7,True,ok,wrong-tool: send_mail,E-Mail wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-de,email,de,4,9.1,True,ok,wrong-tool: send_mail,"E-Mail an anna.berger@example.org mit Betreff „Bankdaten"" wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-de,email,de,5,8.7,True,ok,wrong-tool: send_mail,E-Mail wurde gesendet an anna.berger@example.org mit Betreff „Bankdaten“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-de,email,de,1,5.7,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an info@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-de,email,de,2,8.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde gesendet an info@example.net mit Betreff „Anfrage""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-de,email,de,3,5.8,True,ok,wrong-tool: send_mail,Die E-Mail wurde gesendet an info@example.net mit Betreff „Anfrage“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-de,email,de,4,5.7,True,ok,wrong-tool: send_mail,Die E-Mail wurde versendet an info@example.net mit Betreff „Anfrage“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-de,email,de,5,5.6,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an info@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-de,email,de,1,5.9,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-de,email,de,2,6.0,True,ok,wrong-tool: send_mail,Die E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-de,email,de,3,5.2,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-de,email,de,4,16.9,True,ok,wrong-tool: send_mail,E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-de,email,de,5,5.3,True,ok,wrong-tool: send_mail,Die E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-de,email,de,1,5.4,True,ok,wrong-tool: send_mail,"E-Mail wurde gesendet an david.eichel@example.com mit Betreff „Dokument""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-de,email,de,2,10.0,True,ok,wrong-tool: send_mail,Die E-Mail wurde an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-de,email,de,3,5.5,True,ok,wrong-tool: send_mail,Die E-Mail wurde an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-de,email,de,4,8.0,True,ok,wrong-tool: send_mail,"E-Mail an david.eichel@example.com mit Betreff „Dokument"" wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-de,email,de,5,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde versendet an david.eichel@example.com mit Betreff „Dokument""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-de,email,de,1,13.8,True,ok,wrong-tool: send_mail,E-Mail an anna.berger@example.org wurde gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-de,email,de,2,6.1,True,ok,wrong-tool: send_mail,E-Mail wurde gesendet an anna.berger@example.org mit Betreff „Nachfrage“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-de,email,de,3,25.1,True,ok,wrong-tool: send_mail,E-Mail wurde versendet an anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-de,email,de,4,5.7,True,ok,wrong-tool: send_mail,E-Mail wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-de,email,de,5,6.2,True,ok,wrong-tool: send_mail,Die E-Mail wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-de,email,de,1,11.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an support@example.net gesendet – Betreff „Stoerung"", Inhalt „Bitte um Hilfe beim Login."""
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-de,email,de,2,6.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde gesendet: an **support@example.net**, Betreff „Stoerung"", Inhalt „Bitte um Hilfe beim Login."""
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-de,email,de,3,5.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde gesendet an support@example.net mit Betreff „Stoerung""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-de,email,de,4,6.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde gesendet an **support@example.net** mit Betreff „Stoerung"" und dem Inhalt „Bitte um Hilfe beim Login."""
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-de,email,de,5,5.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde gesendet an support@example.net mit Betreff „Stoerung""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-de,email,de,1,7.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde versendet – an michael.krause@example.net, Betreff „Kontakt“, mit Thomas Schmidt als erwähntem Ansprechpartner."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-de,email,de,2,6.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net mit dem Betreff „Kontakt"" gesendet. Thomas Schmidt ist als Ansprechpartner im Text erwähnt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-de,email,de,3,6.6,True,ok,wrong-tool: send_mail,"E-Mail ist raus. 📧
+
+- **An:** michael.krause@example.net
+- **Betreff:** Kontakt
+- **Ansprechpartner im Text:** Thomas Schmidt"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-de,email,de,4,7.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an michael.krause@example.net gesendet – Betreff „Kontakt"", mit Thomas Schmidt als erwähntem Ansprechpartner."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-de,email,de,5,7.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an michael.krause@example.net gesendet – Betreff „Kontakt"", mit Thomas Schmidt als erwähntem Ansprechpartner."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-de,email,de,1,5.8,True,ok,wrong-tool: send_mail,E-Mail an julia.meyer@example.org wurde gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-de,email,de,2,5.6,True,ok,wrong-tool: send_mail,Die E-Mail wurde an julia.meyer@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-de,email,de,3,5.8,True,ok,wrong-tool: send_mail,"E-Mail an julia.meyer@example.org mit Betreff „Adresse"" wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-de,email,de,4,5.5,True,ok,wrong-tool: send_mail,"E-Mail an julia.meyer@example.org mit Betreff „Adresse"" wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-de,email,de,5,5.3,True,ok,wrong-tool: send_mail,"E-Mail an julia.meyer@example.org mit Betreff „Adresse"" wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-de,email,de,1,6.4,True,ok,wrong-tool: send_mail,"E-Mail wurde gesendet an thomas.schmidt@example.com mit Betreff „Server""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-de,email,de,2,5.9,True,ok,wrong-tool: send_mail,"E-Mail an thomas.schmidt@example.com mit Betreff „Server"" wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-de,email,de,3,5.5,True,ok,wrong-tool: send_mail,"E-Mail an thomas.schmidt@example.com mit Betreff „Server"" wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-de,email,de,4,6.3,True,ok,wrong-tool: send_mail,"E-Mail wurde gesendet an thomas.schmidt@example.com mit Betreff „Server""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-de,email,de,5,6.1,True,ok,wrong-tool: send_mail,"E-Mail an thomas.schmidt@example.com mit Betreff „Server"" wurde gesendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-de,email,de,1,5.5,True,ok,wrong-tool: send_mail,"E-Mail an lisa.wagner@example.net mit Betreff „Meeting"" wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-de,email,de,2,5.8,True,ok,wrong-tool: send_mail,E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-de,email,de,3,7.6,True,ok,wrong-tool: send_mail,"E-Mail an lisa.wagner@example.net mit Betreff „Meeting"" wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-de,email,de,4,7.3,True,ok,wrong-tool: send_mail,"E-Mail an lisa.wagner@example.net mit Betreff „Meeting"" wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-de,email,de,5,9.7,True,ok,wrong-tool: send_mail,E-Mail wurde gesendet an lisa.wagner@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-de,email,de,1,5.6,True,ok,wrong-tool: send_mail,E-Mail wurde versendet an david.eichel@example.com mit Betreff „Freigabe“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-de,email,de,2,5.3,True,ok,wrong-tool: send_mail,Die E-Mail wurde an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-de,email,de,3,5.7,True,ok,wrong-tool: send_mail,Die E-Mail wurde an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-de,email,de,4,8.2,True,ok,wrong-tool: send_mail,E-Mail an david.eichel@example.com mit Betreff „Freigabe“ wurde versendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-de,email,de,5,6.2,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-de,email,de,1,6.1,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-de,email,de,2,5.7,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-de,email,de,3,6.0,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-de,email,de,4,5.7,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-de,email,de,5,6.3,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-de,calendar,de,1,8.1,True,ok,tool-ok,"Termin eingetragen: **Projektbesprechung** am 20.07.2026, 10:00–11:00 Uhr, mit David Eichel (david.eichel@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-de,calendar,de,2,8.4,True,ok,tool-ok,"Termin eingetragen: **Projektbesprechung** am 20.07.2026, 10:00–11:00 Uhr, mit David Eichel (david.eichel@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-de,calendar,de,3,14.3,True,ok,tool-ok,"Termin erstellt: **Projektbesprechung** am 20.07.2026, 10:00–11:00 Uhr, mit David Eichel (david.eichel@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-de,calendar,de,4,8.6,True,ok,tool-ok,"Termin erstellt: **Projektbesprechung** am 20.07.2026, 10:00–11:00 Uhr, mit David Eichel als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-de,calendar,de,5,7.7,True,ok,tool-ok,"Termin eingetragen: **Projektbesprechung** am 20.07.2026, 10:00–11:00 Uhr, mit David Eichel als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-de,calendar,de,1,8.2,True,ok,tool-ok,"Termin „Zahnarzt"" am 22.07.2026 um 09:30 Uhr mit Beschreibung „Patient Anna Berger"" ist angelegt. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-de,calendar,de,2,10.7,True,ok,tool-ok,"Termin **Zahnarzt** am 22.07.2026 um 09:30 Uhr mit Beschreibung „Patient Anna Berger"" wurde angelegt. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-de,calendar,de,3,9.6,True,ok,tool-ok,Termin erstellt: **Zahnarzt** am 22.07.2026 um 09:30 Uhr mit Beschreibung „Patient Anna Berger“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-de,calendar,de,4,8.6,True,ok,tool-ok,"Termin „Zahnarzt"" am 22.07.2026 um 09:30 Uhr mit Beschreibung „Patient Anna Berger"" wurde angelegt. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-de,calendar,de,5,7.5,True,ok,tool-ok,"Termin „Zahnarzt"" am 22.07.2026 um 09:30 Uhr mit Beschreibung „Patient Anna Berger"" wurde angelegt. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-de,calendar,de,1,8.5,True,ok,tool-ok,Termin eingetragen: **Kickoff** am 23.07.2026 um 14:00 Uhr mit Teilnehmer michael.krause@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-de,calendar,de,2,7.8,True,ok,tool-ok,Termin eingetragen: **Kickoff** am 23.07.2026 um 14:00 Uhr mit Teilnehmer michael.krause@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-de,calendar,de,3,9.8,True,ok,tool-ok,"Termin eingetragen: **Kickoff** am 23.07.2026, 14:00–15:00 Uhr, mit Teilnehmer michael.krause@example.net."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-de,calendar,de,4,6.8,True,ok,tool-ok,Termin eingetragen: **Kickoff** am 23.07.2026 um 14:00 Uhr mit michael.krause@example.net als Teilnehmer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-de,calendar,de,5,10.4,True,ok,tool-ok,"Termin **Kickoff** für den 23.07.2026 um 14:00 Uhr wurde eingetragen, inklusive Teilnehmer michael.krause@example.net. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-de,calendar,de,1,7.8,True,ok,tool-ok,Termin erstellt: **Rueckruf** am 24.07.2026 um 11:00 Uhr mit der Nummer +49 721 1234567 in der Beschreibung.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-de,calendar,de,2,9.2,True,ok,tool-ok,Termin **Rueckruf** für den 24.07.2026 um 11:00 Uhr mit der Nummer +49 721 1234567 in der Beschreibung ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-de,calendar,de,3,12.7,True,ok,tool-ok,Termin erstellt: **Rueckruf** am 24.07.2026 um 11:00 Uhr mit der Nummer +49 721 1234567 in der Beschreibung.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-de,calendar,de,4,14.3,True,ok,tool-ok,Termin **Rueckruf** am 24.07.2026 um 11:00 Uhr mit der Nummer +49 721 1234567 ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-de,calendar,de,5,8.0,True,ok,tool-ok,Termin **Rueckruf** für den 24.07.2026 um 11:00 Uhr mit der Nummer +49 721 1234567 in der Beschreibung ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-de,calendar,de,1,11.9,True,ok,tool-ok,"Erledigt. 🔷
+
+- **Workshop** am 27.07.2026, 09:00–11:00 Uhr
+- Teilnehmerin: lisa.wagner@example.net"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-de,calendar,de,2,7.6,True,ok,tool-ok,"Termin eingetragen: **Workshop** am 27.07.2026, 09:00–11:00 Uhr, mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-de,calendar,de,3,6.9,True,ok,tool-ok,"Termin eingetragen:
+
+- **Workshop** am **27.07.2026, 09:00–11:00 Uhr**
+- Teilnehmerin: lisa.wagner@example.net"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-de,calendar,de,4,8.5,True,ok,tool-ok,"Termin eingetragen:
+
+- **Workshop** am 27.07.2026, 09:00–11:00 Uhr
+- Teilnehmerin: lisa.wagner@example.net"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-de,calendar,de,5,8.5,True,ok,tool-ok,"Termin eingetragen: **Workshop** am 27.07.2026, 09:00–11:00 Uhr, mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-de,calendar,de,1,8.2,True,ok,tool-ok,Termin erstellt: **Interview** am 28.07.2026 um 15:30 Uhr mit Kandidat Thomas Schmidt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-de,calendar,de,2,7.5,True,ok,tool-ok,Termin erstellt: **Interview** am 28.07.2026 um 15:30 Uhr mit Kandidat Thomas Schmidt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-de,calendar,de,3,6.7,True,ok,tool-ok,"Termin **Interview** am 28.07.2026 um 15:30 Uhr mit Beschreibung „Kandidat Thomas Schmidt"" wurde angelegt. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-de,calendar,de,4,7.3,True,ok,tool-ok,Termin erstellt: **Interview** am 28.07.2026 um 15:30 Uhr mit Kandidat Thomas Schmidt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-de,calendar,de,5,9.8,True,ok,tool-ok,Termin erstellt: **Interview** am 28.07.2026 um 15:30 Uhr mit Kandidat Thomas Schmidt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-de,calendar,de,1,6.6,True,ok,tool-ok,Termin eingetragen: **Review** am 29.07.2026 um 13:00 Uhr mit Teilnehmerin [EMAIL_ADDRESS_445793faef225679].
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-de,calendar,de,2,10.9,True,ok,tool-ok,Termin eingetragen: **Review** am 29.07.2026 um 13:00 Uhr mit Teilnehmerin [EMAIL_ADDRESS_445793faef225679].
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-de,calendar,de,3,7.6,True,ok,tool-ok,Termin eingetragen: **Review** am 29.07.2026 um 13:00 Uhr mit Teilnehmerin [EMAIL_ADDRESS_445793faef225679].
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-de,calendar,de,4,8.1,True,ok,tool-ok,Termin eingetragen: **Review** am 29.07.2026 um 13:00 Uhr mit Teilnehmerin [EMAIL_ADDRESS_445793faef225679].
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-de,calendar,de,5,7.7,True,ok,tool-ok,Termin eingetragen: **Review** am 29.07.2026 um 13:00–14:00 Uhr mit Anna Berger ([anna.berger@example.org](mailto:anna.berger@example.org)) als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-de,calendar,de,1,7.4,True,ok,tool-ok,Termin **Abrechnung** am 30.07.2026 um 10:30 Uhr mit der IBAN in der Beschreibung ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-de,calendar,de,2,7.8,True,ok,tool-ok,Termin **Abrechnung** am 30.07.2026 um 10:30 Uhr mit der IBAN in der Beschreibung ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-de,calendar,de,3,11.2,True,ok,tool-ok,"Termin ""Abrechnung"" ist für den 30.07.2026 um 10:30 Uhr angelegt, mit der IBAN in der Beschreibung."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-de,calendar,de,4,7.8,True,ok,tool-ok,Termin **Abrechnung** am 30.07.2026 um 10:30 Uhr mit der IBAN in der Beschreibung ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-de,calendar,de,5,7.6,True,ok,tool-ok,Termin **Abrechnung** am 30.07.2026 um 10:30 Uhr mit der IBAN in der Beschreibung ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-de,calendar,de,1,6.7,True,ok,tool-ok,"Erledigt. 🔷
+
+**Abstimmung** am **31.07.2026 um 16:00 Uhr** mit **julia.meyer@example.org** als Teilnehmerin ist eingetragen."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-de,calendar,de,2,7.3,True,ok,tool-ok,Termin eingetragen: **Abstimmung** am 31.07.2026 um 16:00 Uhr mit Julia Meyer ([julia.meyer@example.org](mailto:julia.meyer@example.org)) als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-de,calendar,de,3,7.6,True,ok,tool-ok,Termin erstellt: **Abstimmung** am **31.07.2026 um 16:00 Uhr** mit Teilnehmerin **julia.meyer@example.org**.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-de,calendar,de,4,9.2,True,ok,tool-ok,"Termin eingetragen: **Abstimmung** am 31.07.2026, 16:00–17:00 Uhr, mit Julia Meyer (julia.meyer@example.org) als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-de,calendar,de,5,7.9,True,ok,tool-ok,Termin eingetragen: **Abstimmung** am 31.07.2026 um 16:00 Uhr mit Teilnehmerin julia.meyer@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-de,calendar,de,1,6.9,True,ok,tool-ok,Termin erstellt: **Notiz** am 03.08.2026 um 08:30 Uhr mit dem Vermerk „Ansprechpartner Michael Krause“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-de,calendar,de,2,8.3,True,ok,tool-ok,"Termin „Notiz"" am 03.08.2026 um 08:30 Uhr mit der Beschreibung „Ansprechpartner Michael Krause"" wurde angelegt. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-de,calendar,de,3,7.3,True,ok,tool-ok,Termin erstellt: **Notiz** am 03.08.2026 um 08:30 Uhr mit Beschreibung „Ansprechpartner Michael Krause“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-de,calendar,de,4,7.0,True,ok,tool-ok,"Termin „Notiz"" für den 03.08.2026 um 08:30 Uhr mit der Beschreibung „Ansprechpartner Michael Krause"" ist angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-de,calendar,de,5,7.5,True,ok,tool-ok,"Termin ""Notiz"" am 03.08.2026 um 08:30 Uhr mit der Beschreibung ""Ansprechpartner Michael Krause"" wurde angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-de,calendar,de,1,10.2,True,ok,tool-ok,Termin erstellt: **Call** am 04.08.2026 um 11:15 Uhr mit Thomas Schmidt (thomas.schmidt@example.com) als Teilnehmer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-de,calendar,de,2,7.7,True,ok,tool-ok,"Termin erstellt: **Call** am 04.08.2026, 11:15–12:15 Uhr mit Thomas Schmidt (thomas.schmidt@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-de,calendar,de,3,7.3,True,ok,tool-ok,Termin eingetragen: **Call** am 04.08.2026 um 11:15 Uhr mit Teilnehmer thomas.schmidt@example.com.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-de,calendar,de,4,8.2,True,ok,tool-ok,Termin erstellt: **Call** am 04.08.2026 um 11:15–12:15 Uhr mit Thomas Schmidt (thomas.schmidt@example.com) als Teilnehmer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-de,calendar,de,5,7.4,True,ok,tool-ok,Termin eingetragen: **Call** am 04.08.2026 um 11:15–12:15 Uhr mit Thomas Schmidt (thomas.schmidt@example.com) als Teilnehmer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-de,calendar,de,1,8.5,True,ok,tool-ok,Termin erstellt: **Uebergabe** am 05.08.2026 um 14:45 Uhr mit Beschreibung „Empfaengerin Lisa Wagner“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-de,calendar,de,2,11.8,True,ok,tool-ok,Termin erstellt: **Uebergabe** am 05.08.2026 um 14:45 Uhr mit Lisa Wagner.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-de,calendar,de,3,10.8,True,ok,tool-ok,Termin erstellt: **Uebergabe** am 05.08.2026 um 14:45 Uhr mit Beschreibung „Empfaengerin Lisa Wagner“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-de,calendar,de,4,8.9,True,ok,tool-ok,Termin erstellt: **Uebergabe** am 05.08.2026 um 14:45 Uhr mit Beschreibung „Empfaengerin Lisa Wagner“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-de,calendar,de,5,8.0,True,ok,tool-ok,Termin erstellt: **Uebergabe** am 05.08.2026 um 14:45 Uhr mit Beschreibung „Empfaengerin Lisa Wagner“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-de,calendar,de,1,7.5,True,ok,tool-ok,"Termin erstellt: **Planung** am 06.08.2026, 09:00–10:00 Uhr, mit David Eichel (david.eichel@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-de,calendar,de,2,11.8,True,ok,tool-ok,Termin eingetragen: **Planung** am 06.08.2026 um 09:00 Uhr mit David Eichel (david.eichel@example.com).
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-de,calendar,de,3,9.7,True,ok,tool-ok,Termin eingetragen: **Planung** am 06.08.2026 um 09:00 Uhr mit David Eichel (david.eichel@example.com) als Teilnehmer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-de,calendar,de,4,18.3,True,ok,tool-ok,"Termin eingetragen: **„Planung""** am **06.08.2026 um 09:00 Uhr** mit Teilnehmer david.eichel@example.com."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-de,calendar,de,5,12.5,True,ok,tool-ok,Termin eingetragen: **Planung** am 06.08.2026 um 09:00 Uhr mit David Eichel (david.eichel@example.com) als Teilnehmer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-de,calendar,de,1,7.6,True,ok,tool-ok,"Termin **Besichtigung** am 07.08.2026 um 10:00 Uhr mit Beschreibung „Ort Karlsruhe"" ist angelegt. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-de,calendar,de,2,8.5,True,ok,tool-ok,Termin **Besichtigung** am 07.08.2026 um 10:00 Uhr mit Beschreibung „Ort Karlsruhe“ ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-de,calendar,de,3,8.4,True,ok,tool-ok,Termin **Besichtigung** am 07.08.2026 um 10:00 Uhr mit Beschreibung „Ort Karlsruhe“ ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-de,calendar,de,4,8.6,True,ok,tool-ok,Termin **Besichtigung** am 07.08.2026 um 10:00 Uhr mit Beschreibung „Ort Karlsruhe“ ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-de,calendar,de,5,7.6,True,ok,tool-ok,Termin **Besichtigung** am 07.08.2026 um 10:00 Uhr mit Beschreibung „Ort Karlsruhe“ ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-de,calendar,de,1,9.6,True,ok,tool-ok,Termin eingetragen: **Sync** am 10.08.2026 um 15:00–16:00 Uhr mit Teilnehmer michael.krause@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-de,calendar,de,2,7.5,True,ok,tool-ok,Termin **Sync** eingetragen: 10.08.2026 um 15:00 Uhr mit Teilnehmer michael.krause@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-de,calendar,de,3,30.4,True,ok,tool-ok,Termin erstellt: **Sync** am 10.08.2026 um 15:00 Uhr mit Teilnehmer michael.krause@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-de,calendar,de,4,14.1,True,ok,tool-ok,Termin **Sync** am 10.08.2026 um 15:00–16:00 Uhr mit Teilnehmer [EMAIL_ADDRESS_445793faef225679] ist eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-de,calendar,de,5,8.4,True,ok,tool-ok,Termin eingetragen: **Sync** am 10.08.2026 um 15:00 Uhr mit Teilnehmer michael.krause@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-de,calendar,de,1,10.9,True,ok,tool-ok,"Termin erstellt: **Gespraech** am 11.08.2026, 13:30–14:30 Uhr, mit Teilnehmerin Julia Meyer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-de,calendar,de,2,11.7,True,ok,tool-ok,Termin erstellt: **Gespraech** am 11.08.2026 um 13:30 Uhr mit Julia Meyer. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-de,calendar,de,3,12.5,True,ok,tool-ok,Termin erstellt: **Gespraech** am 11.08.2026 um 13:30 Uhr mit Julia Meyer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-de,calendar,de,4,11.1,True,ok,tool-ok,Termin erstellt: **Gespraech** am 11.08.2026 um 13:30 Uhr mit Julia Meyer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-de,calendar,de,5,13.1,True,ok,tool-ok,Termin erstellt: **Gespraech** am 11.08.2026 um 13:30 Uhr mit Julia Meyer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-de,calendar,de,1,11.0,True,ok,tool-ok,"Termin eingetragen: **Demo** am 12.08.2026, 11:00–12:00 Uhr, mit Anna Berger ([anna.berger@example.org](mailto:anna.berger@example.org)) als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-de,calendar,de,2,17.8,True,ok,tool-ok,"Termin eingetragen: **Demo** am 12.08.2026, 11:00–12:00 Uhr, mit Anna Berger ([EMAIL_ADDRESS_445793faef225679]) als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-de,calendar,de,3,17.5,True,ok,tool-ok,Termin eingetragen: **Demo** am 12.08.2026 um 11:00 Uhr mit Teilnehmerin [EMAIL_ADDRESS_445793faef225679].
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-de,calendar,de,4,15.6,True,ok,tool-ok,Termin **Demo** am 12.08.2026 um 11:00–12:00 Uhr mit Teilnehmerin [EMAIL_ADDRESS_445793faef225679] ist eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-de,calendar,de,5,8.9,True,ok,tool-ok,Termin **Demo** am 12.08.2026 um 11:00 Uhr wurde eingetragen und [anna.berger@example.org](mailto:anna.berger@example.org) ist als Teilnehmerin eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-de,calendar,de,1,20.6,True,ok,tool-ok,Termin erstellt: **Hotline** am 13.08.2026 um 09:45 Uhr mit der Durchwahl +49 30 9876543 in der Beschreibung.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-de,calendar,de,2,9.9,True,ok,tool-ok,Termin **Hotline** am 13.08.2026 um 09:45 Uhr mit der Beschreibung „Durchwahl +49 30 9876543“ ist angelegt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-de,calendar,de,3,7.4,True,ok,tool-ok,Termin **Hotline** am 13.08.2026 um 09:45 Uhr mit der Beschreibung „Durchwahl +49 30 9876543“ ist angelegt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-de,calendar,de,4,8.9,True,ok,tool-ok,Termin erstellt: **Hotline** am 13.08.2026 um 09:45 Uhr mit der Durchwahl +49 30 9876543 in der Beschreibung.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-de,calendar,de,5,10.1,True,ok,tool-ok,Termin **Hotline** am 13.08.2026 um 09:45 Uhr mit der Beschreibung „Durchwahl +49 30 9876543“ ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-de,calendar,de,1,9.4,True,ok,tool-ok,Termin eingetragen: **Abschluss** am 14.08.2026 um 16:30 Uhr mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-de,calendar,de,2,8.5,True,ok,tool-ok,Termin eingetragen: **Abschluss** am 14.08.2026 um 16:30 Uhr mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-de,calendar,de,3,10.3,True,ok,tool-ok,Termin **Abschluss** am 14.08.2026 um 16:30 Uhr mit Lisa Wagner (lisa.wagner@example.net) ist eingetragen. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-de,calendar,de,4,9.9,True,ok,tool-ok,Termin eingetragen: **Abschluss** am 14.08.2026 um 16:30–17:30 Uhr mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-de,calendar,de,5,7.8,True,ok,tool-ok,Termin eingetragen: **Abschluss** am 14.08.2026 um 16:30 Uhr mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-de,calendar,de,1,11.0,True,ok,tool-ok,Termin erstellt: **Kontaktpflege** am 17.08.2026 um 10:15 Uhr mit Beschreibung „Kunde Anna Berger“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-de,calendar,de,2,11.3,True,ok,tool-ok,Termin erstellt: **Kontaktpflege** am 17.08.2026 um 10:15 Uhr mit Beschreibung „Kunde Anna Berger“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-de,calendar,de,3,10.1,True,ok,tool-ok,Termin **Kontaktpflege** für den 17.08.2026 um 10:15 Uhr mit der Beschreibung „Kunde Anna Berger“ ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-de,calendar,de,4,8.8,True,ok,tool-ok,"Termin erstellt: **Kontaktpflege** am 17.08.2026, 10:15–11:15 Uhr mit Beschreibung „Kunde Anna Berger“."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-de,calendar,de,5,9.6,True,ok,tool-ok,Termin **Kontaktpflege** am 17.08.2026 um 10:15 Uhr mit Beschreibung „Kunde Anna Berger“ ist angelegt. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-en,conversation,en,1,3.7,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-en,conversation,en,2,5.1,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-en,conversation,en,3,3.7,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-en,conversation,en,4,8.7,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-01-en,conversation,en,5,3.5,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-en,conversation,en,1,4.3,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-en,conversation,en,2,4.4,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-en,conversation,en,3,5.4,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-en,conversation,en,4,5.6,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-02-en,conversation,en,5,4.1,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-en,conversation,en,1,4.3,True,ok,,"Guten Tag, Frau Anna Berger – ich hoffe, es geht Ihnen gut!"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-en,conversation,en,2,5.1,True,ok,,"Guten Tag, Frau Anna Berger – ich hoffe, es geht Ihnen gut!"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-en,conversation,en,3,5.5,True,ok,,"Guten Tag, Frau Anna Berger – ich hoffe, es geht Ihnen gut!"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-en,conversation,en,4,4.8,True,ok,,"Guten Tag, Frau Anna Berger – ich hoffe, es geht Ihnen gut!"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-03-en,conversation,en,5,4.5,True,ok,,"Good morning, Ms. Anna Berger — I hope your day is off to a wonderful start."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-en,conversation,en,1,5.1,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-en,conversation,en,2,5.0,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-en,conversation,en,3,6.7,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-en,conversation,en,4,4.3,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-04-en,conversation,en,5,4.2,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-en,conversation,en,1,4.3,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-en,conversation,en,2,3.8,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-en,conversation,en,3,3.8,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-en,conversation,en,4,4.0,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-05-en,conversation,en,5,4.7,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-en,conversation,en,1,4.3,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-en,conversation,en,2,3.7,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-en,conversation,en,3,3.8,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-en,conversation,en,4,4.2,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-06-en,conversation,en,5,4.2,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-en,conversation,en,1,4.2,True,ok,,Nordlicht Datentechnik GmbH entwickelt maßgeschneiderte IT-Lösungen für den Mittelstand.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-en,conversation,en,2,4.3,True,ok,,Nordlicht Datentechnik GmbH ist ein Arbeitgeber in der IT-Branche.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-en,conversation,en,3,3.8,True,ok,,Nordlicht Datentechnik GmbH entwickelt innovative Softwarelösungen für den Mittelstand.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-en,conversation,en,4,3.9,True,ok,,Nordlicht Datentechnik GmbH entwickelt innovative Softwarelösungen für den Mittelstand.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-07-en,conversation,en,5,3.9,True,ok,,Nordlicht Datentechnik GmbH ist ein Arbeitgeber in der IT-Branche.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-en,conversation,en,1,4.2,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-en,conversation,en,2,5.3,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-en,conversation,en,3,4.1,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-en,conversation,en,4,4.5,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-08-en,conversation,en,5,4.1,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-en,conversation,en,1,4.1,True,ok,,Ich habe Michael Krause als Kontaktperson mit der Mobilnummer +49 151 22233344 in USER.md vermerkt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-en,conversation,en,2,4.1,True,ok,,Ich habe Michael Krause als Kontaktperson mit der Mobilnummer +49 151 22233344 in USER.md vermerkt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-en,conversation,en,3,4.0,True,ok,,Ich habe Michael Krause als Kontaktperson mit der Mobilnummer +49 151 22233344 in USER.md vermerkt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-en,conversation,en,4,4.4,True,ok,,Ich habe Michael Krause als meinen Nutzer mit der Mobilnummer +49 151 22233344 in der USER.md vermerkt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-09-en,conversation,en,5,4.1,True,ok,,Ich habe Michael Krause als Kontaktperson mit der Mobilnummer +49 151 22233344 in USER.md vermerkt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-en,conversation,en,1,15.4,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-en,conversation,en,2,7.4,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-en,conversation,en,3,8.1,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-en,conversation,en,4,5.8,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-10-en,conversation,en,5,4.6,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-en,conversation,en,1,5.1,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-en,conversation,en,2,5.8,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-en,conversation,en,3,5.4,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-en,conversation,en,4,5.9,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-11-en,conversation,en,5,5.2,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-en,conversation,en,1,14.4,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-en,conversation,en,2,10.3,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-en,conversation,en,3,11.1,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-en,conversation,en,4,4.2,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-12-en,conversation,en,5,15.0,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-en,conversation,en,1,10.8,True,ok,,Lisa Wagner ist als Teilnehmerin registriert.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-en,conversation,en,2,6.8,True,ok,,Lisa Wagner ist als Teilnehmerin registriert.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-en,conversation,en,3,20.8,True,ok,,Lisa Wagner ist als Teilnehmerin registriert.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-en,conversation,en,4,7.5,True,ok,,Lisa Wagner ist als Teilnehmerin registriert.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-13-en,conversation,en,5,5.0,True,ok,,Lisa Wagner ist als Teilnehmerin registriert.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-en,conversation,en,1,4.5,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-en,conversation,en,2,5.3,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-en,conversation,en,3,6.3,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-en,conversation,en,4,4.9,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-14-en,conversation,en,5,4.3,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-en,conversation,en,1,6.6,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-en,conversation,en,2,4.6,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-en,conversation,en,3,4.5,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-en,conversation,en,4,4.6,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-15-en,conversation,en,5,6.6,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-en,conversation,en,1,3.6,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-en,conversation,en,2,3.9,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-en,conversation,en,3,4.1,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-en,conversation,en,4,4.7,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-16-en,conversation,en,5,5.0,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-en,conversation,en,1,6.5,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-en,conversation,en,2,4.7,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-en,conversation,en,3,6.5,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-en,conversation,en,4,4.9,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-17-en,conversation,en,5,11.3,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-en,conversation,en,1,6.9,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-en,conversation,en,2,5.5,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-en,conversation,en,3,5.9,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-en,conversation,en,4,6.4,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-18-en,conversation,en,5,4.9,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-en,conversation,en,1,10.6,True,ok,,"Ich kann nicht bestätigen, dass Thomas Schmidt der Projektleiter ist – ich habe keine Informationen darüber in meinen Unterlagen und die Speichersuche ist derzeit nicht verfügbar."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-en,conversation,en,2,8.5,True,ok,,"Ich kann das nicht bestätigen — ich habe keine Informationen über Thomas Schmidt als Projektleiter in meinen Unterlagen, und meine Speichersuche ist derzeit nicht verfügbar."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-en,conversation,en,3,11.1,True,ok,,"Ich kann das nicht bestätigen — ich habe keine Informationen über Thomas Schmidt als Projektleiter in meinen Unterlagen, und meine Speichersuche ist derzeit nicht verfügbar."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-en,conversation,en,4,10.3,True,ok,,"Ich kann nicht bestätigen, dass Thomas Schmidt der Projektleiter ist – ich habe keine entsprechenden Informationen in meinen Unterlagen gefunden."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-19-en,conversation,en,5,12.0,True,ok,,Ich kann das nicht bestätigen – in meinen verfügbaren Unterlagen finde ich keinen Eintrag zu Thomas Schmidt als Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-en,conversation,en,1,5.2,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-en,conversation,en,2,6.2,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-en,conversation,en,3,7.3,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-en,conversation,en,4,4.5,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,conv-20-en,conversation,en,5,7.2,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-en,email,en,1,6.6,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Status update""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-en,email,en,2,28.3,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Status update""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-en,email,en,3,8.5,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Status update""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-en,email,en,4,17.1,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Status update""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-01-en,email,en,5,10.6,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Status update""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-en,email,en,1,10.2,True,ok,wrong-tool: send_mail,Erledigt. Die Erinnerung wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-en,email,en,2,10.0,True,ok,wrong-tool: send_mail,Erledigt. Die Erinnerung wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-en,email,en,3,9.1,True,ok,wrong-tool: send_mail,Done. Die Erinnerung wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-en,email,en,4,7.1,True,ok,wrong-tool: send_mail,Done. Die Erinnerung wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-02-en,email,en,5,6.8,True,ok,wrong-tool: send_mail,Erledigt. Die Erinnerung wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-en,email,en,1,6.6,True,ok,wrong-tool: send_mail,Die E-Mail wurde an michael.krause@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-en,email,en,2,6.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde gesendet an michael.krause@example.net mit Betreff „Offer""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-en,email,en,3,9.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff: „Offer"", Text: „Please find our offer attached."""
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-en,email,en,4,6.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde gesendet an michael.krause@example.net mit Betreff „Offer""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-03-en,email,en,5,15.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff: „Offer"", Inhalt: „Please find our offer attached."""
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-en,email,en,1,6.1,True,ok,wrong-tool: send_mail,"Done. Email sent to lisa.wagner@example.net with subject ""Question""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-en,email,en,2,16.4,True,ok,wrong-tool: send_mail,"Done. Email sent to lisa.wagner@example.net with subject ""Question""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-en,email,en,3,7.9,True,ok,wrong-tool: send_mail,Done. Die E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-en,email,en,4,6.0,True,ok,wrong-tool: send_mail,"Done. Email sent to lisa.wagner@example.net with subject ""Question""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-04-en,email,en,5,9.7,True,ok,wrong-tool: send_mail,"Done. Email sent to lisa.wagner@example.net with subject ""Question""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-en,email,en,1,5.5,True,ok,wrong-tool: send_mail,"Done. Email sent to thomas.schmidt@example.com with subject ""Minutes""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-en,email,en,2,5.9,True,ok,wrong-tool: send_mail,"Done. Email sent to thomas.schmidt@example.com with subject ""Minutes""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-en,email,en,3,8.5,True,ok,wrong-tool: send_mail,"Done. Email sent to thomas.schmidt@example.com with subject ""Minutes""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-en,email,en,4,8.9,True,ok,wrong-tool: send_mail,"Done. Email sent to thomas.schmidt@example.com with subject ""Minutes""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-05-en,email,en,5,9.0,True,ok,wrong-tool: send_mail,"Done. Email sent to thomas.schmidt@example.com with subject ""Minutes""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-en,email,en,1,6.5,True,ok,wrong-tool: send_mail,"Done. Email sent to julia.meyer@example.org with subject ""Appointment""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-en,email,en,2,7.1,True,ok,wrong-tool: send_mail,"Done. Email sent to julia.meyer@example.org with subject ""Appointment""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-en,email,en,3,7.3,True,ok,wrong-tool: send_mail,"Done. Email sent to julia.meyer@example.org with subject ""Appointment""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-en,email,en,4,6.4,True,ok,wrong-tool: send_mail,"Done. Email sent to julia.meyer@example.org with subject ""Appointment""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-06-en,email,en,5,12.3,True,ok,wrong-tool: send_mail,"Done. Email sent to julia.meyer@example.org with subject ""Appointment""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-en,email,en,1,8.2,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Greeting"" and warm regards from Anna Berger included."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-en,email,en,2,6.7,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Greeting"" and Anna Bergers warm regards included."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-en,email,en,3,7.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an david.eichel@example.com gesendet – Betreff „Greeting“, mit Grüßen von Anna Berger im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-en,email,en,4,9.0,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Greeting"" and warm regards from Anna Berger included."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-07-en,email,en,5,7.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an david.eichel@example.com gesendet – mit Betreff „Greeting"" und Anna Bergers herzlichen Grüßen im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-en,email,en,1,9.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff „Callback“, inklusive der Rückrufnummer +49 721 1234567."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-en,email,en,2,9.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff „Callback“, mit der Rückrufnummer +49 721 1234567 im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-en,email,en,3,10.9,True,ok,wrong-tool: send_mail,Mail ist raus an michael.krause@example.net mit Betreff „Callback“ und der Rückrufnummer +49 721 1234567.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-en,email,en,4,6.6,True,ok,wrong-tool: send_mail,Email gesendet an michael.krause@example.net mit Betreff „Callback“ und der Rückrufnummer +49 721 1234567.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-08-en,email,en,5,7.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff „Callback“, mit der Rückrufnummer +49 721 1234567 im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-en,email,en,1,6.5,True,ok,wrong-tool: send_mail,Email sent to anna.berger@example.org with the IBAN details.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-en,email,en,2,12.9,True,ok,wrong-tool: send_mail,Done. Email sent to anna.berger@example.org with the IBAN details.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-en,email,en,3,6.7,True,ok,wrong-tool: send_mail,"Done. Die E-Mail mit dem Betreff „Bank details"" und der IBAN DE89 3704 0044 0532 0130 00 wurde an anna.berger@example.org gesendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-en,email,en,4,17.8,True,ok,wrong-tool: send_mail,Email sent to anna.berger@example.org with the IBAN details.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-09-en,email,en,5,6.7,True,ok,wrong-tool: send_mail,Done. Die E-Mail mit den Bankdaten wurde an anna.berger@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-en,email,en,1,8.9,True,ok,wrong-tool: send_mail,"Email sent to info@example.net with subject ""Inquiry""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-en,email,en,2,6.9,True,ok,wrong-tool: send_mail,"Done. Email sent to info@example.net with subject ""Inquiry""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-en,email,en,3,7.1,True,ok,wrong-tool: send_mail,"Done. Email sent to info@example.net with subject ""Inquiry""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-en,email,en,4,9.5,True,ok,wrong-tool: send_mail,"Done. Email sent to `info@example.net` with subject ""Inquiry""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-10-en,email,en,5,8.4,True,ok,wrong-tool: send_mail,Done. Die E-Mail wurde an info@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-en,email,en,1,6.0,True,ok,wrong-tool: send_mail,Done. Die E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-en,email,en,2,7.9,True,ok,wrong-tool: send_mail,"Done. Die E-Mail mit dem Betreff „Invitation"" wurde an lisa.wagner@example.net gesendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-en,email,en,3,6.4,True,ok,wrong-tool: send_mail,Done. Die Einladung wurde an lisa.wagner@example.net verschickt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-en,email,en,4,7.2,True,ok,wrong-tool: send_mail,Die E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-11-en,email,en,5,6.1,True,ok,wrong-tool: send_mail,Done. Die E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-en,email,en,1,11.8,True,ok,wrong-tool: send_mail,Done. Die E-Mail wurde an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-en,email,en,2,8.3,True,ok,wrong-tool: send_mail,Die E-Mail wurde an david.eichel@example.com gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-en,email,en,3,9.6,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Document""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-en,email,en,4,7.2,True,ok,wrong-tool: send_mail,"Email sent to david.eichel@example.com with subject ""Document""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-12-en,email,en,5,6.2,True,ok,wrong-tool: send_mail,"Email sent to david.eichel@example.com with subject ""Document""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-en,email,en,1,6.3,True,ok,wrong-tool: send_mail,Done. Email sent to anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-en,email,en,2,6.1,True,ok,wrong-tool: send_mail,Done. Email sent to anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-en,email,en,3,6.4,True,ok,wrong-tool: send_mail,"Done. Email sent to anna.berger@example.org with subject ""Follow-up""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-en,email,en,4,9.6,True,ok,wrong-tool: send_mail,"Email sent to anna.berger@example.org with subject ""Follow-up""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-13-en,email,en,5,6.7,True,ok,wrong-tool: send_mail,Done. Email sent to anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-en,email,en,1,9.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an support@example.net gesendet – Betreff: „Issue"", Inhalt: „Please help with the login."""
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-en,email,en,2,7.3,True,ok,wrong-tool: send_mail,"Done. Email sent to support@example.net with subject ""Issue""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-en,email,en,3,8.7,True,ok,wrong-tool: send_mail,"Done. Email sent to support@example.net with subject ""Issue""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-en,email,en,4,10.2,True,ok,wrong-tool: send_mail,"Done. Email sent to `support@example.net` with subject ""Issue""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-14-en,email,en,5,11.7,True,ok,wrong-tool: send_mail,"Done. Email sent to `support@example.net` with subject ""Issue""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-en,email,en,1,15.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff „Contact"", mit Erwähnung von Thomas Schmidt im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-en,email,en,2,13.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff „Contact"", mit Erwähnung von Thomas Schmidt im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-en,email,en,3,6.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff „Contact“, mit Erwähnung von Thomas Schmidt im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-en,email,en,4,6.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff „Contact“, mit Erwähnung von Thomas Schmidt im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-15-en,email,en,5,8.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde an michael.krause@example.net gesendet – Betreff „Contact"", mit Erwähnung von Thomas Schmidt im Text."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-en,email,en,1,9.2,True,ok,wrong-tool: send_mail,Done. Die E-Mail wurde an julia.meyer@example.org gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-en,email,en,2,6.4,True,ok,wrong-tool: send_mail,"Done. Die E-Mail an julia.meyer@example.org mit dem Betreff „Address"" wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-en,email,en,3,15.8,True,ok,wrong-tool: send_mail,"Done. Die E-Mail an julia.meyer@example.org mit Betreff „Address"" wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-en,email,en,4,16.8,True,ok,wrong-tool: send_mail,"Done. Email sent to julia.meyer@example.org with subject ""Address""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-16-en,email,en,5,15.0,True,ok,wrong-tool: send_mail,"Email sent to julia.meyer@example.org with subject ""Address""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-en,email,en,1,14.2,True,ok,wrong-tool: send_mail,"Email sent to thomas.schmidt@example.com with subject ""Server""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-en,email,en,2,11.7,True,ok,wrong-tool: send_mail,"Email sent to thomas.schmidt@example.com with subject ""Server""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-en,email,en,3,13.8,True,ok,wrong-tool: send_mail,"Email sent to thomas.schmidt@example.com with subject ""Server""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-en,email,en,4,13.2,True,ok,wrong-tool: send_mail,"Done. Email sent to thomas.schmidt@example.com with subject ""Server""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-17-en,email,en,5,15.4,True,ok,wrong-tool: send_mail,"Done. Email sent to thomas.schmidt@example.com with subject ""Server""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-en,email,en,1,33.8,True,ok,wrong-tool: send_mail,"Email sent to lisa.wagner@example.net with subject ""Meeting""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-en,email,en,2,12.0,True,ok,wrong-tool: send_mail,Done. Email sent to lisa.wagner@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-en,email,en,3,11.2,True,ok,wrong-tool: send_mail,"Done. Email sent to lisa.wagner@example.net with subject ""Meeting""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-en,email,en,4,8.2,True,ok,wrong-tool: send_mail,Done. Die E-Mail wurde an lisa.wagner@example.net gesendet.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-18-en,email,en,5,12.2,True,ok,wrong-tool: send_mail,Done. Email sent to lisa.wagner@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-en,email,en,1,13.1,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Approval""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-en,email,en,2,10.2,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Approval""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-en,email,en,3,8.8,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Approval""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-en,email,en,4,10.9,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Approval""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-19-en,email,en,5,11.7,True,ok,wrong-tool: send_mail,"Done. Email sent to david.eichel@example.com with subject ""Approval""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-en,email,en,1,15.4,True,ok,wrong-tool: send_mail,Done. Email sent to anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-en,email,en,2,9.1,True,ok,wrong-tool: send_mail,Done. Email sent to anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-en,email,en,3,7.8,True,ok,wrong-tool: send_mail,Email sent to anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-en,email,en,4,11.3,True,ok,wrong-tool: send_mail,Done. Email sent to anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,mail-20-en,email,en,5,10.0,True,ok,wrong-tool: send_mail,Done. Email sent to anna.berger@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-en,calendar,en,1,13.3,True,ok,tool-ok,"Termin erstellt: **Project meeting** am 20. Juli 2026, 10:00–11:00 Uhr, mit David Eichel (david.eichel@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-en,calendar,en,2,21.8,True,ok,tool-ok,"Termin erstellt: **Project meeting** am 20.07.2026, 10:00–11:00 Uhr, mit David Eichel (david.eichel@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-en,calendar,en,3,12.9,True,ok,tool-ok,"Der Termin **""Project meeting""** wurde erstellt:
+
+- **Datum:** 20. Juli 2026, 10:00–11:00 Uhr
+- **Teilnehmer:** david.eichel@example.com
+- **UID:** controlgroup-1784721973508@exp.rq2.local"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-en,calendar,en,4,9.5,True,ok,tool-ok,"Termin erstellt: **Project meeting** am 20.07.2026, 10:00–11:00 Uhr, mit David Eichel (david.eichel@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-01-en,calendar,en,5,12.2,True,ok,tool-ok,"Termin erstellt: **Project meeting** am 20.07.2026, 10:00–11:00 Uhr, mit David Eichel (david.eichel@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-en,calendar,en,1,8.6,True,ok,tool-ok,Termin erstellt: **Dentist** am 22.07.2026 um 09:30 Uhr mit Beschreibung „Patient Anna Berger“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-en,calendar,en,2,8.1,True,ok,tool-ok,Termin erstellt: **Dentist** am 22.07.2026 um 09:30 Uhr mit Beschreibung „Patient Anna Berger“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-en,calendar,en,3,8.0,True,ok,tool-ok,"Termin „Dentist"" für den 22.07.2026 um 09:30 Uhr mit der Beschreibung „Patient Anna Berger"" wurde erstellt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-en,calendar,en,4,8.3,True,ok,tool-ok,Termin erstellt: **Dentist** am 22.07.2026 um 09:30 Uhr mit Beschreibung „Patient Anna Berger“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-02-en,calendar,en,5,9.0,True,ok,tool-ok,"Termin „Dentist"" für den 22.07.2026 um 09:30 mit der Beschreibung „Patient Anna Berger"" ist angelegt. 🔷"
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-en,calendar,en,1,8.2,True,ok,tool-ok,Erledigt. Der Termin **Kickoff** wurde für den 23. Juli 2026 um 14:00 Uhr erstellt und [michael.krause@example.net] ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-en,calendar,en,2,8.0,True,ok,tool-ok,Erledigt. Der Termin **Kickoff** wurde für den **23. Juli 2026 um 14:00 Uhr** angelegt und **michael.krause@example.net** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-en,calendar,en,3,17.8,True,ok,tool-ok,"Erledigt. Der Termin **Kickoff** wurde für den **23. Juli 2026 um 14:00 Uhr** angelegt, mit michael.krause@example.net als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-en,calendar,en,4,10.8,True,ok,tool-ok,Termin erstellt: **Kickoff** am 23.07.2026 um 14:00 Uhr mit Teilnehmer michael.krause@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-03-en,calendar,en,5,9.0,True,ok,tool-ok,Erledigt. Der Termin **Kickoff** wurde für den 23. Juli 2026 um 14:00 Uhr angelegt und [michael.krause@example.net] ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-en,calendar,en,1,10.2,True,ok,tool-ok,Erledigt. Termin **Callback** am 24.07.2026 um 11:00 Uhr mit der Nummer +49 721 1234567 in der Beschreibung ist angelegt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-en,calendar,en,2,8.3,True,ok,tool-ok,Termin erstellt: **Callback** am 24.07.2026 um 11:00 Uhr mit der Nummer +49 721 1234567 in der Beschreibung.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-en,calendar,en,3,10.5,True,ok,tool-ok,"Erledigt. Der Termin „Callback"" wurde für den 24. Juli 2026 um 11:00 Uhr mit der Beschreibung „Number +49 721 1234567"" angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-en,calendar,en,4,8.4,True,ok,tool-ok,"Termin ""Callback"" für den 24.07.2026 um 11:00 Uhr wurde erstellt – inklusive der Nummer +49 721 1234567 in der Beschreibung."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-04-en,calendar,en,5,8.5,True,ok,tool-ok,Done. Der Termin **Callback** wurde für den 24. Juli 2026 um 11:00 Uhr mit der Beschreibung *Number +49 721 1234567* angelegt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-en,calendar,en,1,19.7,True,ok,tool-ok,"Workshop erstellt: **Montag, 27. Juli 2026, 09:00–11:00** mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-en,calendar,en,2,9.8,True,ok,tool-ok,"Erledigt. Der Termin **Workshop** wurde für den **27. Juli 2026, 09:00–11:00** erstellt und **lisa.wagner@example.net** ist als Teilnehmerin eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-en,calendar,en,3,10.3,True,ok,tool-ok,"Erledigt. Der **Workshop** ist für **27. Juli 2026, 09:00–11:00 Uhr** eingetragen und **lisa.wagner@example.net** ist als Teilnehmerin eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-en,calendar,en,4,12.6,True,ok,tool-ok,"Workshop steht: **27. Juli 2026, 09:00–11:00**, mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin. Ist eingetragen."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-05-en,calendar,en,5,11.6,True,ok,tool-ok,"Erledigt. 🔷
+
+**Workshop** am **27. Juli 2026, 09:00–11:00** mit Lisa Wagner ([EMAIL_ADDRESS_445793faef225679]) als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-en,calendar,en,1,9.7,True,ok,tool-ok,Termin erstellt: **Interview** am 28. Juli 2026 um 15:30 Uhr mit Beschreibung „Candidate Thomas Schmidt“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-en,calendar,en,2,10.8,True,ok,tool-ok,Termin erstellt: **Interview** am 28. Juli 2026 um 15:30 Uhr mit dem Beschreibungstext „Candidate Thomas Schmidt“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-en,calendar,en,3,11.9,True,ok,tool-ok,Termin erstellt: **Interview** am 28. Juli 2026 um 15:30 Uhr mit dem Vermerk „Candidate Thomas Schmidt“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-en,calendar,en,4,11.0,True,ok,tool-ok,"Termin erstellt: **Interview** am 28. Juli 2026 um 15:30 Uhr mit dem Vermerk „Candidate Thomas Schmidt""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-06-en,calendar,en,5,23.0,True,ok,tool-ok,"Termin erstellt: **Interview** am 28. Juli 2026, 15:30–16:30 Uhr, mit Beschreibung „Candidate Thomas Schmidt“."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-en,calendar,en,1,13.4,True,ok,tool-ok,Termin erstellt: **Review** am 29. Juli 2026 um 13:00 Uhr mit [anna.berger@example.org] als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-en,calendar,en,2,10.9,True,ok,tool-ok,Termin erstellt: **Review** am 29. Juli 2026 um 13:00 Uhr mit [anna.berger@example.org] als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-en,calendar,en,3,8.2,False,attendee 'anna.berger@example.org' missing in event,tool-ok,Termin erstellt: **Review** am 29. Juli 2026 um 13:00 Uhr mit [EMAIL_ADDRESS_445793faef225679] als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-en,calendar,en,4,8.5,True,ok,tool-ok,Termin erstellt: **Review** am 29. Juli 2026 um 13:00 Uhr mit [anna.berger@example.org] als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-07-en,calendar,en,5,34.0,True,ok,tool-ok,Erledigt. Der Termin **Review** wurde für den **29. Juli 2026 um 13:00 Uhr** erstellt und [anna.berger@example.org] ist als Teilnehmerin eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-en,calendar,en,1,8.1,True,ok,tool-ok,"Termin ""Billing"" erstellt: **30. Juli 2026, 10:30 Uhr** mit der IBAN im Beschreibungstext."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-en,calendar,en,2,8.8,True,ok,tool-ok,"Termin **Billing** erstellt: 30. Juli 2026, 10:30 Uhr, mit der angegebenen IBAN in der Beschreibung."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-en,calendar,en,3,13.3,True,ok,tool-ok,"Termin ""Billing"" am 30.07.2026 um 10:30 Uhr mit der IBAN im Beschreibungstext ist eingetragen."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-en,calendar,en,4,16.4,True,ok,tool-ok,"Termin „Billing"" für den 30.07.2026 um 10:30 Uhr mit der IBAN-Beschreibung ist angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-08-en,calendar,en,5,7.9,True,ok,tool-ok,"Termin ""Billing"" erstellt: **30. Juli 2026, 10:30 Uhr** mit der IBAN in der Beschreibung."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-en,calendar,en,1,11.4,True,ok,tool-ok,Termin erstellt: **Coordination** am 31. Juli 2026 um 16:00 Uhr mit Teilnehmerin julia.meyer@example.org.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-en,calendar,en,2,8.4,True,ok,tool-ok,Termin erstellt: **Coordination** am 31. Juli 2026 um 16:00 Uhr mit julia.meyer@example.org als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-en,calendar,en,3,18.6,True,ok,tool-ok,Erledigt. Der Termin **Coordination** wurde für den **31. Juli 2026 um 16:00** erstellt und **julia.meyer@example.org** ist als Teilnehmerin eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-en,calendar,en,4,8.6,True,ok,tool-ok,Termin erstellt: **Coordination** am 31. Juli 2026 um 16:00 Uhr mit Julia Meyer (julia.meyer@example.org) als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-09-en,calendar,en,5,9.6,True,ok,tool-ok,Termin erstellt: **Coordination** am 31. Juli 2026 um 16:00 Uhr mit julia.meyer@example.org als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-en,calendar,en,1,7.6,True,ok,tool-ok,Erledigt. Der Termin „Note“ wurde für den **3. August 2026 um 08:30** mit der Beschreibung „Contact person Michael Krause“ angelegt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-en,calendar,en,2,7.6,True,ok,tool-ok,Termin erstellt: **Note** am 03.08.2026 um 08:30 Uhr mit dem Beschreibungstext „Contact person Michael Krause“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-en,calendar,en,3,15.8,True,ok,tool-ok,"Erledigt. Der Termin **""Note""** wurde für **03.08.2026 um 08:30** mit der Beschreibung ""Contact person Michael Krause"" angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-en,calendar,en,4,20.9,True,ok,tool-ok,"Erledigt. Der Termin „Note"" wurde für den 03.08.2026 um 08:30 Uhr mit der Beschreibung „Contact person Michael Krause"" angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-10-en,calendar,en,5,8.3,True,ok,tool-ok,"Erledigt. Der Termin **Note** wurde für den **3. August 2026 um 08:30** mit der Beschreibung „Contact person Michael Krause"" angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-en,calendar,en,1,12.0,True,ok,tool-ok,Erledigt. Der Termin **Call** wurde für den **04.08.2026 um 11:15** erstellt und **thomas.schmidt@example.com** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-en,calendar,en,2,23.4,True,ok,tool-ok,Erledigt. Der Termin **Call** wurde für den **04.08.2026 um 11:15** erstellt und **thomas.schmidt@example.com** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-en,calendar,en,3,9.9,True,ok,tool-ok,"Erledigt. Der Termin **""Call""** wurde für den **04.08.2026 um 11:15** erstellt und **thomas.schmidt@example.com** ist als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-en,calendar,en,4,9.8,True,ok,tool-ok,Erledigt. Der Termin **Call** wurde für den **04.08.2026 um 11:15** erstellt und **thomas.schmidt@example.com** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-11-en,calendar,en,5,9.8,True,ok,tool-ok,Erledigt. Der Termin **Call** wurde für den **04.08.2026 um 11:15** angelegt und **thomas.schmidt@example.com** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-en,calendar,en,1,7.8,True,ok,tool-ok,Termin erstellt: **Handover** am 05.08.2026 um 14:45 Uhr mit dem Vermerk „Recipient Lisa Wagner“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-en,calendar,en,2,8.7,True,ok,tool-ok,Termin „Handover“ am 05.08.2026 um 14:45 Uhr mit Beschreibung „Recipient Lisa Wagner“ wurde erstellt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-en,calendar,en,3,8.1,True,ok,tool-ok,"Termin „Handover"" erstellt: **5. August 2026, 14:45 Uhr** mit Beschreibung „Recipient Lisa Wagner""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-en,calendar,en,4,9.1,True,ok,tool-ok,"Termin „Handover"" erstellt: **05.08.2026, 14:45–15:45 Uhr** mit Beschreibung „Recipient Lisa Wagner""."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-12-en,calendar,en,5,11.4,True,ok,tool-ok,"Termin erstellt: **Handover** am 5. August 2026 um 14:45 Uhr, mit dem Vermerk „Recipient Lisa Wagner“ in der Beschreibung."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-en,calendar,en,1,7.8,True,ok,tool-ok,Erledigt. Der Termin **Planning** wurde für den **6. August 2026 um 09:00** angelegt und **david.eichel@example.com** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-en,calendar,en,2,8.5,True,ok,tool-ok,Termin erstellt: **Planning** am **6. August 2026 um 09:00** mit David Eichel (david.eichel@example.com) als Teilnehmer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-en,calendar,en,3,8.4,True,ok,tool-ok,Erledigt. Der Termin **Planning** wurde für den **6. August 2026 um 09:00** angelegt und **david.eichel@example.com** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-en,calendar,en,4,8.0,True,ok,tool-ok,Erledigt. Der Termin **Planning** wurde für den **6. August 2026 um 09:00** angelegt und **david.eichel@example.com** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-13-en,calendar,en,5,8.3,True,ok,tool-ok,"Termin erstellt: **Planning** am 06.08.2026, 09:00–10:00 Uhr, mit David Eichel (david.eichel@example.com) als Teilnehmer."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-en,calendar,en,1,7.6,True,ok,tool-ok,"Termin erstellt: **Viewing** am 07.08.2026 um 10:00 Uhr, Location Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-en,calendar,en,2,9.8,True,ok,tool-ok,Done. Der Termin **Viewing** am 07.08.2026 um 10:00 Uhr mit Beschreibung „Location Karlsruhe“ ist angelegt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-en,calendar,en,3,10.4,True,ok,tool-ok,Done. Der Termin **Viewing** am 07.08.2026 um 10:00 Uhr mit Beschreibung „Location Karlsruhe“ ist angelegt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-en,calendar,en,4,7.5,True,ok,tool-ok,"Erledigt. Der Termin **Viewing** wurde für den **7. August 2026 um 10:00 Uhr** mit der Beschreibung „Location Karlsruhe"" angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-14-en,calendar,en,5,9.7,True,ok,tool-ok,Done. Termin „Viewing“ am 07.08.2026 um 10:00 Uhr mit Beschreibung „Location Karlsruhe“ ist angelegt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-en,calendar,en,1,9.3,True,ok,tool-ok,Termin erstellt: **Sync** am 10. August 2026 um 15:00 Uhr mit Teilnehmer michael.krause@example.net.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-en,calendar,en,2,8.0,True,ok,tool-ok,Termin erstellt: **Sync** am 10. August 2026 um 15:00 Uhr mit [michael.krause@example.net] als Teilnehmer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-en,calendar,en,3,8.9,True,ok,tool-ok,Erledigt. Der Termin **Sync** wurde für den **10. August 2026 um 15:00** erstellt und **michael.krause@example.net** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-en,calendar,en,4,8.0,True,ok,tool-ok,Erledigt. Der Termin **Sync** wurde für den **10. August 2026 um 15:00 Uhr** erstellt und **michael.krause@example.net** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-15-en,calendar,en,5,10.3,True,ok,tool-ok,Erledigt. Der Termin **Sync** wurde für den **10. August 2026 um 15:00** erstellt und **michael.krause@example.net** ist als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-en,calendar,en,1,7.6,True,ok,tool-ok,Erledigt. Der Termin „Conversation“ wurde für den 11. August 2026 um 13:30 Uhr mit dem Beschreibungstext „Participant Julia Meyer“ angelegt.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-en,calendar,en,2,7.7,True,ok,tool-ok,Termin erstellt: **Conversation** am 11. August 2026 um 13:30 mit Julia Meyer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-en,calendar,en,3,8.2,True,ok,tool-ok,Termin erstellt: **Conversation** am 11. August 2026 um 13:30 Uhr mit Julia Meyer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-en,calendar,en,4,9.1,True,ok,tool-ok,Termin erstellt: **Conversation** am 11. August 2026 um 13:30 Uhr mit Julia Meyer.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-16-en,calendar,en,5,7.3,True,ok,tool-ok,"Termin ""Conversation"" am 11. August 2026 um 13:30 Uhr mit Julia Meyer ist eingetragen."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-en,calendar,en,1,9.1,True,ok,tool-ok,"Termin **Demo** erstellt: 12. August 2026, 11:00–12:00 Uhr, mit [anna.berger@example.org] als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-en,calendar,en,2,7.7,True,ok,tool-ok,Termin erstellt: **Demo** am 12. August 2026 um 11:00 Uhr mit [anna.berger@example.org] als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-en,calendar,en,3,8.2,True,ok,tool-ok,Termin erstellt: **Demo** am 12. August 2026 um 11:00 Uhr mit [anna.berger@example.org](mailto:anna.berger@example.org) als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-en,calendar,en,4,8.9,True,ok,tool-ok,Erledigt. Der Termin **Demo** wurde für den **12. August 2026 um 11:00 Uhr** erstellt und [anna.berger@example.org] ist als Teilnehmerin eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-17-en,calendar,en,5,9.0,True,ok,tool-ok,"Termin erstellt: **Demo** am 12. August 2026, 11:00–12:00 Uhr, mit [anna.berger@example.org] als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-en,calendar,en,1,9.0,True,ok,tool-ok,"Termin ""Hotline"" für den 13. August 2026 um 09:45 Uhr mit der Beschreibung ""Extension +49 30 9876543"" wurde erstellt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-en,calendar,en,2,7.7,True,ok,tool-ok,Termin erstellt: **Hotline** am 13. August 2026 um 09:45 Uhr mit der Beschreibung „Extension +49 30 9876543“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-en,calendar,en,3,8.3,True,ok,tool-ok,"Termin **Hotline** erstellt: 13. August 2026, 09:45–10:45 Uhr, mit der Beschreibung „Extension +49 30 9876543“."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-en,calendar,en,4,8.9,True,ok,tool-ok,Termin **Hotline** für den 13. August 2026 um 09:45 Uhr wurde erstellt – inklusive der Beschreibung „Extension +49 30 9876543“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-18-en,calendar,en,5,7.9,True,ok,tool-ok,Termin **Hotline** am 13. August 2026 um 09:45 Uhr wurde erstellt – inklusive der Beschreibung „Extension +49 30 9876543“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-en,calendar,en,1,8.5,True,ok,tool-ok,Erledigt. Der Termin **Closing** am **14. August 2026 um 16:30** wurde angelegt und [lisa.wagner@example.net](mailto:lisa.wagner@example.net) ist als Teilnehmerin eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-en,calendar,en,2,9.3,True,ok,tool-ok,Termin erstellt: **Closing** am **14. August 2026 um 16:30** mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-en,calendar,en,3,17.2,True,ok,tool-ok,Erledigt. Der Termin **Closing** wurde für den **14. August 2026 um 16:30** erstellt und [EMAIL_ADDRESS_445793faef225679] ist als Teilnehmerin eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-en,calendar,en,4,8.5,True,ok,tool-ok,"Termin erstellt: **Closing** am **14. August 2026, 16:30 Uhr** mit Lisa Wagner (lisa.wagner@example.net) als Teilnehmerin."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-19-en,calendar,en,5,9.6,False,attendee 'lisa.wagner@example.net' missing in event,tool-ok,Termin erstellt: **Closing** am 14. August 2026 um 16:30 Uhr mit Lisa Wagner ([EMAIL_ADDRESS_445793faef225679]) als Teilnehmerin. 🔷
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-en,calendar,en,1,7.8,True,ok,tool-ok,Termin erstellt: **Contact care** am 17. August 2026 um 10:15 Uhr mit Beschreibung „Customer Anna Berger“.
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-en,calendar,en,2,8.4,True,ok,tool-ok,"Erledigt. Der Termin **Contact care** wurde für den 17. August 2026 um 10:15 Uhr mit der Beschreibung „Customer Anna Berger"" angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-en,calendar,en,3,7.9,True,ok,tool-ok,"Erledigt. Der Termin **Contact care** wurde für den 17. August 2026 um 10:15 Uhr mit der Beschreibung „Customer Anna Berger"" angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-en,calendar,en,4,10.0,True,ok,tool-ok,"Erledigt. Der Termin **Contact care** wurde für den **17. August 2026 um 10:15 Uhr** mit der Beschreibung „Customer Anna Berger"" angelegt."
+exp-rq2-experimentalgroup,privacyproxy/deepseek-v4-pro:cloud,cal-20-en,calendar,en,5,7.8,True,ok,tool-ok,Termin erstellt: **Contact care** am 17. August 2026 um 10:15 Uhr mit der Beschreibung „Customer Anna Berger“.

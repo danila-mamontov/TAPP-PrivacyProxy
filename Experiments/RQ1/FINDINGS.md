@@ -1,0 +1,6 @@
+### First DSR pass
+- in tool_calls in arguments field there could be depseudonymized PIIs that destroy the inline json format e.g. heights measured in inches : ' " '. The PrivacyProxy had to be improved to recognize those values ​​and process them without destroying the json of the llm response. In non stream it was easy, just recursive algorithm that builds json step by step in streaming it was not trivial because we have to forward it and cant buffer the whole response, therefore we only buffer the arguments field and use the algorithm.
+
+### Second DSR pass
+- Lines 125236 and 197359 contain an emoji in the `source_text`. Emojis are counted in Python with CODE POINT units, in .NET with UFT-16 units. In Python one Emoji has a length of 2 Codepoints that has a length of 2 UFT-16 units, in .NET an Emoji is one UTF-16 unit long. The Presidio Analyzer is built with python therefore our `PresidioService.cs` class gets a new method `CodePointToUtf16Index` that calculates
+- In line 178426, the `source_text` contains [URL_]. This is correctly left alone during pseudonymization, but in the LLM response, the PrivacyProxy incorrectly attempts to depseudonymize this incorrect placeholder, which fails. The PrivacyProxy must convert the code point from the Presidio specification to UTF-16 units for .NET.

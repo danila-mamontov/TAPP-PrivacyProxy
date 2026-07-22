@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+left to right direction
+skinparam linetype polyline
+skinparam nodesep 60
+skinparam ranksep 100
+
+' --- Komponenten ---
+[experiment]
+[OpenClaw]
+[LLM]
+[MCP Server]
+[MailPit]
+[Radicale]
+
+' --- Interfaces (jeweils bei ihrer Komponente) ---
+"OpenClaw CLI\n(agent --json)" - [OpenClaw]
+"OpenAI\nChat\nCompletions" - [LLM]
+MCP - [MCP Server]
+"Calls/Reset" - [MCP Server]
+SMTP - [MailPit]
+"REST API" - [MailPit]
+CalDAV - [Radicale]
+
+'--- control path ---
+[experiment] -> "OpenClaw CLI\n(agent --json)" : docker exec
+[OpenClaw] -> MCP : http
+[OpenClaw] --> "OpenAI\nChat\nCompletions" : POST /v1/chat/completions
+[MCP Server] --> SMTP
+CalDAV <-- [MCP Server]
+
+'--- measurement path ---
+[experiment] ..> "Calls/Reset" : tool calls incl. failed attempts
+[experiment] ..> "REST API" : did the mail arrive?
+[experiment] ..> CalDAV : does the event exist?
+
+@enduml

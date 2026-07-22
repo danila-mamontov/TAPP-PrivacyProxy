@@ -1,0 +1,1556 @@
+group,model,id,domain,lang,iteration,seconds,function_ok,detail,tool_diagnosis,reply
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,1,3.3,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,2,6.5,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,3,3.4,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,4,2.9,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-de,conversation,de,5,2.9,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,1,3.5,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,2,2.8,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,3,3.0,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,4,2.9,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-de,conversation,de,5,4.4,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,1,2.9,True,ok,,"Sehr geehrte Frau Anna Berger, es ist mir eine Freude, Sie hier willkommen zu heißen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,2,3.3,True,ok,,"Guten Tag, Frau Anna Berger, es ist mir eine Freude, Sie begrüßen zu dürfen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,3,4.2,True,ok,,"Sehr geehrte Frau Anna Berger, es ist mir eine Freude, Sie begrüßen zu dürfen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,4,3.9,True,ok,,"Sehr geehrte Frau Anna Berger, es ist mir eine Freude, Sie hier willkommen zu heißen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-de,conversation,de,5,6.9,True,ok,,"Guten Tag, Frau Anna Berger, es ist mir eine Freude, Sie begrüßen zu dürfen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,1,3.2,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,2,2.9,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,3,3.2,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,4,3.2,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-de,conversation,de,5,2.8,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,1,3.0,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,2,2.8,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,3,2.8,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,4,2.8,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-de,conversation,de,5,2.6,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,1,2.6,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,2,3.6,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,3,2.4,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,4,3.3,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-de,conversation,de,5,3.5,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,1,3.3,True,ok,,Ich freue mich auf die Zusammenarbeit mit der Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,2,3.2,True,ok,,Die Nordlicht Datentechnik GmbH ist ein innovatives Unternehmen in der IT-Branche.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,3,3.1,True,ok,,Die Nordlicht Datentechnik GmbH ist ein innovatives Unternehmen in der IT-Branche.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,4,3.1,True,ok,,Die Nordlicht Datentechnik GmbH ist ein innovatives Unternehmen in der IT-Branche.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-de,conversation,de,5,4.0,True,ok,,Die Nordlicht Datentechnik GmbH sucht aktuell verstärkt nach qualifizierten Fachkräften für ihr Entwicklerteam.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,1,3.1,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,2,3.1,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,3,3.7,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,4,3.1,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-de,conversation,de,5,2.4,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,1,3.1,True,ok,,Ich habe den Ansprechpartner Michael Krause notiert.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,2,4.0,True,ok,,"Ich bestätige, dass ich den Ansprechpartner Michael Krause notiert habe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,3,3.3,True,ok,,Ich habe mir den Ansprechpartner Michael Krause notiert.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,4,3.6,True,ok,,"Ich bestätige, dass ich den Ansprechpartner Michael Krause notiert habe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-de,conversation,de,5,4.0,True,ok,,"Ich bestätige, dass ich den Ansprechpartner Michael Krause notiert habe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,1,3.8,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,2,3.1,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,3,5.5,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,4,12.2,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-de,conversation,de,5,8.0,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,1,2.9,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,2,2.6,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,3,2.7,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,4,3.1,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-de,conversation,de,5,2.8,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,1,2.7,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,2,3.1,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,3,3.0,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,4,2.7,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-de,conversation,de,5,3.3,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,1,2.8,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,2,3.0,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,3,3.3,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,4,3.4,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-de,conversation,de,5,3.2,True,ok,,Lisa Wagner ist als Teilnehmerin eingetragen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,1,3.4,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,2,3.0,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,3,3.0,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,4,3.0,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-de,conversation,de,5,2.9,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,1,2.8,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,2,3.6,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,3,4.0,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,4,3.0,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-de,conversation,de,5,4.1,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,1,2.8,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,2,2.8,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,3,2.8,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,4,2.7,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-de,conversation,de,5,2.6,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,1,3.1,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,2,3.2,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,3,3.2,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,4,3.5,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-de,conversation,de,5,3.0,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,1,2.8,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,2,2.8,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,3,2.6,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,4,2.5,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-de,conversation,de,5,2.6,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,1,3.6,True,ok,,"Ich bestätige, dass Thomas Schmidt der Projektleiter ist."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,2,3.6,True,ok,,"Hiermit bestätige ich, dass Thomas Schmidt der Projektleiter ist."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,3,3.5,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,4,3.7,True,ok,,Thomas Schmidt ist der Projektleiter.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-de,conversation,de,5,4.4,True,ok,,"Ich bestätige, dass Thomas Schmidt der Projektleiter ist."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,1,5.2,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,2,3.5,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,3,3.9,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,4,2.8,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-de,conversation,de,5,4.8,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,1,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **david.eichel@example.com** gesendet.
+
+- **Betreff:** Statusupdate  
+- **Inhalt:** Hallo, wie geht es Ihnen?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,2,5.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **david.eichel@example.com** gesendet.
+
+- **Betreff:** Statusupdate  
+- **Inhalt:** Hallo, wie geht es Ihnen?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,3,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **david.eichel@example.com** gesendet.
+
+- **Betreff:** Statusupdate  
+- **Inhalt:** Hallo, wie geht es Ihnen?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,4,5.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **david.eichel@example.com** gesendet.
+
+- **Betreff:** Statusupdate  
+- **Inhalt:** Hallo, wie geht es Ihnen?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-de,email,de,5,4.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **david.eichel@example.com** gesendet.
+
+- **Betreff:** Statusupdate  
+- **Inhalt:** Hallo, wie geht es Ihnen?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,1,5.9,True,ok,wrong-tool: send_mail,"Die Erinnerung wurde soeben an **anna.berger@example.org** gesendet.
+
+- **Betreff:** Erinnerung  
+- **Text:** Bitte denken Sie an das Meeting."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,2,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+
+- **Betreff:** Erinnerung
+- **Text:** Bitte denken Sie an das Meeting."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,3,7.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+
+- **Betreff:** Erinnerung
+- **Text:** Bitte denken Sie an das Meeting."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,4,6.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Erinnerung  
+- **Text:** Bitte denken Sie an das Meeting."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-de,email,de,5,7.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Erinnerung  
+- **Text:** Bitte denken Sie an das Meeting."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,1,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** michael.krause@example.net  
+- **Betreff:** Angebot  
+- **Inhalt:** Anbei unser Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,2,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** michael.krause@example.net  
+- **Betreff:** Angebot  
+- **Inhalt:** Anbei unser Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,3,5.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** michael.krause@example.net  
+**Betreff:** Angebot  
+**Inhalt:** Anbei unser Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,4,5.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** michael.krause@example.net  
+- **Betreff:** Angebot  
+- **Inhalt:** Anbei unser Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-de,email,de,5,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** michael.krause@example.net  
+- **Betreff:** Angebot  
+- **Inhalt:** Anbei unser Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,1,5.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **lisa.wagner@example.net** versendet.
+
+- **Betreff:** Rueckfrage  
+- **Text:** Koennen wir telefonieren?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,2,6.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **lisa.wagner@example.net** gesendet.
+
+- **Betreff:** Rueckfrage  
+- **Text:** Koennen wir telefonieren?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,3,5.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Rueckfrage
+- **Text:** Koennen wir telefonieren?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,4,6.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **lisa.wagner@example.net** gesendet.
+
+- **Betreff:** Rueckfrage  
+- **Text:** Koennen wir telefonieren?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-de,email,de,5,5.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net versendet.
+
+- **Betreff:** Rueckfrage
+- **Text:** Koennen wir telefonieren?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,1,5.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **thomas.schmidt@example.com** gesendet.
+
+- **Betreff:** Protokoll
+- **Inhalt:** Das Protokoll ist fertig."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,2,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **thomas.schmidt@example.com** gesendet.
+
+- **Betreff:** Protokoll  
+- **Inhalt:** Das Protokoll ist fertig."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,3,6.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** thomas.schmidt@example.com  
+- **Betreff:** Protokoll  
+- **Inhalt:** Das Protokoll ist fertig."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,4,5.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** thomas.schmidt@example.com  
+- **Betreff:** Protokoll  
+- **Inhalt:** Das Protokoll ist fertig."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-de,email,de,5,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **thomas.schmidt@example.com** gesendet.
+
+- **Betreff:** Protokoll  
+- **Inhalt:** Das Protokoll ist fertig."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,1,4.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **julia.meyer@example.org** gesendet.
+
+- **Betreff:** Termin  
+- **Text:** Passt Ihnen naechste Woche?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,2,5.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Termin  
+- **Text:** Passt Ihnen naechste Woche?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,3,5.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Termin  
+- **Text:** Passt Ihnen naechste Woche?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,4,4.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Termin  
+- **Text:** Passt Ihnen naechste Woche?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-de,email,de,5,4.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Termin  
+- **Text:** Passt Ihnen naechste Woche?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,1,6.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+- **Empfänger:** david.eichel@example.com  
+- **Betreff:** Gruss  
+- **Inhalt:** Herzliche Grüße von Anna Berger wurden ausgerichtet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,2,5.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Gruss  
+- **Inhalt:** Herzliche Grüße von Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,3,5.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **david.eichel@example.com** gesendet.
+
+- **Betreff:** Gruss  
+- **Inhalt:** Herzliche Grüße von Anna Berger
+
+Viel Erfolg!"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,4,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Gruss  
+- **Inhalt:** Herzliche Grüße von Anna Berger wurden ausgerichtet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-de,email,de,5,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Gruss  
+- **Inhalt:** Herzliche Grüße von Anna Berger wurden ausgerichtet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,1,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an michael.krause@example.net versendet.
+
+**Betreff:** Rueckruf  
+**Rückrufnummer:** +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,2,6.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **michael.krause@example.net** versendet.
+
+- **Betreff:** Rueckruf
+- **Rückrufnummer im Text:** +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,3,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an michael.krause@example.net versendet.
+
+**Betreff:** Rueckruf  
+**Rückrufnummer im Text:** +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,4,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an michael.krause@example.net versendet.
+
+**Betreff:** Rueckruf  
+**Rückrufnummer:** +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-de,email,de,5,6.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** michael.krause@example.net  
+- **Betreff:** Rueckruf  
+- **Rückrufnummer im Text:** +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,1,5.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Bankdaten  
+- **Inhalt:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,2,20.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **anna.berger@example.org** gesendet.
+
+- **Betreff:** Bankdaten  
+- **Inhalt:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,3,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Bankdaten  
+- **Text:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,4,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Bankdaten  
+- **Nachricht:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-de,email,de,5,5.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **anna.berger@example.org** gesendet.
+
+- **Betreff:** Bankdaten  
+- **Text:** Unsere IBAN lautet DE89 3704 0044 0532 0130 00."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,1,5.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,2,5.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,3,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,4,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-de,email,de,5,5.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** info@example.net  
+- **Betreff:** Anfrage  
+- **Inhalt:** Bitte um ein Angebot."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,1,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **lisa.wagner@example.net** versendet.
+
+- **Betreff:** Einladung  
+- **Text:** Sie sind herzlich eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,2,5.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Einladung
+- **Text:** Sie sind herzlich eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,3,9.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **lisa.wagner@example.net** versendet.
+
+- **Betreff:** Einladung  
+- **Text:** Sie sind herzlich eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,4,16.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net versendet.
+
+- **Betreff:** Einladung
+- **Text:** Sie sind herzlich eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-de,email,de,5,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **lisa.wagner@example.net** versendet.
+
+- **Betreff:** Einladung  
+- **Text:** Sie sind herzlich eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,1,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **david.eichel@example.com** versendet.
+
+- **Betreff:** Dokument  
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,2,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Dokument  
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,3,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Dokument  
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,4,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **david.eichel@example.com** versendet.
+
+- **Betreff:** Dokument  
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-de,email,de,5,7.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Dokument  
+- **Inhalt:** Das Dokument liegt bei."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,1,17.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Nachfrage  
+- **Text:** Gibt es Neuigkeiten?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,2,4.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Nachfrage  
+- **Text:** Gibt es Neuigkeiten?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,3,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Nachfrage  
+- **Text:** Gibt es Neuigkeiten?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,4,5.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Nachfrage  
+- **Text:** Gibt es Neuigkeiten?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-de,email,de,5,5.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Nachfrage  
+- **Text:** Gibt es Neuigkeiten?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,1,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** support@example.net  
+- **Betreff:** Stoerung  
+- **Inhalt:** Bitte um Hilfe beim Login."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,2,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** support@example.net  
+- **Betreff:** Stoerung  
+- **Inhalt:** Bitte um Hilfe beim Login."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,3,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** support@example.net  
+- **Betreff:** Stoerung  
+- **Inhalt:** Bitte um Hilfe beim Login."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,4,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** support@example.net  
+- **Betreff:** Stoerung  
+- **Inhalt:** Bitte um Hilfe beim Login."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-de,email,de,5,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** support@example.net  
+- **Betreff:** Stoerung  
+- **Inhalt:** Bitte um Hilfe beim Login."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,1,6.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **Empfänger:** michael.krause@example.net  
+- **Betreff:** Kontakt  
+- **Inhalt:** Enthält den Hinweis auf den Ansprechpartner Thomas Schmidt"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,2,6.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **michael.krause@example.net** versendet.
+
+- **Betreff:** Kontakt  
+- **Erwähnter Ansprechpartner:** Thomas Schmidt"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,3,7.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** michael.krause@example.net  
+**Betreff:** Kontakt  
+**Inhalt:** Enthält die Erwähnung des Ansprechpartners Thomas Schmidt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,4,7.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **michael.krause@example.net** gesendet.
+
+- **Betreff:** Kontakt  
+- **Ansprechpartner im Text:** Thomas Schmidt  
+
+Es wurde keine Rückfrage gestellt, sondern direkt ausgeführt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-de,email,de,5,6.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** michael.krause@example.net  
+**Betreff:** Kontakt  
+**Inhalt:** Enthält die Erwähnung von Ansprechpartner Thomas Schmidt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,1,4.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an julia.meyer@example.org gesendet.
+
+**Betreff:** Adresse  
+**Text:** Das Buero ist in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,2,5.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Adresse  
+- **Text:** Das Buero ist in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,3,4.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Adresse  
+- **Text:** Das Buero ist in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,4,5.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Adresse  
+- **Text:** Das Buero ist in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-de,email,de,5,4.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** julia.meyer@example.org  
+- **Betreff:** Adresse  
+- **Text:** Das Buero ist in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,1,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **thomas.schmidt@example.com** gesendet.
+
+- **Betreff:** Server  
+- **Inhalt:** Die IP ist 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,2,5.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** thomas.schmidt@example.com  
+**Betreff:** Server  
+**Inhalt:** Die IP ist 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,3,5.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **thomas.schmidt@example.com** gesendet.
+
+- **Betreff:** Server  
+- **Inhalt:** Die IP ist 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,4,13.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **thomas.schmidt@example.com** gesendet.
+
+- **Betreff:** Server  
+- **Inhalt:** Die IP ist 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-de,email,de,5,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **thomas.schmidt@example.com** gesendet.
+
+- **Betreff:** Server  
+- **Inhalt:** Die IP ist 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,1,5.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** lisa.wagner@example.net  
+- **Betreff:** Meeting  
+- **Text:** Wir sehen uns morgen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,2,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Meeting
+- **Text:** Wir sehen uns morgen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,3,5.5,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Meeting
+- **Text:** Wir sehen uns morgen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,4,13.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** lisa.wagner@example.net  
+- **Betreff:** Meeting  
+- **Text:** Wir sehen uns morgen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-de,email,de,5,7.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an lisa.wagner@example.net gesendet.
+
+- **Betreff:** Meeting
+- **Text:** Wir sehen uns morgen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,1,6.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com versendet.
+
+- **Betreff:** Freigabe
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,2,7.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **david.eichel@example.com** versendet.
+
+- **Betreff:** Freigabe  
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,3,5.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Freigabe  
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,4,7.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** david.eichel@example.com  
+- **Betreff:** Freigabe  
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-de,email,de,5,9.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an david.eichel@example.com versendet.
+
+- **Betreff:** Freigabe
+- **Inhalt:** Bitte um Ihre Freigabe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,1,16.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **anna.berger@example.org** gesendet.
+
+- **Betreff:** Danke  
+- **Text:** Vielen Dank fuer Ihre Hilfe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,2,7.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Danke  
+- **Text:** Vielen Dank fuer Ihre Hilfe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,3,6.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an anna.berger@example.org gesendet.
+
+- **Betreff:** Danke
+- **Text:** Vielen Dank fuer Ihre Hilfe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,4,6.0,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **anna.berger@example.org** gesendet.
+
+- **Betreff:** Danke
+- **Text:** Vielen Dank fuer Ihre Hilfe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-de,email,de,5,5.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an **anna.berger@example.org** gesendet.
+
+- **Betreff:** Danke  
+- **Text:** Vielen Dank fuer Ihre Hilfe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,1,7.6,True,ok,tool-ok,"Der Termin **""Projektbesprechung""** wurde erstellt:
+
+- **Datum:** 20.07.2026
+- **Uhrzeit:** 10:00 – 11:00 Uhr
+- **Teilnehmer:** david.eichel@example.com
+
+Die Einladung wurde direkt versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,2,8.8,True,ok,tool-ok,"Der Termin **„Projektbesprechung“** wurde erfolgreich eingetragen:
+
+- **Datum:** 20. Juli 2026
+- **Uhrzeit:** 10:00 – 11:00 Uhr
+- **Teilnehmer:** david.eichel@example.com
+
+Bestätigung: `Event 'Projektbesprechung' created at 2026-07-20T10:00:00`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,3,12.4,True,ok,tool-ok,"Der Termin **„Projektbesprechung“** wurde erstellt:
+
+- **Datum:** 20. Juli 2026
+- **Uhrzeit:** 10:00 – 11:00 Uhr
+- **Teilnehmer:** david.eichel@example.com
+
+Die Einladung wurde direkt versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,4,7.7,True,ok,tool-ok,Der Termin **„Projektbesprechung“** wurde am **20.07.2026 von 10:00 bis 11:00 Uhr** erstellt und **david.eichel@example.com** als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-de,calendar,de,5,8.9,True,ok,tool-ok,"Der Termin **„Projektbesprechung“** wurde erstellt:
+
+- **Datum:** 20. Juli 2026
+- **Uhrzeit:** 10:00 – 11:00 Uhr
+- **Teilnehmer:** david.eichel@example.com
+
+Die Einladung wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,1,8.0,True,ok,tool-ok,"Der Termin **""Zahnarzt""** wurde erfolgreich angelegt:
+
+- **Datum:** 22.07.2026
+- **Uhrzeit:** 09:30 Uhr
+- **Beschreibung:** Patient Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,2,13.6,True,ok,tool-ok,"Der Termin **""Zahnarzt""** wurde für den **22.07.2026 um 09:30 Uhr** mit der Beschreibung **""Patient Anna Berger""** angelegt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,3,7.1,True,ok,tool-ok,"Der Termin **„Zahnarzt“** wurde erfolgreich angelegt:
+
+- **Datum:** 22.07.2026
+- **Uhrzeit:** 09:30 Uhr
+- **Beschreibung:** Patient Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,4,8.4,True,ok,tool-ok,"Der Termin **„Zahnarzt“** wurde angelegt:
+
+- **Datum:** 22. Juli 2026
+- **Uhrzeit:** 09:30 Uhr
+- **Beschreibung:** Patient Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-de,calendar,de,5,7.5,True,ok,tool-ok,"Der Termin **""Zahnarzt""** wurde für den **22.07.2026 um 09:30 Uhr** angelegt.  
+In der Beschreibung steht: *Patient Anna Berger*."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,1,7.7,True,ok,tool-ok,"Der Termin **„Kickoff""** wurde am **23.07.2026 um 14:00 Uhr** erstellt und **michael.krause@example.net** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,2,6.8,True,ok,tool-ok,"Der Termin **""Kickoff""** wurde für den **23.07.2026 um 14:00 Uhr** erstellt und **michael.krause@example.net** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,3,6.8,True,ok,tool-ok,"Der Termin **""Kickoff""** wurde für den **23.07.2026 um 14:00 Uhr** erstellt und **michael.krause@example.net** wurde als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,4,7.3,True,ok,tool-ok,"Der Termin **""Kickoff""** wurde für den **23. Juli 2026 um 14:00 Uhr** erstellt und **michael.krause@example.net** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-de,calendar,de,5,13.1,True,ok,tool-ok,"Der Termin **""Kickoff""** wurde für den **23. Juli 2026 um 14:00 Uhr** erstellt. **michael.krause@example.net** wurde als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,1,7.5,True,ok,tool-ok,"Der Termin **""Rueckruf""** wurde erfolgreich angelegt:
+
+- **Datum:** 24.07.2026
+- **Uhrzeit:** 11:00 Uhr
+- **Beschreibung:** Nummer +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,2,8.2,True,ok,tool-ok,"Der Termin **""Rueckruf""** wurde für den **24.07.2026 um 11:00 Uhr** mit der Beschreibung **""Nummer +49 721 1234567""** angelegt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,3,7.4,True,ok,tool-ok,"Der Termin **""Rueckruf""** wurde angelegt:
+
+- **Datum:** 24.07.2026
+- **Uhrzeit:** 11:00 Uhr
+- **Beschreibung:** Nummer +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,4,7.4,True,ok,tool-ok,"Der Termin **""Rueckruf""** wurde angelegt:
+
+- **Datum:** 24.07.2026
+- **Uhrzeit:** 11:00 – 12:00 Uhr
+- **Beschreibung:** Nummer +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-de,calendar,de,5,9.1,True,ok,tool-ok,"Der Termin **""Rueckruf""** wurde angelegt:
+
+- **Datum:** 24.07.2026
+- **Uhrzeit:** 11:00 Uhr
+- **Beschreibung:** Nummer +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,1,8.4,True,ok,tool-ok,"Der Termin **""Workshop""** wurde erfolgreich eingetragen:
+
+- **Datum:** 27. Juli 2026
+- **Uhrzeit:** 09:00 – 11:00 Uhr (2 Stunden)
+- **Teilnehmerin:** lisa.wagner@example.net"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,2,7.4,True,ok,tool-ok,"Der Termin **""Workshop""** wurde eingetragen:
+
+- **Datum:** 27.07.2026
+- **Uhrzeit:** 09:00 – 11:00 Uhr (2 Stunden)
+- **Teilnehmerin:** lisa.wagner@example.net
+
+Die Einladung wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,3,8.9,True,ok,tool-ok,"Der Termin **""Workshop""** wurde eingetragen:
+
+- **Datum:** 27. Juli 2026
+- **Uhrzeit:** 09:00 – 11:00 Uhr
+- **Teilnehmer:** lisa.wagner@example.net
+
+Die Einladung wurde direkt versandt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,4,6.7,True,ok,tool-ok,"Der Termin **""Workshop""** wurde erfolgreich eingetragen:
+
+- **Datum:** 27. Juli 2026
+- **Uhrzeit:** 09:00 – 11:00 Uhr (2 Stunden)
+- **Teilnehmerin:** lisa.wagner@example.net
+
+Die Einladung wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-de,calendar,de,5,7.2,True,ok,tool-ok,"Der Termin **""Workshop""** wurde erfolgreich eingetragen:
+
+- **Datum:** 27. Juli 2026
+- **Uhrzeit:** 09:00 – 11:00 Uhr (2 Stunden)
+- **Teilnehmer:** lisa.wagner@example.net
+
+Die Einladung wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,1,7.1,True,ok,tool-ok,"Der Termin **""Interview""** wurde für den **28.07.2026 um 15:30 Uhr** mit der Beschreibung **""Kandidat Thomas Schmidt""** angelegt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,2,7.8,True,ok,tool-ok,"Der Termin **„Interview""** wurde erfolgreich angelegt:
+
+- **Datum:** 28. Juli 2026
+- **Uhrzeit:** 15:30 Uhr
+- **Beschreibung:** Kandidat Thomas Schmidt"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,3,10.5,True,ok,tool-ok,"Der Termin **""Interview""** wurde erfolgreich angelegt:
+
+- **Datum:** 28.07.2026
+- **Uhrzeit:** 15:30 Uhr
+- **Beschreibung:** Kandidat Thomas Schmidt"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,4,8.5,True,ok,tool-ok,"Der Termin **""Interview""** wurde erfolgreich angelegt:
+
+- **Datum:** 28.07.2026
+- **Uhrzeit:** 15:30 Uhr
+- **Beschreibung:** Kandidat Thomas Schmidt"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-de,calendar,de,5,6.8,True,ok,tool-ok,"Der Termin wurde erfolgreich angelegt:
+
+- **Titel:** Interview  
+- **Datum/Uhrzeit:** 28.07.2026 um 15:30 Uhr  
+- **Beschreibung:** Kandidat Thomas Schmidt"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,1,6.8,True,ok,tool-ok,Der Termin **„Review“** wurde für den **29.07.2026 um 13:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,2,6.9,True,ok,tool-ok,"Der Termin **""Review""** wurde für den **29. Juli 2026 um 13:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,3,6.9,True,ok,tool-ok,"Der Termin **""Review""** wurde für den **29.07.2026 um 13:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,4,6.3,True,ok,tool-ok,"Der Termin **""Review""** wurde für den **29.07.2026 um 13:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-de,calendar,de,5,6.2,True,ok,tool-ok,"Der Termin **""Review""** wurde für den **29.07.2026 um 13:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,1,7.0,True,ok,tool-ok,"Der Termin **""Abrechnung""** wurde für den **30.07.2026 um 10:30 Uhr** mit der Beschreibung **IBAN DE89 3704 0044 0532 0130 00** angelegt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,2,9.3,True,ok,tool-ok,"Der Termin **""Abrechnung""** wurde für den **30.07.2026 um 10:30 Uhr** mit der Beschreibung **IBAN DE89 3704 0044 0532 0130 00** angelegt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,3,7.3,True,ok,tool-ok,Der Termin **„Abrechnung“** wurde für den **30. Juli 2026 um 10:30 Uhr** mit der Beschreibung **IBAN DE89 3704 0044 0532 0130 00** angelegt.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,4,6.9,True,ok,tool-ok,"Der Termin **""Abrechnung""** wurde für den **30.07.2026 um 10:30 Uhr** angelegt.  
+In der Beschreibung steht die IBAN: **DE89 3704 0044 0532 0130 00**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-de,calendar,de,5,7.6,True,ok,tool-ok,Der Termin **„Abrechnung“** wurde am **30.07.2026 um 10:30 Uhr** mit der Beschreibung **IBAN DE89 3704 0044 0532 0130 00** angelegt.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,1,7.6,True,ok,tool-ok,"Der Termin **""Abstimmung""** wurde für den **31.07.2026 um 16:00 Uhr** erstellt und **julia.meyer@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,2,6.6,True,ok,tool-ok,"Der Termin **""Abstimmung""** wurde für den **31.07.2026 um 16:00 Uhr** erstellt und **julia.meyer@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,3,7.7,True,ok,tool-ok,"Der Termin **""Abstimmung""** wurde für den **31.07.2026 um 16:00 Uhr** erstellt und **julia.meyer@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,4,7.1,True,ok,tool-ok,Der Termin **„Abstimmung“** wurde für den **31.07.2026 um 16:00 Uhr** erstellt und **julia.meyer@example.org** als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-de,calendar,de,5,6.8,True,ok,tool-ok,Der Termin **„Abstimmung“** wurde für den **31.07.2026 um 16:00 Uhr** erstellt und **julia.meyer@example.org** als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,1,9.5,True,ok,tool-ok,"Der Termin **""Notiz""** wurde für den **03.08.2026 um 08:30 Uhr** angelegt.  
+In der Beschreibung steht: *Ansprechpartner Michael Krause*."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,2,7.6,True,ok,tool-ok,"Der Termin **""Notiz""** wurde erfolgreich angelegt:
+
+- **Datum:** 03.08.2026
+- **Uhrzeit:** 08:30 Uhr
+- **Beschreibung:** Ansprechpartner Michael Krause"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,3,7.5,True,ok,tool-ok,"Der Termin **„Notiz""** wurde erfolgreich angelegt:
+
+- **Datum:** 03.08.2026
+- **Uhrzeit:** 08:30 Uhr
+- **Beschreibung:** Ansprechpartner Michael Krause"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,4,9.1,True,ok,tool-ok,"Der Termin **„Notiz""** wurde erfolgreich angelegt:
+
+- **Datum:** 03.08.2026
+- **Uhrzeit:** 08:30 Uhr
+- **Beschreibung:** Ansprechpartner Michael Krause"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-de,calendar,de,5,7.2,True,ok,tool-ok,"Der Termin **„Notiz“** wurde für den **03.08.2026 um 08:30 Uhr** angelegt.  
+In der Beschreibung steht: **Ansprechpartner Michael Krause**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,1,7.6,True,ok,tool-ok,"Der Termin **""Call""** wurde erfolgreich eingetragen:
+
+- **Datum:** 04.08.2026
+- **Uhrzeit:** 11:15 Uhr
+- **Teilnehmer:** thomas.schmidt@example.com
+
+Die Einladung wurde direkt versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,2,7.4,True,ok,tool-ok,"Der Termin **""Call""** wurde erfolgreich eingetragen:
+
+- **Datum:** 04.08.2026
+- **Uhrzeit:** 11:15 – 12:15 Uhr
+- **Teilnehmer:** thomas.schmidt@example.com
+
+Die Einladung wurde versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,3,11.1,True,ok,tool-ok,"Der Termin **""Call""** wurde für den **04.08.2026 um 11:15 Uhr** erstellt und **thomas.schmidt@example.com** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,4,11.8,True,ok,tool-ok,"Der Termin **""Call""** wurde für den **04.08.2026 um 11:15 Uhr** erstellt und **thomas.schmidt@example.com** wurde als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-de,calendar,de,5,6.3,True,ok,tool-ok,"Der Termin **""Call""** wurde für den **04.08.2026 um 11:15 Uhr** erstellt und **thomas.schmidt@example.com** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,1,6.8,True,ok,tool-ok,Der Termin **„Uebergabe“** wurde für den **05.08.2026 um 14:45 Uhr** mit der Beschreibung **„Empfaengerin Lisa Wagner“** angelegt.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,2,6.6,True,ok,tool-ok,Der Termin **„Uebergabe“** wurde für den **05.08.2026 um 14:45 Uhr** mit der Beschreibung **„Empfaengerin Lisa Wagner“** angelegt.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,3,7.3,True,ok,tool-ok,"Der Termin **""Uebergabe""** wurde erfolgreich angelegt:
+
+- **Datum:** 05. August 2026
+- **Uhrzeit:** 14:45 – 15:45 Uhr
+- **Beschreibung:** Empfaengerin Lisa Wagner"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,4,8.1,True,ok,tool-ok,"Der Termin **""Uebergabe""** wurde angelegt:
+
+- **Datum:** 05.08.2026
+- **Uhrzeit:** 14:45 – 15:45 Uhr
+- **Beschreibung:** Empfaengerin Lisa Wagner"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-de,calendar,de,5,8.0,True,ok,tool-ok,Der Termin **„Uebergabe“** wurde für den **05.08.2026 um 14:45 Uhr** mit der Beschreibung **„Empfaengerin Lisa Wagner“** erfolgreich angelegt.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,1,8.1,True,ok,tool-ok,"Der Termin **""Planung""** wurde erfolgreich eingetragen:
+
+- **Datum:** 06. August 2026
+- **Uhrzeit:** 09:00 – 10:00 Uhr
+- **Teilnehmer:** david.eichel@example.com
+
+Die Einladung wurde direkt versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,2,7.9,True,ok,tool-ok,"Der Termin **""Planung""** wurde erfolgreich eingetragen:
+
+- **Datum:** 06. August 2026
+- **Uhrzeit:** 09:00 Uhr
+- **Teilnehmer:** david.eichel@example.com"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,3,7.3,True,ok,tool-ok,"Der Termin **""Planung""** wurde für den **06.08.2026 um 09:00 Uhr** erstellt und **david.eichel@example.com** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,4,9.2,True,ok,tool-ok,"Der Termin **""Planung""** wurde erfolgreich eingetragen:
+
+- **Datum:** 06. August 2026
+- **Uhrzeit:** 09:00 Uhr
+- **Teilnehmer:** david.eichel@example.com
+
+Die Einladung wurde direkt versendet."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-de,calendar,de,5,6.9,True,ok,tool-ok,"Der Termin **""Planung""** wurde für den **06.08.2026 um 09:00 Uhr** erstellt.  
+**Teilnehmer:** david.eichel@example.com wurde eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,1,7.4,True,ok,tool-ok,"Der Termin **""Besichtigung""** wurde angelegt:
+
+- **Datum:** 07.08.2026
+- **Uhrzeit:** 10:00 Uhr
+- **Beschreibung:** Ort Karlsruhe"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,2,7.3,True,ok,tool-ok,"Der Termin **""Besichtigung""** wurde erfolgreich angelegt:
+
+- **Datum:** 07.08.2026
+- **Uhrzeit:** 10:00 Uhr
+- **Beschreibung:** Ort Karlsruhe"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,3,7.4,True,ok,tool-ok,"Der Termin **""Besichtigung""** wurde für den **07.08.2026 um 10:00 Uhr** mit der Beschreibung **""Ort Karlsruhe""** angelegt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,4,7.5,True,ok,tool-ok,"Der Termin **„Besichtigung""** wurde für den **07.08.2026 um 10:00 Uhr** mit der Beschreibung **„Ort Karlsruhe""** angelegt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-de,calendar,de,5,7.0,True,ok,tool-ok,"Der Termin **„Besichtigung“** wurde angelegt:
+
+- **Datum:** 07. August 2026
+- **Uhrzeit:** 10:00 Uhr
+- **Beschreibung:** Ort Karlsruhe"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,1,7.3,True,ok,tool-ok,"Der Termin **""Sync""** wurde für den **10. August 2026 um 15:00 Uhr** erstellt und **michael.krause@example.net** wurde als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,2,6.6,True,ok,tool-ok,"Der Termin **""Sync""** wurde für den **10.08.2026 um 15:00 Uhr** erstellt und **michael.krause@example.net** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,3,7.1,True,ok,tool-ok,"Der Termin **""Sync""** wurde für den **10.08.2026 um 15:00 Uhr** erstellt und **michael.krause@example.net** wurde als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,4,10.1,True,ok,tool-ok,"Der Termin **""Sync""** wurde für den **10.08.2026 um 15:00 Uhr** erstellt und **michael.krause@example.net** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-de,calendar,de,5,7.2,True,ok,tool-ok,"Der Termin **""Sync""** wurde für den **10. August 2026 um 15:00 Uhr** erstellt und **michael.krause@example.net** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,1,7.0,True,ok,tool-ok,"Der Termin **""Gespraech""** wurde angelegt:
+
+- **Datum:** 11.08.2026
+- **Uhrzeit:** 13:30 – 14:30 Uhr
+- **Beschreibung:** Teilnehmerin Julia Meyer"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,2,7.3,True,ok,tool-ok,"Der Termin **""Gespraech""** wurde angelegt:
+
+- **Datum:** 11.08.2026
+- **Uhrzeit:** 13:30 – 14:30 Uhr
+- **Beschreibung:** Teilnehmerin Julia Meyer"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,3,8.3,True,ok,tool-ok,"Der Termin **""Gespraech""** wurde erfolgreich angelegt:
+
+- **Datum:** 11.08.2026
+- **Uhrzeit:** 13:30 – 14:30 Uhr
+- **Beschreibung:** Teilnehmerin Julia Meyer"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,4,7.7,True,ok,tool-ok,"Der Termin **""Gespraech""** wurde erfolgreich angelegt:
+
+- **Datum:** 11.08.2026
+- **Uhrzeit:** 13:30 – 14:30 Uhr
+- **Beschreibung:** Teilnehmerin Julia Meyer"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-de,calendar,de,5,7.2,True,ok,tool-ok,"Der Termin **""Gespraech""** wurde angelegt:
+
+- **Datum:** 11.08.2026
+- **Uhrzeit:** 13:30 Uhr
+- **Beschreibung:** Teilnehmerin Julia Meyer"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,1,8.2,True,ok,tool-ok,"Der Termin **""Demo""** wurde für den **12.08.2026 um 11:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,2,6.7,True,ok,tool-ok,"Der Termin **""Demo""** wurde für den **12.08.2026 um 11:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,3,7.5,True,ok,tool-ok,"Der Termin **""Demo""** wurde für den **12.08.2026 um 11:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,4,6.8,True,ok,tool-ok,"Der Termin **""Demo""** wurde am **12.08.2026 um 11:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-de,calendar,de,5,7.5,True,ok,tool-ok,"Der Termin **""Demo""** wurde am **12.08.2026 um 11:00 Uhr** erstellt und **anna.berger@example.org** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,1,7.3,True,ok,tool-ok,"Der Termin **""Hotline""** wurde für den **13.08.2026 um 09:45 Uhr** mit der Beschreibung **""Durchwahl +49 30 9876543""** angelegt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,2,7.1,True,ok,tool-ok,"Der Termin **""Hotline""** wurde angelegt:
+
+- **Datum:** 13.08.2026
+- **Uhrzeit:** 09:45 – 10:45 Uhr
+- **Beschreibung:** Durchwahl +49 30 9876543"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,3,7.0,True,ok,tool-ok,"Der Termin **""Hotline""** wurde für den **13.08.2026 um 09:45 Uhr** mit der Beschreibung **""Durchwahl +49 30 9876543""** angelegt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,4,7.5,True,ok,tool-ok,"Der Termin **""Hotline""** wurde erfolgreich angelegt:
+
+- **Datum:** 13. August 2026
+- **Uhrzeit:** 09:45 Uhr
+- **Beschreibung:** Durchwahl +49 30 9876543"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-de,calendar,de,5,7.4,True,ok,tool-ok,"Der Termin **""Hotline""** wurde für den **13. August 2026 um 09:45 Uhr** angelegt. In der Beschreibung steht: *Durchwahl +49 30 9876543*."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,1,7.7,True,ok,tool-ok,"Der Termin **""Abschluss""** wurde für den **14. August 2026 um 16:30 Uhr** erstellt.  
+**Lisa Wagner** (`lisa.wagner@example.net`) wurde als Teilnehmerin eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,2,12.8,True,ok,tool-ok,"Der Termin **""Abschluss""** wurde für den **14.08.2026 um 16:30 Uhr** erstellt und **lisa.wagner@example.net** wurde als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,3,15.8,True,ok,tool-ok,"Der Termin **""Abschluss""** wurde für den **14.08.2026 um 16:30 Uhr** erstellt und **lisa.wagner@example.net** als Teilnehmer eingeladen."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,4,9.3,True,ok,tool-ok,Der Termin **„Abschluss“** wurde für den **14. August 2026 um 16:30 Uhr** erstellt und **lisa.wagner@example.net** als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-de,calendar,de,5,7.0,True,ok,tool-ok,Der Termin **„Abschluss“** wurde für den **14. August 2026 um 16:30 Uhr** erstellt und **lisa.wagner@example.net** als Teilnehmer eingeladen.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,1,7.1,True,ok,tool-ok,"Der Termin **""Kontaktpflege""** wurde erfolgreich angelegt:
+
+- **Datum:** 17.08.2026
+- **Uhrzeit:** 10:15 Uhr
+- **Beschreibung:** Kunde Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,2,7.2,True,ok,tool-ok,"Der Termin **""Kontaktpflege""** wurde erfolgreich angelegt:
+
+- **Datum:** 17.08.2026
+- **Uhrzeit:** 10:15 Uhr
+- **Beschreibung:** Kunde Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,3,9.7,True,ok,tool-ok,"Der Termin **""Kontaktpflege""** wurde angelegt:
+
+- **Datum:** 17.08.2026
+- **Uhrzeit:** 10:15 – 11:15 Uhr
+- **Beschreibung:** Kunde Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,4,8.4,True,ok,tool-ok,"Der Termin **""Kontaktpflege""** wurde erfolgreich angelegt:
+
+- **Datum:** 17.08.2026
+- **Uhrzeit:** 10:15 – 11:15 Uhr
+- **Beschreibung:** Kunde Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-de,calendar,de,5,12.8,True,ok,tool-ok,"Der Termin **""Kontaktpflege""** wurde angelegt:
+
+- **Datum:** 17.08.2026
+- **Uhrzeit:** 10:15 – 11:15 Uhr
+- **Beschreibung:** Kunde Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,1,3.3,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,2,3.0,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,3,4.9,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,4,3.6,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-01-en,conversation,en,5,3.3,True,ok,,david.eichel@example.com
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,1,3.4,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,2,3.2,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,3,3.1,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,4,3.0,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-02-en,conversation,en,5,2.8,True,ok,,+49 721 1234567
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,1,4.4,True,ok,,"Hello, Ms Anna Berger, it is a pleasure to greet you."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,2,4.9,True,ok,,"Hello, Ms Anna Berger, I hope you are having a wonderful day."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,3,5.2,True,ok,,"Hello, Ms Anna Berger, I hope you are having a wonderful day."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,4,4.9,True,ok,,"Hello, Ms Anna Berger, I hope you are having a wonderful day."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-03-en,conversation,en,5,4.6,True,ok,,"Hello, Ms Anna Berger, I hope you are having a wonderful day."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,1,3.5,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,2,2.8,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,3,4.3,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,4,3.4,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-04-en,conversation,en,5,3.2,True,ok,,DE89 3704 0044 0532 0130 00
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,1,3.0,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,2,3.2,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,3,3.1,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,4,3.5,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-05-en,conversation,en,5,3.2,True,ok,,Karlsruhe
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,1,3.0,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,2,3.3,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,3,2.9,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,4,4.5,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-06-en,conversation,en,5,3.1,True,ok,,192.168.10.55
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,1,3.9,True,ok,,Ich habe mich bei der Nordlicht Datentechnik GmbH auf die Stelle beworben.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,2,5.0,True,ok,,I work for Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,3,5.2,True,ok,,My employer is Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,4,4.4,True,ok,,I work for Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-07-en,conversation,en,5,3.3,True,ok,,I recently applied for a software developer position at Nordlicht Datentechnik GmbH.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,1,4.2,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,2,3.5,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,3,3.6,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,4,3.7,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-08-en,conversation,en,5,4.1,True,ok,,4111 1111 1111 1111
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,1,4.1,True,ok,,I confirm that I have noted the contact person Michael Krause.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,2,3.0,True,ok,,I have noted Michael Krause as the contact person.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,3,3.7,True,ok,,I confirm that I have noted Michael Krause as the contact person.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,4,3.5,True,ok,,I confirm that I have noted Michael Krause as the contact person.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-09-en,conversation,en,5,3.1,True,ok,,I have noted the contact person Michael Krause.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,1,4.7,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,2,3.0,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,3,4.3,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,4,3.0,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-10-en,conversation,en,5,2.9,True,ok,,anna.berger@example.org
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,1,3.3,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,2,4.0,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,3,3.0,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,4,8.6,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-11-en,conversation,en,5,2.9,True,ok,,+49 30 9876543
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,1,3.2,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,2,3.0,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,3,2.9,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,4,3.3,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-12-en,conversation,en,5,2.8,True,ok,,https://intranet.example.net/report
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,1,3.2,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,2,2.9,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,3,3.2,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,4,3.0,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-13-en,conversation,en,5,3.3,True,ok,,Lisa Wagner is registered as a participant.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,1,3.8,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,2,3.0,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,3,2.9,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,4,3.0,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-14-en,conversation,en,5,2.8,True,ok,,Berlin
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,1,4.1,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,2,3.4,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,3,3.3,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,4,3.3,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-15-en,conversation,en,5,3.4,True,ok,,michael.krause@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,1,3.6,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,2,3.0,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,3,3.0,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,4,2.9,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-16-en,conversation,en,5,3.2,True,ok,,DE12 5001 0517 0648 4898 90
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,1,3.2,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,2,3.0,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,3,3.1,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,4,3.1,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-17-en,conversation,en,5,3.1,True,ok,,00:1A:2B:3C:4D:5E
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,1,3.0,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,2,3.2,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,3,3.1,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,4,3.1,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-18-en,conversation,en,5,3.0,True,ok,,+49 151 22233344
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,1,3.1,True,ok,,Thomas Schmidt is the project lead.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,2,3.0,True,ok,,Thomas Schmidt is the project lead.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,3,3.7,True,ok,,Thomas Schmidt is the project lead.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,4,3.3,True,ok,,Thomas Schmidt is the project lead.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-19-en,conversation,en,5,4.9,True,ok,,Thomas Schmidt is the project lead.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,1,3.2,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,2,3.0,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,3,3.3,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,4,3.0,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,conv-20-en,conversation,en,5,8.2,True,ok,,lisa.wagner@example.net
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,1,5.2,True,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Status update"" and the body ""Hello, how are you?""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,2,5.0,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **david.eichel@example.com** with the subject **""Status update""** and the body **""Hello, how are you?""**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,3,5.6,True,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Status update"" and the body ""Hello, how are you?""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,4,5.2,True,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Status update""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-01-en,email,en,5,4.8,True,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Status update""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,1,5.5,True,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Reminder"" and the text ""Please remember the meeting."""
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,2,5.8,True,ok,wrong-tool: send_mail,"The reminder email has been sent successfully to **anna.berger@example.org** with the subject ""Reminder"" and the text ""Please remember the meeting.""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,3,5.6,True,ok,wrong-tool: send_mail,"The reminder email has been sent successfully to **anna.berger@example.org** with the subject ""Reminder"" and the text ""Please remember the meeting.""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,4,5.2,True,ok,wrong-tool: send_mail,"The reminder email has been sent successfully to **anna.berger@example.org** with the subject ""Reminder"" and the text ""Please remember the meeting.""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-02-en,email,en,5,11.7,True,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Reminder"" and the requested text."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,1,6.1,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Offer""** and the body **""Please find our offer attached.""**"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,2,5.6,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Offer""**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,3,6.1,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Offer""** and the body **""Please find our offer attached.""**"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,4,5.8,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Offer""** and the body **""Please find our offer attached.""**"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-03-en,email,en,5,5.9,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** michael.krause@example.net  
+**Subject:** Offer  
+**Body:** Please find our offer attached."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,1,5.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Question  
+**Nachricht:** Can we talk on the phone?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,2,5.3,True,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Question"" and the message ""Can we talk on the phone?""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,3,6.7,True,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Question"" and the message ""Can we talk on the phone?""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,4,6.5,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an lisa.wagner@example.net mit dem Betreff „Question“ und dem Text „Can we talk on the phone?“ gesendet.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-04-en,email,en,5,5.9,True,ok,wrong-tool: send_mail,Die E-Mail wurde erfolgreich an lisa.wagner@example.net mit dem Betreff „Question“ und dem Text „Can we talk on the phone?“ gesendet.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,1,5.4,True,ok,wrong-tool: send_mail,"The email has been sent successfully to thomas.schmidt@example.com with the subject ""Minutes"" and the body ""The minutes are ready."""
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,2,5.3,True,ok,wrong-tool: send_mail,"The email has been sent to thomas.schmidt@example.com with the subject ""Minutes"" and the body ""The minutes are ready."""
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,3,5.6,True,ok,wrong-tool: send_mail,"Done. The email has been sent to **thomas.schmidt@example.com** with the subject **""Minutes""** and the body **""The minutes are ready.""**"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,4,5.1,True,ok,wrong-tool: send_mail,"The email has been sent successfully to thomas.schmidt@example.com with the subject ""Minutes""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-05-en,email,en,5,5.0,True,ok,wrong-tool: send_mail,"The email has been sent successfully to thomas.schmidt@example.com with the subject ""Minutes""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,1,6.1,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **julia.meyer@example.org** with the subject **""Appointment""** and the message:
+
+> Does next week work for you?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,2,6.4,True,ok,wrong-tool: send_mail,"The email has been sent successfully to julia.meyer@example.org with the subject ""Appointment"" and the message ""Does next week work for you?""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,3,5.6,True,ok,wrong-tool: send_mail,"The email has been sent to julia.meyer@example.org with the subject ""Appointment"" and the message ""Does next week work for you?""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,4,5.0,True,ok,wrong-tool: send_mail,"The email has been sent to julia.meyer@example.org with the subject ""Appointment"" and the message ""Does next week work for you?""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-06-en,email,en,5,4.9,True,ok,wrong-tool: send_mail,"The email has been sent to julia.meyer@example.org with the subject ""Appointment"" and the message ""Does next week work for you?""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,1,5.5,True,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Greeting"" and warm regards from Anna Berger included in the text."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,2,5.6,True,ok,wrong-tool: send_mail,"The email has been sent to david.eichel@example.com with the subject ""Greeting"" and warm regards from Anna Berger included in the message."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,3,7.9,True,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Greeting"" and warm regards from Anna Berger included in the message."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,4,8.7,True,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Greeting"" and warm regards from Anna Berger included in the message."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-07-en,email,en,5,7.1,True,ok,wrong-tool: send_mail,"The email has been sent to david.eichel@example.com with the subject ""Greeting"" and warm regards from Anna Berger included in the message."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,1,6.4,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject ""Callback"" and the callback number **+49 721 1234567** included in the message body."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,2,6.9,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** michael.krause@example.net  
+**Subject:** Callback  
+**Status:** Sent ✅
+
+The message includes the callback number +49 721 1234567 as requested."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,3,7.5,True,ok,wrong-tool: send_mail,"The email has been sent to michael.krause@example.net with the subject ""Callback"" and the callback number +49 721 1234567 included in the text."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,4,7.1,True,ok,wrong-tool: send_mail,"The email has been sent to michael.krause@example.net with the subject ""Callback"" and the callback number +49 721 1234567 included in the message."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-08-en,email,en,5,6.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** michael.krause@example.net  
+**Betreff:** Callback  
+**Inhalt:** Enthält die Rückrufnummer +49 721 1234567."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,1,5.5,True,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Bank details"" and the IBAN information."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,2,56.3,True,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Bank details""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,3,7.1,True,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Bank details"" and the IBAN information."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,4,6.1,True,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Bank details"" and the IBAN information."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-09-en,email,en,5,5.8,True,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Bank details"" and the IBAN information."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,1,6.3,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** info@example.net  
+**Subject:** Inquiry  
+**Body:** Please send us a quote."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,2,6.0,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **info@example.net** with the subject *Inquiry* and the body *""Please send us a quote.""*"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,3,5.2,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** info@example.net  
+**Subject:** Inquiry  
+**Body:** Please send us a quote."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,4,6.0,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** info@example.net  
+**Subject:** Inquiry  
+**Body:** Please send us a quote."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-10-en,email,en,5,5.7,True,ok,wrong-tool: send_mail,"Done. The email has been sent to **info@example.net** with the subject **""Inquiry""** and the body **""Please send us a quote.""**"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,1,6.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Invitation  
+**Nachricht:** You are warmly invited."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,2,5.4,True,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Invitation"" and the message ""You are warmly invited."""
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,3,6.8,True,ok,wrong-tool: send_mail,"The email has been sent successfully to lisa.wagner@example.net with the subject ""Invitation""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,4,5.9,True,ok,wrong-tool: send_mail,"Done. The email has been sent to lisa.wagner@example.net with the subject ""Invitation""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-11-en,email,en,5,6.0,True,ok,wrong-tool: send_mail,Done. The email has been sent to **lisa.wagner@example.net** with the subject *Invitation*.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,1,6.2,True,ok,wrong-tool: send_mail,"The email has been sent to david.eichel@example.com with the subject ""Document"" and the body ""The document is attached."""
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,2,6.2,True,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Document"" and the body ""The document is attached."""
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,3,6.0,True,ok,wrong-tool: send_mail,"Done. The email has been sent to david.eichel@example.com with the subject ""Document"" and the body ""The document is attached."""
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,4,5.8,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **david.eichel@example.com** with the subject **""Document""** and the body **""The document is attached.""**"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-12-en,email,en,5,5.3,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **david.eichel@example.com** with the subject **""Document""** and the body **""The document is attached.""**"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,1,8.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Follow-up  
+- **Nachricht:** Any news?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,2,6.3,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **anna.berger@example.org** with the subject *""Follow-up""* and the message *""Any news?""*."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,3,6.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** anna.berger@example.org  
+**Betreff:** Follow-up  
+**Nachricht:** Any news?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,4,7.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet:
+
+- **An:** anna.berger@example.org  
+- **Betreff:** Follow-up  
+- **Inhalt:** Any news?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-13-en,email,en,5,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** anna.berger@example.org  
+**Betreff:** Follow-up  
+**Nachricht:** Any news?"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,1,5.2,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **support@example.net** with the subject **""Issue""** and the body **""Please help with the login.""**"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,2,5.7,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** support@example.net  
+**Subject:** Issue  
+**Body:** Please help with the login."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,3,5.7,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** support@example.net  
+**Subject:** Issue  
+**Body:** Please help with the login."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,4,6.5,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **support@example.net** with the subject **""Issue""** and the requested body text."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-14-en,email,en,5,6.4,True,ok,wrong-tool: send_mail,"Done. The email has been sent to **support@example.net** with the subject **""Issue""** and the body **""Please help with the login.""**"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,1,5.6,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject **""Contact""** and mentions **Thomas Schmidt** in the text."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,2,5.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich an michael.krause@example.net gesendet.
+
+- **Betreff:** Contact  
+- **Inhalt:** Thomas Schmidt wurde im Text als Ansprechpartner erwähnt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,3,7.6,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net** with the subject ""Contact"". Thomas Schmidt was mentioned in the message as the designated contact person."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,4,5.5,True,ok,wrong-tool: send_mail,"The email has been sent to **michael.krause@example.net** with the subject ""Contact"" and mentions **Thomas Schmidt** in the text."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-15-en,email,en,5,5.7,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **michael.krause@example.net**.
+
+- **Subject:** Contact
+- **Content:** The email mentions Thomas Schmidt as the contact person and informs Mr. Krause that he will be the primary point of contact going forward."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,1,5.8,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Nachricht:** The office is in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,2,6.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Nachricht:** The office is in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,3,6.4,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Nachricht:** The office is in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,4,7.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Nachricht:** The office is in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-16-en,email,en,5,5.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** julia.meyer@example.org  
+**Betreff:** Address  
+**Nachricht:** The office is in Karlsruhe."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,1,6.1,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** thomas.schmidt@example.com  
+**Betreff:** Server  
+**Inhalt:** The IP is 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,2,5.9,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** thomas.schmidt@example.com  
+**Subject:** Server  
+**Body:** The IP is 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,3,5.3,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** thomas.schmidt@example.com  
+**Subject:** Server  
+**Body:** The IP is 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,4,5.4,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** thomas.schmidt@example.com  
+**Subject:** Server  
+**Body:** The IP is 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-17-en,email,en,5,5.6,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** thomas.schmidt@example.com  
+**Subject:** Server  
+**Body:** The IP is 192.168.10.55."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,1,5.7,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Meeting  
+**Nachricht:** See you tomorrow."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,2,6.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Meeting  
+**Nachricht:** See you tomorrow."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,3,5.9,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Meeting  
+**Nachricht:** See you tomorrow."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,4,6.3,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Meeting  
+**Nachricht:** See you tomorrow."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-18-en,email,en,5,6.6,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich versendet.
+
+**Empfänger:** lisa.wagner@example.net  
+**Betreff:** Meeting  
+**Nachricht:** See you tomorrow."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,1,5.5,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **david.eichel@example.com** with the subject **""Approval""** and the requested body."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,2,6.7,True,ok,wrong-tool: send_mail,"The email has been sent successfully to david.eichel@example.com with the subject ""Approval"" and the requested body."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,3,5.4,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **david.eichel@example.com** with the subject **""Approval""**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,4,5.6,True,ok,wrong-tool: send_mail,"The email has been sent successfully.
+
+**To:** david.eichel@example.com  
+**Subject:** Approval  
+**Body:** Please give your approval."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-19-en,email,en,5,6.1,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **david.eichel@example.com** with the subject **""Approval""**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,1,5.1,True,ok,wrong-tool: send_mail,"The email has been sent successfully to anna.berger@example.org with the subject ""Thanks""."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,2,5.3,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **anna.berger@example.org** with the subject **""Thanks""**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,3,5.3,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **anna.berger@example.org** with the subject **""Thanks""**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,4,6.8,True,ok,wrong-tool: send_mail,"The email has been sent successfully to **anna.berger@example.org** with the subject **""Thanks""**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,mail-20-en,email,en,5,5.2,True,ok,wrong-tool: send_mail,"Die E-Mail wurde erfolgreich gesendet.
+
+**Empfänger:** anna.berger@example.org  
+**Betreff:** Thanks  
+**Nachricht:** Thank you very much for your help."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,1,7.5,True,ok,tool-ok,"The appointment **""Project meeting""** has been created successfully.
+
+- **Date:** 2026-07-20
+- **Time:** 10:00 – 11:00 UTC
+- **Participant:** david.eichel@example.com
+
+Event UID: `controlgroup-1784597952591@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,2,14.3,True,ok,tool-ok,"The appointment **""Project meeting""** has been successfully created:
+
+- **Date:** 2026-07-20
+- **Time:** 10:00 – 11:00 UTC
+- **Participant:** david.eichel@example.com
+
+Event ID: `controlgroup-1784597968623@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,3,9.5,True,ok,tool-ok,"The appointment **""Project meeting""** has been created successfully.
+
+- **Date:** 2026-07-20
+- **Time:** 10:00 – 11:00 UTC
+- **Participant:** david.eichel@example.com
+- **Event ID:** controlgroup-1784597981006@exp.rq2.local"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,4,8.8,True,ok,tool-ok,"The appointment **""Project meeting""** has been created successfully.
+
+- **Date:** 2026-07-20
+- **Time:** 10:00 – 11:00 UTC
+- **Participant:** david.eichel@example.com
+- **Event ID:** `controlgroup-1784597991985@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-01-en,calendar,en,5,8.4,True,ok,tool-ok,"Done! The appointment **""Project meeting""** has been created for **2026-07-20 at 10:00 UTC** (ending at 11:00 UTC), and **david.eichel@example.com** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,1,8.1,True,ok,tool-ok,"Der Termin wurde erstellt:
+
+- **Titel:** Dentist
+- **Datum/Uhrzeit:** 2026-07-22 um 09:30
+- **Beschreibung:** Patient Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,2,7.8,True,ok,tool-ok,"The appointment has been created:
+
+- **Title:** Dentist  
+- **Date:** 2026-07-22  
+- **Time:** 09:30  
+- **Description:** Patient Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,3,7.6,True,ok,tool-ok,"Der Termin wurde erfolgreich erstellt:
+
+- **Titel:** Dentist
+- **Datum/Uhrzeit:** Mittwoch, 22. Juli 2026 um 09:30 Uhr
+- **Beschreibung:** Patient Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,4,8.0,True,ok,tool-ok,"The appointment **""Dentist""** has been created successfully.
+
+- **Date:** 2026-07-22
+- **Time:** 09:30
+- **Description:** Patient Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-02-en,calendar,en,5,10.3,True,ok,tool-ok,"Der Termin wurde erfolgreich erstellt:
+
+- **Titel:** Dentist  
+- **Datum/Uhrzeit:** Mittwoch, 22. Juli 2026, 09:30 Uhr  
+- **Beschreibung:** Patient Anna Berger.  
+- **UID:** controlgroup-1784598054051@exp.rq2.local"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,1,7.2,True,ok,tool-ok,"The appointment **""Kickoff""** has been created for **July 23, 2026 at 14:00 UTC**, and **michael.krause@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,2,8.4,True,ok,tool-ok,"Der Termin **""Kickoff""** wurde erfolgreich erstellt:
+
+- **Datum:** 23. Juli 2026
+- **Uhrzeit:** 14:00 Uhr
+- **Teilnehmer:** michael.krause@example.net
+
+Bestätigung: `Event 'Kickoff' created at 2026-07-23T14:00:00`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,3,7.6,True,ok,tool-ok,"The appointment **""Kickoff""** has been created for **July 23, 2026 at 14:00 UTC**, and **michael.krause@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,4,8.0,True,ok,tool-ok,"Der Termin **""Kickoff""** wurde erfolgreich erstellt:
+
+- **Datum:** 23. Juli 2026
+- **Uhrzeit:** 14:00 Uhr
+- **Teilnehmer:** michael.krause@example.net
+
+Die Einladung wurde versendet (Event-ID: controlgroup-1784598094521@exp.rq2.local)."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-03-en,calendar,en,5,7.5,True,ok,tool-ok,"Der Termin **""Kickoff""** wurde erstellt:
+
+- **Datum:** 23. Juli 2026
+- **Uhrzeit:** 14:00 Uhr
+- **Teilnehmer:** michael.krause@example.net
+
+Die Einladung wurde erfolgreich versendet (Event-ID: `controlgroup-1784598104476@exp.rq2.local`)."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,1,7.0,True,ok,tool-ok,"The appointment **""Callback""** has been created for **2026-07-24 at 11:00** with the description:
+
+> Number +49 721 1234567
+
+Event UID: `controlgroup-1784598113892@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,2,8.0,True,ok,tool-ok,"The appointment **""Callback""** has been created for **July 24, 2026 at 11:00 UTC** with the description:
+
+> Number +49 721 1234567
+
+Event UID: `controlgroup-1784598124608@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,3,7.3,True,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Callback
+- **Date:** Friday, 2026-07-24
+- **Time:** 11:00
+- **Description:** Number +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,4,8.3,True,ok,tool-ok,"Done. The appointment **""Callback""** has been created for **2026-07-24 at 11:00 UTC** with the description:
+
+> Number +49 721 1234567"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-04-en,calendar,en,5,8.0,True,ok,tool-ok,Der Termin „Callback“ wurde für den **24. Juli 2026 um 11:00 Uhr** mit der Beschreibung „Number +49 721 1234567“ erfolgreich erstellt.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,1,9.2,True,ok,tool-ok,"Done. The appointment **""Workshop""** has been created for **2026-07-27 from 09:00 to 11:00 UTC**, and **lisa.wagner@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,2,7.6,True,ok,tool-ok,"Done! The appointment **""Workshop""** has been created for **2026-07-27 from 09:00 to 11:00 UTC**, and **lisa.wagner@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,3,10.8,True,ok,tool-ok,"Done. The appointment **""Workshop""** has been created for **2026-07-27 at 09:00 UTC** (ending at 11:00 UTC), and **lisa.wagner@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,4,8.7,True,ok,tool-ok,"The appointment **""Workshop""** has been created successfully:
+
+- **Date:** 2026-07-27
+- **Time:** 09:00 – 11:00 (2 hours)
+- **Participant:** lisa.wagner@example.net
+
+The event was confirmed with UID `controlgroup-1784598197369@exp.rq2.local`."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-05-en,calendar,en,5,7.7,True,ok,tool-ok,"Done! The appointment **""Workshop""** has been created for **2026-07-27 from 09:00 to 11:00 UTC**, and **lisa.wagner@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,1,6.6,True,ok,tool-ok,"Der Termin wurde erstellt:
+
+- **Titel:** Interview  
+- **Datum/Uhrzeit:** 28. Juli 2026, 15:30 Uhr  
+- **Beschreibung:** Candidate Thomas Schmidt"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,2,6.6,True,ok,tool-ok,"Der Termin wurde erstellt:
+
+- **Titel:** Interview  
+- **Datum/Uhrzeit:** 28. Juli 2026, 15:30 Uhr  
+- **Beschreibung:** Candidate Thomas Schmidt"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,3,7.6,True,ok,tool-ok,"Der Termin ""Interview"" wurde erfolgreich erstellt:
+
+- **Datum:** 28. Juli 2026
+- **Uhrzeit:** 15:30
+- **Beschreibung:** Candidate Thomas Schmidt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,4,7.1,True,ok,tool-ok,"The appointment has been created:
+
+- **Title:** Interview
+- **Date & Time:** 2026-07-28 at 15:30
+- **Description:** Candidate Thomas Schmidt."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-06-en,calendar,en,5,6.9,True,ok,tool-ok,"Der Termin wurde erstellt:
+
+- **Titel:** Interview  
+- **Datum/Uhrzeit:** Dienstag, 28. Juli 2026, 15:30 Uhr  
+- **Beschreibung:** Candidate Thomas Schmidt.  
+
+Bestätigung: `Event 'Interview' created at 2026-07-28T15:30:00`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,1,6.8,True,ok,tool-ok,"Done. The appointment **""Review""** has been created for **2026-07-29 at 13:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,2,8.8,True,ok,tool-ok,"Done. The appointment **""Review""** has been created for **2026-07-29 at 13:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,3,7.1,True,ok,tool-ok,"Done. The appointment **""Review""** has been created for **2026-07-29 at 13:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,4,7.3,True,ok,tool-ok,"Done. The appointment **""Review""** has been created for **2026-07-29 at 13:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-07-en,calendar,en,5,7.4,True,ok,tool-ok,"Done! The appointment **""Review""** has been created for **2026-07-29 at 13:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,1,9.4,True,ok,tool-ok,"The appointment has been created:
+
+- **Title:** Billing  
+- **Date:** 2026-07-30  
+- **Time:** 10:30  
+- **Description:** IBAN DE89 3704 0044 0532 0130 00"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,2,8.6,True,ok,tool-ok,"Done. The appointment **""Billing""** has been created for **July 30, 2026 at 10:30 UTC** with the description:
+
+> IBAN DE89 3704 0044 0532 0130 00"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,3,8.6,True,ok,tool-ok,"Done. The appointment **'Billing'** has been created for **July 30, 2026 at 10:30** with the description:
+
+`IBAN DE89 3704 0044 0532 0130 00`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,4,8.3,True,ok,tool-ok,"Done. The appointment **""Billing""** has been created for **July 30, 2026 at 10:30** with the description:
+
+> IBAN DE89 3704 0044 0532 0130 00"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-08-en,calendar,en,5,7.9,True,ok,tool-ok,"Done. The appointment **'Billing'** has been created for **2026-07-30 at 10:30** with the description:
+
+> IBAN DE89 3704 0044 0532 0130 00"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,1,7.2,True,ok,tool-ok,"The appointment **""Coordination""** has been created successfully.
+
+- **Date:** 2026-07-31
+- **Time:** 16:00
+- **Participant:** julia.meyer@example.org
+- **Event ID:** `controlgroup-1784598362456@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,2,10.8,True,ok,tool-ok,"The appointment **""Coordination""** has been created for **July 31, 2026 at 16:00 UTC**, and **julia.meyer@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,3,8.4,True,ok,tool-ok,"The appointment **""Coordination""** has been created for **July 31, 2026 at 16:00 UTC**, and **julia.meyer@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,4,8.2,True,ok,tool-ok,"The appointment **""Coordination""** has been successfully created for **July 31, 2026 at 16:00 UTC**, with **julia.meyer@example.org** invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-09-en,calendar,en,5,10.3,True,ok,tool-ok,"The appointment **""Coordination""** has been created for **July 31, 2026 at 16:00 UTC**, and **julia.meyer@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,1,8.0,True,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Note
+- **Date:** 2026-08-03
+- **Time:** 08:30
+- **Description:** Contact person Michael Krause."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,2,6.5,True,ok,tool-ok,"The appointment ""Note"" has been created for August 3, 2026 at 08:30 with the description ""Contact person Michael Krause."""
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,3,7.7,True,ok,tool-ok,"The appointment has been created:
+
+- **Title:** Note  
+- **Date:** 2026-08-03  
+- **Time:** 08:30  
+- **Description:** Contact person Michael Krause."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,4,8.2,True,ok,tool-ok,"The appointment has been created:
+
+- **Title:** Note  
+- **Date:** 2026-08-03  
+- **Time:** 08:30  
+- **Description:** Contact person Michael Krause."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-10-en,calendar,en,5,7.1,True,ok,tool-ok,"The appointment has been created:
+
+- **Title:** Note
+- **Date:** 2026-08-03
+- **Time:** 08:30
+- **Description:** Contact person Michael Krause."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,1,7.7,True,ok,tool-ok,"Done! I've created the appointment **""Call""** on **August 4, 2026 at 11:15 UTC** and invited **thomas.schmidt@example.com** as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,2,8.4,True,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Call  
+- **Date:** 2026-08-04  
+- **Time:** 11:15  
+- **Participant:** thomas.schmidt@example.com  
+
+Event ID: `controlgroup-1784598474960@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,3,7.7,True,ok,tool-ok,"Done. The appointment **""Call""** has been created for **August 4, 2026 at 11:15**, and **thomas.schmidt@example.com** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,4,7.3,True,ok,tool-ok,"Done. The appointment **""Call""** has been created on **August 4, 2026 at 11:15**, with **thomas.schmidt@example.com** invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-11-en,calendar,en,5,8.5,True,ok,tool-ok,"The appointment **""Call""** has been created successfully.
+
+- **Date:** August 4, 2026  
+- **Time:** 11:15  
+- **Participant:** thomas.schmidt@example.com  
+
+Event UID: `controlgroup-1784598504492@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,1,6.9,True,ok,tool-ok,"The appointment **""Handover""** has been created successfully.
+
+- **Date:** August 5, 2026
+- **Time:** 14:45
+- **Description:** Recipient Lisa Wagner"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,2,6.9,True,ok,tool-ok,"The appointment **""Handover""** has been created successfully.
+
+- **Date:** 2026-08-05  
+- **Time:** 14:45  
+- **Description:** Recipient Lisa Wagner"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,3,6.4,True,ok,tool-ok,"The appointment **""Handover""** has been created successfully.
+
+- **Date:** 2026-08-05
+- **Time:** 14:45
+- **Description:** Recipient Lisa Wagner"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,4,6.6,True,ok,tool-ok,"The appointment **""Handover""** has been created successfully.
+
+- **Date:** August 5, 2026
+- **Time:** 14:45
+- **Description:** Recipient Lisa Wagner"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-12-en,calendar,en,5,6.9,True,ok,tool-ok,"The appointment **""Handover""** has been successfully created for **August 5, 2026 at 14:45** with the description: *Recipient Lisa Wagner*."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,1,7.3,True,ok,tool-ok,"The appointment **""Planning""** has been created successfully for **August 6, 2026 at 09:00 UTC**, with **david.eichel@example.com** invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,2,7.8,True,ok,tool-ok,"Done. The appointment **""Planning""** has been created on **2026-08-06 at 09:00 UTC** with **david.eichel@example.com** invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,3,7.5,True,ok,tool-ok,"Done! The appointment **""Planning""** has been created on **August 6, 2026 at 09:00 UTC**, and **david.eichel@example.com** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,4,7.1,True,ok,tool-ok,"Done. The appointment **""Planning""** has been created on **August 6, 2026 at 09:00 UTC**, and **david.eichel@example.com** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-13-en,calendar,en,5,8.6,True,ok,tool-ok,"Done. The appointment **""Planning""** has been created for **2026-08-06 at 09:00 UTC**, and **david.eichel@example.com** has been invited as a participant. The event UID is `controlgroup-1784598597991@exp.rq2.local`."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,1,9.3,True,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Viewing  
+- **Date:** 2026-08-07  
+- **Time:** 10:00  
+- **Description:** Location Karlsruhe"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,2,6.7,True,ok,tool-ok,"The appointment **""Viewing""** has been created successfully.
+
+- **Date:** 2026-08-07
+- **Time:** 10:00
+- **Description:** Location Karlsruhe"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,3,6.9,True,ok,tool-ok,"The appointment **'Viewing'** has been created on **2026-08-07 at 10:00** with the description **""Location Karlsruhe""**."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,4,8.6,True,ok,tool-ok,"The appointment **'Viewing'** has been created successfully.
+
+- **Date:** 2026-08-07
+- **Time:** 10:00
+- **Description:** Location Karlsruhe"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-14-en,calendar,en,5,7.7,True,ok,tool-ok,"The appointment **""Viewing""** has been created successfully:
+
+- **Date:** 2026-08-07
+- **Time:** 10:00
+- **Description:** Location Karlsruhe
+
+Event ID: `controlgroup-1784598646743@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,1,7.5,True,ok,tool-ok,"The appointment **""Sync""** has been created successfully:
+
+- **Date:** 2026-08-10
+- **Time:** 15:00
+- **Participant:** michael.krause@example.net
+
+Event ID: `controlgroup-1784598656606@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,2,8.2,True,ok,tool-ok,"Done. The appointment **""Sync""** has been created for **August 10, 2026 at 15:00 UTC**, and **michael.krause@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,3,8.9,True,ok,tool-ok,"Done. The appointment **""Sync""** has been created for **August 10, 2026 at 15:00 UTC**, and **michael.krause@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,4,7.8,True,ok,tool-ok,"The appointment **""Sync""** has been created for **2026-08-10 at 15:00 UTC**, and **michael.krause@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-15-en,calendar,en,5,8.2,True,ok,tool-ok,"Done. The appointment **""Sync""** has been created for **2026-08-10 at 15:00 UTC**, and **michael.krause@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,1,8.2,True,ok,tool-ok,Der Termin „Conversation“ wurde am 11. August 2026 um 13:30 Uhr erstellt. In der Beschreibung steht: „Participant Julia Meyer.“
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,2,7.5,True,ok,tool-ok,Der Termin „Conversation“ wurde am 11. August 2026 um 13:30 Uhr mit der Beschreibung „Participant Julia Meyer.“ erstellt.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,3,20.3,True,ok,tool-ok,Der Termin „Conversation“ wurde am 11. August 2026 um 13:30 Uhr mit der Beschreibung „Participant Julia Meyer.“ erstellt.
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,4,8.7,True,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Conversation  
+- **Date:** 2026-08-11  
+- **Time:** 13:30  
+- **Description:** Participant Julia Meyer."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-16-en,calendar,en,5,7.8,True,ok,tool-ok,"Der Termin „Conversation“ wurde erfolgreich erstellt:
+
+- **Datum:** 11. August 2026
+- **Uhrzeit:** 13:30
+- **Beschreibung:** Participant Julia Meyer."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,1,9.5,True,ok,tool-ok,"The appointment **""Demo""** has been created on **2026-08-12 at 11:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,2,8.1,True,ok,tool-ok,"The appointment **""Demo""** has been created for **August 12, 2026 at 11:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,3,7.2,True,ok,tool-ok,"Done. The appointment **""Demo""** has been created on **August 12, 2026 at 11:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,4,8.1,True,ok,tool-ok,"Done. The appointment **""Demo""** has been created on **August 12, 2026 at 11:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-17-en,calendar,en,5,7.5,True,ok,tool-ok,"Done. The appointment **""Demo""** has been created on **August 12, 2026 at 11:00 UTC**, and **anna.berger@example.org** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,1,8.1,True,ok,tool-ok,"Der Termin **'Hotline'** wurde erfolgreich erstellt:
+
+- **Datum:** 13. August 2026
+- **Uhrzeit:** 09:45
+- **Beschreibung:** Extension +49 30 9876543"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,2,7.1,True,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Hotline
+- **Date:** 2026-08-13
+- **Time:** 09:45
+- **Description:** Extension +49 30 9876543"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,3,7.0,True,ok,tool-ok,"Der Termin **'Hotline'** wurde erstellt:
+
+- **Datum:** 13. August 2026
+- **Uhrzeit:** 09:45
+- **Beschreibung:** Extension +49 30 9876543
+
+Bestätigung: `Event 'Hotline' created at 2026-08-13T09:45:00`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,4,7.6,True,ok,tool-ok,"Der Termin wurde erfolgreich erstellt:
+
+- **Titel:** Hotline  
+- **Datum/Uhrzeit:** 13. August 2026, 09:45 Uhr  
+- **Beschreibung:** Extension +49 30 9876543"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-18-en,calendar,en,5,7.3,True,ok,tool-ok,"Der Termin **'Hotline'** wurde erfolgreich erstellt:
+
+- **Datum:** 13. August 2026
+- **Uhrzeit:** 09:45
+- **Beschreibung:** Extension +49 30 9876543"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,1,7.9,True,ok,tool-ok,"The appointment **""Closing""** has been created for **August 14, 2026 at 16:30 UTC**, and **lisa.wagner@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,2,6.8,True,ok,tool-ok,"The appointment **""Closing""** has been created for **August 14, 2026 at 16:30 UTC**, and **lisa.wagner@example.net** has been invited as a participant.
+
+- **Event ID:** `controlgroup-1784598880667@exp.rq2.local`"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,3,7.3,True,ok,tool-ok,"Done. The appointment **""Closing""** has been created on **2026-08-14 at 16:30**, and **lisa.wagner@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,4,7.5,True,ok,tool-ok,"The appointment **""Closing""** has been successfully created for **August 14, 2026 at 16:30 UTC**, with **lisa.wagner@example.net** invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-19-en,calendar,en,5,8.2,True,ok,tool-ok,"Done. The appointment **""Closing""** has been created for **2026-08-14 at 16:30**, and **lisa.wagner@example.net** has been invited as a participant."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,1,10.1,True,ok,tool-ok,"The appointment has been created:
+
+- **Title:** Contact care  
+- **Date:** 2026-08-17  
+- **Time:** 10:15  
+- **Description:** Customer Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,2,7.9,True,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Contact care
+- **Date:** 2026-08-17
+- **Time:** 10:15
+- **Description:** Customer Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,3,7.6,True,ok,tool-ok,"The appointment **""Contact care""** has been created successfully.
+
+- **Date:** 2026-08-17
+- **Time:** 10:15
+- **Description:** Customer Anna Berger"
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,4,7.9,True,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Contact care
+- **Date:** 2026-08-17
+- **Time:** 10:15
+- **Description:** Customer Anna Berger."
+exp-rq2-experimentalgroup,privacyproxy/kimi-k2.6:cloud,cal-20-en,calendar,en,5,7.1,True,ok,tool-ok,"The appointment has been created successfully:
+
+- **Title:** Contact care
+- **Date:** 2026-08-17
+- **Time:** 10:15
+- **Description:** Customer Anna Berger"
