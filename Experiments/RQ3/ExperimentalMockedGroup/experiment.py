@@ -107,6 +107,31 @@ def clear_openclaw_sessions() -> None:
             elif path.is_dir():
                 shutil.rmtree(path, ignore_errors=True)
 
+def wait_until_gateway_healthy() -> None:
+    """Wait until the gateway container reports 'healthy' again."""
+    for _ in range(60):
+        inspect = subprocess.run(
+            ["docker", "inspect", "-f", "{{.State.Health.Status}}", OPENCLAW_CONTAINER],
+            capture_output=True, text=True)
+        if inspect.stdout.strip() == "healthy":
+            return
+        time.sleep(2)
+    raise SystemExit("Gateway did not become healthy.")
+
+def stop_stray_agent() -> None:
+    """Stop an agent that is still running after a timeout.
+
+    A timeout only kills the local "docker exec" - the agent INSIDE the gateway
+    keeps working and keeps sending requests to the proxy. Those late requests
+    land in the NEXT row's recorder log and are measured as if they belonged to
+    it, which corrupts the pseudonymization result of the following rows.
+    Restarting the gateway is the simple and reliable way to make sure nothing is
+    left running.
+    """
+    print("      (timeout: restarting gateway to stop the stray agent)")
+    subprocess.run(["docker", "restart", OPENCLAW_CONTAINER], capture_output=True, text=True)
+    wait_until_gateway_healthy()
+
 def reset_agent_store_for_run() -> None:
     """Once at run start: stop the gateway, delete the agent's sqlite store
     (sessions + transcripts + full-text search index), start the gateway again.
@@ -118,15 +143,8 @@ def reset_agent_store_for_run() -> None:
     for db_file in AGENT_DB.parent.glob(AGENT_DB.name + "*"):   # .sqlite, -wal, -shm, quarantined
         db_file.unlink()
     subprocess.run(["docker", "start", OPENCLAW_CONTAINER], capture_output=True, text=True, check=True)
-    for _ in range(60):
-        inspect = subprocess.run(
-            ["docker", "inspect", "-f", "{{.State.Health.Status}}", OPENCLAW_CONTAINER],
-            capture_output=True, text=True)
-        if inspect.stdout.strip() == "healthy":
-            print("Gateway healthy, store is fresh.")
-            return
-        time.sleep(2)
-    raise SystemExit("Gateway did not become healthy after the store reset.")
+    wait_until_gateway_healthy()
+    print("Gateway healthy, store is fresh.")
 
 def reset_recorder() -> None:
     """Empty the LLM recorder, so /log only holds THIS data point's exchanges."""
@@ -202,15 +220,37 @@ def seen_by_llm() -> str:
                 texts.append(content)
     return "\n".join(texts)
 
+def everything_seen_by_llm() -> str:
+    """The COMPLETE recorded requests as raw text - including tool_call arguments,
+    which do not sit in "content". Used for the leak check."""
+    try:
+        log = requests.get(f"{LLM_RECORDER}/log", timeout=5).json()
+    except requests.RequestException:
+        return ""
+    return json.dumps([entry.get("request") for entry in log], ensure_ascii=False)
+
 def check_pseudonymization(row) -> tuple[bool, str]:
     """Did the LLM see a placeholder INSTEAD of the real PII - fully, not partially?
 
-    We rebuild what the LLM SHOULD have seen: the prompt, but with every PII value
-    replaced by "some placeholder". If exactly that shape appears in the recorded
-    text, pseudonymization was perfect. If only PART of a value was masked (e.g.
-    "[PERSON_..] Itzel" or "dennis.[PERSON_..]@..."), the shape does not match and
-    we report a leak.
+    Two things have to hold, and we check BOTH:
+
+    1. No real PII value may appear ANYWHERE in what the LLM received - not in a
+       later round either, and not inside tool_call arguments.
+    2. The prompt must have the expected SHAPE: the prompt text with a placeholder
+       exactly where a PII value was. This catches partial masking such as
+       "[PERSON_..] Itzel" or "dennis.[PERSON_..]@...".
+
+    Checking only 2. would not be enough: it asks whether the masked form is
+    PRESENT, not whether the real value is ABSENT - so a leak in a later round
+    would go unnoticed.
     """
+    # 1) the real values must not show up anywhere
+    everything = everything_seen_by_llm()
+    leaked = [pii["value"] for pii in row["pii"] if pii["value"] in everything]
+    if leaked:
+        return False, "real value reached the LLM: " + "; ".join(leaked)
+
+    # 2) the prompt must have the expected shape
     prompt = row["prompt"]
 
     # find where each PII value sits in the prompt (left to right)
@@ -307,6 +347,7 @@ def run_agent(session_key: str, message: str, model: str | None, timeout: int) -
         try:
             completed = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
         except subprocess.TimeoutExpired:
+            stop_stray_agent()   # otherwise it keeps sending requests to the proxy
             if attempt == 2:
                 return {"_error": "timeout"}
             continue
