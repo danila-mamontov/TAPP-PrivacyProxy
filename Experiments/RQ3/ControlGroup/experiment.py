@@ -43,6 +43,13 @@ OPENCLAW_CONTAINER = os.environ.get("OPENCLAW_CONTAINER", "openclaw-openclaw-gat
 WORKSPACE = Path.home() / ".openclaw" / "workspace"
 WORKSPACE_MEMORY_DIR = WORKSPACE / "memory"
 WORKSPACE_MEMORY_FILE = WORKSPACE / "MEMORY.md"
+# Past conversations live in TWO places: as files in sessions/ (incl. soft-deleted
+# .zst archives) and as rows in the agent's sqlite store - including a full-text
+# search index (session_transcript_fts) that the agent's memory/search tools use.
+# Both are wiped, otherwise the agent can "remember" earlier runs. The experimental
+# groups do exactly the same - without it the comparison would be unfair.
+SESSIONS_DIR = Path.home() / ".openclaw" / "agents" / "main" / "sessions"
+AGENT_DB = Path.home() / ".openclaw" / "agents" / "main" / "agent" / "openclaw-agent.sqlite"
 
 # -------------------------
 # Experiment vars
@@ -56,7 +63,7 @@ MODEL = os.environ.get("MODEL", "llm-direct/kimi-k2.6:cloud")
 # Only ONE orchestrator may run at a time: all runs share the global state of the
 # recorder / tool-log / presidio-mock. Parallel runs would reset each other's state
 # and produce wrong LEAK / no-tool-call errors. Enforced with a lock file.
-LOCKFILE = Path("/tmp/exp_rq3_controlgroup_run.lock")
+LOCKFILE = Path("/tmp/openclaw_experiment_run.lock")
 
 # -------------------------
 # Cleaning
@@ -83,9 +90,62 @@ def clear_workspace_memory() -> None:
     if WORKSPACE_MEMORY_FILE.exists():
         WORKSPACE_MEMORY_FILE.write_text("# MEMORY.md\n")
 
+def clear_openclaw_sessions() -> None:
+    """Delete the session FILES on disk (transcripts, incl. archived .zst).
+
+    The sqlite store is deliberately NOT touched here: sqlite does not survive two
+    writers across the Docker file-sharing boundary (host python vs. the gateway in
+    the container). The sqlite store is instead wiped ONCE per run, with the
+    gateway stopped (see reset_agent_store_for_run).
+    """
+    if SESSIONS_DIR.exists():
+        for path in SESSIONS_DIR.iterdir():
+            if path.is_file():
+                path.unlink()
+            elif path.is_dir():
+                shutil.rmtree(path, ignore_errors=True)
+
+def wait_until_gateway_healthy() -> None:
+    """Wait until the gateway container reports 'healthy' again."""
+    for _ in range(60):
+        inspect = subprocess.run(
+            ["docker", "inspect", "-f", "{{.State.Health.Status}}", OPENCLAW_CONTAINER],
+            capture_output=True, text=True)
+        if inspect.stdout.strip() == "healthy":
+            return
+        time.sleep(2)
+    raise SystemExit("Gateway did not become healthy.")
+
+def stop_stray_agent() -> None:
+    """Stop an agent that is still running after a timeout.
+
+    A timeout only kills the local "docker exec" - the agent INSIDE the gateway
+    keeps working and keeps calling tools. Those late calls land in the NEXT row's
+    mailbox / calendar and are measured as if they belonged to it. Restarting the
+    gateway is the simple and reliable way to make sure nothing is left running.
+    """
+    print("      (timeout: restarting gateway to stop the stray agent)")
+    subprocess.run(["docker", "restart", OPENCLAW_CONTAINER], capture_output=True, text=True)
+    wait_until_gateway_healthy()
+
+def reset_agent_store_for_run() -> None:
+    """Once at run start: stop the gateway, delete the agent's sqlite store
+    (sessions + transcripts + full-text search index), start the gateway again.
+    Stopping first is essential - deleting while the gateway writes corrupts the db.
+    The gateway recreates an empty store on startup (auth/config live in
+    openclaw.json, so nothing is lost)."""
+    print("Resetting OpenClaw agent store (gateway restart) ...")
+    subprocess.run(["docker", "stop", OPENCLAW_CONTAINER], capture_output=True, text=True, check=True)
+    for db_file in AGENT_DB.parent.glob(AGENT_DB.name + "*"):   # .sqlite, -wal, -shm, quarantined
+        db_file.unlink()
+    subprocess.run(["docker", "start", OPENCLAW_CONTAINER], capture_output=True, text=True, check=True)
+    wait_until_gateway_healthy()
+    print("Gateway healthy, store is fresh.")
+
 def clean_all():
     reset_mcp_and_tools()
     clear_workspace_memory()
+    clear_openclaw_sessions()
 
 def reply_text(agent_result: dict) -> str:
     """The agent's final visible answer text."""
@@ -192,6 +252,7 @@ def run_agent(session_key: str, message: str, model: str | None, timeout: int) -
         try:
             completed = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
         except subprocess.TimeoutExpired:
+            stop_stray_agent()   # otherwise it keeps calling tools for the next row
             if attempt == 2:
                 return {"_error": "timeout"}
             continue
@@ -217,9 +278,51 @@ def acquire_lock() -> None:
                          f"If that is wrong, delete the file and start again.")
     LOCKFILE.write_text(str(os.getpid()))
 
+def preflight() -> None:
+    """Check the measuring apparatus BEFORE the run starts.
+
+    Each check stands for a failure that already happened here and stayed
+    invisible for hours, because it never raised an error - it only showed up in
+    the results. Twenty seconds here save a run of several hours.
+    """
+    print("Preflight ...")
+
+    # 1) The control group must NOT go through the proxy, otherwise it would
+    #    silently measure the experimental group.
+    if not MODEL.startswith("llm-direct/"):
+        raise SystemExit(f"Preflight: MODEL is '{MODEL}' - the control group "
+                         f"needs an 'llm-direct/...' model.")
+
+    # 2) Tools, Mailpit: reachable, and /reset really empties the mailbox.
+    requests.post(f"{MCP_SERVER}/reset", timeout=10)
+    mails = requests.get(f"{MAILPIT_UI}/api/v1/messages", timeout=10).json().get("messages", [])
+    if mails:
+        raise SystemExit(f"Preflight: Mailpit still holds {len(mails)} mail(s) after reset.")
+
+    # 3) Calendar: write an event WITH an attendee and read it back. This catches
+    #    both a broken Radicale mount and a tool that silently drops fields.
+    client = caldav.DAVClient(url=CALDAV, username=CALDAV_USER, password=CALDAV_PASS)
+    try:
+        calendar = client.principal().calendar(name=CALDAV_CAL)
+        calendar.save_event(
+            "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\n"
+            "UID:preflight@exp.local\r\nDTSTART:20260101T090000\r\nDTEND:20260101T100000\r\n"
+            "SUMMARY:preflight\r\nATTENDEE:mailto:preflight@example.com\r\n"
+            "END:VEVENT\r\nEND:VCALENDAR\r\n")
+        events = calendar.events()
+    except Exception as error:
+        raise SystemExit(f"Preflight: calendar not usable: {error}")
+    if len(events) != 1 or "preflight@example.com" not in events[0].data:
+        raise SystemExit("Preflight: the calendar did not return the event with its attendee.")
+    requests.post(f"{MCP_SERVER}/reset", timeout=10)   # remove the test event again
+
+    print("Preflight ok: tools, mail, calendar and model all work.")
+
 def main() -> None:
     acquire_lock()
     try:
+        preflight()
+        reset_agent_store_for_run()
         rows = json.loads((HERE / "dataset.json").read_text(encoding="utf-8"))["rows"]
         print(f"== {DEFAULT_GROUP} == {len(rows)} rows x {DEFAULT_ITERATIONS} iteration(s) | model={MODEL}")
 

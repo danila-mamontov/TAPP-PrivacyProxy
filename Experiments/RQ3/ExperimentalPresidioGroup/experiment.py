@@ -28,6 +28,7 @@ MCP_SERVER    = f"http://localhost:{_port('TOOLS_PORT', '3100')}"      # tool-ca
 MAILPIT_UI  = f"http://localhost:{_port('MAILPIT_UI_PORT', '8025')}"  # Mailpit REST API
 CALDAV = f"http://localhost:{_port('CALDAV_PORT', '5232')}/"
 LLM_RECORDER  = f"http://localhost:{_port('RECORDER_PORT', '8000')}"  # what the LLM actually saw
+PROXY = f"http://127.0.0.1:{_port('PROXY_PORT', '8080')}"             # the PrivacyProxy itself
 CALDAV_USER, CALDAV_PASS = "test", "test"
 CALDAV_CAL = os.environ.get("CALDAV_CAL", "exp_rq2_experimentalgroup")
 
@@ -64,7 +65,7 @@ MODEL = os.environ.get("MODEL", "llm-direct/kimi-k2.6:cloud")
 # Only ONE orchestrator may run at a time: all runs share the global state of the
 # recorder / tool-log / presidio-mock. Parallel runs would reset each other's state
 # and produce wrong LEAK / no-tool-call errors. Enforced with a lock file.
-LOCKFILE = Path("/tmp/exp_rq2_experimentalgroup_run.lock")
+LOCKFILE = Path("/tmp/openclaw_experiment_run.lock")
 
 # -------------------------
 # Cleaning
@@ -212,13 +213,20 @@ def seen_by_llm() -> str:
     return "\n".join(texts)
 
 def everything_seen_by_llm() -> str:
-    """The COMPLETE recorded requests as raw text - including tool_call arguments,
-    which do not sit in "content". Used for the leak check."""
+    """All recorded MESSAGES as raw text - including tool_call arguments, which do
+    not sit in "content". Used for the leak check.
+
+    Only the messages, deliberately NOT the whole request: the "tools" section
+    holds the tool SCHEMA, and its examples contain things like
+    "2026-07-15T14:00:00". A row whose PII is "14:00" would otherwise be reported
+    as a leak although that text never came from the user.
+    """
     try:
         log = requests.get(f"{LLM_RECORDER}/log", timeout=5).json()
     except requests.RequestException:
         return ""
-    return json.dumps([entry.get("request") for entry in log], ensure_ascii=False)
+    return json.dumps([(entry.get("request") or {}).get("messages", []) for entry in log],
+                      ensure_ascii=False)
 
 def check_pseudonymization(row) -> tuple[bool, str]:
     """Did the LLM see a placeholder INSTEAD of the real PII - fully, not partially?
@@ -369,9 +377,74 @@ def acquire_lock() -> None:
 # those old conversations - the agent then "remembers" earlier events.
 RUN_ID = datetime.now().strftime("%Y%m%d%H%M%S")
 
+def preflight() -> None:
+    """Check the measuring apparatus BEFORE the run starts.
+
+    Each check stands for a failure that already happened here and stayed
+    invisible for hours, because it never raised an error - it only showed up in
+    the results. Twenty seconds here save a run of several hours.
+    """
+    print("Preflight ...")
+
+    # 1) The experimental group MUST go through the proxy. With "llm-direct/..."
+    #    the run silently measures the control group instead.
+    if not MODEL.startswith("privacyproxy/"):
+        raise SystemExit(f"Preflight: MODEL is '{MODEL}' - the experimental group "
+                         f"needs a 'privacyproxy/...' model.")
+
+    # 2) Tools, Mailpit: reachable, and /reset really empties the mailbox.
+    requests.post(f"{MCP_SERVER}/reset", timeout=10)
+    mails = requests.get(f"{MAILPIT_UI}/api/v1/messages", timeout=10).json().get("messages", [])
+    if mails:
+        raise SystemExit(f"Preflight: Mailpit still holds {len(mails)} mail(s) after reset.")
+
+    # 3) Calendar: write an event WITH an attendee and read it back. This catches
+    #    both a broken Radicale mount and a tool that silently drops fields.
+    client = caldav.DAVClient(url=CALDAV, username=CALDAV_USER, password=CALDAV_PASS)
+    try:
+        calendar = client.principal().calendar(name=CALDAV_CAL)
+        calendar.save_event(
+            "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\n"
+            "UID:preflight@exp.local\r\nDTSTART:20260101T090000\r\nDTEND:20260101T100000\r\n"
+            "SUMMARY:preflight\r\nATTENDEE:mailto:preflight@example.com\r\n"
+            "END:VEVENT\r\nEND:VCALENDAR\r\n")
+        events = calendar.events()
+    except Exception as error:
+        raise SystemExit(f"Preflight: calendar not usable: {error}")
+    if len(events) != 1 or "preflight@example.com" not in events[0].data:
+        raise SystemExit("Preflight: the calendar did not return the event with its attendee.")
+    requests.post(f"{MCP_SERVER}/reset", timeout=10)   # remove the test event again
+
+    # 4) The full chain: Presidio detects -> proxy masks -> recorder sees a
+    #    placeholder and NOT the real value. An e-mail address is used on purpose:
+    #    that is the one entity the real Presidio recognises reliably, so a failure
+    #    here means the chain is broken, not that detection is imperfect.
+    canary = "preflight.canary@example.com"
+    reset_recorder()
+    try:
+        answer = requests.post(f"{PROXY}/v1/chat/completions", timeout=120, json={
+            "model": "preflight", "max_tokens": 10,
+            "messages": [{"role": "user", "content": f"Say OK. Contact: {canary}"}]})
+    except requests.RequestException as error:
+        raise SystemExit(f"Preflight: proxy not reachable: {error}")
+    if answer.status_code != 200:
+        raise SystemExit(f"Preflight: proxy answered {answer.status_code}: {answer.text[:300]}")
+
+    seen = everything_seen_by_llm()
+    if not seen:
+        raise SystemExit("Preflight: the recorder logged nothing - is Llm__BaseUrl pointing at it?")
+    if canary in seen:
+        raise SystemExit("Preflight: the real value reached the LLM - masking is NOT working.")
+    if not re.search(PLACEHOLDER, seen):
+        raise SystemExit("Preflight: no placeholder in what the LLM saw - masking is NOT working.")
+
+    reset_recorder()
+    print("Preflight ok: tools, mail, calendar, presidio, proxy, recorder and model all work.")
+
 def main() -> None:
     acquire_lock()
     try:
+        preflight()
         reset_agent_store_for_run()
         rows = json.loads((HERE / "dataset.json").read_text(encoding="utf-8"))["rows"]
         print(f"== {DEFAULT_GROUP} == {len(rows)} rows x {DEFAULT_ITERATIONS} iteration(s) | model={MODEL}")
