@@ -392,6 +392,13 @@ def preflight() -> None:
         raise SystemExit(f"Preflight: MODEL is '{MODEL}' - the experimental group "
                          f"needs a 'privacyproxy/...' model.")
 
+    # MODEL and LLM_MODEL are two separate lines in .env and must always agree.
+    # Switching only one of them silently runs a different model behind the proxy.
+    behind_proxy = os.environ.get("LLM_MODEL", "")
+    if MODEL.split("/", 1)[1] != behind_proxy:
+        raise SystemExit(f"Preflight: MODEL '{MODEL}' and LLM_MODEL '{behind_proxy}' "
+                         f"do not match - the proxy would order a different model.")
+
     # 2) Tools, Mailpit: reachable, and /reset really empties the mailbox.
     requests.post(f"{MCP_SERVER}/reset", timeout=10)
     mails = requests.get(f"{MAILPIT_UI}/api/v1/messages", timeout=10).json().get("messages", [])
