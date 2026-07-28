@@ -26,7 +26,7 @@ public interface IChatCompletionService
     public Task<ChatCompletionResponse> ProcessAsync(ChatCompletionRequest request, CancellationToken ct = default);
 
     /// <summary>
-    /// Processes the specified chat completion request in streaming mode, writing the deanonymized
+    /// Processes the specified chat completion request in streaming mode, writing the depseudonymized
     /// response back to the caller incrementally as Server-Sent Events (SSE).
     /// </summary>
     /// <param name="request">

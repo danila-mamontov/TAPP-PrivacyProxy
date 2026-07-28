@@ -1,7 +1,7 @@
 namespace PrivacyProxy.Core.Configuration;
 
 /// <summary>
-/// Configuration options for Presidio, a library for text analytics and data anonymization.
+/// Configuration options for Presidio, a library for text analytics and data pseudonymization.
 /// </summary>
 public class PresidioOptions
 {
@@ -14,7 +14,7 @@ public class PresidioOptions
     /// <remarks>
     /// The <c>AllowList</c> property provides a mechanism to define specific
     /// entries that should bypass privacy-preserving processes. These entries
-    /// are treated as exceptions and will not be redacted, anonymized, or analyzed,
+    /// are treated as exceptions and will not be redacted, pseudonymized, or analyzed,
     /// ensuring that critical or sensitive information can be preserved as-is.
     /// This property is an array of strings where each string represents an
     /// entry to be exempted.
@@ -29,7 +29,7 @@ public class PresidioOptions
     /// The <c>Context</c> property allows the inclusion of supplementary data or metadata
     /// that provides additional insight into the environment or scenario being processed. This
     /// information is used to refine and enhance the behavior of the text analytics
-    /// and data anonymization functions. The context is represented as an array of strings
+    /// and data pseudonymization functions. The context is represented as an array of strings
     /// where each string serves as an identifiable piece of contextual information.
     /// </remarks>
     public string[] Context { get; set; } = [];
@@ -81,7 +81,7 @@ public class PresidioOptions
 
     /// <summary>
     /// Gets or initializes the entity-specific confidence thresholds for English-language entities
-    /// used by the Presidio engine during text analysis and data anonymization.
+    /// used by the Presidio engine during text analysis and data pseudonymization.
     /// </summary>
     /// <remarks>
     /// The <c>EnglishEntityThresholds</c> property defines the minimum confidence scores required

@@ -59,7 +59,7 @@ public class ChatCompletionEndpointTests(WebApplicationFactory<Program> factory)
     {
         // Arrange
         var presidio = new Mock<IPresidioService>();
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         var llm = new Mock<ILlmClient>();
@@ -100,7 +100,7 @@ public class ChatCompletionEndpointTests(WebApplicationFactory<Program> factory)
         // Arrange
         var store    = new MappingStore();
         var presidio = new Mock<IPresidioService>();
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         // simulating SSE-Stream
@@ -146,14 +146,14 @@ public class ChatCompletionEndpointTests(WebApplicationFactory<Program> factory)
     }
 
     [Fact]
-    public async Task Post_AnonymizesAndDeanonymizesContent()
+    public async Task Post_PseudonymizesAndDepseudonymizesContent()
     {
         // Arrange
         var store       = new MappingStore();
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
 
         var presidio = new Mock<IPresidioService>();
-        presidio.Setup(p => p.AnonymizeAsync("Hello Alice", It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync("Hello Alice", It.IsAny<CancellationToken>()))
                 .ReturnsAsync($"Hello {placeholder}");
 
         var llm = new Mock<ILlmClient>();

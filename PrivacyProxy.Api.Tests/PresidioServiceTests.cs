@@ -64,37 +64,37 @@ public class PresidioServiceTests
     }
 
     [Fact]
-    public async Task AnonymizeAsync_EmptyText_ReturnsUnchanged()
+    public async Task PseudonymizeAsync_EmptyText_ReturnsUnchanged()
     {
         // Arrange
         var (sut, _, _, _) = CreateSut();
         
         // Act + Assert
-        Assert.Equal("",    await sut.AnonymizeAsync(""));
-        Assert.Equal("   ", await sut.AnonymizeAsync("   "));
+        Assert.Equal("",    await sut.PseudonymizeAsync(""));
+        Assert.Equal("   ", await sut.PseudonymizeAsync("   "));
     }
 
     [Fact]
-    public async Task AnonymizeAsync_NoEntitiesFound_ReturnsUnchanged()
+    public async Task PseudonymizeAsync_NoEntitiesFound_ReturnsUnchanged()
     {
         // Arrange
         var (sut, _, _, _) = CreateSut();
         
         // Act
-        var result = await sut.AnonymizeAsync("no pii here");
+        var result = await sut.PseudonymizeAsync("no pii here");
         
         // Assert
         Assert.Equal("no pii here", result);
     }
 
     [Fact]
-    public async Task AnonymizeAsync_SendsTwoParallelRequests()
+    public async Task PseudonymizeAsync_SendsTwoParallelRequests()
     {
         // Arrange
         var (sut, analyzer, _, _) = CreateSut();
         
         // Act
-        await sut.AnonymizeAsync("some text");
+        await sut.PseudonymizeAsync("some text");
 
         // Assert
         analyzer.Verify(a => a.AnalyzeAsync("some text", Language.German,  It.IsAny<CancellationToken>()), Times.Once);
@@ -102,7 +102,7 @@ public class PresidioServiceTests
     }
 
     [Fact]
-    public async Task AnonymizeAsync_AppliesPolicyWithCorrectLanguage()
+    public async Task PseudonymizeAsync_AppliesPolicyWithCorrectLanguage()
     {
         // Arrange
         var (sut, analyzer, policy, _) = CreateSut();
@@ -111,7 +111,7 @@ public class PresidioServiceTests
                 .ReturnsAsync([Entity("PERSON", 0.92, 0, 5)]);
 
         // Act
-        await sut.AnonymizeAsync("Alice wohnt hier");
+        await sut.PseudonymizeAsync("Alice wohnt hier");
 
         // Assert
         policy.Verify(p => p.Apply(It.IsAny<IEnumerable<PresidioAnalyzerResponse>>(), Language.German,  It.IsAny<string>()), Times.AtLeastOnce);
@@ -120,7 +120,7 @@ public class PresidioServiceTests
     }
 
     [Fact]
-    public async Task AnonymizeAsync_ReplacesEntityWithPlaceholder()
+    public async Task PseudonymizeAsync_ReplacesEntityWithPlaceholder()
     {
         // Arrange
         var (sut, analyzer, policy, store) = CreateSut();
@@ -136,28 +136,28 @@ public class PresidioServiceTests
              .Returns("[PERSON_abc123]");
 
         // Act
-        var result = await sut.AnonymizeAsync("Alice wohnt hier");
+        var result = await sut.PseudonymizeAsync("Alice wohnt hier");
         
         // Assert
         Assert.Equal("[PERSON_abc123] wohnt hier", result);
     }
 
     [Fact]
-    public async Task AnonymizeAsync_PassesCancellationToken()
+    public async Task PseudonymizeAsync_PassesCancellationToken()
     {
         // Arrange
         var (sut, analyzer, _, _) = CreateSut();
         var cts = new CancellationTokenSource();
 
         // Act
-        await sut.AnonymizeAsync("text", cts.Token);
+        await sut.PseudonymizeAsync("text", cts.Token);
 
         // Assert
         analyzer.Verify(a => a.AnalyzeAsync(It.IsAny<string>(), It.IsAny<Language>(), cts.Token), Times.Exactly(2));
     }
 
     [Fact]
-    public async Task AnonymizeAsync_MultipleEntities_ReplacedCorrectly()
+    public async Task PseudonymizeAsync_MultipleEntities_ReplacedCorrectly()
     {
         // Arrange
         var (sut, analyzer, policy, store) = CreateSut();
@@ -176,14 +176,14 @@ public class PresidioServiceTests
         store.Setup(s => s.GetOrCreatePlaceholder("LOCATION", "Berlin")).Returns("[LOCATION_bbb]");
 
         // Act
-        var result = await sut.AnonymizeAsync("Alice wohnt in Berlin");
+        var result = await sut.PseudonymizeAsync("Alice wohnt in Berlin");
         
         // Assert
         Assert.Equal("[PERSON_aaa] wohnt in [LOCATION_bbb]", result);
     }
     
         [Fact]
-    public async Task AnonymizeAsync_GermanPerson_IsAnonymized()
+    public async Task PseudonymizeAsync_GermanPerson_IsPseudonymized()
     {
         // Arrange
         var (sut, store) = CreateSut(
@@ -191,16 +191,16 @@ public class PresidioServiceTests
             enEntities: []);
 
         // Act
-        var result = await sut.AnonymizeAsync("Alice wohnt hier");
+        var result = await sut.PseudonymizeAsync("Alice wohnt hier");
 
         // Assert
         Assert.DoesNotContain("Alice", result);
         Assert.Equal(1, store.PlaceholderCount);
-        Assert.Equal("Alice wohnt hier", store.Deanonymize(result));
+        Assert.Equal("Alice wohnt hier", store.Depseudonymize(result));
     }
 
     [Fact]
-    public async Task AnonymizeAsync_EntityBelowThreshold_IsNotAnonymized()
+    public async Task PseudonymizeAsync_EntityBelowThreshold_IsNotPseudonymized()
     {
         // Arrange
         var (sut, _) = CreateSut(
@@ -208,14 +208,14 @@ public class PresidioServiceTests
             enEntities: []);
 
         // Act
-        var result = await sut.AnonymizeAsync("Alice wohnt hier");
+        var result = await sut.PseudonymizeAsync("Alice wohnt hier");
         
         // Assert
         Assert.Equal("Alice wohnt hier", result);
     }
 
     [Fact]
-    public async Task AnonymizeAsync_OverlappingEntities_OnlyHigherScoreAnonymized()
+    public async Task PseudonymizeAsync_OverlappingEntities_OnlyHigherScorePseudonymized()
     {
         // Arrange
         var (sut, store) = CreateSut(
@@ -226,7 +226,7 @@ public class PresidioServiceTests
             enEntities: []);
 
         // Act
-        var result = await sut.AnonymizeAsync("John Smith wohnt hier");
+        var result = await sut.PseudonymizeAsync("John Smith wohnt hier");
 
         // Assert
         Assert.Equal(1, store.PlaceholderCount);
@@ -234,7 +234,7 @@ public class PresidioServiceTests
     }
 
     [Fact]
-    public async Task AnonymizeAsync_GermanAndEnglishEntities_BothAnonymized()
+    public async Task PseudonymizeAsync_GermanAndEnglishEntities_BothPseudonymized()
     {
         // Arrange
         var (sut, store) = CreateSut(
@@ -242,17 +242,17 @@ public class PresidioServiceTests
             enEntities: [Entity("EMAIL_ADDRESS", 0.80, 15, 30)]);
 
         // Act
-        var result = await sut.AnonymizeAsync("Alice schreibt test@example.com");
+        var result = await sut.PseudonymizeAsync("Alice schreibt test@example.com");
 
         // Assert
         Assert.Equal(2, store.PlaceholderCount);
         Assert.DoesNotContain("Alice",            result);
         Assert.DoesNotContain("test@example.com", result);
-        Assert.Equal("Alice schreibt test@example.com", store.Deanonymize(result));
+        Assert.Equal("Alice schreibt test@example.com", store.Depseudonymize(result));
     }
 
     [Fact]
-    public async Task AnonymizeAsync_SameEntityTwice_SamePlaceholder()
+    public async Task PseudonymizeAsync_SameEntityTwice_SamePlaceholder()
     {
         // Arrange
         var (sut, store) = CreateSut(
@@ -263,16 +263,16 @@ public class PresidioServiceTests
                                      enEntities: []);
 
         // Act
-        var result = await sut.AnonymizeAsync("Alice wohnt bei Alice");
+        var result = await sut.PseudonymizeAsync("Alice wohnt bei Alice");
 
         // Assert
         Assert.Equal(1, store.PlaceholderCount);
-        var unused = store.Deanonymize(result[..result.IndexOf(' ')]);
+        var unused = store.Depseudonymize(result[..result.IndexOf(' ')]);
         Assert.Equal(result[..result.IndexOf(' ')], result[(result.LastIndexOf(' ') + 1)..]);
     }
 
     [Fact]
-    public async Task AnonymizeAsyncEmojiBeforeEntityUsesCodePointOffsets()
+    public async Task PseudonymizeAsyncEmojiBeforeEntityUsesCodePointOffsets()
     {
         // Arrange: "😅 Anna!" - Presidio (Python) counts code points, so "Anna" is
         // at 2..6. In UTF-16 the emoji occupies TWO units, so "Anna" is at 3..7
@@ -287,10 +287,10 @@ public class PresidioServiceTests
              .Returns("[PERSON_0123456789abcdef]");
 
         // Act
-        var anonymized = await sut.AnonymizeAsync(text);
+        var pseudonymized = await sut.PseudonymizeAsync(text);
 
         // Assert: the placeholder sits exactly where "Anna" was - nothing leaked,
         // nothing swallowed.
-        Assert.Equal("\U0001F605 [PERSON_0123456789abcdef]!", anonymized);
+        Assert.Equal("\U0001F605 [PERSON_0123456789abcdef]!", pseudonymized);
     }
 }

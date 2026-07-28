@@ -37,7 +37,7 @@ public class DefaultEntityPolicy(IOptionsMonitor<PresidioOptions> options) : IEn
 
         // Keep an entity if its score meets the threshold for its type. A type WITHOUT a configured
         // per-entity threshold falls back to the global ScoreThreshold instead of being dropped, so a
-        // missing entry can never silently leak PII the caller asked to have anonymized.
+        // missing entry can never silently leak PII the caller asked to have pseudonymized.
         var filtered = entities
                       .Where(e => e.Score >= (thresholds.TryGetValue(e.EntityType, out var threshold)
                                                   ? threshold

@@ -63,17 +63,17 @@ builder.Services.AddHttpClient<ILlmClient, LlmClient>((sp, client) =>
 });
 
 // Add MappingStore for mapping PII to placeholders. Scoped (per request): each chat-completion
-// request gets its own, isolated mapping table. The whole round-trip (anonymize -> LLM ->
-// deanonymize) happens within one request, so the mapping lives exactly as long as it is needed,
+// request gets its own, isolated mapping table. The whole round-trip (pseudonymize -> LLM ->
+// depseudonymize) happens within one request, so the mapping lives exactly as long as it is needed,
 // while no state (placeholders, entity type, casing) bleeds between requests or users. Chat
-// completions are stateless (the client resends the full, deanonymized history every turn), so a
+// completions are stateless (the client resends the full, depseudonymized history every turn), so a
 // request-scoped store is sufficient and avoids cross-request contamination.
 builder.Services.AddScoped<IMappingStore, MappingStore>();
 
-// Add StreamingDeanonymizer to PrivacyProxy for deanonymizing text in real-time from LLM responses
-builder.Services.AddScoped<StreamingDeanonymizer>();
+// Add StreamingDepseudonymizer to PrivacyProxy for depseudonymizing text in real-time from LLM responses
+builder.Services.AddScoped<StreamingDepseudonymizer>();
 
-// Add PresidioService to PrivacyProxy for handling PII detection and anonymization
+// Add PresidioService to PrivacyProxy for handling PII detection and pseudonymization
 builder.Services.AddScoped<IPresidioService, PresidioService>();
 
 // Add ChatCompletionService to PrivacyProxy for handling chat completions

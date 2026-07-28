@@ -111,7 +111,7 @@ public class MappingStoreTests
     }
 
     [Fact]
-    public void Deanonymize_RestoresExactOriginalCasing()
+    public void Depseudonymize_RestoresExactOriginalCasing()
     {
         // Arrange
         var sut = CreateSut();
@@ -121,36 +121,36 @@ public class MappingStoreTests
         var lower = sut.GetOrCreatePlaceholder("LOCATION", "berlin");
 
         // Assert — restoration returns each exact original
-        Assert.Equal("Berlin", sut.Deanonymize(upper));
-        Assert.Equal("berlin", sut.Deanonymize(lower));
+        Assert.Equal("Berlin", sut.Depseudonymize(upper));
+        Assert.Equal("berlin", sut.Depseudonymize(lower));
     }
 
     [Fact]
-    public void DeanonymizeKnownPlaceholderIsReplaced()
+    public void DepseudonymizeKnownPlaceholderIsReplaced()
     {
         // Arrange
         var sut         = CreateSut();
         
         // Act
         var placeholder = sut.GetOrCreatePlaceholder("PERSON", "Alice");
-        var result      = sut.Deanonymize($"Hallo {placeholder}!");
+        var result      = sut.Depseudonymize($"Hallo {placeholder}!");
         
         // Assert
         Assert.Equal("Hallo Alice!", result);
     }
 
     [Fact]
-    public void DeanonymizeUnknownPlaceholderIsLeftUnchanged()
+    public void DepseudonymizeUnknownPlaceholderIsLeftUnchanged()
     {
         // Arrange & Act
-        var result = CreateSut().Deanonymize("Hallo [PERSON_0000000000000000]!");
+        var result = CreateSut().Depseudonymize("Hallo [PERSON_0000000000000000]!");
         
         // Assert
         Assert.Equal("Hallo [PERSON_0000000000000000]!", result);
     }
 
     [Fact]
-    public void DeanonymizeMultiplePlaceholdersAllReplaced()
+    public void DepseudonymizeMultiplePlaceholdersAllReplaced()
     {
         // Arrange
         var sut  = CreateSut();
@@ -158,17 +158,17 @@ public class MappingStoreTests
         // Act
         var pp1  = sut.GetOrCreatePlaceholder("PERSON",   "Alice");
         var pp2  = sut.GetOrCreatePlaceholder("LOCATION", "Berlin");
-        var result = sut.Deanonymize($"{pp1} wohnt in {pp2}.");
+        var result = sut.Depseudonymize($"{pp1} wohnt in {pp2}.");
         
         //Assert
         Assert.Equal("Alice wohnt in Berlin.", result);
     }
 
     [Fact]
-    public void DeanonymizeEmptyStringReturnsEmpty()
+    public void DepseudonymizeEmptyStringReturnsEmpty()
     {
         // Arrange & Act & Assert
-        Assert.Equal("", CreateSut().Deanonymize(""));
+        Assert.Equal("", CreateSut().Depseudonymize(""));
     }
 
     [Fact]
@@ -188,7 +188,7 @@ public class MappingStoreTests
     }
 
     [Fact]
-    public void DeanonymizeJsonValueWithQuoteKeepsJsonValid()
+    public void DepseudonymizeJsonValueWithQuoteKeepsJsonValid()
     {
         // Arrange: a value like a body height 6' 4" contains a double quote that would
         // terminate the surrounding JSON string if inserted unescaped.
@@ -197,15 +197,15 @@ public class MappingStoreTests
         var json        = $"{{\"pii_text\": \"my height is {placeholder} thanks\"}}";
 
         // Act
-        var deanonymized = sut.DeanonymizeJson(json);
+        var depseudonymized = sut.DepseudonymizeJson(json);
 
         // Assert: still parseable JSON, and the decoded value is the original again
-        var parsed = JsonSerializer.Deserialize<JsonElement>(deanonymized);
+        var parsed = JsonSerializer.Deserialize<JsonElement>(depseudonymized);
         Assert.Equal("my height is 6' 4\" thanks", parsed.GetProperty("pii_text").GetString());
     }
 
     [Fact]
-    public void DeanonymizeJsonValueWithBackslashAndNewlineKeepsJsonValid()
+    public void DepseudonymizeJsonValueWithBackslashAndNewlineKeepsJsonValid()
     {
         // Arrange
         var sut         = CreateSut();
@@ -213,15 +213,15 @@ public class MappingStoreTests
         var json        = $"{{\"pii_text\": \"{placeholder}\"}}";
 
         // Act
-        var deanonymized = sut.DeanonymizeJson(json);
+        var depseudonymized = sut.DepseudonymizeJson(json);
 
         // Assert
-        var parsed = JsonSerializer.Deserialize<JsonElement>(deanonymized);
+        var parsed = JsonSerializer.Deserialize<JsonElement>(depseudonymized);
         Assert.Equal("C:\\Users\\alice\nline2", parsed.GetProperty("pii_text").GetString());
     }
 
     [Fact]
-    public void DeanonymizeJsonNestedArgumentsJsonStaysValidOnBothLevels()
+    public void DepseudonymizeJsonNestedArgumentsJsonStaysValidOnBothLevels()
     {
         // Arrange: the OpenAI tool_call shape - "arguments" is a STRING that itself
         // contains serialized JSON. A restored '"' must be escaped for the INNER
@@ -235,24 +235,24 @@ public class MappingStoreTests
                           });
 
         // Act
-        var deanonymized = sut.DeanonymizeJson(toolCalls);
+        var depseudonymized = sut.DepseudonymizeJson(toolCalls);
 
         // Assert: outer level parses, and the inner arguments string parses too
-        var outer     = JsonSerializer.Deserialize<JsonElement>(deanonymized);
+        var outer     = JsonSerializer.Deserialize<JsonElement>(depseudonymized);
         var innerJson = outer[0].GetProperty("function").GetProperty("arguments").GetString();
         var inner     = JsonSerializer.Deserialize<JsonElement>(innerJson!);
         Assert.Equal("my height is 6' 4\"", inner.GetProperty("pii_text").GetString());
     }
 
     [Fact]
-    public void DeanonymizeJsonUnknownPlaceholderIsLeftUnchanged()
+    public void DepseudonymizeJsonUnknownPlaceholderIsLeftUnchanged()
     {
         // Arrange (note: re-serialization may change whitespace, so compare the VALUE)
         var sut  = CreateSut();
         var json = "{\"pii_text\": \"[PERSON_0123456789abcdef]\"}";
 
         // Act
-        var parsed = JsonSerializer.Deserialize<JsonElement>(sut.DeanonymizeJson(json));
+        var parsed = JsonSerializer.Deserialize<JsonElement>(sut.DepseudonymizeJson(json));
 
         // Assert: the unknown placeholder is still there, untouched
         Assert.Equal("[PERSON_0123456789abcdef]", parsed.GetProperty("pii_text").GetString());

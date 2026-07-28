@@ -10,8 +10,8 @@ using Serilog;
 namespace PrivacyProxy.Api.Services;
 
 /// <summary>
-/// Represents a store for managing mappings between original values and their anonymized placeholders.
-/// Provides functionality for creating and retrieving placeholders as well as deanonymizing text by replacing placeholders
+/// Represents a store for managing mappings between original values and their pseudonymized placeholders.
+/// Provides functionality for creating and retrieving placeholders as well as depseudonymizing text by replacing placeholders
 /// with their corresponding original values.
 /// </summary>
 /// <remarks>
@@ -32,7 +32,7 @@ public partial class MappingStore : IMappingStore
     private readonly Dictionary<string, string> _originalToPlaceholder = new();
 
     /// <summary>
-    /// Reverse lookup used during deanonymization: maps a placeholder back to its original value.
+    /// Reverse lookup used during depseudonymization: maps a placeholder back to its original value.
     /// </summary>
     private readonly Dictionary<string, string> _placeholderToOriginal = new();
 
@@ -92,13 +92,13 @@ public partial class MappingStore : IMappingStore
     /// <summary>
     /// Replaces placeholders in the given text with their corresponding original values using the stored mappings.
     /// </summary>
-    /// <param name="anonymizedText">The text containing placeholders to be replaced with original values.</param>
+    /// <param name="pseudonymizedText">The text containing placeholders to be replaced with original values.</param>
     /// <returns>The text with placeholders replaced by their original values. If a placeholder does not have a matching original value in the mapping, it is left unchanged.</returns>
-    public string Deanonymize(string anonymizedText)
+    public string Depseudonymize(string pseudonymizedText)
     {
-        if (string.IsNullOrEmpty(anonymizedText)) return anonymizedText;
+        if (string.IsNullOrEmpty(pseudonymizedText)) return pseudonymizedText;
 
-        return PlaceholderRegex.Replace(anonymizedText, m =>
+        return PlaceholderRegex.Replace(pseudonymizedText, m =>
             _placeholderToOriginal.TryGetValue(m.Value, out var original) ? original : m.Value);
     }
 
@@ -112,36 +112,36 @@ public partial class MappingStore : IMappingStore
     };
 
     /// <summary>
-    /// Like <see cref="Deanonymize"/>, but for text that is serialized JSON (e.g. tool_calls).
+    /// Like <see cref="Depseudonymize"/>, but for text that is serialized JSON (e.g. tool_calls).
     /// Instead of replacing in the raw text (where a restored '"' or '\' would corrupt the
     /// document), the JSON is parsed, placeholders are replaced inside the string values, and
     /// the document is serialized again - so escaping is correct on every nesting level,
     /// including string values that themselves contain serialized JSON (tool_call arguments).
     /// </summary>
-    /// <param name="json">The anonymized raw JSON text containing placeholders.</param>
+    /// <param name="json">The pseudonymized raw JSON text containing placeholders.</param>
     /// <returns>The JSON text with placeholders replaced by their original values.</returns>
-    public string DeanonymizeJson(string json)
+    public string DepseudonymizeJson(string json)
     {
         if (string.IsNullOrEmpty(json)) return json;
 
         try
         {
             var node = JsonNode.Parse(json);
-            node = DeanonymizeNode(node);
+            node = DepseudonymizeNode(node);
             return node?.ToJsonString(RelaxedJson) ?? json;
         }
         catch (JsonException)
         {
             // Not valid JSON at all (some models emit malformed arguments):
             // fall back to plain text replacement instead of failing the request.
-            return Deanonymize(json);
+            return Depseudonymize(json);
         }
     }
 
     /// <summary>
-    /// Recursively deanonymizes all string values of a JSON tree in place.
+    /// Recursively depseudonymizes all string values of a JSON tree in place.
     /// </summary>
-    private JsonNode? DeanonymizeNode(JsonNode? node)
+    private JsonNode? DepseudonymizeNode(JsonNode? node)
     {
         switch (node)
         {
@@ -149,7 +149,7 @@ public partial class MappingStore : IMappingStore
                 foreach (var key in obj.Select(property => property.Key).ToList())
                 {
                     var child    = obj[key];
-                    var replaced = DeanonymizeNode(child);
+                    var replaced = DepseudonymizeNode(child);
                     if (!ReferenceEquals(child, replaced)) obj[key] = replaced;
                 }
                 return obj;
@@ -158,13 +158,13 @@ public partial class MappingStore : IMappingStore
                 for (var i = 0; i < array.Count; i++)
                 {
                     var child    = array[i];
-                    var replaced = DeanonymizeNode(child);
+                    var replaced = DepseudonymizeNode(child);
                     if (!ReferenceEquals(child, replaced)) array[i] = replaced;
                 }
                 return array;
 
             case JsonValue value when value.TryGetValue<string>(out var text):
-                return JsonValue.Create(DeanonymizeStringValue(text));
+                return JsonValue.Create(DepseudonymizeStringValue(text));
 
             default:
                 return node;
@@ -172,12 +172,12 @@ public partial class MappingStore : IMappingStore
     }
 
     /// <summary>
-    /// Deanonymizes a single JSON string value. If the string itself contains serialized JSON
+    /// Depseudonymizes a single JSON string value. If the string itself contains serialized JSON
     /// (like tool_call "arguments"), the placeholders live one encoding level deeper: the string
-    /// is parsed, deanonymized recursively and serialized again, so the restored values are
+    /// is parsed, depseudonymized recursively and serialized again, so the restored values are
     /// escaped correctly at that level too. Otherwise it is treated as plain text.
     /// </summary>
-    private string DeanonymizeStringValue(string text)
+    private string DepseudonymizeStringValue(string text)
     {
         var trimmed = text.TrimStart();
         if (trimmed.StartsWith('{') || trimmed.StartsWith('['))
@@ -187,7 +187,7 @@ public partial class MappingStore : IMappingStore
                 var inner = JsonNode.Parse(text);
                 if (inner is JsonObject or JsonArray)
                 {
-                    DeanonymizeNode(inner);
+                    DepseudonymizeNode(inner);
                     return inner.ToJsonString(RelaxedJson);
                 }
             }
@@ -196,7 +196,7 @@ public partial class MappingStore : IMappingStore
                 // not valid JSON -> fall through and treat it as plain text
             }
         }
-        return Deanonymize(text);
+        return Depseudonymize(text);
     }
 
     /// <summary>

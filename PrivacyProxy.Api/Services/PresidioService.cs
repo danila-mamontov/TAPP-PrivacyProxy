@@ -6,7 +6,7 @@ using Serilog;
 namespace PrivacyProxy.Api.Services;
 
 /// <summary>
-/// The PresidioService class provides functionality for analyzing and anonymizing sensitive
+/// The PresidioService class provides functionality for analyzing and pseudonymizing sensitive
 /// information from text inputs using multi-language support. It interacts with an analyzer
 /// client to detect sensitive entities, applies policy filters, and replaces the detected
 /// entities with placeholders.
@@ -17,14 +17,14 @@ public class PresidioService(
     IMappingStore mappingStore) : IPresidioService
 {
     /// <summary>
-    /// Anonymizes sensitive information in the provided text by analyzing it in multiple languages
+    /// Pseudonymizes sensitive information in the provided text by analyzing it in multiple languages
     /// and replacing detected entities with placeholders.
     /// </summary>
-    /// <param name="text">The input text to be anonymized. If null or whitespace, the original text is returned.</param>
-    /// <param name="ct">An optional cancellation token used to cancel the anonymization process.</param>
+    /// <param name="text">The input text to be pseudonymized. If null or whitespace, the original text is returned.</param>
+    /// <param name="ct">An optional cancellation token used to cancel the pseudonymization process.</param>
     /// <returns>A string where sensitive entities have been replaced with generated placeholders.
     /// If no entities are detected, the original text is returned.</returns>
-    public async Task<string> AnonymizeAsync(
+    public async Task<string> PseudonymizeAsync(
         string text,
         CancellationToken ct = default)
     {
@@ -67,10 +67,10 @@ public class PresidioService(
               .Insert(start, placeholder);
         }
         
-        Log.Information("Anonymized {Count} entities in message", combined.Count);
+        Log.Information("Pseudonymized {Count} entities in message", combined.Count);
         Log.Debug("Original message: {Message}", text);
-        Log.Debug("Anonymized message: {Message}", sb.ToString());
-        Log.Debug("Anonymized entities: {@Entities}", combined);
+        Log.Debug("Pseudonymized message: {Message}", sb.ToString());
+        Log.Debug("Pseudonymized entities: {@Entities}", combined);
 
         return sb.ToString();
     }

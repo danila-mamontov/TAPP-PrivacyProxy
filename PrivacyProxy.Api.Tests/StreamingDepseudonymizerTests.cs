@@ -2,12 +2,12 @@ using PrivacyProxy.Api.Services;
 
 namespace PrivacyProxy.Api.Tests;
 
-public class StreamingDeanonymizerTests
+public class StreamingDepseudonymizerTests
 {
-    private static (StreamingDeanonymizer sut, MappingStore mappingStore) CreateSut()
+    private static (StreamingDepseudonymizer sut, MappingStore mappingStore) CreateSut()
     {
         var store = new MappingStore();
-        return (new StreamingDeanonymizer(store), store);
+        return (new StreamingDepseudonymizer(store), store);
     }
 
     [Fact]

@@ -26,63 +26,63 @@ public class PresidioServiceIntegrationTests
     }
     
     [Fact]
-    public async Task AnonymizeAsync_RealPresidio_DetectsEnglishPerson()
+    public async Task PseudonymizeAsync_RealPresidio_DetectsEnglishPerson()
     {
         // Arrange
         var (sut, store) = CreateSut();
 
         // Act
-        var result = await sut.AnonymizeAsync("John Smith lives in New York.");
+        var result = await sut.PseudonymizeAsync("John Smith lives in New York.");
 
         // Assert
         Assert.DoesNotContain("John Smith", result);
         Assert.True(store.PlaceholderCount > 0);
-        Assert.Contains("John Smith", store.Deanonymize(result));
+        Assert.Contains("John Smith", store.Depseudonymize(result));
     }
 
     [Fact]
-    public async Task AnonymizeAsync_RealPresidio_DetectsEmail()
+    public async Task PseudonymizeAsync_RealPresidio_DetectsEmail()
     {
         // Arrange
         var (sut, store) = CreateSut();
 
         // Act
-        var result = await sut.AnonymizeAsync("Contact me at john@example.com");
+        var result = await sut.PseudonymizeAsync("Contact me at john@example.com");
 
         // Assert
         Assert.DoesNotContain("john@example.com", result);
-        Assert.Equal("Contact me at john@example.com", store.Deanonymize(result));
+        Assert.Equal("Contact me at john@example.com", store.Depseudonymize(result));
     }
 
     [Fact]
-    public async Task AnonymizeAsync_RealPresidio_DetectsGermanPerson()
+    public async Task PseudonymizeAsync_RealPresidio_DetectsGermanPerson()
     {
         // Arrange
         var (sut, store) = CreateSut();
 
         // Act
-        var result = await sut.AnonymizeAsync("Max Mustermann wohnt in Berlin.");
+        var result = await sut.PseudonymizeAsync("Max Mustermann wohnt in Berlin.");
 
         // Assert
         Assert.DoesNotContain("Max Mustermann", result);
-        Assert.Contains("Max Mustermann", store.Deanonymize(result));
+        Assert.Contains("Max Mustermann", store.Depseudonymize(result));
     }
 
     [Fact]
-    public async Task AnonymizeAsync_RealPresidio_NoPii_ReturnsUnchanged()
+    public async Task PseudonymizeAsync_RealPresidio_NoPii_ReturnsUnchanged()
     {
         // Arrange
         var (sut, _) = CreateSut();
 
         // Act
-        var result = await sut.AnonymizeAsync("The weather is nice today.");
+        var result = await sut.PseudonymizeAsync("The weather is nice today.");
 
         // Assert
         Assert.Equal("The weather is nice today.", result);
     }
 
     [Fact]
-    public async Task AnonymizeAsync_RealPresidio_DeanonymizedTextMatchesOriginal()
+    public async Task PseudonymizeAsync_RealPresidio_DepseudonymizedTextMatchesOriginal()
     {
         // Arrange
         var (sut, store) = CreateSut();
@@ -90,11 +90,11 @@ public class PresidioServiceIntegrationTests
         const string original     = "Alice schreibt an bob@example.com über das Projekt.";
         
         // Act
-        var          anonymized   = await sut.AnonymizeAsync(original);
-        var          deanonymized = store.Deanonymize(anonymized);
+        var          pseudonymized   = await sut.PseudonymizeAsync(original);
+        var          depseudonymized = store.Depseudonymize(pseudonymized);
 
         // Assert
-        Assert.NotEqual(original,    anonymized);
-        Assert.Equal(original, deanonymized);
+        Assert.NotEqual(original,    pseudonymized);
+        Assert.Equal(original, depseudonymized);
     }
 }

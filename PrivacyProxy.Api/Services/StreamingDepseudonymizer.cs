@@ -5,7 +5,7 @@ using Serilog;
 namespace PrivacyProxy.Api.Services;
 
 /// <summary>
-/// Handles deanonymization of streamed text fragments from an LLM response.
+/// Handles depseudonymization of streamed text fragments from an LLM response.
 ///
 /// Problem: A placeholder like [PERSON_3fa91b8a2c1d4e5f] can be split across chunk boundaries:
 ///   Chunk 1: "[PER"
@@ -20,7 +20,7 @@ namespace PrivacyProxy.Api.Services;
 ///   2. Run the placeholder regex on the combined string.
 ///   3a. If complete placeholders are found:,
 ///        Check the tail (text after the last match) for an opening '['.
-///       - If no '[' in tail → flush everything: deanonymize and return.
+///       - If no '[' in tail → flush everything: depseudonymize and return.
 ///       - If '[' in tail but no ']' yet → buffer the tail, return everything before it.
 ///   3b. If no complete placeholders are found:
 ///       - Find the last '[' in the combined string.
@@ -29,9 +29,9 @@ namespace PrivacyProxy.Api.Services;
 ///       - If '[' found with no ']' yet → buffer from '[' onward, return everything before.
 ///
 /// FlushAll: Called when the stream ends. Returns and clears all carry buffers,
-/// deanonymizing any remaining buffered content.
+/// depseudonymizing any remaining buffered content.
 /// </summary>
-public partial class StreamingDeanonymizer(IMappingStore mappingStore)
+public partial class StreamingDepseudonymizer(IMappingStore mappingStore)
 {
     private readonly Dictionary<string, string> _carries = new();
     
@@ -81,11 +81,11 @@ public partial class StreamingDeanonymizer(IMappingStore mappingStore)
         _carries.TryGetValue(contextKey, out var carry);
         carry ??= "";
 
-        // If this is the last fragment, flush the carry buffer and deanonymize everything.
+        // If this is the last fragment, flush the carry buffer and depseudonymize everything.
         if (isFinal)
         {
             _carries.Remove(contextKey);
-            return mappingStore.Deanonymize(carry + fragment);
+            return mappingStore.Depseudonymize(carry + fragment);
         }
 
         // Prepend any previously buffered content to the incoming fragment.
@@ -101,13 +101,13 @@ public partial class StreamingDeanonymizer(IMappingStore mappingStore)
             if (tail.IndexOf('[') < 0)
             {
                 _carries.Remove(contextKey);
-                return mappingStore.Deanonymize(combined);
+                return mappingStore.Depseudonymize(combined);
             }
 
             // Split the tail: text before '[' is safe to release, from '[' onward buffer
             var openInTail = tail.LastIndexOf('[');
             _carries[contextKey] = tail[openInTail..];
-            return mappingStore.Deanonymize(combined[..lastEnd] + tail[..openInTail]);
+            return mappingStore.Depseudonymize(combined[..lastEnd] + tail[..openInTail]);
         }
 
         // No complete placeholder found — look for an opening '['.
@@ -117,7 +117,7 @@ public partial class StreamingDeanonymizer(IMappingStore mappingStore)
         if (lastOpen < 0)
         {
             _carries.Remove(contextKey);
-            return mappingStore.Deanonymize(combined);
+            return mappingStore.Depseudonymize(combined);
         }
 
         // '[' found — check if there is already a closing ']' after it.
@@ -127,21 +127,21 @@ public partial class StreamingDeanonymizer(IMappingStore mappingStore)
             // Both '[' and ']' are present, but the regex did not match →
             // not a valid placeholder format, release everything.
             _carries.Remove(contextKey);
-            return mappingStore.Deanonymize(combined);
+            return mappingStore.Depseudonymize(combined);
         }
 
         // '[' found but no ']' yet → placeholder may still be arriving in the next chunk.
         // Buffer everything from '[' onward and release the text before it.
         _carries[contextKey] = combined[lastOpen..];
-        return mappingStore.Deanonymize(combined[..lastOpen]);
+        return mappingStore.Depseudonymize(combined[..lastOpen]);
     }
 
     /// <summary>
     /// Completes the processing of all buffered fragments across all contexts
-    /// by applying deanonymization and returning the results.
+    /// by applying depseudonymization and returning the results.
     /// Any remaining buffered data will be cleared after this operation.
     /// </summary>
-    /// <returns>A dictionary where each key represents a context, and each value is the deanonymized result of the buffered fragments for that context.</returns>
+    /// <returns>A dictionary where each key represents a context, and each value is the depseudonymized result of the buffered fragments for that context.</returns>
     public Dictionary<string, string> FlushAll()
     {
         Log.Debug("Flushing {Count} buffered fragments...", _carries.Count);
@@ -151,7 +151,7 @@ public partial class StreamingDeanonymizer(IMappingStore mappingStore)
         foreach (var (key, carry) in _carries)
         {
             if (!string.IsNullOrEmpty(carry))
-                result[key] = mappingStore.Deanonymize(carry);
+                result[key] = mappingStore.Depseudonymize(carry);
         }
 
         _carries.Clear();

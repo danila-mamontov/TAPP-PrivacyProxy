@@ -34,7 +34,7 @@ public class ChatCompletionServiceTests
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
         var store    = new Mock<IMappingStore>();
-        var deanon   = new StreamingDeanonymizer(store.Object);
+        var deanon   = new StreamingDepseudonymizer(store.Object);
 
         return (new ChatCompletionService(
                                           presidio.Object, llm.Object, store.Object, deanon, LlmOpts()),
@@ -79,13 +79,13 @@ public class ChatCompletionServiceTests
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
         var store    = new Mock<IMappingStore>();
-        var deanon   = new StreamingDeanonymizer(store.Object);
+        var deanon   = new StreamingDepseudonymizer(store.Object);
         var sut      = new ChatCompletionService(
             presidio.Object, llm.Object, store.Object, deanon, LlmOpts("kimi-k2.6:cloud"));
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
-        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+        store.Setup(s => s.Depseudonymize(It.IsAny<string>())).Returns<string>(t => t);
 
         JsonElement? captured = null;
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
@@ -104,18 +104,18 @@ public class ChatCompletionServiceTests
     }
 
     [Fact]
-    public async Task ProcessAsync_AnonymizesEveryCallerMessage()
+    public async Task ProcessAsync_PseudonymizesEveryCallerMessage()
     {
         // Arrange
         var (sut, presidio, llm, store) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);  
         
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
            .ReturnsAsync(LlmResponse("ok"));
         
-        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+        store.Setup(s => s.Depseudonymize(It.IsAny<string>())).Returns<string>(t => t);
 
         var request = new ChatCompletionRequest
                       {
@@ -129,21 +129,21 @@ public class ChatCompletionServiceTests
         // Act
         await sut.ProcessAsync(request);
 
-        // Assert — both caller messages anonymized (our own instruction is prepended verbatim, not counted)
-        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
+        // Assert — both caller messages pseudonymized (our own instruction is prepended verbatim, not counted)
+        presidio.Verify(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
     }
 
     [Fact]
-    public async Task ProcessAsync_AnonymizesAllRolesAndSendsInstructionVerbatim()
+    public async Task ProcessAsync_PseudonymizesAllRolesAndSendsInstructionVerbatim()
     {
-        // Arrange — every caller role (incl. system/developer) is anonymized; only our own
+        // Arrange — every caller role (incl. system/developer) is pseudonymized; only our own
         // placeholder instruction is forwarded 1:1.
         var (sut, presidio, llm, store) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => "ANON(" + t + ")");
 
-        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+        store.Setup(s => s.Depseudonymize(It.IsAny<string>())).Returns<string>(t => t);
 
         JsonElement? captured = null;
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
@@ -163,19 +163,19 @@ public class ChatCompletionServiceTests
             ]
         });
 
-        // Assert — all four caller messages were anonymized
-        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(4));
+        // Assert — all four caller messages were pseudonymized
+        presidio.Verify(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Exactly(4));
 
         var messages = captured!.Value.GetProperty("messages");
 
-        // Our own instruction is first and sent verbatim (never anonymized)
+        // Our own instruction is first and sent verbatim (never pseudonymized)
         Assert.Equal(5, messages.GetArrayLength());
         Assert.Equal("system", messages[0].GetProperty("role").GetString());
         var instruction = messages[0].GetProperty("content").GetString()!;
         Assert.DoesNotContain("ANON(", instruction);
         Assert.Contains("placeholder", instruction, StringComparison.OrdinalIgnoreCase);
 
-        // The caller messages follow, each anonymized, original order preserved
+        // The caller messages follow, each pseudonymized, original order preserved
         Assert.Equal("ANON(sys)",  messages[1].GetProperty("content").GetString());
         Assert.Equal("ANON(dev)",  messages[2].GetProperty("content").GetString());
         Assert.Equal("ANON(asst)", messages[3].GetProperty("content").GetString());
@@ -183,18 +183,18 @@ public class ChatCompletionServiceTests
     }
 
         [Fact]
-    public async Task ProcessAsync_ForwardsAnonymizedContentToLlm()
+    public async Task ProcessAsync_ForwardsPseudonymizedContentToLlm()
     {
         // Arrange
         var (sut, presidio, llm, store) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync("Alice", It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync("Alice", It.IsAny<CancellationToken>()))
                 .ReturnsAsync("[PERSON_abc123]");
         
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
            .ReturnsAsync(LlmResponse("ok"));
         
-        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+        store.Setup(s => s.Depseudonymize(It.IsAny<string>())).Returns<string>(t => t);
 
         JsonElement? captured = null;
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
@@ -215,18 +215,18 @@ public class ChatCompletionServiceTests
     }
 
     [Fact]
-    public async Task ProcessAsync_DeanonymizesResponseContent()
+    public async Task ProcessAsync_DepseudonymizesResponseContent()
     {
         // Arrange
         var (sut, presidio, llm, store) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync<string, CancellationToken, IPresidioService, string>((t, _) => t);
         
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
            .ReturnsAsync(LlmResponse("[PERSON_abc123] wohnt hier"));
         
-        store.Setup(s => s.Deanonymize("[PERSON_abc123] wohnt hier"))
+        store.Setup(s => s.Depseudonymize("[PERSON_abc123] wohnt hier"))
              .Returns("Alice wohnt hier");
 
         // Act
@@ -241,16 +241,16 @@ public class ChatCompletionServiceTests
     }
 
     [Fact]
-    public async Task ProcessAsync_DeanonymizesAndLogsToolCallsExtension()
+    public async Task ProcessAsync_DepseudonymizesAndLogsToolCallsExtension()
     {
         // Arrange — a response whose message carries a "tool_calls" extension (not content)
         var store    = new MappingStore();
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
-        var deanon   = new StreamingDeanonymizer(store);
+        var deanon   = new StreamingDepseudonymizer(store);
         var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
@@ -272,25 +272,25 @@ public class ChatCompletionServiceTests
             Messages = [new ChatMessage { Role = "user", Content = "Hi" }]
         });
 
-        // Assert — the tool_calls extension was deanonymized (placeholder -> original PII)
+        // Assert — the tool_calls extension was depseudonymized (placeholder -> original PII)
         var toolCallsRaw = result.Choices[0].Message.Extensions!["tool_calls"].GetRawText();
         Assert.Contains("Alice", toolCallsRaw);
         Assert.DoesNotContain(placeholder, toolCallsRaw);
     }
 
     [Fact]
-    public async Task ProcessAsync_AnonymizesToolCallArgumentsInRequestHistory()
+    public async Task ProcessAsync_PseudonymizesToolCallArgumentsInRequestHistory()
     {
         // Arrange — a real multi-round agent echoes a prior assistant tool_call back in the history.
         // Its arguments (in the extension data, not in content) still hold the PII that was
-        // deanonymized on the way out so the tool could run. Those must be re-anonymized before
+        // depseudonymized on the way out so the tool could run. Those must be re-pseudonymized before
         // reaching the LLM, otherwise the placeholder guarantee breaks from round 2 onwards.
         var (sut, presidio, llm, store) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t.Replace("Alice", "[PERSON_abc123]"));
 
-        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+        store.Setup(s => s.Depseudonymize(It.IsAny<string>())).Returns<string>(t => t);
 
         JsonElement? captured = null;
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
@@ -330,13 +330,13 @@ public class ChatCompletionServiceTests
         // Arrange
         var (sut, presidio, llm, store) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync<string, CancellationToken, IPresidioService, string>((t, _) => t);
         
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
            .ReturnsAsync(LlmResponse("ok"));
         
-        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+        store.Setup(s => s.Depseudonymize(It.IsAny<string>())).Returns<string>(t => t);
 
         JsonElement? captured = null;
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
@@ -367,13 +367,13 @@ public class ChatCompletionServiceTests
         var (sut, presidio, llm, store) = CreateSut();
         var cts = new CancellationTokenSource();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), cts.Token))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), cts.Token))
                 .ReturnsAsync<string, CancellationToken, IPresidioService, string>((t, _) => t);
         
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
            .ReturnsAsync(LlmResponse("ok"));
         
-        store.Setup(s => s.Deanonymize(It.IsAny<string>())).Returns<string>(t => t);
+        store.Setup(s => s.Depseudonymize(It.IsAny<string>())).Returns<string>(t => t);
 
         // Act
         await sut.ProcessAsync(new ChatCompletionRequest
@@ -383,17 +383,17 @@ public class ChatCompletionServiceTests
         }, cts.Token);
 
         // Assert
-        presidio.Verify(p => p.AnonymizeAsync(It.IsAny<string>(), cts.Token), Times.Once);
+        presidio.Verify(p => p.PseudonymizeAsync(It.IsAny<string>(), cts.Token), Times.Once);
         llm.Verify(l => l.SendAsync(It.IsAny<JsonElement>(), cts.Token), Times.Once);
     }
     
     [Fact]
-    public async Task ProcessStreamAsync_AnonymizesMessages()
+    public async Task ProcessStreamAsync_PseudonymizesMessages()
     {
         // Arrange
         var (sut, presidio, llm, _) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync("Hello Alice", It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync("Hello Alice", It.IsAny<CancellationToken>()))
                 .ReturnsAsync("Hello [PERSON_abc]");
 
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
@@ -411,16 +411,16 @@ public class ChatCompletionServiceTests
                                      context.Response);
 
         // Assert
-        presidio.Verify(p => p.AnonymizeAsync("Hello Alice", It.IsAny<CancellationToken>()), Times.Once);
+        presidio.Verify(p => p.PseudonymizeAsync("Hello Alice", It.IsAny<CancellationToken>()), Times.Once);
     }
     
     [Fact]
-    public async Task ProcessStreamAsync_ForwardsAnonymizedContentToLlm()
+    public async Task ProcessStreamAsync_ForwardsPseudonymizedContentToLlm()
     {
         // Arrange
         var (sut, presidio, llm, _) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync("Alice", It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync("Alice", It.IsAny<CancellationToken>()))
                 .ReturnsAsync("[PERSON_abc]");
 
         JsonElement? captured = null;
@@ -445,17 +445,17 @@ public class ChatCompletionServiceTests
     }
     
     [Fact]
-    public async Task ProcessStreamAsync_DeanonymizesDeltaContent()
+    public async Task ProcessStreamAsync_DepseudonymizesDeltaContent()
     {
         var store    = new MappingStore();
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
-        var deanon   = new StreamingDeanonymizer(store);
+        var deanon   = new StreamingDepseudonymizer(store);
         var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         // JSON-String sauber bauen statt Raw-String-Interpolation
@@ -491,7 +491,7 @@ public class ChatCompletionServiceTests
         // Arrange
         var (sut, presidio, llm, _) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
@@ -520,7 +520,7 @@ public class ChatCompletionServiceTests
         // Arrange
         var (sut, presidio, llm, _) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         llm.Setup(l => l.SendAsync(It.IsAny<JsonElement>(), It.IsAny<CancellationToken>()))
@@ -542,13 +542,13 @@ public class ChatCompletionServiceTests
     }
     
     [Fact]
-    public async Task ProcessStreamAsync_PlaceholderSplitAcrossChunks_DeanonymizedCorrectly()
+    public async Task ProcessStreamAsync_PlaceholderSplitAcrossChunks_DepseudonymizedCorrectly()
     {
         // Arrange
         var store    = new MappingStore();
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
-        var deanon   = new StreamingDeanonymizer(store);
+        var deanon   = new StreamingDepseudonymizer(store);
         var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
@@ -556,7 +556,7 @@ public class ChatCompletionServiceTests
         var firstHalf   = placeholder[..mid];
         var secondHalf  = placeholder[mid..];
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         var chunk1 = JsonSerializer.Serialize(new
@@ -602,19 +602,19 @@ public class ChatCompletionServiceTests
         var store    = new MappingStore();
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
-        var deanon   = new StreamingDeanonymizer(store);
+        var deanon   = new StreamingDepseudonymizer(store);
         var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
         var mid         = placeholder.Length / 2;
         var firstHalf   = placeholder[..mid];
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
 
         // Only the first half of the placeholder is displayed — the second half never appears
-        // StreamingDeanonymizer buffers firstHalf until [DONE] calls FlushAll
+        // StreamingDepseudonymizer buffers firstHalf until [DONE] calls FlushAll
         var chunk1 = JsonSerializer.Serialize(new
         {
             id      = "1",
@@ -652,13 +652,13 @@ public class ChatCompletionServiceTests
         var store    = new MappingStore();
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
-        var deanon   = new StreamingDeanonymizer(store);
+        var deanon   = new StreamingDepseudonymizer(store);
         var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
-        // Chunk with empty content → StreamingDeanonymizer buffers nothing
+        // Chunk with empty content → StreamingDepseudonymizer buffers nothing
         // but another contextKey has an empty carry
         var chunk1 = JsonSerializer.Serialize(new
         {
@@ -695,7 +695,7 @@ public class ChatCompletionServiceTests
         // Arrange
         var (sut, presidio, llm, _) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         // Invalid JSON deserialized to zero
@@ -728,7 +728,7 @@ public class ChatCompletionServiceTests
         // Arrange
         var (sut, presidio, llm, _) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         // "choices": [] -> nothing to process, the chunk is just written through
@@ -762,7 +762,7 @@ public class ChatCompletionServiceTests
         // Arrange
         var (sut, presidio, llm, _) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         // "choices": [null] -> the first (only) choice is not an object
@@ -791,18 +791,18 @@ public class ChatCompletionServiceTests
     }
 
     [Fact]
-    public async Task ProcessStreamAsync_DeanonymizesReasoningDelta()
+    public async Task ProcessStreamAsync_DepseudonymizesReasoningDelta()
     {
         // Arrange — reasoning-capable models (Qwen3, DeepSeek-R1, ...) stream a "reasoning" field
         var store    = new MappingStore();
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
-        var deanon   = new StreamingDeanonymizer(store);
+        var deanon   = new StreamingDepseudonymizer(store);
         var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         var chunkJson = JsonSerializer.Serialize(new
@@ -836,19 +836,19 @@ public class ChatCompletionServiceTests
     }
 
     [Fact]
-    public async Task ProcessStreamAsync_DeanonymizesToolCallArguments_AndSkipsNonStringArguments()
+    public async Task ProcessStreamAsync_DepseudonymizesToolCallArguments_AndSkipsNonStringArguments()
     {
         // Arrange — one tool call with non-string arguments (skipped) and one with a placeholder
-        // (deanonymized), exercising both branches of the tool_calls loop.
+        // (depseudonymized), exercising both branches of the tool_calls loop.
         var store    = new MappingStore();
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
-        var deanon   = new StreamingDeanonymizer(store);
+        var deanon   = new StreamingDepseudonymizer(store);
         var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
         var placeholder = store.GetOrCreatePlaceholder("PERSON", "Alice");
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         var chunkJson =
@@ -876,7 +876,7 @@ public class ChatCompletionServiceTests
         context.Response.Body.Seek(0, SeekOrigin.Begin);
         var output = await new StreamReader(context.Response.Body).ReadToEndAsync();
 
-        // Assert — valid tool call deanonymized, invalid one passed through untouched
+        // Assert — valid tool call depseudonymized, invalid one passed through untouched
         Assert.Contains("Alice", output);
         Assert.DoesNotContain(placeholder, output);
         Assert.Contains("12345", output);
@@ -888,7 +888,7 @@ public class ChatCompletionServiceTests
         // Arrange
         var (sut, presidio, llm, _) = CreateSut();
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         // Chunk without content — only role, no content (first chunk from LLM)
@@ -925,15 +925,15 @@ public class ChatCompletionServiceTests
     public async Task ProcessStreamAsync_UnclosedBracketAtStreamEndIsFlushedAsValidChunk()
     {
         // Arrange - the streamed text ends with "[URL_": an unclosed '[' that looks
-        // like a placeholder start, so the deanonymizer buffers it until the end.
+        // like a placeholder start, so the depseudonymizer buffers it until the end.
         // The flushed leftover must be a PARSEABLE chunk, not a raw text line.
         var store    = new MappingStore();
         var presidio = new Mock<IPresidioService>();
         var llm      = new Mock<ILlmClient>();
-        var deanon   = new StreamingDeanonymizer(store);
+        var deanon   = new StreamingDepseudonymizer(store);
         var sut      = new ChatCompletionService(presidio.Object, llm.Object, store, deanon, LlmOpts());
 
-        presidio.Setup(p => p.AnonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+        presidio.Setup(p => p.PseudonymizeAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync((string t, CancellationToken _) => t);
 
         var chunkJson = "{\"id\":\"1\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"link at [URL_\"}}]}";
