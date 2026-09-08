@@ -15,6 +15,8 @@ public class PresidioServiceIntegrationTests
     private static (PresidioService sut, MappingStore store) CreateSut()
     {
         var presidioOptions = Configuration.GetSection("Presidio").Get<PresidioOptions>()!;
+        presidioOptions.AnalyzerUrl = "http://127.0.0.1:5002";
+        
         var options         = new StaticOptionsMonitor<PresidioOptions>(presidioOptions);
 
         var httpClient = new HttpClient { BaseAddress = new Uri(presidioOptions.AnalyzerUrl) };

@@ -42,100 +42,6 @@ public class ChatCompletionService(
     IOptionsMonitor<LlmOptions> llmOptions) : IChatCompletionService
 {
     /// <summary>
-    /// Builds the messages forwarded to the LLM: our own placeholder-handling instruction verbatim
-    /// (never pseudonymized, never altered) followed by EVERY caller message — regardless of role —
-    /// with its content pseudonymized via Presidio. Maximum privacy: no caller content reaches the LLM
-    /// without passing through pseudonymization.
-    /// </summary>
-    private async Task<List<ChatMessage>> BuildPseudonymizedMessagesAsync(
-        IReadOnlyList<ChatMessage> incoming, CancellationToken ct)
-    {
-        var messages = new List<ChatMessage>(incoming.Count + 1) { SystemInstruction };
-
-        foreach (var message in incoming)
-        {
-            var pseudonymizedContent = await presidioService.PseudonymizeAsync(message.Content, ct);
-            var pseudonymizedExtensions = await PseudonymizeToolCallArgumentsAsync(message.Extensions, ct);
-            messages.Add(message with { Content = pseudonymizedContent, Extensions = pseudonymizedExtensions });
-        }
-
-        return messages;
-    }
-
-    /// <summary>
-    /// Pseudonymizes the <c>arguments</c> of any assistant <c>tool_calls</c> carried in a message's
-    /// extension data. A real multi-round agent echoes its previous tool call (whose arguments were
-    /// depseudonymized on the way out so the tool could run) back in the conversation history. Those
-    /// arguments live in <see cref="ChatMessage.Extensions"/>, not in <c>content</c>, so without this
-    /// step the real PII inside them would reach the LLM on the next round — defeating pseudonymization.
-    /// Returns a new extensions dictionary with pseudonymized tool-call arguments, or the original
-    /// reference when there is nothing to pseudonymize.
-    /// </summary>
-    private async Task<IDictionary<string, JsonElement>?> PseudonymizeToolCallArgumentsAsync(
-        IDictionary<string, JsonElement>? extensions, CancellationToken ct)
-    {
-        if (extensions is null
-            || !extensions.TryGetValue("tool_calls", out var toolCalls)
-            || toolCalls.ValueKind != JsonValueKind.Array)
-        {
-            return extensions;
-        }
-
-        var toolCallsArray = JsonNode.Parse(toolCalls.GetRawText())!.AsArray();
-        var changed = false;
-
-        foreach (var toolCall in toolCallsArray)
-        {
-            if (toolCall?["function"]?["arguments"] is not JsonValue argumentsValue
-                || !argumentsValue.TryGetValue<string>(out var argumentsJson)
-                || string.IsNullOrEmpty(argumentsJson))
-            {
-                continue;
-            }
-
-            // The whole arguments JSON string is pseudonymized as text: Presidio replaces any PII
-            // value with its placeholder, and placeholders contain no JSON-breaking characters,
-            // so the argument object's structure stays intact.
-            var pseudonymizedArguments = await presidioService.PseudonymizeAsync(argumentsJson, ct);
-            if (!string.Equals(pseudonymizedArguments, argumentsJson, StringComparison.Ordinal))
-            {
-                toolCall["function"]!["arguments"] = pseudonymizedArguments;
-                changed = true;
-            }
-        }
-
-        if (!changed)
-        {
-            return extensions;
-        }
-
-        var updated = new Dictionary<string, JsonElement>(extensions)
-        {
-            ["tool_calls"] = JsonSerializer.Deserialize<JsonElement>(toolCallsArray.ToJsonString())
-        };
-        return updated;
-    }
-
-    /// <summary>
-    /// A static instance of <see cref="JsonSerializerOptions"/> used to configure
-    /// JSON serialization and deserialization settings tailored to the service.
-    /// </summary>
-    /// <remarks>
-    /// Configured with the following settings:
-    /// - Utilizes SnakeCaseLower naming policy for property names to align with API specifications.
-    /// - Omits null values during serialization to reduce payload size.
-    /// - Supports case-insensitive property name matching for deserialization.
-    /// </remarks>
-    private static readonly JsonSerializerOptions JsonOptions = new()
-    {
-        PropertyNamingPolicy =
-            JsonNamingPolicy.SnakeCaseLower,
-        DefaultIgnoreCondition =
-            JsonIgnoreCondition.WhenWritingNull,
-        PropertyNameCaseInsensitive = true
-    };
-
-    /// <summary>
     /// Processes a chat completion request by pseudonymizing the content of input messages,
     /// forwarding the pseudonymized data to a Large Language Model (LLM), and depseudonymizing
     /// the responses received from the LLM.
@@ -365,6 +271,100 @@ public class ChatCompletionService(
             await WriteChunk(httpResponse, chunkNode, ct);
         }
     }
+    
+    /// <summary>
+    /// Builds the messages forwarded to the LLM: our own placeholder-handling instruction verbatim
+    /// (never pseudonymized, never altered) followed by EVERY caller message — regardless of role —
+    /// with its content pseudonymized via Presidio. Maximum privacy: no caller content reaches the LLM
+    /// without passing through pseudonymization.
+    /// </summary>
+    private async Task<List<ChatMessage>> BuildPseudonymizedMessagesAsync(
+        IReadOnlyList<ChatMessage> incoming, CancellationToken ct)
+    {
+        var messages = new List<ChatMessage>(incoming.Count + 1) { SystemInstruction };
+
+        foreach (var message in incoming)
+        {
+            var pseudonymizedContent = await presidioService.PseudonymizeAsync(message.Content, ct);
+            var pseudonymizedExtensions = await PseudonymizeToolCallArgumentsAsync(message.Extensions, ct);
+            messages.Add(message with { Content = pseudonymizedContent, Extensions = pseudonymizedExtensions });
+        }
+
+        return messages;
+    }
+
+    /// <summary>
+    /// Pseudonymizes the <c>arguments</c> of any assistant <c>tool_calls</c> carried in a message's
+    /// extension data. A real multi-round agent echoes its previous tool call (whose arguments were
+    /// depseudonymized on the way out so the tool could run) back in the conversation history. Those
+    /// arguments live in <see cref="ChatMessage.Extensions"/>, not in <c>content</c>, so without this
+    /// step the real PII inside them would reach the LLM on the next round — defeating pseudonymization.
+    /// Returns a new extensions dictionary with pseudonymized tool-call arguments, or the original
+    /// reference when there is nothing to pseudonymize.
+    /// </summary>
+    private async Task<IDictionary<string, JsonElement>?> PseudonymizeToolCallArgumentsAsync(
+        IDictionary<string, JsonElement>? extensions, CancellationToken ct)
+    {
+        if (extensions is null
+            || !extensions.TryGetValue("tool_calls", out var toolCalls)
+            || toolCalls.ValueKind != JsonValueKind.Array)
+        {
+            return extensions;
+        }
+
+        var toolCallsArray = JsonNode.Parse(toolCalls.GetRawText())!.AsArray();
+        var changed = false;
+
+        foreach (var toolCall in toolCallsArray)
+        {
+            if (toolCall?["function"]?["arguments"] is not JsonValue argumentsValue
+                || !argumentsValue.TryGetValue<string>(out var argumentsJson)
+                || string.IsNullOrEmpty(argumentsJson))
+            {
+                continue;
+            }
+
+            // The whole arguments JSON string is pseudonymized as text: Presidio replaces any PII
+            // value with its placeholder, and placeholders contain no JSON-breaking characters,
+            // so the argument object's structure stays intact.
+            var pseudonymizedArguments = await presidioService.PseudonymizeAsync(argumentsJson, ct);
+            if (!string.Equals(pseudonymizedArguments, argumentsJson, StringComparison.Ordinal))
+            {
+                toolCall["function"]!["arguments"] = pseudonymizedArguments;
+                changed = true;
+            }
+        }
+
+        if (!changed)
+        {
+            return extensions;
+        }
+
+        var updated = new Dictionary<string, JsonElement>(extensions)
+        {
+            ["tool_calls"] = JsonSerializer.Deserialize<JsonElement>(toolCallsArray.ToJsonString())
+        };
+        return updated;
+    }
+
+    /// <summary>
+    /// A static instance of <see cref="JsonSerializerOptions"/> used to configure
+    /// JSON serialization and deserialization settings tailored to the service.
+    /// </summary>
+    /// <remarks>
+    /// Configured with the following settings:
+    /// - Utilizes SnakeCaseLower naming policy for property names to align with API specifications.
+    /// - Omits null values during serialization to reduce payload size.
+    /// - Supports case-insensitive property name matching for deserialization.
+    /// </remarks>
+    private static readonly JsonSerializerOptions JsonOptions = new()
+    {
+        PropertyNamingPolicy =
+            JsonNamingPolicy.SnakeCaseLower,
+        DefaultIgnoreCondition =
+            JsonIgnoreCondition.WhenWritingNull,
+        PropertyNameCaseInsensitive = true
+    };
 
     private static async Task WriteChunk(HttpResponse httpResponse, JsonNode chunkNode, CancellationToken ct)
     {
