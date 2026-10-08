@@ -1,6 +1,7 @@
 FROM python:3.12-slim
 
 ARG PII_SHIELD_REF=3730e54943a9844780652b8ce50cd588ca9e0cba
+ARG SPACY_MODEL=en_core_web_lg
 
 WORKDIR /app
 
@@ -10,15 +11,16 @@ RUN apt-get update \
 
 RUN git clone https://github.com/KasamShaikh/pii-shield.git /app/pii-shield \
     && cd /app/pii-shield \
-    && git checkout ${PII_SHIELD_REF}
+    && git checkout ${PII_SHIELD_REF} \
+    && sed -i 's/^SPACY_MODEL = "en_core_web_lg"$/SPACY_MODEL = os.getenv("SPACY_MODEL", "en_core_web_lg")/' pii_shield/nlp_engine.py \
+    && pip install --no-cache-dir -r requirements.txt \
+    && python -m spacy download ${SPACY_MODEL}
+
+ENV SPACY_MODEL=${SPACY_MODEL}
 
 WORKDIR /app/pii-shield
-
-RUN pip install --no-cache-dir -r requirements.txt \
-    && python -m spacy download en_core_web_lg
-
 EXPOSE 8000
 
-# PII Shield's REST session store is in-process, so use one worker to guarantee
-# that the /anonymize_unique -> /deanonymize session stays on the same process.
+# Keep one worker: the Shield session store is process-local/Redis-backed and each
+# anonymize -> deanonymize pair must remain on one service instance.
 CMD ["sh", "-c", "exec gunicorn app.main:app --worker-class uvicorn.workers.UvicornWorker --workers 1 --bind 0.0.0.0:8000 --preload"]
