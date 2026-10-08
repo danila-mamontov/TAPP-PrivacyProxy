@@ -1,0 +1,138 @@
+services:
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: exp-rq3_piishield-mailpit
+    restart: unless-stopped
+    ports:
+      - "${MAILPIT_SMTP_PORT:-1026}:1025"
+      - "${MAILPIT_UI_PORT:-8026}:8025"
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: "true"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+      MP_MAX_MESSAGES: "0"
+
+  radicale:
+    image: tomsquest/docker-radicale:latest
+    container_name: exp-rq3_piishield-radicale
+    restart: unless-stopped
+    ports:
+      - "${CALDAV_PORT:-5233}:5232"
+    environment:
+      TAKE_FILE_OWNERSHIP: "true"
+    volumes:
+      - ./radicale-data:/data
+      - ../../ExperimentalPresidioGroup/infrastructure/radicale/config:/config:ro
+
+  calendar-viewer:
+    build:
+      context: ../../ExperimentalPresidioGroup/infrastructure
+      dockerfile: Dockerfile.calendar_viewer
+    container_name: exp-rq3_piishield-calendar_viewer
+    restart: unless-stopped
+    ports:
+      - "${CALENDAR_VIEWER_PORT:-8091}:5000"
+    depends_on:
+      - radicale
+    environment:
+      CALDAV_URL: "http://radicale:5232/"
+      CALDAV_USER: test
+      CALDAV_PASS: test
+
+  mcp-server:
+    build:
+      context: ../../ExperimentalPresidioGroup/infrastructure
+      dockerfile: Dockerfile.mcp_server
+    container_name: exp-rq3_piishield-mcp_server
+    restart: unless-stopped
+    ports:
+      - "${TOOLS_PORT:-3101}:3100"
+    depends_on:
+      - mailpit
+      - radicale
+    environment:
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      CALDAV_URL: "http://radicale:5232/"
+      MAILPIT_API: "http://mailpit:8025"
+      CALDAV_CAL: "${CALDAV_CAL:-exp_rq3_experimentalpiishieldgroup}"
+
+  llm-recorder:
+    build:
+      context: ../../ExperimentalPresidioGroup/infrastructure
+      dockerfile: Dockerfile.llm_recorder
+    container_name: exp-rq3_piishield-llm_recorder
+    restart: unless-stopped
+    ports:
+      - "${RECORDER_PORT:-8001}:8000"
+    environment:
+      UPSTREAM: "http://host.docker.internal:11434"
+
+  redis:
+    image: redis:7-alpine
+    container_name: exp-rq3_piishield-redis
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  pii-shield-en:
+    build:
+      context: .
+      dockerfile: Dockerfile.pii_shield
+      args:
+        PII_SHIELD_REF: "${PII_SHIELD_REF:-3730e54943a9844780652b8ce50cd588ca9e0cba}"
+        SPACY_MODEL: en_core_web_lg
+    container_name: exp-rq3_piishield-pii_shield_en
+    restart: unless-stopped
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      NLP_ENGINE: spacy
+      WEB_CONCURRENCY: "1"
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  pii-shield-de:
+    build:
+      context: .
+      dockerfile: Dockerfile.pii_shield
+      args:
+        PII_SHIELD_REF: "${PII_SHIELD_REF:-3730e54943a9844780652b8ce50cd588ca9e0cba}"
+        SPACY_MODEL: de_core_news_lg
+    container_name: exp-rq3_piishield-pii_shield_de
+    restart: unless-stopped
+    environment:
+      REDIS_URL: redis://redis:6379/1
+      NLP_ENGINE: spacy
+      SPACY_MODEL: de_core_news_lg
+      WEB_CONCURRENCY: "1"
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  pii-adapter:
+    build:
+      context: .
+      dockerfile: Dockerfile.pii_adapter
+    container_name: exp-rq3_piishield-adapter
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${PROXY_PORT:-8081}:8080"
+    environment:
+      PII_SHIELD_EN_URL: "http://pii-shield-en:8000"
+      PII_SHIELD_DE_URL: "http://pii-shield-de:8000"
+      UPSTREAM: "http://llm-recorder:8000"
+      PII_SHIELD_REQUEST_TIMEOUT: "${PII_SHIELD_REQUEST_TIMEOUT:-120}"
+    depends_on:
+      - pii-shield-en
+      - pii-shield-de
+      - llm-recorder
+
+volumes:
+  radicale-data:
+  redis-data:
