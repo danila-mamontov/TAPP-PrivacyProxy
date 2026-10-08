@@ -60,13 +60,15 @@ The current upstream PII Shield engine is configured for English. To keep the sa
 120-row bilingual benchmark, this experiment adds a small isolated language patch
 that:
 
-1. loads `en_core_web_lg` and `de_core_news_lg`,
-2. enables Presidio `supported_languages=["en", "de"]`, and
-3. duplicates PII Shield's existing English recognizers for German.
+1. builds one PII Shield instance with `en_core_web_lg`,
+2. builds a second PII Shield instance with `de_core_news_lg`, while exposing
+   the German instance to Presidio under the existing `en` language code, and
+3. routes German benchmark turns to the German-model instance.
 
-The PII detection/anonymization operators themselves remain PII Shield's
-implementation. This adaptation is documented explicitly because the upstream
-configuration is English-only.
+The PII detection/anonymization and de-anonymization operators remain PII Shield's
+implementation. The German instance is an experimental compatibility adaptation,
+not a claim that upstream PII Shield natively supports German. This is documented
+explicitly because the pinned upstream engine declares only English support.
 
 ## OpenClaw model configuration
 
