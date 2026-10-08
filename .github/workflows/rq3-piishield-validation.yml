@@ -1,0 +1,38 @@
+name: RQ3 PII Shield validation
+
+on:
+  push:
+    branches:
+      - pii-shield-comparison
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Experiments/RQ3/ExperimentalPIIShieldGroup
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Python syntax
+        run: python -m py_compile experiment.py infrastructure/pii_adapter.py
+
+      - name: Validate dataset invariant
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows = json.loads(Path("../ExperimentalPresidioGroup/dataset.json").read_text(encoding="utf-8"))["rows"]
+          assert len(rows) == 120, len(rows)
+          assert sum(r["lang"] == "en" for r in rows) == 60
+          assert sum(r["lang"] == "de" for r in rows) == 60
+          assert {r["domain"] for r in rows} == {"conversation", "email", "calendar"}
+          print("dataset OK:", len(rows), "rows")
+          PY
+
+      - name: Validate Compose syntax
+        run: docker compose -f infrastructure/docker-compose.yaml config -q
