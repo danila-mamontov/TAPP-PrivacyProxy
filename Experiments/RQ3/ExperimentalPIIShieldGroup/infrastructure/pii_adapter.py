@@ -7,12 +7,39 @@ import requests
 from fastapi import FastAPI, Request, Response
 from fastapi.responses import JSONResponse, StreamingResponse
 
-PII_SHIELD_URL = os.environ.get("PII_SHIELD_URL", "http://pii-shield:8000").rstrip("/")
+PII_SHIELD_EN_URL = os.environ.get("PII_SHIELD_EN_URL", "http://pii-shield-en:8000").rstrip("/")
+PII_SHIELD_DE_URL = os.environ.get("PII_SHIELD_DE_URL", "http://pii-shield-de:8000").rstrip("/")
 UPSTREAM = os.environ.get("UPSTREAM", "http://llm-recorder:8000").rstrip("/")
-LANGUAGE_MODE = os.environ.get("PII_SHIELD_LANGUAGE_MODE", "force_en").strip().lower()
 REQUEST_TIMEOUT = float(os.environ.get("PII_SHIELD_REQUEST_TIMEOUT", "120"))
 
 app = FastAPI(title="PII Shield OpenAI Adapter")
+
+
+def _german(messages: list[dict]) -> bool:
+    # Detect language from the most recent user message only. The OpenClaw
+    # system prompt is English even for German benchmark rows.
+    for message in reversed(messages):
+        if message.get("role") != "user":
+            continue
+        content = message.get("content")
+        if not isinstance(content, str):
+            continue
+        text = f" {content.lower()} "
+        if any(ch in text for ch in "äöüß"):
+            return True
+        markers = (
+            " der ", " die ", " das ", " den ", " dem ", " des ",
+            " und ", " oder ", " ein ", " eine ", " bitte ",
+            " erstellen ", " erstelle ", " sende ", " sende ",
+            " termin ", " kalender ", " nachricht ", " email ",
+            " e-mail ", " teilnehmer ", " beschreibung ",
+        )
+        return any(marker in text for marker in markers)
+    return False
+
+
+def _shield_url(messages: list[dict]) -> str:
+    return PII_SHIELD_DE_URL if _german(messages) else PII_SHIELD_EN_URL
 
 
 def _headers(request: Request) -> dict[str, str]:
@@ -20,64 +47,65 @@ def _headers(request: Request) -> dict[str, str]:
     return {k: v for k, v in request.headers.items() if k.lower() not in blocked}
 
 
-def _language(messages: list[dict]) -> str:
-    if LANGUAGE_MODE in {"en", "force_en"}:
-        return "en"
-    if LANGUAGE_MODE == "de":
-        return "de"
-    # Optional lightweight auto mode. The benchmark uses force_en because the
-    # pinned upstream PII Shield engine currently declares only English support.
-    text = " ".join(
-        str(m.get("content", ""))
-        for m in messages
-        if isinstance(m, dict) and isinstance(m.get("content"), str)
-    ).lower()
-    german_markers = (
-        " der ", " die ", " das ", " und ", " ein ", " eine ", " bitte ",
-        " termin ", " sende ", " erstelle ", " kalender ", " e-mail ",
-    )
-    return "de" if any(marker in f" {text} " for marker in german_markers) else "en"
-
-
 def _shield_anonymize(messages: list[dict]) -> tuple[list[dict], str]:
-    # Serialize the complete message structure. This protects content, tool-call
-    # arguments and tool messages with one PII Shield session, so placeholders can
-    # be restored even when the LLM copies a placeholder from one field to another.
+    # Protect the complete message JSON in one Shield session. This covers
+    # message content, tool_call arguments and tool messages.
     packed = json.dumps(messages, ensure_ascii=False, separators=(",", ":"))
-    language = _language(messages)
     r = requests.post(
-        f"{PII_SHIELD_URL}/anonymize_unique",
-        json={"text": packed, "language": language},
+        f"{_shield_url(messages)}/anonymize_unique",
+        json={"text": packed, "language": "en"},
         timeout=REQUEST_TIMEOUT,
     )
     r.raise_for_status()
     payload = r.json()
-    anonymized = json.loads(payload["anonymized_text"])
-    return anonymized, payload["id"]
+    return json.loads(payload["anonymized_text"]), payload["id"]
 
 
-def _shield_deanonymize(payload: dict, session_id: str) -> dict:
-    packed = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+def _shield_deanonymize(response_payload: dict, session_id: str, shield_url: str) -> dict:
+    packed = json.dumps(response_payload, ensure_ascii=False, separators=(",", ":"))
     r = requests.post(
-        f"{PII_SHIELD_URL}/deanonymize",
+        f"{shield_url}/deanonymize",
         json={"id": session_id, "text": packed},
         timeout=REQUEST_TIMEOUT,
     )
     r.raise_for_status()
-    restored = r.json()["text"]
-    return json.loads(restored)
+    return json.loads(r.json()["text"])
 
 
 def _post_upstream(req: dict) -> requests.Response:
     forwarded = dict(req)
-    # The adapter currently buffers the upstream completion. When OpenClaw asks
-    # for a stream, we synthesize a valid single-chunk SSE response below.
     forwarded["stream"] = False
     return requests.post(
         f"{UPSTREAM}/v1/chat/completions",
         json=forwarded,
         timeout=REQUEST_TIMEOUT,
     )
+
+
+def _stream_response(restored: dict, requested_model: str):
+    chunks = []
+    choices = restored.get("choices", [])
+    for idx, choice in enumerate(choices):
+        message = choice.get("message") or {}
+        delta = {
+            key: message[key]
+            for key in ("role", "content", "tool_calls", "function_call", "refusal")
+            if key in message
+        }
+        chunk = {
+            "id": restored.get("id", f"pii-shield-{uuid.uuid4().hex}"),
+            "object": "chat.completion.chunk",
+            "created": restored.get("created", int(time.time())),
+            "model": restored.get("model", requested_model),
+            "choices": [{
+                "index": idx,
+                "delta": delta,
+                "finish_reason": choice.get("finish_reason"),
+            }],
+        }
+        chunks.append("data: " + json.dumps(chunk, ensure_ascii=False) + "\n\n")
+    chunks.append("data: [DONE]\n\n")
+    return StreamingResponse(iter(chunks), media_type="text/event-stream")
 
 
 @app.post("/v1/chat/completions")
@@ -87,66 +115,50 @@ async def chat_completions(request: Request):
     if not isinstance(messages, list):
         return JSONResponse({"error": {"message": "messages must be a list"}}, status_code=400)
 
-    original_stream = bool(req.get("stream"))
+    stream = bool(req.get("stream"))
+    shield_url = _shield_url(messages)
+
     try:
         protected_messages, session_id = _shield_anonymize(messages)
         protected_request = dict(req)
         protected_request["messages"] = protected_messages
+
         upstream = _post_upstream(protected_request)
-
-        content_type = upstream.headers.get("content-type", "application/json")
         if upstream.status_code < 200 or upstream.status_code >= 300:
-            return Response(upstream.content, status_code=upstream.status_code, media_type=content_type.split(";")[0])
+            return Response(
+                upstream.content,
+                status_code=upstream.status_code,
+                media_type=upstream.headers.get("content-type", "application/json").split(";")[0],
+            )
 
-        upstream_json = upstream.json()
-        restored = _shield_deanonymize(upstream_json, session_id)
-
-        if not original_stream:
+        restored = _shield_deanonymize(upstream.json(), session_id, shield_url)
+        if not stream:
             return JSONResponse(restored)
-
-        # OpenAI-compatible single-chunk stream. This is deliberately buffered so
-        # de-anonymization is completed before any restored PII is sent downstream.
-        chunks = []
-        for idx, choice in enumerate(restored.get("choices", [])):
-            message = choice.get("message") or {}
-            delta = {}
-            for key in ("role", "content", "tool_calls", "function_call", "refusal"):
-                if key in message:
-                    delta[key] = message[key]
-            chunk = {
-                "id": restored.get("id", f"pii-shield-{uuid.uuid4().hex}"),
-                "object": "chat.completion.chunk",
-                "created": restored.get("created", int(time.time())),
-                "model": restored.get("model", req.get("model", "unknown")),
-                "choices": [{
-                    "index": idx,
-                    "delta": delta,
-                    "finish_reason": choice.get("finish_reason"),
-                }],
-            }
-            chunks.append("data: " + json.dumps(chunk, ensure_ascii=False) + "\n\n")
-        chunks.append("data: [DONE]\n\n")
-        return StreamingResponse(iter(chunks), media_type="text/event-stream")
+        return _stream_response(restored, req.get("model", "unknown"))
 
     except requests.HTTPError as exc:
         detail = getattr(exc.response, "text", str(exc))
-        return JSONResponse({"error": {"message": detail[:2000], "type": "pii_shield_upstream_error"}}, status_code=502)
+        return JSONResponse(
+            {"error": {"message": detail[:2000], "type": "pii_shield_upstream_error"}},
+            status_code=502,
+        )
     except (requests.RequestException, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
-        return JSONResponse({"error": {"message": str(exc), "type": "pii_shield_adapter_error"}}, status_code=502)
+        return JSONResponse(
+            {"error": {"message": str(exc), "type": "pii_shield_adapter_error"}},
+            status_code=502,
+        )
 
 
 @app.get("/v1/models")
 def models():
     r = requests.get(f"{UPSTREAM}/v1/models", timeout=REQUEST_TIMEOUT)
-    return Response(r.content, status_code=r.status_code, media_type=r.headers.get("content-type", "application/json"))
+    return Response(
+        r.content,
+        status_code=r.status_code,
+        media_type=r.headers.get("content-type", "application/json"),
+    )
 
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
-
-
-@app.get("/{path:path}")
-def passthrough_get(path: str):
-    r = requests.get(f"{UPSTREAM}/{path}", timeout=REQUEST_TIMEOUT)
-    return Response(r.content, status_code=r.status_code, media_type=r.headers.get("content-type", "application/json"))
